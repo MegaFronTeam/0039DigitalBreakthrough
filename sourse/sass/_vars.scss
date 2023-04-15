@@ -30,7 +30,7 @@ $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
-$gray-700: #495057 !default;
+$gray-700: #232323;
 $gray-800: #222222;
 $gray-900: #111111;
 $black:    #000 !default;
@@ -623,11 +623,11 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
+$h1-font-size:                rem(48) !default;
 $h2-font-size:                rem(32) !default;
 $h3-font-size:                rem(24) !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
+$h4-font-size:                rem(18)!default;
+$h5-font-size:                rem(12) !default;
 $h6-font-size:                $font-size-base !default;
 // scss-docs-end font-variables
 

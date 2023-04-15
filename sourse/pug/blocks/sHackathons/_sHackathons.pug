@@ -1,0 +1,50 @@
+mixin sHackathons(data)
+	// start sHackathons
+	+b.SECTION.sHackathons.section#sHackathons&attributes(attributes)
+		.container
+			+e.wrap
+				+b.section-title
+					h2 8 окружных хакатонов
+				+e.row.row
+					mixin item(title)
+						+e.item&attributes(attributes)
+							+e.content
+								h5 10 июня - 20 июля
+								h4!= title
+								+e.city Ярославская обл.
+							+e.choose Выберите лигу:
+							+e.inner-row.row
+								.col-auto
+									+e.tag(href='#') Новички 
+								.col-auto
+									+e.tag(href='#') Профи 
+							+icon('check-2')
+							+e.dataset(href='#')
+								+icon('ai')
+								| Dataset
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Хабаровск').done
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Нижний Новгород').active
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Екатеринбург')
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Томск')
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Волгоград')
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Санкт-Петербург')
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Москва')
+					.col-sm-6.col-md-4.col-xl-3 
+						+item('Волгоград')
+				.row
+					.col-lg-6
+						+e.item-wrap(style='--bgColor: #03FE33')
+							span 10 июня - 20 июля
+							.h1 Всероссийский чемпионат
+					.col-lg-6
+						+e.item-wrap(style='--bgColor: #FF00C7')
+							span.text-white 10 июня - 20 июля
+							.h1.text-white Всероссийский чемпионат
+	// end sHackathons

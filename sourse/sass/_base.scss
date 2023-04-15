@@ -555,6 +555,10 @@ iframe {
 	}
 }
 
+.row {
+	--bs-gutter-y: var(--bs-gutter-x);
+}
+
 .btn {
 	--bs-btn-font-size: #{rem(14)};
 	--bs-btn-padding-y: #{rem(12.5)};
