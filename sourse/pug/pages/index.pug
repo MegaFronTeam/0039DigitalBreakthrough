@@ -14,7 +14,7 @@ block variables
 	- let  bg= null
 
 block title
-	- let  title= index.head.title
+	- let  title= 'Главная'
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -22,11 +22,7 @@ block pagecontent
 	
 	+parts('header')
 	main
-		.ratiod
-		+headerBlock 
-		+sCatalog
-		+sForm()
-		+sContact()
+		+headerBlock
 		
 	+parts('footer')
       

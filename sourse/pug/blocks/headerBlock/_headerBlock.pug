@@ -2,9 +2,14 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
 			.row
+				.col-lg-6
+					+e.wrap
+						+img('img/svg/headerBlock-img-1.svg')
+						h3 Большой спорт<br>для IT-специалистов
+						+e.btn.btn.btn-dark(href='#') Регистрация на хакатон
+						img(src="img/svg/headerBlock-img-3.svg", alt="").bg
+				.col-lg-6
+					+img('img/headerBlock-img-2.png').img
 						
 	// end headerBlock

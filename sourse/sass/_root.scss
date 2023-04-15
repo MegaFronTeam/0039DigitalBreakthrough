@@ -5,9 +5,12 @@
 
 	@include media-breakpoint-up(md) {
 
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
+		--sPT: #{rem(16)};
+		--sPB: #{rem(16)};
 		--sTPB: #{rem(40)};
+	}
+	@include media-breakpoint-up(xl) {
+		--bs-body-font-size: #{$em-base};
 	}
 
 	--sPT: #{rem(80 * .5)};

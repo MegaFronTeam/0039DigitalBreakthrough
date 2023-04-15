@@ -1,6 +1,7 @@
 mixin menu-toggle()
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js
 		span
+		p Меню
 mixin mob-mnu()
 	-
 		//- let path = require('path');
@@ -21,13 +22,21 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
-				.col.order-lg-0.order-last
+			+e.row.row
+				.col-auto
+					+img('img/svg/logo.svg')
+				.col-auto
+					+img('img/svg/logo2.svg')
+				.col-auto
+					+img('img/logo3.png')
+				.col-auto.p-0.order-lg-0.order-last
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
-							+menu-toggle()
-							+mnu()
-					
-				.col-auto.d-lg-none
-					+menu-toggle()
+							//- +menu-toggle()
+							//- +mnu()
+				.col-auto.ms-auto
+					+e.wrap
+						+menu-toggle()
+						+e.link(href='#'): +icon('access')
+						+e.link(href='#'): +icon('user')
 	// end top-nav

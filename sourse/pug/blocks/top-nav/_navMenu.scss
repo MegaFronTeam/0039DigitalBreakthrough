@@ -26,22 +26,24 @@
 
 
 .toggle-menu-mobile {
-	--h: #{em(2)};
-	--color: #{$primary};
-	--position: calc(var(--h) * 2);
+	--h: #{rem(2)};
+	--color: #fff;
+	--position: calc(var(--h) * 3);
 	&.on span {
-		--color: transparent;
+		--color: #fff;
+		background-color: transparent;
 	}
 
 	&.on  { 
 		--position: 0; 
 		--rotate: 45deg;
 	}
-	display: block;
+	display: flex;
+	align-items: center;
 	height: calc(var(--h)* 12);
 	position: relative; 
-	font-size: 32px;
-	width: 1em;
+	font-size: 16.5px;
+	width: auto;
 	cursor: pointer;
 	span:after,
 	span:before {
@@ -74,6 +76,12 @@
 		backface-visibility: hidden; 
 		transform-origin: 50% 50%;
 	} 
+	p {
+		margin-bottom: 0;
+		font-size: rem(12);
+		font-weight: 600;
+		padding-left: rem(27);
+	}
 }
 @include media-breakpoint-down(lg) {
 

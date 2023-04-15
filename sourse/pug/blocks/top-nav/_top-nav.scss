@@ -1,25 +1,30 @@
 .top-nav {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPT: #{rem(24)};
+	--sPB: #{rem(24)};
 	// --sTPB: #{rem()};
+	padding-bottom: var(--sPB);
+	padding-top: var(--sPT);
 	&__row{
-		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: var(--bs-gutter-x);
-
-	}
-	.section-title{
-		
-	}
-	&__col{
-
-	}
-	&__item{
+		--bs-gutter-x: #{rem(40)};
+		--bs-gutter-y: #{rem(24)};
 
 	}
 	&__slide{
 		height: auto;
 	}
-
+	&__wrap {
+		@include roww('20px');
+		display: flex;
+		align-items: center;
+	}
+	&__link {
+		&:not(:hover) {
+			color: #fff;
+		}
+		.icon {
+			font-size: rem(24);
+		}
+	}
 	@include media-breakpoint-up(md) {}
 
 	@include media-breakpoint-up(sm) {}
