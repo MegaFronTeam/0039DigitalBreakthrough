@@ -13,9 +13,9 @@ include components/ddgroup.pug
 
 mixin arrow()
 	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
-		+icon('chevron-left')
+		+icon('chevron-left-2')
 	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
-		+icon('chevron-right')
+		+icon('chevron-right-2')
 //- /arrow for swiper-slider
 
 mixin ie11()
@@ -50,3 +50,15 @@ mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+mixin defaultSlider(btn)
+	+b.default-slider
+		+e.slider--js.swiper
+			.swiper-wrapper
+				block
+		+e.row.row
+			.col
+				+e.btn.btn.btn-dark(href='#')!= btn
+			.col-auto 
+				+e.arrow-wrap
+					+arrow

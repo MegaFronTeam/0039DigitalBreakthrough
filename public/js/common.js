@@ -424,8 +424,25 @@ function eventHandler() {
 			clickable: true,
 		},
 	});
-
 	// modal window
+
+	let defaultSliders = document.querySelectorAll('.default-slider');
+	if(defaultSliders.length > 0) {
+		for (const defaultSlider of defaultSliders) {
+			const defaultSwiper = new Swiper(defaultSlider.querySelector('.default-slider__slider--js'), {
+				slidesPerView: 'auto',
+				navigation: {
+					nextEl: defaultSlider.querySelector('.default-slider__arrow-wrap .swiper-button-next'),
+					prevEl: defaultSlider.querySelector('.default-slider__arrow-wrap .swiper-button-prev'),
+				},
+				pagination: {
+					el: defaultSlider.querySelector('.default-slider__arrow-wrap .swiper-pagination'),
+					type: 'bullets',
+					clickable: true,
+				},
+			});
+		}
+	}
 
 };
 if (document.readyState !== 'loading') {

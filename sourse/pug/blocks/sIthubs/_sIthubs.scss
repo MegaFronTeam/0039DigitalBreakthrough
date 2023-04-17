@@ -1,0 +1,71 @@
+// start .sIthubs
+.sIthubs {
+	--sPT: #{rem(32)};
+	--sPB: #{rem(20)};
+	--sTPB: #{rem(20)};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(52)};
+		--sPB: #{rem(40)};
+		--sTPB: #{rem(40)};
+	}
+	--slideCount: 1;
+	--slideGutter: #{rem(16)};
+	@include media-breakpoint-up(sm) {
+		--slideCount: 2;
+	}
+	@include media-breakpoint-up(md) {
+		--slideCount: 3;
+	}
+	@include media-breakpoint-up(xl) {
+		--slideCount: 4;
+	}
+	.default-slider {
+		&__slider {
+			margin-bottom: rem(20);
+			@include media-breakpoint-up(lg) {
+				margin-bottom: rem(40);
+			}
+		}
+		&__slide {
+			.h4 {
+				@include mt;
+				margin-bottom: rem(4);
+				line-height: 1.27;
+				color: #fff;
+			}
+			@include media-breakpoint-up(xl) {
+				max-width: rem(309);
+			}
+			&:hover {
+				.h4 {
+					color: $primary;
+				}
+			}
+		}
+		img {
+			@include block(193, 310);
+			border-radius: 8px;
+			overflow: hidden;
+			margin-bottom: rem(24);
+		}
+		&__city {
+			font-size: rem(12);
+			line-height: 1.83;
+			color: rgba($color: #fff, $alpha: .5);
+		}
+		&__btn {
+			--bs-btn-bg: #{$gray-800};
+	
+			width: 100%;
+			max-width: rem(154);
+		}
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sIthubs

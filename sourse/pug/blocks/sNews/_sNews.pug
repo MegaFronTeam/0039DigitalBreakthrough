@@ -1,0 +1,21 @@
+mixin sNews(data)
+	// start sNews
+	+b.SECTION.sNews.section#sNews&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Новости проекта
+			+defaultSlider('Все новости')
+				mixin slide(img, date, title)
+					+e.slide.swiper-slide.bg-wrap(href='#')
+						+img(`img/${img}`, 'bg').picture-bg
+						+e.date!=date
+						h4!= title
+				+slide('sNews-img-1.jpg', '10 июня - 20 июля', 'В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;')
+				+slide('sNews-img-2.jpg', '10 июня - 20 июля', 'Как искусственный интеллект помогает решать проблему отходов')
+				+slide('sNews-img-3.jpg', '10 июня - 20 июля', 'Как искусственный интеллект борется за живую природу')
+				+slide('sNews-img-4.jpg', '10 июня - 20 июля', 'В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;')
+				+slide('sNews-img-1.jpg', '10 июня - 20 июля', 'В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;')
+				+slide('sNews-img-2.jpg', '10 июня - 20 июля', 'Как искусственный интеллект помогает решать проблему отходов')
+				+slide('sNews-img-3.jpg', '10 июня - 20 июля', 'Как искусственный интеллект борется за живую природу')
+				+slide('sNews-img-4.jpg', '10 июня - 20 июля', 'В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;')
+	// end sNews

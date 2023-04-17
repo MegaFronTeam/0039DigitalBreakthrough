@@ -2,8 +2,36 @@ mixin footer()
 	+b.FOOTER.footer.section
 		.container
 			.row
-				.col
-					
-				.col Footer
-				.col
-				.col-auto
+				.col-12.col-lg-3.col-xl-4.order-1
+					+e.logo(href='/'): +img('img/svg/logo3.svg')
+				.col-auto.col-lg-4.col-xl-3.order-3.order-lg-2
+					+soc
+					mixin link(span, mail)
+						+e.link
+							span!= span 
+							a(href=`mailto:${mail}`)!= mail  
+					+link('Для СМИ', 'pr@hacks-ai.ru')
+					+link('Для партнеров', 'partners@hacks-ai.ru')
+					+link('О чемпионатах', 'info-champ@hacks-ai.ru ')
+					+link('О хакатонах', 'info-hack@hacks-ai.ru ')
+				.col.col-lg.order-2.order-lg-3
+					nav
+						ul
+							li: a(href="#") О проекте 
+							li: a(href="#") Контакты
+							li: a(href="#") FAQ
+							li: a(href="#") Чемпионаты
+							li: a(href="#") Лекции
+							li: a(href="#") Партнёрам
+							li: a(href="#") Новости
+							li: a(href="#") Вакансии
+							li: a(href="#") Резюме
+							li: a(href="#") Меры поддержки
+			+e.wrap
+				.row.text-center.text-md-start
+					.col-md.col-lg-4
+						span © 2023
+					.col-md.col-lg-3
+						a(href="#") Положение об окружных хакатонах 
+					.col-md.col
+						a(href="#") Политика конфиденциальности

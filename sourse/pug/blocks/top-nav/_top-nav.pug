@@ -24,7 +24,7 @@ mixin top-nav()
 		.container
 			+e.row.row
 				.col-auto
-					+img('img/svg/logo.svg')
+					+img('img/svg/logo.svg').main-logo
 				.col-auto
 					+img('img/svg/logo2.svg')
 				.col-auto
@@ -34,7 +34,8 @@ mixin top-nav()
 						.menu-mobile__inner
 							//- +menu-toggle()
 							//- +mnu()
-				.col-auto.ms-auto
+				.col-12.p-0.m-0.d-sm-none
+				.col-auto.ms-md-auto
 					+e.wrap
 						+menu-toggle()
 						+e.link(href='#'): +icon('access')

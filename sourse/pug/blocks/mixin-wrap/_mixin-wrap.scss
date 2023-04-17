@@ -1,7 +1,7 @@
  
 	  
 .soc{
-	@include roww(10px, m);
+	@include roww(24px, m);
 	display: flex;
 	&__item{
 		text-decoration: none !important; 
@@ -9,14 +9,16 @@
 		@include mt;
 		display: grid;
 		place-items: center;
+		color: #fff;
 		&:hover{
 		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
 			// opacity: .6 ;
+			color: $primary;
 		}
 		
 	}
 	.icon{
-		font-size: rem(30);
+		font-size: rem(24);
 	}
 
 
@@ -139,6 +141,48 @@
 		}
 		&-active {
 			background-color: $primary;
+		}
+	}
+}
+
+.dd-group {
+	&__content {
+		display: none;
+	}
+}
+
+.default-slider {
+	overflow: hidden;
+	&__slider {
+		margin-right: calc(var(--slideGutter) * -1);
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(40);
+		}
+	}
+	&__slide {
+		width: calc(100% / var(--slideCount) - var(--slideGutter));
+		margin-right: var(--slideGutter);
+	}
+	&__arrow-wrap {
+		@include roww('20px', 'm');
+		@include media-breakpoint-up(md) {
+			--bs-gutter-x: 40px;
+		}
+	}
+	&__row {
+		align-items: center;
+	}
+	.swiper-button-hand {
+		position: static;
+		display: inline-flex;
+		border: none;
+		--swiperArrowSize: #{rem(24)};
+		--swiperColorDef: #{$pink};
+		.icon {
+			font-size: rem(24);
+			fill: currentColor;
+			stroke: none;
 		}
 	}
 }

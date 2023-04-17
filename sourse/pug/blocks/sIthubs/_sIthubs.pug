@@ -1,0 +1,21 @@
+mixin sIthubs(data)
+	// start sIthubs
+	+b.SECTION.sIthubs.section#sIthubs&attributes(attributes)
+		.container
+			+b.section-title
+				h2 IT хабы
+			+defaultSlider('Все IT хабы')
+				mixin slide(img, title)
+					+e.slide.swiper-slide(href='#')
+						+img(`img/${img}`, 'bg')
+						.h4!= title
+						+e.city г. Москва
+				+slide('sIthubs-img-1.jpg', 'Название ITхаба')
+				+slide('sIthubs-img-2.jpg', 'Название ITхаба')
+				+slide('sIthubs-img-3.jpg', 'Название ITхаба')
+				+slide('sIthubs-img-4.jpg', 'Название ITхаба')
+				+slide('sIthubs-img-1.jpg', 'Название ITхаба')
+				+slide('sIthubs-img-2.jpg', 'Название ITхаба')
+				+slide('sIthubs-img-3.jpg', 'Название ITхаба')
+				+slide('sIthubs-img-4.jpg', 'Название ITхаба')
+	// end sIthubs

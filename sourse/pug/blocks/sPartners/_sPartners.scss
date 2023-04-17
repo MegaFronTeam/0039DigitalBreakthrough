@@ -1,0 +1,60 @@
+// start .sPartners
+.sPartners {
+	--sPT: #{rem(32)};
+	--sPB: #{rem(20)};
+	--sTPB: #{rem(16)};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(66.400)};
+		--sPB: #{rem(28)};
+		--sTPB: #{rem(32)};
+	}
+	&__row{
+		--bs-gutter-x: #{rem(53)};
+		--bs-gutter-y: #{rem(49)};
+	}
+	.section-title{
+		color: $body-bg;
+	}
+	&__wrap {
+		background-color: #fff;
+		border-radius: 8px;
+		padding: rem(20);
+		@include media-breakpoint-up(lg) {
+			padding: rem(40) rem(40) rem(63.400) rem(40);
+		}
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: $body-bg;
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: rem(180);
+			margin-bottom: rem(16);
+		}
+		span {
+			font-size: rem(12);
+			font-weight: 600;
+			line-height: 1.33;
+			color: $gray-500;
+		}
+		p {
+			font-size: rem(12);
+			line-height: 1.53;
+			margin-bottom: 0;
+			margin-top: rem(4);
+			max-width: rem(280);
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sPartners
