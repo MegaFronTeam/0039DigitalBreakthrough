@@ -1,7 +1,7 @@
 // start .sMap
 .sMap {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPB: #{rem(0)};
 	--sTPB: #{rem(22)};
 	@include media-breakpoint-up(lg) {
 		--sTPB: #{rem(40)};
@@ -19,7 +19,7 @@
 			padding: rem(40);
 		}
 		@include media-breakpoint-up(xl) {
-			padding: rem(40) rem(96) rem(40) rem(40);
+			padding: rem(40) rem(96) rem(67) rem(40);
 		}
 	}
 	img {
@@ -35,6 +35,7 @@
 		margin-top: calc(var(--bs-gutter-y) * -1);
 		@include media-breakpoint-up(lg) {
 			flex-direction: column;
+			min-width: rem(176);
 			--bs-gutter-y: #{rem(32)};
 		}
 		& > * {
@@ -42,7 +43,7 @@
 		}
 	}
 	&__item{
-		max-width: rem(157);
+		max-width: rem(175);
 		p {
 			line-height: 1.27;
 			margin-bottom: 0;

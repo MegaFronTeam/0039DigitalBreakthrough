@@ -126,16 +126,16 @@
 .swiper-pagination {
 	margin: 0 rem(6);
 	@include media-breakpoint-up(md) {
-		margin: 0 rem(12);
+		margin: 0 rem(8.4);
 	}
 	&-bullet {
-		--swiper-pagination-bullet-horizontal-gap: #{rem(6)};
+		--swiper-pagination-bullet-horizontal-gap: #{rem(10.8)};
 
 		background-color: rgba($color: #fff, $alpha: .2);
 		width: rem(10);
 		height: rem(10);
 		@include media-breakpoint-up(md) {
-			--swiper-pagination-bullet-horizontal-gap: #{rem(12)};
+			--swiper-pagination-bullet-horizontal-gap: #{rem(10.8)};
 		}
 		&-active {
 			background-color: $primary;

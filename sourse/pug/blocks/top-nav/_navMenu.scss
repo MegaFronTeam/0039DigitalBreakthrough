@@ -45,6 +45,9 @@
 	font-size: 16.5px;
 	width: auto;
 	cursor: pointer;
+	@include media-breakpoint-up(xl) {
+		margin-right: 16px;
+	}
 	span:after,
 	span:before {
 		content: "";
