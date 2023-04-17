@@ -15,9 +15,9 @@ mixin sHackathons(data)
 							+e.choose Выберите лигу:
 							+e.inner-row.row
 								.col-auto
-									+e.tag(href='#') Новички 
+									+in-c('checkbox', 'Новички')
 								.col-auto
-									+e.tag(href='#') Профи 
+									+in-c('checkbox', 'Профи')
 							+icon('check-2')
 							+e.dataset(href='#')
 								+icon('ai')

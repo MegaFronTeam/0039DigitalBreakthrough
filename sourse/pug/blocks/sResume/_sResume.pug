@@ -1,0 +1,53 @@
+mixin sResume(data)
+	// start sResume
+	+b.SECTION.sResume.section#sResume&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-6
+					+e.wrap--img.bg-wrap
+						+img('img/sResume-bg-1.png', 'bg').picture-bg 
+						h2.h1 Резюме лучших участников
+				.col-lg-6
+					mixin item(img, text, status)
+						+e.item(href='#')
+							+img(`img/${img}`)
+							+e.content
+								p!= text
+								+e.status!= status
+								.row
+									.col-auto
+										span Программист
+									.col-auto
+										span.city Москва
+					+e.wrap
+						+e.text Лучшие из лучших готовы присоединится к вашим командам. 
+						+e.slider--js.swiper
+							.swiper-wrapper
+								+e.slide.swiper-slide
+									+item('sResume-img-1.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-2.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-3.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+								+e.slide.swiper-slide
+									+item('sResume-img-1.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-2.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-3.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+								+e.slide.swiper-slide
+									+item('sResume-img-1.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-2.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-3.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+								+e.slide.swiper-slide
+									+item('sResume-img-1.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-2.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+									+item('sResume-img-3.jpg', 'Викторовский Валентин Игоревич', 'Senior PHP Developer')
+						+e.inner-row
+							.row
+								.col
+									+e.arrow-wrap
+										.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+											+icon('chevron-left')
+										.swiper-pagination
+										.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+											+icon('chevron-right')
+								.col-auto
+									+e.btn.btn.btn-dark(href="#") Все резюме
+	// end sResume

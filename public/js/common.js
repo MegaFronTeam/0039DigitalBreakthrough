@@ -412,16 +412,17 @@ function eventHandler() {
 		watchOverflow: true
 	});
 	
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-
+	const sResumeSwiper = new Swiper('.sResume__slider--js', {
+		slidesPerView: 1,
+		navigation: {
+			nextEl: '.sResume__arrow-wrap .swiper-button-next',
+			prevEl: '.sResume__arrow-wrap .swiper-button-prev',
+		},
+		pagination: {
+			el: '.sResume__arrow-wrap .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
 	});
 
 	// modal window

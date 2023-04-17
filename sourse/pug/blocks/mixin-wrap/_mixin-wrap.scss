@@ -111,3 +111,34 @@
 	width: auto;
 	margin-right: rem(32);
 }
+
+.swiper-button-hand {
+	margin-top: 0;
+	flex: 0 0 auto;
+	.icon {
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2px;
+		font-size: rem(8);
+	}
+}
+
+.swiper-pagination {
+	margin: 0 rem(6);
+	@include media-breakpoint-up(md) {
+		margin: 0 rem(12);
+	}
+	&-bullet {
+		--swiper-pagination-bullet-horizontal-gap: #{rem(6)};
+
+		background-color: rgba($color: #fff, $alpha: .2);
+		width: rem(10);
+		height: rem(10);
+		@include media-breakpoint-up(md) {
+			--swiper-pagination-bullet-horizontal-gap: #{rem(12)};
+		}
+		&-active {
+			background-color: $primary;
+		}
+	}
+}

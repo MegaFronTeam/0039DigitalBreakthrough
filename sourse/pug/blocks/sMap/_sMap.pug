@@ -1,0 +1,21 @@
+mixin sMap(data)
+	// start sMap
+	+b.SECTION.sMap.section#sMap&attributes(attributes)
+		.container
+			+e.wrap
+				+b.section-title
+					h2 Карта участников
+				+e.row.row
+					.col-lg
+						+img('img/svg/map.svg')
+					.col-lg-auto 
+						mixin item(text, span)
+							+e.item
+								p!= text
+								span!= span
+						+e.item-wrap
+							+item('Подтверждённых хакатонов прошло', '16')
+							+item('Подтверждённых участников', '1240')
+							+item('Подтверждённых команд', '11 240')
+							+item('Подтверждённых решений', '24 101')
+	// end sMap

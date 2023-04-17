@@ -9,6 +9,9 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sHackathons/_sHackathons.pug
+include ../blocks/sLargestEvent/_sLargestEvent.pug
+include ../blocks/sMap/_sMap.pug
+include ../blocks/sResume/_sResume.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -25,4 +28,7 @@ block pagecontent
 	main
 		+headerBlock
 		+sHackathons
+		+sLargestEvent
+		+sMap
+		+sResume
 	+parts('footer')
