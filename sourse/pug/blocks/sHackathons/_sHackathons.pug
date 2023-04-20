@@ -10,14 +10,14 @@ mixin sHackathons(data)
 						+e.item&attributes(attributes)
 							+e.content
 								h5 10 июня - 20 июля
-								h4!= title
+								h3!= title
 								+e.city Ярославская обл.
 							+e.choose Выберите лигу:
 							+e.inner-row.row
 								.col-auto
-									+in-c('checkbox', 'Новички')
+									a(href="#") Новички
 								.col-auto
-									+in-c('checkbox', 'Профи')
+									a(href="#") Профи
 							+icon('check-2')
 							+e.dataset(href='#')
 								+icon('ai')
@@ -43,8 +43,10 @@ mixin sHackathons(data)
 						+e.item-wrap(style='--bgColor: #03FE33')
 							span 10 июня - 20 июля
 							.h1 Всероссийский чемпионат
+							+e.place Нижний Новгород
 					.col-lg-6
 						+e.item-wrap(style='--bgColor: #FF00C7')
 							span.text-white 10 июня - 20 июля
 							.h1.text-white Международный чемпионат
+							+e.place.text-white Москва
 	// end sHackathons
