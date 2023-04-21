@@ -3,7 +3,10 @@ mixin sLargestEvent(data)
 	+b.SECTION.sLargestEvent.section#sLargestEvent.bg-wrap&attributes(attributes)
 		.container
 			+e.wrap.bg-wrap
-				+e.img-wrap.picture-bg: +img('img/sLargestEvent-bg-1.jpg', 'bg')
+				video.picture-bg(autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata")
+					source(src="video/video-bg.mp4" type="video/mp4")
+					//- source(src="video/video-bg.webm" type="video/webm")
+				//- +e.img-wrap.picture-bg: +img('img/sLargestEvent-bg-1.jpg', 'bg')
 				+e.row.row
 					.col
 						h2.h1 Самый масштабный проект по&nbsp;искусственному интелекту в&nbsp;России
