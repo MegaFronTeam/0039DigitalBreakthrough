@@ -444,6 +444,38 @@ function eventHandler() {
 		}
 	}
 
+	let map = document.querySelector('.map-svg');
+	if(map) {
+		let mapParts = map.children;
+		let hackathonsText = document.querySelector('.sMap__item span.hackathons');
+		let playersText = document.querySelector('.sMap__item span.players');
+		let teamsText = document.querySelector('.sMap__item span.teams');
+		let resultsText = document.querySelector('.sMap__item span.results');
+		document.addEventListener('click', function(e){
+			let mapTarget = e.target.closest('.map-svg');
+			if (!mapTarget) {
+				hackathonsText.innerText = 18;
+				playersText.innerText = 5829;
+				teamsText.innerText = 805;
+				resultsText.innerText = 491;
+				for (const mapPart of mapParts) {
+					mapPart.classList.remove('active');
+				}
+			}
+		})
+		for (const mapPart of mapParts) {
+			mapPart.addEventListener('click', function() {
+				for (const mapPart of mapParts) {
+					mapPart.classList.remove('active');
+				}
+				this.classList.add('active');
+				hackathonsText.innerText = mapPart.dataset.hackathons;
+				playersText.innerText = mapPart.dataset.players;
+				teamsText.innerText = mapPart.dataset.teams;
+				resultsText.innerText = mapPart.dataset.results;
+			})
+		}
+	}
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
