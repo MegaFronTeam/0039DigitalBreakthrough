@@ -451,13 +451,27 @@ function eventHandler() {
 		let playersText = document.querySelector('.sMap__item span.players');
 		let teamsText = document.querySelector('.sMap__item span.teams');
 		let resultsText = document.querySelector('.sMap__item span.results');
+		function counter(id, start, end, duration) {
+			let obj = id,
+					current = start,
+					range = end - start,
+					increment = end > start ? 1 : -1,
+					step = Math.abs(Math.floor(duration / range)),
+					timer = setInterval(() => {
+					current += increment;
+					obj.textContent = current;
+						if (current == end) {
+							clearInterval(timer);
+						}
+					}, step);
+		}
 		document.addEventListener('click', function(e){
 			let mapTarget = e.target.closest('.map-svg');
 			if (!mapTarget) {
-				hackathonsText.innerText = 18;
-				playersText.innerText = 5829;
-				teamsText.innerText = 805;
-				resultsText.innerText = 491;
+				counter(hackathonsText, 7, 18, 700);
+				counter(playersText, 5500, 5829, 700);
+				counter(teamsText, 400, 805, 700);
+				counter(resultsText, 250, 491, 700);
 				for (const mapPart of mapParts) {
 					mapPart.classList.remove('active');
 				}
@@ -469,10 +483,10 @@ function eventHandler() {
 					mapPart.classList.remove('active');
 				}
 				this.classList.add('active');
-				hackathonsText.innerText = mapPart.dataset.hackathons;
-				playersText.innerText = mapPart.dataset.players;
-				teamsText.innerText = mapPart.dataset.teams;
-				resultsText.innerText = mapPart.dataset.results;
+				counter(hackathonsText, 18, mapPart.dataset.hackathons, 700);
+				counter(playersText, 800, mapPart.dataset.players, 700);
+				counter(teamsText, 18, mapPart.dataset.teams, 700);
+				counter(resultsText, 18, mapPart.dataset.results, 700);
 			})
 		}
 	}
