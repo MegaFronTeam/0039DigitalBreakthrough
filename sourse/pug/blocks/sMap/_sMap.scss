@@ -27,7 +27,13 @@
 		// max-width: rem(877);
 		stroke: $body-bg;
 		g {
+			@include mt;
+			cursor: pointer;
+			&:hover {
+				opacity: .8;
+			}
 			&.active {
+				opacity: 1;
 				path {
 					fill: $pink; 
 				}
