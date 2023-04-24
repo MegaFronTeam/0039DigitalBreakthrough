@@ -484,7 +484,7 @@ function eventHandler() {
 				}
 				this.classList.add('active');
 				counter(hackathonsText, 18, mapPart.dataset.hackathons, 700);
-				counter(playersText, 800, mapPart.dataset.players, 700);
+				counter(playersText, 700, mapPart.dataset.players, 700);
 				counter(teamsText, 18, mapPart.dataset.teams, 700);
 				counter(resultsText, 18, mapPart.dataset.results, 700);
 			})

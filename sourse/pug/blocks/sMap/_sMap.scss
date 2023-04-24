@@ -24,14 +24,12 @@
 	}
 	svg {
 		width: 100%;
-		max-width: rem(877);
+		// max-width: rem(877);
 		stroke: $body-bg;
 		g {
 			&.active {
-				g {
-					path {
-						fill: $pink; 
-					}
+				path {
+					fill: $pink; 
 				}
 			}
 		}
