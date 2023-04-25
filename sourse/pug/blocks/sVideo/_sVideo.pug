@@ -6,7 +6,7 @@ mixin sVideo(data)
 				+e.slide.swiper-slide(href='https://www.youtube.com/watch?v=L_LUpnjgPso&t=6950s' data-fancybox=`video-gallery-${i}`)
 					+e.video-wrap.bg-wrap
 						+e.play-btn: +icon('play')
-						+img(`img/${img}`, 'bg')
+						img(src=`img/${img}` alt='').object-fit-js
 					p!= text
 			+defaultSlider('', 'Видео от кейсодержателей')
 				+item('sVideo-img-1.jpg', 1)

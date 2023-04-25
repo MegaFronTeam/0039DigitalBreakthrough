@@ -140,7 +140,7 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
-		height: 100vh;
+		height: calc(var(--vh) * 100);
 		width: 100%;
 		max-width: calc(rem(446) + (rem(18) * 2));
 		padding-left: rem(18);

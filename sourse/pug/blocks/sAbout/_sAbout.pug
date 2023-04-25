@@ -1,0 +1,37 @@
+mixin sAbout(data)
+	// start sAbout
+	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
+		.container
+			+e.wrap
+				img(src="img/sAbout-bg-1.png", alt="").bg
+				.row
+					.col-lg
+						+e.content
+							+e.types
+								+e.type.h4 Окружной хакатон
+								+e.type.h4 г. Москва, площадка VK
+							h1 Москва
+							h2 Центральный федеральный округ
+							p Окружной хакатон&nbsp;&mdash; командное соревнование для специалистов&nbsp;ИТ, в&nbsp;результате которого участники из&nbsp;округа смогут решить задачи от&nbsp;государства и&nbsp;бизнеса по&nbsp;теме&nbsp;ИИ или другим ИТ-тематикам. Мероприятие проходит в&nbsp;гибридном формате с&nbsp;офлайн площадкой (студия + коворкинг) в&nbsp;одном из&nbsp;регионов округа. В&nbsp;окружном хакатоне могут участвовать также и&nbsp;представители других регионов.
+							+e.row.row
+								.col-auto
+									+e.item
+										+icon('user-solid')
+										div
+											p Участников
+											.h2 1240
+								.col-auto
+									+e.item
+										+icon('users')
+										div
+											p Команд
+											.h2 11 240
+							+e.btn.btn.btn-dark(href='#') Принять участие
+					.col-lg-auto
+						+e.info-wrap
+							+e.date 26 28 
+								span мая
+							+e.banner
+								.h3 24 июня 18:00
+								span Дедлайн подачи заявок
+	// end sAbout

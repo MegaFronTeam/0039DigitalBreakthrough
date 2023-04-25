@@ -11,6 +11,7 @@ include ../blocks/sInfo/_sInfo.pug
 include ../blocks/sVideo/_sVideo.pug
 include ../blocks/sDetailedInfo/_sDetailedInfo.pug
 include ../blocks/sCases/_sCases.pug
+include ../blocks/sAbout/_sAbout.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -25,6 +26,7 @@ block pagecontent
 	
 	+parts('header')
 	main
+		+sAbout
 		+sCases
 		+sPartners2
 		+sDetailedInfo
