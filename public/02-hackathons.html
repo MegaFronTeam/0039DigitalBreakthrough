@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Хакатон</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="main-page" data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<!-- start sCases-->
+				<section class="sCases section" id="sCases">
+					<div class="container">
+						<div class="sCases__wrap">
+							<div class="section-title">
+								<h2>Кейсовые задания</h2>
+							</div>
+							<div class="row">
+								<div class="col-lg order-lg-2">
+									<div class="tabs">
+										<div class="tabs__caption">
+											<div class="tabs__btn active">Описание</div>
+											<div class="tabs__btn">Результаты</div>
+										</div>
+										<div class="tabs__content active">
+											<div class="sCases__tags">
+												<a class="sCases__tag" href="#">Signs
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+											</div>
+											<p>Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p>В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p>&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<p>Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<div class="sCases__director"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</div>
+										</div>
+										<div class="tabs__content"> </div>
+									</div>
+								</div>
+								<div class="col-lg-auto order-lg-1">
+									<div class="sCases__links">
+										<a class="sCases__link" href="#">
+											<p>Эффективность образовательных программ</p><span>Рустехнологии</span>
+										</a>
+										<a class="sCases__link" href="#">
+											<p>Фронтиры науки</p><span>СБЕРтехнологии</span>
+										</a>
+										<a class="sCases__link" href="#">
+											<p>Фронтиры науки</p><span>СБЕРтехнологии</span>
+										</a>
+										<a class="sCases__link" href="#">
+											<p>Фронтиры науки</p><span>СБЕРтехнологии</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sCases-->
+				<!-- start sPartners-->
+				<section class="sPartners sPartners--2 section" id="sPartners">
+					<div class="container">
+						<div class="sPartners__wrap">
+							<div class="section-title">
+								<h2>Партнеры окружного хакатона</h2>
+							</div>
+							<div class="sPartners__row row">
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-1.png" alt="" loading="lazy"/><span>Информационный партнер</span>
+										<p></p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sPartners-->
+				<!-- start sDetailedInfo-->
+				<section class="sDetailedInfo section" id="sDetailedInfo">
+					<div class="container">
+						<div class="sDetailedInfo__row row">
+							<div class="col-lg-6">
+								<div class="section-title">
+									<h2>Подробная информация о&nbsp;хакатоне</h2>
+								</div>
+								<p>The election of&nbsp;9&nbsp;April 2021 resulted in&nbsp;a&nbsp;25/25 tie between the ruling Human Rights Protection Party (HRPP) of&nbsp;Prime Minister Tuilaepa Aiono Sailele Malielegaoi and the FAST party of&nbsp;Naomi Mata&rsquo;afa, with the remaining seat held by&nbsp;the independent Tuala Iosefo Ponifasio.[5] On&nbsp;20 April 2021, the Samoan electoral commission declared the HRPP&rsquo;s Ali&rsquo;imalemanu Alofa Tuuau elected in&nbsp;an&nbsp;extra seat due to&nbsp;the requirement that a&nbsp;minimum of&nbsp;10% of&nbsp;seats in&nbsp;parliament must be&nbsp;held by&nbsp;women</p>
+								<a class="sDetailedInfo__btn btn btn-primary" href="#">Принять участие
+								</a>
+							</div>
+							<div class="col-lg-6">
+								<div class="sDetailedInfo__animate" data-json="json/animation.json">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sDetailedInfo-->
+				<!-- start sVideo-->
+				<section class="sVideo section" id="sVideo">
+					<div class="container">
+						<div class="default-slider">
+							<div class="default-slider__row row">
+								<div class="col">
+									<h2>Видео от кейсодержателей</h2>
+								</div>
+								<div class="col-auto"> 
+									<div class="default-slider__arrow-wrap">
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="default-slider__slider default-slider__slider--js swiper">
+								<div class="swiper-wrapper">
+										<a class="default-slider__slide swiper-slide" href="https://www.youtube.com/watch?v=L_LUpnjgPso&amp;t=6950s" data-fancybox="video-gallery-1">
+											<div class="default-slider__video-wrap bg-wrap">
+												<div class="default-slider__play-btn">
+													<svg class="icon icon-play ">
+														<use xlink:href="img/svg/sprite.svg#play"></use>
+													</svg>
+												</div><img class="object-fit-js" src="img/sVideo-img-1.jpg" alt="" loading="lazy"/>
+											</div>
+											<p>Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам</p>
+										</a>
+										<a class="default-slider__slide swiper-slide" href="https://www.youtube.com/watch?v=L_LUpnjgPso&amp;t=6950s" data-fancybox="video-gallery-2">
+											<div class="default-slider__video-wrap bg-wrap">
+												<div class="default-slider__play-btn">
+													<svg class="icon icon-play ">
+														<use xlink:href="img/svg/sprite.svg#play"></use>
+													</svg>
+												</div><img class="object-fit-js" src="img/sVideo-img-2.jpg" alt="" loading="lazy"/>
+											</div>
+											<p>Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам</p>
+										</a>
+										<a class="default-slider__slide swiper-slide" href="https://www.youtube.com/watch?v=L_LUpnjgPso&amp;t=6950s" data-fancybox="video-gallery-3">
+											<div class="default-slider__video-wrap bg-wrap">
+												<div class="default-slider__play-btn">
+													<svg class="icon icon-play ">
+														<use xlink:href="img/svg/sprite.svg#play"></use>
+													</svg>
+												</div><img class="object-fit-js" src="img/sVideo-img-3.jpg" alt="" loading="lazy"/>
+											</div>
+											<p>Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам</p>
+										</a>
+										<a class="default-slider__slide swiper-slide" href="https://www.youtube.com/watch?v=L_LUpnjgPso&amp;t=6950s" data-fancybox="video-gallery-4">
+											<div class="default-slider__video-wrap bg-wrap">
+												<div class="default-slider__play-btn">
+													<svg class="icon icon-play ">
+														<use xlink:href="img/svg/sprite.svg#play"></use>
+													</svg>
+												</div><img class="object-fit-js" src="img/sVideo-img-1.jpg" alt="" loading="lazy"/>
+											</div>
+											<p>Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам</p>
+										</a>
+										<a class="default-slider__slide swiper-slide" href="https://www.youtube.com/watch?v=L_LUpnjgPso&amp;t=6950s" data-fancybox="video-gallery-5">
+											<div class="default-slider__video-wrap bg-wrap">
+												<div class="default-slider__play-btn">
+													<svg class="icon icon-play ">
+														<use xlink:href="img/svg/sprite.svg#play"></use>
+													</svg>
+												</div><img class="object-fit-js" src="img/sVideo-img-2.jpg" alt="" loading="lazy"/>
+											</div>
+											<p>Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам</p>
+										</a>
+										<a class="default-slider__slide swiper-slide" href="https://www.youtube.com/watch?v=L_LUpnjgPso&amp;t=6950s" data-fancybox="video-gallery-6">
+											<div class="default-slider__video-wrap bg-wrap">
+												<div class="default-slider__play-btn">
+													<svg class="icon icon-play ">
+														<use xlink:href="img/svg/sprite.svg#play"></use>
+													</svg>
+												</div><img class="object-fit-js" src="img/sVideo-img-3.jpg" alt="" loading="lazy"/>
+											</div>
+											<p>Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам</p>
+										</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sVideo-->
+				<!-- start sInfo-->
+				<section class="sInfo section" id="sInfo">
+					<div class="container">
+						<div class="sInfo__grid">
+							<div class="sInfo__grid-item bg-wrap">
+								<div class="sInfo__img-wrap picture-bg"><img class="object-fit-js" src="img/sInfo-img-1.jpg" alt="" loading="lazy"/>
+								</div>
+								<h2 class="h1">Название площадки</h2>
+								<p>Нижний Новгород, ул. Викторовская 68</p>
+							</div>
+							<div class="sInfo__grid-item">
+								<p>The election of&nbsp;9&nbsp;April 2021 resulted in&nbsp;a&nbsp;25/25 tie between the ruling Human Rights Protection Party (HRPP) of&nbsp;Prime Minister Tuilaepa Aiono Sailele Malielegaoi and the FAST party of&nbsp;Naomi Mata&rsquo;afa, with the remaining seat held by&nbsp;the independent Tuala Iosefo Ponifasio.[5] On&nbsp;20 April 2021, the Samoan electoral commission declared the HRPP&rsquo;s Ali&rsquo;imalemanu Alofa Tuuau elected in&nbsp;an&nbsp;extra seat due to&nbsp;the requirement that a&nbsp;minimum of&nbsp;10% of&nbsp;seats in&nbsp;parliament must be&nbsp;held by&nbsp;women</p><a href="#">Подробнее... </a>
+							</div>
+							<div class="sInfo__grid-item bg-wrap"><img class="object-fit-js picture-bg" src="img/sInfo-img-2.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="sInfo__grid-item bg-wrap"><img class="object-fit-js picture-bg" src="img/sInfo-img-3.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="sInfo__grid-item p-0"><iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A067577216d28e63ea7afc2dba5eaf822c8cdcdc3fb8e8050fb4a8c45fc86d3ab&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+							</div>
+							<div class="sInfo__grid-item bg-wrap"><img class="object-fit-js picture-bg" src="img/sInfo-img-4.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="sInfo__grid-item">
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sInfo-->
+				<!-- start sNews-->
+				<section class="sNews section" id="sNews">
+					<div class="container">
+						<div class="section-title">
+							<h2>Новости проекта</h2>
+						</div>
+						<div class="default-slider">
+							<div class="default-slider__slider default-slider__slider--js swiper">
+								<div class="swiper-wrapper">
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-1.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
+									</a>
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-2.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>Как искусственный интеллект помогает решать проблему отходов</h4>
+									</a>
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-3.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>Как искусственный интеллект борется за живую природу</h4>
+									</a>
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-4.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
+									</a>
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-1.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
+									</a>
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-2.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>Как искусственный интеллект помогает решать проблему отходов</h4>
+									</a>
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-3.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>Как искусственный интеллект борется за живую природу</h4>
+									</a>
+									<a class="default-slider__slide swiper-slide bg-wrap" href="#"><img class="object-fit-js picture-bg" src="img/sNews-img-4.jpg" alt="" loading="lazy"/>
+										<div class="default-slider__date">10 июня - 20 июля
+										</div>
+										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
+									</a>
+								</div>
+							</div>
+							<div class="default-slider__row row">
+								<div class="col">
+									<a class="default-slider__btn btn btn-dark" href="#">Все новости
+									</a>
+								</div>
+								<div class="col-auto"> 
+									<div class="default-slider__arrow-wrap">
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sNews-->
+				<!-- start sPartners-->
+				<section class="sPartners section" id="sPartners">
+					<div class="container">
+						<div class="sPartners__wrap">
+							<div class="section-title">
+								<h2>Организаторы и партнеры</h2>
+							</div>
+							<div class="sPartners__row row">
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-1.png" alt="" loading="lazy"/><span>Информационный партнер</span>
+										<p></p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-1.png" alt="" loading="lazy"/><span>Информационный партнер</span>
+										<p></p>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<div class="sPartners__item"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sPartners-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

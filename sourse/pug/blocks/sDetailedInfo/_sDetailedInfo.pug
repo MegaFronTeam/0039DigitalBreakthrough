@@ -1,0 +1,13 @@
+mixin sDetailedInfo(data)
+	// start sDetailedInfo
+	+b.SECTION.sDetailedInfo.section#sDetailedInfo&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-6
+					+b.section-title
+						h2 Подробная информация о&nbsp;хакатоне
+					p The election of&nbsp;9&nbsp;April 2021 resulted in&nbsp;a&nbsp;25/25 tie between the ruling Human Rights Protection Party (HRPP) of&nbsp;Prime Minister Tuilaepa Aiono Sailele Malielegaoi and the FAST party of&nbsp;Naomi Mata&rsquo;afa, with the remaining seat held by&nbsp;the independent Tuala Iosefo Ponifasio.[5] On&nbsp;20 April 2021, the Samoan electoral commission declared the HRPP&rsquo;s Ali&rsquo;imalemanu Alofa Tuuau elected in&nbsp;an&nbsp;extra seat due to&nbsp;the requirement that a&nbsp;minimum of&nbsp;10% of&nbsp;seats in&nbsp;parliament must be&nbsp;held by&nbsp;women
+					+e.btn.btn.btn-primary(href='#') Принять участие
+				.col-lg-6
+					+e.animate(data-json='json/animation.json')
+	// end sDetailedInfo

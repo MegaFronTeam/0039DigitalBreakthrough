@@ -1,0 +1,35 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sPartners/_sPartners.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sPartners/_sPartners.pug
+include ../blocks/sInfo/_sInfo.pug
+include ../blocks/sVideo/_sVideo.pug
+include ../blocks/sDetailedInfo/_sDetailedInfo.pug
+include ../blocks/sCases/_sCases.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= 'Хакатон'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		+sCases
+		+sPartners2
+		+sDetailedInfo
+		+sVideo
+		+sInfo
+		+sNews
+		+sPartners
+	+parts('footer')

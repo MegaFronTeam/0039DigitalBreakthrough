@@ -46,6 +46,7 @@
     "@fancyapps/ui": "^4.0.31",
     "inputmask": "^5.0.8",
     "jquery": "^3.6.3",
+    "lottie-web": "^5.11.0",
     "swiper": "^9.2.0"
   }
 }

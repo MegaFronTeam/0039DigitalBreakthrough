@@ -63,8 +63,8 @@ body {
 		height: 100%;
 		@include mt;
 		// background-color: $body-color;
-		background-color: rgba($body-color, 0.8); 
-    backdrop-filter: blur(5px);
+		background-color: rgba(0, 255, 49, 0.86); 
+    // backdrop-filter: blur(5px);
 		opacity: 0;
 		z-index: -1;
 		// left: 200px;
@@ -101,6 +101,13 @@ body {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+	padding-top: rem(182);
+	@media screen and (min-width: 500px) {
+		padding-top: rem(129);
+	}
+	@include media-breakpoint-up(md) {
+		padding-top: rem(76);
+	}
 	// display: flex;
 	// flex-direction: row; 
 // /	overflow: scroll;
@@ -569,6 +576,9 @@ iframe {
 	@include media-breakpoint-up(lg) {
 		--bs-btn-font-size: #{rem(18)};
 		--bs-btn-padding-y: #{rem(15.5)};
+	}
+	&-primary {
+		box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
 	}
 	&-dark {
 		--bs-btn-color: #{$primary};

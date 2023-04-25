@@ -50,6 +50,14 @@
 			margin-right: auto;
 		}
 	}
+	&--2 {
+		--sPT: #{rem(16)};
+		--sPB: #{rem(30)};
+		@include media-breakpoint-up(lg) {
+			--sPT: #{rem(16)};
+			--sPB: #{rem(48)};
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

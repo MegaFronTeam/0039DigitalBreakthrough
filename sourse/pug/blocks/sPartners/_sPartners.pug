@@ -28,3 +28,26 @@ mixin sPartners(data)
 					.col-sm-6.col-md-4.col-xl-3
 						+item('sPartners-img-2.png', 'Соорганизатор', 'Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента')
 	// end sPartners
+
+mixin sPartners2(data)
+	// start sPartners
+	+b.SECTION.sPartners--2.section#sPartners&attributes(attributes)
+		.container
+			+e.wrap
+				+b.section-title
+					h2 Партнеры окружного хакатона
+				+e.row.row
+					mixin item(img, span, text)
+						+e.item
+							+img(`img/${img}`)
+							span!= span
+							p!= text
+					.col-sm-6.col-md-4.col-xl-3
+						+item('sPartners-img-1.png', 'Информационный партнер')
+					.col-sm-6.col-md-4.col-xl-3
+						+item('sPartners-img-2.png', 'Соорганизатор', 'Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента')
+					.col-sm-6.col-md-4.col-xl-3
+						+item('sPartners-img-2.png', 'Соорганизатор', 'Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента')
+					.col-sm-6.col-md-4.col-xl-3
+						+item('sPartners-img-2.png', 'Соорганизатор', 'Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента')
+	// end sPartners

@@ -51,14 +51,22 @@ mixin parts(elem)
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
 
-mixin defaultSlider(btn)
+mixin defaultSlider(btn, title)
 	+b.default-slider
+		if title
+			+e.row.row
+				.col
+					h2!= title
+				.col-auto 
+					+e.arrow-wrap
+						+arrow
 		+e.slider--js.swiper
 			.swiper-wrapper
 				block
-		+e.row.row
-			.col
-				+e.btn.btn.btn-dark(href='#')!= btn
-			.col-auto 
-				+e.arrow-wrap
-					+arrow
+		if btn
+			+e.row.row
+				.col
+					+e.btn.btn.btn-dark(href='#')!= btn
+				.col-auto 
+					+e.arrow-wrap
+						+arrow

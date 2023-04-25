@@ -87,11 +87,11 @@ const JSCCommon = {
       { passive: true },
     );
 
-    window.addEventListener('resize', () => {
-        if (window.matchMedia('(min-width: 992px)').matches) this.closeMenu();
-      },
-      { passive: true },
-    );
+    // window.addEventListener('resize', () => {
+    //     if (window.matchMedia('(min-width: 992px)').matches) this.closeMenu();
+    //   },
+    //   { passive: true },
+    // );
   },
 
 	// tabs  .
@@ -344,7 +344,7 @@ const $ = jQuery;
 
 function eventHandler() { 
 	JSCCommon.modalCall();
-	// JSCCommon.tabscostume('tabs');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
@@ -363,11 +363,14 @@ function eventHandler() {
 
 
 	function setFixedNav() {
-		let topNav = document.querySelector('.top-nav  ');
+		let topNav = document.querySelector('.header');
 		if (!topNav) return;
-		window.scrollY > 0
-			? topNav.classList.add('fixed')
-			: topNav.classList.remove('fixed');
+		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		// console.log(scrollTop);
+
+		scrollTop > 160 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
+		scrollTop > 250 ? topNav.classList.add('fixed-animate') : topNav.classList.remove('fixed-animate');
+		scrollTop > 400 ? topNav.classList.add('fixed-show') : topNav.classList.remove('fixed-show');
 	}
 
 	function whenResize() {
@@ -489,7 +492,19 @@ function eventHandler() {
 				counter(resultsText, 18, mapPart.dataset.results, 700);
 			})
 		}
-	}
+	};
+	let animateBlocks = document.querySelectorAll('[data-json]');
+  if (animateBlocks) {
+    for (const animateBlock of animateBlocks) {
+      lottie.loadAnimation({
+        container: animateBlock, // the dom element that will contain the animation
+        renderer: 'canvas',
+        loop: true,
+        autoplay: true,
+        path: animateBlock.dataset.json, // the path to the animation json
+      });
+    }
+  }
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
