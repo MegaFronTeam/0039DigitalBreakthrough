@@ -130,6 +130,8 @@
 		top: rem(17);
 		z-index: 9999; 
 		font-size: rem(24);
+		width: rem(24);
+		margin-right: 0;
 		span:after,
 		span:before {
 			--color: #ffffff;

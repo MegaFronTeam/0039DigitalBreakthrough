@@ -85,8 +85,16 @@ const JSCCommon = {
         if (!container && !toggle) this.closeMenu();
       },
       { passive: true },
-    );
-
+		);
+		
+		let touchStart, touchEnd;
+		document.querySelector('.menu-mobile--js').addEventListener('touchstart', e => (touchStart = e.targetTouches[0].clientX));
+		document.querySelector('.menu-mobile--js').addEventListener('touchmove',e => (touchEnd = e.targetTouches[0].clientX));
+		document.querySelector('.menu-mobile--js').addEventListener('touchend', e => {
+			if (touchEnd - touchStart > 45) {
+				this.closeMenu();
+			}
+		});
     // window.addEventListener('resize', () => {
     //     if (window.matchMedia('(min-width: 992px)').matches) this.closeMenu();
     //   },
@@ -345,6 +353,7 @@ const $ = jQuery;
 function eventHandler() { 
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
+	JSCCommon.tabscostume('innerTabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	// JSCCommon.sendForm();

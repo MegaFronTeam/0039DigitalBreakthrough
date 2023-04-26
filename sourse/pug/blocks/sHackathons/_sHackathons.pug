@@ -7,37 +7,37 @@ mixin sHackathons(data)
 					h2 8 окружных хакатонов
 				+e.row.row
 					mixin item(title)
-						+e.item(data-aos="fade-up" data-aos-duration="700")&attributes(attributes)
+						+e.item&attributes(attributes)
 							+e.content
 								h5 10 июня - 20 июля
-								h3!= title
+								a(href='#').h3!= title
 								+e.city Ярославская обл.
-							+e.choose Выберите лигу:
+							+e.choose Лиги:
 							+e.inner-row.row
 								.col-auto
-									a(href="#") Новички
+									+e.tag Новички
 								.col-auto
-									a(href="#") Профи
+									+e.tag Профи
 							+icon('check-2')
 							+e.dataset(href='#')
 								+icon('ai')
 								| Dataset
-					.col-sm-6.col-md-4.col-xl-3 
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
 						+item('Хабаровск').done
-					.col-sm-6.col-md-4.col-xl-3 
-						+item('Нижний Новгород').active
-					.col-sm-6.col-md-4.col-xl-3 
-						+item('Екатеринбург')
-					.col-sm-6.col-md-4.col-xl-3 
-						+item('Томск')
-					.col-sm-6.col-md-4.col-xl-3 
-						+item('Волгоград')
-					.col-sm-6.col-md-4.col-xl-3 
-						+item('Санкт-Петербург')
-					.col-sm-6.col-md-4.col-xl-3 
-						+item('Москва')
-					.col-sm-6.col-md-4.col-xl-3 
-						+item('Волгоград')
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+						+item('Нижний Новгород')
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+						+item('Екатеринбург').disabled
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+						+item('Томск').disabled
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+						+item('Волгоград').disabled
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+						+item('Санкт-Петербург').disabled
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+						+item('Москва').disabled
+					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+						+item('Волгоград').disabled
 				.row
 					.col-lg-6
 						+e.item-wrap(style='--bgColor: #03FE33' data-aos="fade-up" data-aos-duration="700")

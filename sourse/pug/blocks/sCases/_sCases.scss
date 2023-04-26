@@ -30,6 +30,7 @@
 		}
 	}
 	&__link {
+		@include mt;
 		background: $body-bg;
 		border: 1px solid $primary;
 		border-radius: 8px;
@@ -38,7 +39,7 @@
 		@include media-breakpoint-down(sm) {
 			width: 100%;
 		}
-		&:hover {
+		&:hover, &.active {
 			background-color: $primary;
 			color: $body-bg;
 		}
@@ -55,7 +56,7 @@
 			line-height: 1.83;
 		}
 	}
-	.tabs {
+	.innerTabs {
 		width: 100%;
 		max-width: rem(816);
 		@include media-breakpoint-up(lg) {
@@ -72,6 +73,10 @@
 			}
 		}
 		&__content {
+			display: none;
+			&.active {
+				display: block;
+			}
 			p {
 				font-size: rem(16);
 				line-height: 1.44;
@@ -128,6 +133,9 @@
 			&.active, &:hover {
 				color: #fff;
 				border-bottom-color: $pink;
+			}
+			&.disabled {
+				pointer-events: none;
 			}
 		}
 	}
