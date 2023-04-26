@@ -52,6 +52,10 @@
 				&:not(:hover) {
 					color: #fff;
 				}
+				&.disabled {
+					pointer-events: none;
+					opacity: .3;
+				}
 			}
 		}
 	}

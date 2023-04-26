@@ -7,7 +7,7 @@ mixin sPartners(data)
 					h2 Организаторы и партнеры
 				+e.row.row
 					mixin item(img, span, text)
-						+e.item(data-aos="fade-up" data-aos-duration="700")
+						+e.item(href='#' data-aos="fade-up" data-aos-duration="700")
 							+img(`img/${img}`)
 							span!= span
 							p!= text
@@ -38,7 +38,7 @@ mixin sPartners2(data)
 					h2 Партнеры окружного хакатона
 				+e.row.row
 					mixin item(img, span, text)
-						+e.item(data-aos="fade-up" data-aos-duration="700")
+						+e.item(href='#' data-aos="fade-up" data-aos-duration="700")
 							+img(`img/${img}`)
 							span!= span
 							p!= text

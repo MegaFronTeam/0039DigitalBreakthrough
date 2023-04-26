@@ -82,21 +82,23 @@ const JSCCommon = {
         let container = event.target.closest('.menu-mobile--js'); // (1)
         let toggle = event.target.closest('.toggle-menu-mobile--js'); // (1)
         if (toggle) this.toggleMenu();
-        if (!container && !toggle) this.closeMenu();
+        if (!container && !toggle) {
+					this.closeMenu()
+				};
+				let touchStart, touchEnd;
+				document.querySelector('.menu-mobile--js').addEventListener('touchstart', e => (touchStart = e.targetTouches[0].clientX));
+				document.querySelector('.menu-mobile--js').addEventListener('touchmove',e => (touchEnd = e.targetTouches[0].clientX));
+				document.querySelector('.menu-mobile--js').addEventListener('touchend', e => {
+					if (touchEnd - touchStart > 45) {
+						this.closeMenu();
+						touchStart = 0;
+						touchEnd = 0;
+					}
+				});
       },
       { passive: true },
 		);
 
-		let touchStart, touchEnd;
-		document.querySelector('.menu-mobile--js').addEventListener('touchstart', e => (touchStart = e.targetTouches[0].clientX));
-		document.querySelector('.menu-mobile--js').addEventListener('touchmove',e => (touchEnd = e.targetTouches[0].clientX));
-		document.querySelector('.menu-mobile--js').addEventListener('touchend', e => {
-			if (touchEnd - touchStart > 45) {
-				this.closeMenu();
-				touchStart = 0;
-				touchEnd = 0;
-			}
-		});
     // window.addEventListener('resize', () => {
     //     if (window.matchMedia('(min-width: 992px)').matches) this.closeMenu();
     //   },
@@ -258,7 +260,7 @@ const JSCCommon = {
 			}
 			else {
 				let destination = $(elementClick).offset().top;
-				$('html, body').animate({ scrollTop: destination - 80 }, 0);
+				$('html, body').animate({ scrollTop: destination - 160 }, 0);
 				return false;
 			}
 		});
@@ -362,7 +364,7 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
-	// JSCCommon.animateScroll();
+	JSCCommon.animateScroll();
 	
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
@@ -516,7 +518,6 @@ function eventHandler() {
       });
     }
   };
-
 	AOS.init();
 };
 if (document.readyState !== 'loading') {

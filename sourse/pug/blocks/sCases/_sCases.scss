@@ -39,9 +39,21 @@
 		@include media-breakpoint-down(sm) {
 			width: 100%;
 		}
-		&:hover, &.active {
+		&.active {
 			background-color: $primary;
 			color: $body-bg;
+		}
+		@include media-breakpoint-up(md) {
+			&:hover {
+				background-color: $primary;
+				color: $body-bg;
+			}
+		}
+		@include media-breakpoint-down(md) {
+			&:active {
+				background-color: $primary;
+				color: $body-bg;
+			}
 		}
 		p {
 			font-size: rem(16);
@@ -87,6 +99,7 @@
 				}
 			}
 			.sCases__director {
+				@include mt;
 				padding: rem(25) rem(16);
 				border-radius: 8px;
 				background-color: $body-bg;
@@ -95,6 +108,12 @@
 				width: 100%;
 				max-width: rem(332);
 				// align-items: center;
+				&:hover {
+					// box-shadow: 0px 2px 15px 0px #ffffff14;
+					p {
+						color: $primary;
+					}
+				}
 				img {
 					flex: 0 0 auto;
 					width: 100%;
@@ -109,9 +128,11 @@
 					font-size: rem(12);
 				}
 				p {
+					@include mt;
 					font-size: rem(16);
 					line-height: 1.44;
 					margin-bottom: 0;
+					color: #fff;
 					@include media-breakpoint-up(lg) {
 						font-size: rem(18);
 						margin-bottom: 0;

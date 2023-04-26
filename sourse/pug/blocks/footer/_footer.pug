@@ -20,13 +20,14 @@ mixin footer()
 							li: a(href="#") О проекте 
 							li: a(href="#") Контакты
 							li: a(href="#") FAQ
-							li: a(href="#") Чемпионаты
-							li: a(href="#") Лекции
+							li: a(href="#") Хакатоны
+							//- li: a(href="#") Чемпионаты
+							//- li: a(href="#") Лекции
 							li: a(href="#") Партнёрам
 							li: a(href="#") Новости
-							li: a(href="#") Вакансии
-							li: a(href="#") Резюме
-							li: a(href="#") Меры поддержки
+							li: a.disabled(href="#") Вакансии
+							li: a.disabled(href="#") Резюме
+							li: a.disabled(href="#") Меры поддержки
 			+e.wrap(data-aos="fade-up" data-aos-duration="700")
 				.row.text-center.text-md-start
 					.col-md.col-lg-4
