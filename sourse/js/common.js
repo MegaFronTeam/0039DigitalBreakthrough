@@ -504,7 +504,9 @@ function eventHandler() {
         path: animateBlock.dataset.json, // the path to the animation json
       });
     }
-  }
+  };
+
+	AOS.init();
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

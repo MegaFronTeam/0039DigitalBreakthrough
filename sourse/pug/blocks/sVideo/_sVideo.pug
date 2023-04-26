@@ -3,7 +3,7 @@ mixin sVideo(data)
 	+b.SECTION.sVideo.section#sVideo&attributes(attributes)
 		.container
 			mixin item(img, i, text='Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам')
-				+e.slide.swiper-slide(href='https://www.youtube.com/watch?v=L_LUpnjgPso&t=6950s' data-fancybox=`video-gallery-${i}`)
+				+e.slide.swiper-slide(href='https://www.youtube.com/watch?v=L_LUpnjgPso&t=6950s' data-fancybox=`video-gallery-${i}` data-aos="fade-up" data-aos-duration="700")
 					+e.video-wrap.bg-wrap
 						+e.play-btn: +icon('play')
 						img(src=`img/${img}` alt='').object-fit-js

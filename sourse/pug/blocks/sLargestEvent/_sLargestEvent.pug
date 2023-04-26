@@ -2,7 +2,7 @@ mixin sLargestEvent(data)
 	// start sLargestEvent
 	+b.SECTION.sLargestEvent.section#sLargestEvent.bg-wrap&attributes(attributes)
 		.container
-			+e.wrap.bg-wrap
+			+e.wrap.bg-wrap(data-aos="fade-up" data-aos-duration="700")
 				video.picture-bg(autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata")
 					source(src="video/video-bg.mp4" type="video/mp4")
 					source(src="video/video-bg.webm" type="video/webm")

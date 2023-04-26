@@ -4,12 +4,12 @@ mixin headerBlock()
 		.container
 			.row
 				.col-lg-6
-					+e.wrap
+					+e.wrap(data-aos="fade-up" data-aos-duration="700")
 						+img('img/svg/headerBlock-img-1.svg')
 						h3 Большой спорт<br>для IT-специалистов
 						+e.btn.btn.btn-dark(href='#') Регистрация на хакатон
 						img(src="img/svg/headerBlock-img-3.svg", alt="").bg
-				.col-lg-6
+				.col-lg-6(data-aos="fade-up" data-aos-duration="700")
 					+img('img/headerBlock-img-2.png').res-i
 						
 	// end headerBlock

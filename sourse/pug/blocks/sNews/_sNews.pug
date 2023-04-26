@@ -2,11 +2,11 @@ mixin sNews(data)
 	// start sNews
 	+b.SECTION.sNews.section#sNews&attributes(attributes)
 		.container
-			+b.section-title
+			+b.section-title(data-aos="fade-up" data-aos-duration="700")
 				h2 Новости проекта
 			+defaultSlider('Все новости')
 				mixin slide(img, date, title)
-					+e.slide.swiper-slide.bg-wrap(href='#')
+					+e.slide.swiper-slide.bg-wrap(href='#' data-aos="fade-up" data-aos-duration="700")
 						+img(`img/${img}`, 'bg').picture-bg
 						+e.date!=date
 						h4!= title

@@ -3,11 +3,11 @@ mixin sHackathons(data)
 	+b.SECTION.sHackathons.section#sHackathons&attributes(attributes)
 		.container
 			+e.wrap
-				+b.section-title
+				+b.section-title(data-aos="fade-up" data-aos-duration="700")
 					h2 8 окружных хакатонов
 				+e.row.row
 					mixin item(title)
-						+e.item&attributes(attributes)
+						+e.item(data-aos="fade-up" data-aos-duration="700")&attributes(attributes)
 							+e.content
 								h5 10 июня - 20 июля
 								h3!= title
@@ -40,12 +40,12 @@ mixin sHackathons(data)
 						+item('Волгоград')
 				.row
 					.col-lg-6
-						+e.item-wrap(style='--bgColor: #03FE33')
+						+e.item-wrap(style='--bgColor: #03FE33' data-aos="fade-up" data-aos-duration="700")
 							span 10 июня - 20 июля
 							.h1 Всероссийский чемпионат
 							+e.place Нижний Новгород
 					.col-lg-6
-						+e.item-wrap(style='--bgColor: #FF00C7')
+						+e.item-wrap(style='--bgColor: #FF00C7' data-aos="fade-up" data-aos-duration="700")
 							span.text-white 10 июня - 20 июля
 							.h1.text-white Международный чемпионат
 							+e.place.text-white Москва

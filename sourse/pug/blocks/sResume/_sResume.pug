@@ -4,12 +4,12 @@ mixin sResume(data)
 		.container
 			+e.row.row
 				.col-lg-6
-					+e.wrap--img.bg-wrap
+					+e.wrap--img.bg-wrap(data-aos="fade-up" data-aos-duration="700")
 						+img('img/sResume-bg-1.png', 'bg').picture-bg 
 						h2.h1 Резюме лучших участников
 				.col-lg-6
 					mixin item(img, text, status)
-						+e.item(href='#')
+						+e.item(href='#' data-aos="fade-up" data-aos-duration="700")
 							+img(`img/${img}`)
 							+e.content
 								p!= text
@@ -19,7 +19,7 @@ mixin sResume(data)
 										span Программист
 									.col-auto
 										span.city Москва
-					+e.wrap
+					+e.wrap(data-aos="fade-up" data-aos-duration="700")
 						+e.text Лучшие из лучших готовы присоединится к вашим командам. 
 						+e.slider--js.swiper
 							.swiper-wrapper

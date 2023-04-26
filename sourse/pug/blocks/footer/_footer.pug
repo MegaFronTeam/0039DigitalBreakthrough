@@ -3,11 +3,11 @@ mixin footer()
 		.container
 			.row
 				.col-12.col-lg-3.col-xl-4.order-1
-					+e.logo(href='/'): +img('img/svg/logo3.svg')
+					+e.logo(href='/' data-aos="fade-up" data-aos-duration="700"): +img('img/svg/logo3.svg')
 				.col-auto.col-lg-4.col-xl-3.order-3.order-lg-2
 					+soc
 					mixin link(span, mail)
-						+e.link
+						+e.link(data-aos="fade-up" data-aos-duration="700")
 							span!= span 
 							a(href=`mailto:${mail}`)!= mail  
 					+link('Для СМИ', 'pr@hacks-ai.ru')
@@ -15,7 +15,7 @@ mixin footer()
 					+link('О чемпионатах', 'info-champ@hacks-ai.ru ')
 					+link('О хакатонах', 'info-hack@hacks-ai.ru ')
 				.col.col-lg.order-2.order-lg-3
-					nav
+					nav(data-aos="fade-up" data-aos-duration="700")
 						ul
 							li: a(href="#") О проекте 
 							li: a(href="#") Контакты
@@ -27,7 +27,7 @@ mixin footer()
 							li: a(href="#") Вакансии
 							li: a(href="#") Резюме
 							li: a(href="#") Меры поддержки
-			+e.wrap
+			+e.wrap(data-aos="fade-up" data-aos-duration="700")
 				.row.text-center.text-md-start
 					.col-md.col-lg-4
 						span © 2023

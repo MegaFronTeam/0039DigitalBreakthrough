@@ -6,7 +6,7 @@ mixin sAbout(data)
 				img(src="img/sAbout-bg-1.png", alt="").bg
 				.row
 					.col-lg
-						+e.content
+						+e.content(data-aos="fade-up" data-aos-duration="700")
 							+e.types
 								+e.type.h4 Окружной хакатон
 								+e.type.h4 г. Москва, площадка VK
@@ -28,7 +28,7 @@ mixin sAbout(data)
 											.h2 11 240
 							+e.btn.btn.btn-dark(href='#') Принять участие
 					.col-lg-auto
-						+e.info-wrap
+						+e.info-wrap(data-aos="fade-up" data-aos-duration="700")
 							+e.date 26 28 
 								span мая
 							+e.banner

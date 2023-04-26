@@ -2,11 +2,11 @@ mixin sIthubs(data)
 	// start sIthubs
 	+b.SECTION.sIthubs.section#sIthubs&attributes(attributes)
 		.container
-			+b.section-title
+			+b.section-title(data-aos="fade-up" data-aos-duration="700")
 				h2 IT хабы
 			+defaultSlider('Все IT хабы')
 				mixin slide(img, title)
-					+e.slide.swiper-slide(href='#')
+					+e.slide.swiper-slide(href='#' data-aos="fade-up" data-aos-duration="700")
 						+img(`img/${img}`, 'bg')
 						.h4!= title
 						+e.city г. Москва

@@ -3,11 +3,11 @@ mixin sPartners(data)
 	+b.SECTION.sPartners.section#sPartners&attributes(attributes)
 		.container
 			+e.wrap
-				+b.section-title
+				+b.section-title(data-aos="fade-up" data-aos-duration="700")
 					h2 Организаторы и партнеры
 				+e.row.row
 					mixin item(img, span, text)
-						+e.item
+						+e.item(data-aos="fade-up" data-aos-duration="700")
 							+img(`img/${img}`)
 							span!= span
 							p!= text
@@ -34,11 +34,11 @@ mixin sPartners2(data)
 	+b.SECTION.sPartners--2.section#sPartners&attributes(attributes)
 		.container
 			+e.wrap
-				+b.section-title
+				+b.section-title(data-aos="fade-up" data-aos-duration="700")
 					h2 Партнеры окружного хакатона
 				+e.row.row
 					mixin item(img, span, text)
-						+e.item
+						+e.item(data-aos="fade-up" data-aos-duration="700")
 							+img(`img/${img}`)
 							span!= span
 							p!= text

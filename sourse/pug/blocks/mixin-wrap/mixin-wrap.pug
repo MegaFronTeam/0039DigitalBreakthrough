@@ -54,7 +54,7 @@ mixin parts(elem)
 mixin defaultSlider(btn, title)
 	+b.default-slider
 		if title
-			+e.row.row
+			+e.row.row(data-aos="fade-up" data-aos-duration="700")
 				.col
 					h2!= title
 				.col-auto 
@@ -64,7 +64,7 @@ mixin defaultSlider(btn, title)
 			.swiper-wrapper
 				block
 		if btn
-			+e.row.row
+			+e.row.row(data-aos="fade-up" data-aos-duration="700")
 				.col
 					+e.btn.btn.btn-dark(href='#')!= btn
 				.col-auto 
