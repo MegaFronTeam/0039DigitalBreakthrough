@@ -28,11 +28,21 @@
 		}
 	}
 	.main-logo {
-		@media screen and (max-width: 400px) {
-			width: 100%;
-			max-width: rem(134);
-		}
 		@include media-breakpoint-down(sm) {
+			width: 100%;
+			max-width: rem(124);
+		}
+	}
+	.logo-2 {
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			max-width: rem(58);
+		}
+	}
+	.logo-3 {
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			max-width: rem(65);
 		}
 	}
 	@include media-breakpoint-up(md) {}

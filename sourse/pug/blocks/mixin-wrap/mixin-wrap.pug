@@ -51,7 +51,7 @@ mixin parts(elem)
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
 
-mixin defaultSlider(btn, title)
+mixin defaultSlider(btn, title, link)
 	+b.default-slider
 		if title
 			+e.row.row(data-aos="fade-up" data-aos-duration="700")
@@ -66,7 +66,7 @@ mixin defaultSlider(btn, title)
 		if btn
 			+e.row.row(data-aos="fade-up" data-aos-duration="700")
 				.col
-					+e.btn.btn.btn-dark(href='#')!= btn
+					+e.btn.btn.btn-dark(href=link target='_blank')!= btn
 				.col-auto 
 					+e.arrow-wrap
 						+arrow

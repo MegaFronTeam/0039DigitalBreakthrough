@@ -1,5 +1,5 @@
 mixin item-sos(icon, a='#')
-	+e.A.item(href= a target="_blank" data-aos="fade-up" data-aos-duration="700")
+	+e.A.item(href= a target="_blank")
 		if block
 			block
 		else
@@ -11,6 +11,6 @@ mixin soc()
 			block
 		else
 			each soc in social
-				+item-sos(soc)
+				+item-sos(soc.icon, soc.href)
 
 //- /social buttons 

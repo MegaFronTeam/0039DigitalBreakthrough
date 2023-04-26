@@ -1,13 +1,14 @@
 {
   "nav": [
-    { "name": "Главная", "url": "#" },
-    { "name": "О проекте", "url": "#" },
-    { "name": "Лекции", "url": "#" },
-    { "name": "Новости", "url": "#" },
-    { "name": "Чемпионаты", "url": "#" },
-    { "name": "Вопросы и ответы", "url": "#" }
+    { "name": "Главная", "url": "https://hacks-ai.ru/" },
+    { "name": "Новости", "url": "https://hacks-ai.ru/news" },
+    { "name": "Хакатоны", "url": "#" },
+    { "name": "Вопросы и ответы", "url": "https://hacks-ai.ru/faq" }
   ],
-  "social": ["vk", "telegram"],
+  "social": [
+    { "icon": "vk", "href": "https://vk.com/leadersofdigital" },
+    { "icon": "telegram", "href": "https://t.me/hackathons_ai" }
+  ],
   "index": {
     "head": {
       "title": "тест dffsdf dfsdтест 2222"

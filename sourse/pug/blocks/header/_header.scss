@@ -16,6 +16,11 @@
 			transform: translateY(-200%);
 			// padding-top: .875rem;
 			// padding-top: 0;
+			.top-nav__col-logo {
+				@include media-breakpoint-down(md) {
+					display: none;
+				}
+			}
 		}
 		&.fixed-show{
 			transform: translateY(0);

@@ -144,13 +144,6 @@
 		-webkit-overflow-scrolling: touch;
 		height: calc(var(--vh) * 100);
 		width: 100%;
-		max-width: calc(rem(446) + (rem(18) * 2));
-		padding-left: rem(18);
-		padding-right: rem(18);
-		margin-left: auto;
-		margin-right: auto;
-		display: flex;
-		flex-direction: column;
 		// @include mt(.3s);
 		// transition-delay: .4s;
 		// opacity: var(--opacity);
@@ -158,7 +151,16 @@
 			padding: calc(env(safe-area-inset-top, 0px) + #{rem(97)}) 0 calc(env(safe-area-inset-bottom, 0px) + #{rem(56)});
 		}
 	}
-
+	&__content {
+		max-width: calc(rem(446) + (rem(18) * 2));
+		padding-left: rem(18);
+		padding-right: rem(18);
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
 	&.active { 
 		.toggle-menu-mobile {
 			opacity: 1;
