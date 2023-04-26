@@ -86,13 +86,15 @@ const JSCCommon = {
       },
       { passive: true },
 		);
-		
+
 		let touchStart, touchEnd;
 		document.querySelector('.menu-mobile--js').addEventListener('touchstart', e => (touchStart = e.targetTouches[0].clientX));
 		document.querySelector('.menu-mobile--js').addEventListener('touchmove',e => (touchEnd = e.targetTouches[0].clientX));
 		document.querySelector('.menu-mobile--js').addEventListener('touchend', e => {
 			if (touchEnd - touchStart > 45) {
 				this.closeMenu();
+				touchStart = 0;
+				touchEnd = 0;
 			}
 		});
     // window.addEventListener('resize', () => {
