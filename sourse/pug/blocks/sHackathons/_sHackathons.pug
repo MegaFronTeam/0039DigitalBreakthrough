@@ -1,4 +1,6 @@
 mixin sHackathons(data)
+	script
+		include script.js
 	// start sHackathons
 	+b.SECTION.sHackathons.section#sHackathons&attributes(attributes)
 		.container
@@ -22,22 +24,22 @@ mixin sHackathons(data)
 							+e.dataset(href='#')
 								+icon('ai')
 								| Dataset
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Хабаровск').done
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Нижний Новгород')
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Екатеринбург').disabled
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Томск').disabled
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Волгоград').disabled
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Санкт-Петербург').disabled
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Москва').disabled
-					.col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
-						+item('Волгоград').disabled
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Хабаровск').done
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Нижний Новгород')
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Екатеринбург').disabled
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Томск').disabled
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Волгоград').disabled
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Санкт-Петербург').disabled
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Москва').disabled
+					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
+					//- 	+item('Волгоград').disabled
 				.row
 					.col-lg-6
 						+e.item-wrap(style='--bgColor: #03FE33' data-aos="fade-up" data-aos-duration="700")

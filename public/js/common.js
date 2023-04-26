@@ -291,7 +291,7 @@ const JSCCommon = {
 		}, { passive: true });
 	},
 	makeDDGroup() {
-		$('.dd-head-js').on('click', function () {
+		$(document).on('click', '.dd-head-js', function () {
       let clickedHead = this;
       $(this).parent().toggleClass('active');
       $(this)

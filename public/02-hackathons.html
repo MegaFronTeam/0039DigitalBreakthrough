@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<link href="css/main.min.css" rel="stylesheet"/>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
 		<script>
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -362,6 +363,23 @@
 					</div>
 				</section>
 				<!-- end sInfo-->
+				<script>
+function setNews(items) {
+	const template = function (img, title, date) {
+		return `
+				<div class="default-slider__slide swiper-slide bg-wrap"   data-aos="fade-up" data-aos-duration="700">
+					<img class="object-fit-js picture-bg" src="${img}" alt="" loading="lazy"/>
+					<div class="default-slider__date">${date}</div>
+					<h4>${title}</h4>
+				</div>`;
+	};
+	for (const item of items) {
+		// console.log(item);
+		document.querySelector(".sNews .swiper-wrapper").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.publication_date));
+	}
+}
+getNews(setNews);
+				</script>
 				<!-- start sNews-->
 				<section class="sNews section" id="sNews">
 					<div class="container">
@@ -371,46 +389,6 @@
 						<div class="default-slider">
 							<div class="default-slider__slider default-slider__slider--js swiper">
 								<div class="swiper-wrapper">
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-1.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
-									</a>
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-2.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>Как искусственный интеллект помогает решать проблему отходов</h4>
-									</a>
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-3.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>Как искусственный интеллект борется за живую природу</h4>
-									</a>
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-4.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
-									</a>
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-1.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
-									</a>
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-2.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>Как искусственный интеллект помогает решать проблему отходов</h4>
-									</a>
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-3.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>Как искусственный интеллект борется за живую природу</h4>
-									</a>
-									<a class="default-slider__slide swiper-slide bg-wrap" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sNews-img-4.jpg" alt="" loading="lazy"/>
-										<div class="default-slider__date">10 июня - 20 июля
-										</div>
-										<h4>В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;</h4>
-									</a>
 								</div>
 							</div>
 							<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
@@ -437,6 +415,29 @@
 					</div>
 				</section>
 				<!-- end sNews-->
+				<script>
+function setPartners(items) {
+	const template = function (img, title, text, link) {
+		return `
+				<div class="col-sm-6 col-md-4 col-xl-3">
+					<a class="sPartners__item  " href="${link}" data-aos="fade-up" data-aos-duration="700">
+						<div class="sPartners__img-wrap"> 
+							<div class="img-wrap-center"> 
+								<img src="${img}" alt="" loading="lazy">
+							</div>
+						</div>
+						<span>${title}</span>
+						<p>${text || ''}</p>
+					</a>
+				</div>`;
+	};
+	for (const item of items) {
+		// console.log(item);
+		document.querySelector(".sPartners__row").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.description, item.link));
+	}
+}
+getPartners(setPartners, 'partner');
+				</script>
 				<!-- start sPartners-->
 				<section class="sPartners section" id="sPartners">
 					<div class="container">
@@ -445,46 +446,6 @@
 								<h2>Организаторы и партнеры</h2>
 							</div>
 							<div class="sPartners__row row">
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-1.png" alt="" loading="lazy"/><span>Информационный партнер</span>
-										<p></p>
-									</a>
-								</div>
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
-										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
-									</a>
-								</div>
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
-										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
-									</a>
-								</div>
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
-										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
-									</a>
-								</div>
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
-										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
-									</a>
-								</div>
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
-										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
-									</a>
-								</div>
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-1.png" alt="" loading="lazy"/><span>Информационный партнер</span>
-										<p></p>
-									</a>
-								</div>
-								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
-										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
-									</a>
-								</div>
 							</div>
 						</div>
 					</div>
