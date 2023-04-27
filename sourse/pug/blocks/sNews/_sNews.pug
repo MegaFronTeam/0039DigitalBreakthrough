@@ -6,7 +6,7 @@ mixin sNews(data)
 		.container
 			+b.section-title(data-aos="fade-up" data-aos-duration="700")
 				h2 Новости проекта
-			+defaultSlider('Все новости', '', 'https://hacks-ai.ru/news')
+			+defaultSlider('', '', 'https://hacks-ai.ru/news')
 				mixin slide(img, date, title)
 					+e.slide.swiper-slide.bg-wrap(href='#' data-aos="fade-up" data-aos-duration="700")
 						+img(`img/${img}`, 'bg').picture-bg
