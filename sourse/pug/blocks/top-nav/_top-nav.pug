@@ -15,7 +15,7 @@ mixin mob-mnu()
 	+b.menu-mobile--js
 		+b.toggle-menu-mobile--js
 			span
-		+e.icon-link(href='#'): +icon('access')
+		//- +e.icon-link(href='#'): +icon('access')
 		+e.inner
 			+e.content
 				.row
@@ -53,6 +53,6 @@ mixin top-nav()
 				.col.col-md-auto.ms-md-auto
 					+e.wrap
 						+menu-toggle()
-						+e.link.ms-auto.ms-md-0(href='https://lk.hacks-ai.ru/'): +icon('access')
+						//- +e.link.ms-auto.ms-md-0(href='https://lk.hacks-ai.ru/'): +icon('access')
 						+e.link(href='https://lk.hacks-ai.ru/'): +icon('user')
 	// end top-nav

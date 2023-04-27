@@ -1,9 +1,9 @@
 {
   "nav": [
-    { "name": "Главная", "url": "https://hacks-ai.ru/" },
-    { "name": "Новости", "url": "https://hacks-ai.ru/news" },
-    { "name": "Хакатоны", "url": "#" },
-    { "name": "Вопросы и ответы", "url": "https://hacks-ai.ru/faq" }
+    { "name": "Главная", "url": "/" },
+    { "name": "Новости", "url": "#sNews" },
+    { "name": "Хакатоны", "url": "#sHackathons" },
+    { "name": "Вопросы и ответы", "url": "#sFaq" }
   ],
   "social": [
     { "icon": "vk", "href": "https://vk.com/leadersofdigital" },

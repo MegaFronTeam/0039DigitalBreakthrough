@@ -13,7 +13,10 @@ function setEvents(items) {
 						<div class="sHackathons__choose">Лиги: </div>
 						<div class="sHackathons__inner-row row">
 							<div class="col-auto">
-								<div class="sHackathons__tag">${league}</div>
+								<div class="sHackathons__tag">Новички</div>
+							</div>
+							<div class="col-auto">
+								<div class="sHackathons__tag">Профи</div>
 							</div>
 						</div>
 						<svg class="icon icon-check-2 ">
