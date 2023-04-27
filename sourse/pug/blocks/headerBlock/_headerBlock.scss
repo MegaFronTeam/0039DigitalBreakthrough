@@ -9,6 +9,51 @@
 		--bs-gutter-y: var(--bs-gutter-x);
 
 	}
+	&__img-wrap {
+		position: relative;
+	}
+	.tech {
+		&-1 {
+			left: 7.3%;
+			top: 7.3%;
+		}
+		&-2 {
+			left: 40%;
+    	top: 9%;
+		}
+		&-3 {
+			left: 65.9%;
+			top: 10.8%;
+		}
+		&-4 {
+			left: 23%;
+			top: 20%;
+		}
+		&-5 {
+			left: 12.4%;
+    	top: 36.6%;
+		}
+		&-6 {
+			left: 73.7%;
+			top: 36.6%;
+		}
+		&-7 {
+			left: 17.3%;
+    	top: 53.4%;
+		}
+		&-8 {
+			left: 66.7%;
+			top: 51.6%;
+		}
+		&-9 {
+			left: 88%;
+			top: 64.6%
+		}
+		&-10 {
+			left: 27%;
+			top: 78%;
+		}
+	}
 	&__wrap {
 		position: relative;
 		display: flex;

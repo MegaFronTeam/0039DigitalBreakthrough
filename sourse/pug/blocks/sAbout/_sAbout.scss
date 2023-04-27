@@ -29,11 +29,45 @@
 				bottom: unset;
 				right: unset;
 			}
-			@include media-breakpoint-down(lg) {
-				
-			}
 			@include media-breakpoint-down(xl) {
 				opacity: .7;
+			}
+		}
+		.tech {
+			@include media-breakpoint-down(xl) {
+				opacity: .7;
+			}
+			@include media-breakpoint-down(lg) {
+				display: none;	
+			}
+			&-1 {
+				left: 78.1%;
+				top: 8.3%;		
+				@include media-breakpoint-up(xl) {
+					left: 63.2%;
+				}
+			}
+			&-2 {
+				left: 93.7%;
+				top: 35.5%;
+				@include media-breakpoint-up(xl) {
+					left: 73.2%;
+				}
+			}
+			&-3 {
+				left: 74.3%;
+				top: 48.9%;
+				@include media-breakpoint-up(xl) {
+					left: 60.8%;
+				}
+			}
+			&-4 {
+				left: 70.5%;
+				top: 75%;	
+				@include media-breakpoint-up(xl) {
+					top: 78%;	
+					left: 58.3%;
+				}
 			}
 		}
 	}
@@ -166,6 +200,8 @@
 		}
 	}
 	&__banner {
+		position: relative;
+		z-index: 4;
 		padding: rem(24);
 		background-color: $pink;
 		text-align: center;
