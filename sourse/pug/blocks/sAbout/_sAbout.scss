@@ -16,14 +16,21 @@
 		}
 		.bg {
 			position: absolute;
-			top: 0;
-			left: calc(100% - 64%);
+			bottom: 0;
+			right: 0;
 			width: 100%;
-			max-width: 872px;
+			max-width: 384px;
 			z-index: -1;
-			mix-blend-mode: hard-light;
+			@include media-breakpoint-up(lg) {
+				mix-blend-mode: hard-light;
+				max-width: 872px;
+				top: 0;
+				left: calc(100% - 64%);
+				bottom: unset;
+				right: unset;
+			}
 			@include media-breakpoint-down(lg) {
-				display: none;
+				
 			}
 			@include media-breakpoint-down(xl) {
 				opacity: .7;
