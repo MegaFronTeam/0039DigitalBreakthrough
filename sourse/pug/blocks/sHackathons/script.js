@@ -7,7 +7,7 @@ function setEvents(items) {
 					<div class="sHackathons__item ${className}">
 						<div class="sHackathons__content">
 							<h5>${startDate}</h5>
-							<a class="h3" href="#">${name}</a>
+							<a class="h3" href="https://lk.hacks-ai.ru">${name}</a>
 							<div class="sHackathons__city">${region}</div>
 						</div>
 						<div class="sHackathons__choose">Лиги: </div>
