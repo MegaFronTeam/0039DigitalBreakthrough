@@ -5,18 +5,11 @@ mixin sInfo(data)
 			+e.grid
 				+e.grid-item.bg-wrap(data-aos="fade-up" data-aos-duration="700")
 					+e.img-wrap.picture-bg: +img('img/sInfo-img-1.jpg', 'bg')
-					h2.h1 Название площадки
-					p Нижний Новгород, ул. Викторовская 68
-				+e.grid-item(data-aos="fade-up" data-aos-duration="700")
-					p The election of&nbsp;9&nbsp;April 2021 resulted in&nbsp;a&nbsp;25/25 tie between the ruling Human Rights Protection Party (HRPP) of&nbsp;Prime Minister Tuilaepa Aiono Sailele Malielegaoi and the FAST party of&nbsp;Naomi Mata&rsquo;afa, with the remaining seat held by&nbsp;the independent Tuala Iosefo Ponifasio.[5] On&nbsp;20 April 2021, the Samoan electoral commission declared the HRPP&rsquo;s Ali&rsquo;imalemanu Alofa Tuuau elected in&nbsp;an&nbsp;extra seat due to&nbsp;the requirement that a&nbsp;minimum of&nbsp;10% of&nbsp;seats in&nbsp;parliament must be&nbsp;held by&nbsp;women
-					//- a(href="#") Подробнее... 
+					h2.h1
+					p.addr
+
+				+e.grid-item--text(data-aos="fade-up" data-aos-duration="700")
+
 				+e.grid-item.bg-wrap(data-aos="fade-up" data-aos-duration="700")
-					+img('img/sInfo-img-2.jpg', 'bg').picture-bg
-				+e.grid-item.bg-wrap(data-aos="fade-up" data-aos-duration="700")
-					+img('img/sInfo-img-3.jpg', 'bg').picture-bg
-				+e.grid-item.p-0(data-aos="fade-up" data-aos-duration="700")
-					<iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A067577216d28e63ea7afc2dba5eaf822c8cdcdc3fb8e8050fb4a8c45fc86d3ab&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
-				+e.grid-item.bg-wrap(data-aos="fade-up" data-aos-duration="700")
-					+img('img/sInfo-img-4.jpg', 'bg').picture-bg
-				+e.grid-item(data-aos="fade-up" data-aos-duration="700")
+					+img('', 'bg').picture-bg.map-img
 	// end sInfo

@@ -16,7 +16,7 @@ function setPartners(items) {
 	};
 	for (const item of items) {
 		// console.log(item);
-		document.querySelector(".sPartners__row").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.description, item.link));
+		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.description, item.link));
 	}
 }
 getPartners(setPartners, 'partner');
