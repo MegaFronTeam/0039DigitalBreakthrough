@@ -3,7 +3,13 @@ mixin sAbout(data)
 	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
 		.container
 			+e.wrap
-				img(src="img/sAbout-bg-1.png", alt="").bg
+				.tech.tech-1 AI
+				.tech.tech-2 NeuralNetwork
+				.tech.tech-3 NeuralNetwork
+				.tech.tech-4 Edtech
+				picture
+					source(media="(min-width: 992px)", srcset="img/sAbout-bg-1.png")
+					img(src="img/sAbout-bg-sm-1.png", alt="").bg
 				.row
 					.col-lg
 						+e.content(data-aos="fade-up" data-aos-duration="700")

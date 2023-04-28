@@ -186,3 +186,15 @@
 		}
 	}
 }
+
+.tech {
+	position: absolute;
+	display: block;
+	background-color: $body-bg;
+	color: #fff;
+	padding: rem(3.640) rem(6.160);
+	border-radius: 30.8824px;
+	z-index: 2;
+	font-weight: 600;
+	font-size: calc(6px + 0.55vw + 0.11vh);
+}
