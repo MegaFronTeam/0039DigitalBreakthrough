@@ -111,30 +111,33 @@ function setHackPageData(data) {
 											<div class="innerTabs__btn active">Описание</div>
 											<div class="innerTabs__btn disabled">Результаты</div>
 										</div>
-										<div class="innerTabs__content active">
-											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
-												${expertisesItems()}
+										<div>
+										
+											<div class="innerTabs__content active">
+												<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+													${expertisesItems()}
+												</div>
+												${item.longDescription}
+												
 											</div>
-											${item.longDescription}
-											
-										</div>
-										<div class="innerTabs__content">
-											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
-												<a class="sCases__tag" href="#">Edtech
-												</a>
-												<a class="sCases__tag" href="#">NeuralNetwork
-												</a>
-												<a class="sCases__tag" href="#">Signs
-												</a>
+											<div class="innerTabs__content">
+												<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+													<a class="sCases__tag" href="#">Edtech
+													</a>
+													<a class="sCases__tag" href="#">NeuralNetwork
+													</a>
+													<a class="sCases__tag" href="#">Signs
+													</a>
+												</div>
+												<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+												<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+												<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+												<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+												
 											</div>
-											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
-											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
-											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
-											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
-											
 										</div>
+										${partnersItem()}
 									</div>
-									${partnersItem()}
 									
 								</div>`;
 	};
@@ -168,7 +171,6 @@ function setHackPageData(data) {
 	};
 
 	for (const item of data.playground.photos) {
-		console.log(item);
 		document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item));
 	}
 }
