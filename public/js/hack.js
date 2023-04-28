@@ -12,7 +12,8 @@ var params = window
 		{}
 	);
 
-let pageId = params['eventId']; 
+let pageId = params['eventId'];
+
 function setHackPageData(data) {
 	document.title = data.event.name;
 	document.querySelector('.sAbout__date').innerHTML = 
@@ -31,17 +32,17 @@ function setHackPageData(data) {
 
 
 
-	const templatePartner = function (img, title, text, link) {
+	const templatePartner = item => {
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3">
-					<a class="sPartners__item  " href="${link}" data-aos="fade-up" data-aos-duration="700">
+					<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
 						<div class="sPartners__img-wrap"> 
 							<div class="img-wrap-center"> 
-								<img src="${img}" alt="" loading="lazy">
+								<img src="${item.avatar_url}" alt="" loading="lazy">
 							</div>
 						</div>
-						<span>${title}</span>
-						<p>${text || ''}</p>
+						<span>${item.name}</span>
+						<p>${item.description || ''}</p>
 					</a>
 				</div>`;
 	};
@@ -50,17 +51,17 @@ function setHackPageData(data) {
 
 	for (const item of data.partners) {
 		// console.log(item);
-		document.querySelector("#sPartners2 .sPartners__row").insertAdjacentHTML("beforeend", templatePartner(item.avatar_url, item.name, item.description, item.link));
+		document.querySelector("#sPartners2 .sPartners__row").insertAdjacentHTML("beforeend", templatePartner(item));
 	}
 
 
 	// Cases
 	// BTns
-	const templateBtn = function (name, shortDescription, active) {
+	const templateBtn = (item, active) => {
 		return `
 				<a class="sCases__link tabs__btn scroll-link ${active}" href="#sCases">
-					<p>${shortDescription}</p>
-					<span>${name}</span>
+					<p>${item.shortDescription}</p>
+					<span>${item.name}</span>
 				</a>`;
 	};
 
@@ -72,31 +73,31 @@ function setHackPageData(data) {
 			active = ' '
 		}
 		// console.log(item);
-		document.querySelector(".sCases__links").insertAdjacentHTML("beforeend", templateBtn(item.name, item.shortDescription, active));
+		document.querySelector(".sCases__links").insertAdjacentHTML("beforeend", templateBtn(item, active));
 	}
 
 
 	// Tabs
-	const templateTabs = function (longDescription, partners,  expertises, active) {
+	const templateTabs = (item, active) => {
 		let expertisesItems = ()=>{ 
 			let content = ' '
-			if (expertises.length == 0) return ' ';
-			for (const item of expertises) { 
-				content += ` <a class="sCases__tag" href="#">${item.name} </a>` 
+			if (item.expertises.length == 0) return ' ';
+			for (const subItem of item.expertises) { 
+				content += ` <a class="sCases__tag" href="#">${subItem.name} </a>` 
 			}
 			return content;
 		}
 		
 		let partnersItem = ()=>{
 			let content = ' '
-			if (partners.length == 0) return ' ';
-			for (const item of partners) {
+			if (item.partners.length == 0) return ' ';
+			for (const subItem of item.partners) {
 				content += `
-								<a class="sCases__director " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
-										<img src="${item.avatar_url}" alt="" loading="lazy"/>
+								<a class="sCases__director " href="${subItem.link}" data-aos="fade-up" data-aos-duration="700">
+										<img src="${subItem.avatar_url}" alt="" loading="lazy"/>
 										<div>
-										<span>${item.description}</span>
-											<p>${item.name}</p>
+										<span>${subItem.description}</span>
+											<p>${subItem.name}</p>
 										</div>
 								</a>`
 			}
@@ -114,7 +115,7 @@ function setHackPageData(data) {
 											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
 												${expertisesItems()}
 											</div>
-											${longDescription}
+											${item.longDescription}
 											
 										</div>
 										<div class="innerTabs__content">
@@ -147,7 +148,7 @@ function setHackPageData(data) {
 			active = ' '
 		}
 
-		document.querySelector(".sCases .row.tabs .col-lg").insertAdjacentHTML("beforeend", templateTabs(item.longDescription, item.partners, item.expertises, active));
+		document.querySelector(".sCases .row.tabs .col-lg").insertAdjacentHTML("beforeend", templateTabs(item, active));
 	}
 
 
@@ -159,16 +160,16 @@ function setHackPageData(data) {
 
 
 
-	const templateMap = function (img) {
+	const templateMap = item => {
 		return `
 				<div class="sInfo__grid-item bg-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
-				<img class="object-fit-js picture-bg" src="${img} " alt="" loading="lazy">
+				<img class="object-fit-js picture-bg" src="${item} " alt="" loading="lazy">
 				</div>`;
 	};
 
 	for (const item of data.playground.photos) {
-		// console.log(item);
-		document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item.avatar_url));
+		console.log(item);
+		document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item));
 	}
 }
 getHackPageData(setHackPageData, pageId)
