@@ -1,14 +1,14 @@
 
 function setEvents(items) {
-	const template = function (league, name, region, startDate, className) {
+	const template = (item, className) => {
 
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="700">
 					<div class="sHackathons__item ${className}">
 						<div class="sHackathons__content">
-							<h5>${startDate}</h5>
-							<a class="h3" href="https://lk.hacks-ai.ru">${name}</a>
-							<div class="sHackathons__city">${region}</div>
+							<h5>${item.startDate}</h5>
+							<a class="h3" href="/hackathons.html?eventId=969064${item.eventId}">${item.name}</a>
+							<div class="sHackathons__city">${item.region}</div>
 						</div>
 						<div class="sHackathons__choose">Лиги: </div>
 						<div class="sHackathons__inner-row row">
@@ -39,7 +39,7 @@ function setEvents(items) {
 		else{
 			className = ''
 		}
-		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item.league, item.name, item.region, item.startDate, className));
+		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item, className));
 		index++;
 	}
 }

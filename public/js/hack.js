@@ -19,11 +19,14 @@ function setHackPageData(data) {
 		data.event.dateRange[0] + ' ' +
 		+ data.event.dateRange[1] 
 		+ ' <span>' + data.event.dateRange[2] + '</span>';
+	document.querySelector('.sAbout__type--1').innerHTML = data.playground.city;
 	document.querySelector('.sAbout__type--2').innerHTML = data.playground.adress;
 	document.querySelector('h1').innerHTML = data.event.name;
 	document.querySelector('.sAbout h2').innerHTML = data.event.district;
 	document.querySelector('.sAbout__text').innerHTML = data.event.description;
 	document.querySelector('.sAbout__banner .h3').innerHTML = data.event.deadline_date;
+	document.querySelector('.count-attendee').innerHTML = data.event.count.attendee_count;
+	document.querySelector('.count-team').innerHTML = data.event.count.team_count;
 
 
 
@@ -151,7 +154,8 @@ function setHackPageData(data) {
 	document.querySelector('.sInfo h2').innerHTML = data.playground.name;
 	document.querySelector('.sInfo .addr').innerHTML = data.playground.adress;
 	document.querySelector('.sInfo__grid-item--text').innerHTML = data.playground.description;
-	document.querySelector('.map-img').setAttribute("src", data.playground.avatar);
+	document.querySelector('.img-avatar').setAttribute("src", data.playground.avatar);
+	document.querySelector('.map-img').setAttribute("src", data.playground.map);
 
 
 

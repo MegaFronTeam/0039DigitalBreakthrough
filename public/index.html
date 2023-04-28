@@ -66,15 +66,15 @@
 			<!-- end headerBlock-->
 			<script>
 function setEvents(items) {
-	const template = function (league, name, region, startDate, className) {
+	const template = (item, className) => {
 
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="700">
 					<div class="sHackathons__item ${className}">
 						<div class="sHackathons__content">
-							<h5>${startDate}</h5>
-							<a class="h3" href="https://lk.hacks-ai.ru">${name}</a>
-							<div class="sHackathons__city">${region}</div>
+							<h5>${item.startDate}</h5>
+							<a class="h3" href="/hackathons.html?eventId=969064${item.eventId}">${item.name}</a>
+							<div class="sHackathons__city">${item.region}</div>
 						</div>
 						<div class="sHackathons__choose">Лиги: </div>
 						<div class="sHackathons__inner-row row">
@@ -105,7 +105,7 @@ function setEvents(items) {
 		else{
 			className = ''
 		}
-		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item.league, item.name, item.region, item.startDate, className));
+		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item, className));
 		index++;
 	}
 }
@@ -405,17 +405,17 @@ getMapStats(setMapStats);
 			<!-- end sMap-->
 			<script>
 function setNews(items) {
-	const template = function (img, title, date) {
+	const template = item => {
 		return `
 				<div class="default-slider__slide swiper-slide bg-wrap"   data-aos="fade-up" data-aos-duration="700">
-					<img class="object-fit-js picture-bg" src="${img}" alt="" loading="lazy"/>
-					<div class="default-slider__date">${date}</div>
-					<h4>${title}</h4>
+					<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
+					<div class="default-slider__date">${item.publication_dat}</div>
+					<h4>${item.name}</h4>
 				</div>`;
 	};
 	for (const item of items) {
 		// console.log(item);
-		document.querySelector(".sNews .swiper-wrapper").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.publication_date));
+		document.querySelector(".sNews .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
 	}
 }
 getNews(setNews);
@@ -437,20 +437,20 @@ getNews(setNews);
 			<!-- end sNews-->
 			<script>
 function setFAQ(items) {
-	const template = function ( title, text) {
+	const template = item => {
 		return `
 				<div class="col-lg-6" data-aos="fade-up" data-aos-duration="700">
 					<div class="dd-group__item">
-						<div class="dd-group__head dd-head-js">${title}</div>
+						<div class="dd-group__head dd-head-js">${item.question}</div>
 						<div class="dd-group__content dd-content-js">
-							${text}
+							${item.answer}
 						</div>
 					</div>
 				</div>`;
 	};
 	for (const item of items) {
 		// console.log(item);
-		document.querySelector(".sFaq .dd-group__row").insertAdjacentHTML("beforeend", template(item.question, item.answer));
+		document.querySelector(".sFaq .dd-group__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
 getFAQ(setFAQ);
@@ -470,23 +470,23 @@ getFAQ(setFAQ);
 			<!-- end sFaq-->
 			<script>
 function setPartners(items) {
-	const template = function (img, title, text, link) {
+	const template = item => {
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3">
-					<a class="sPartners__item  " href="${link}" data-aos="fade-up" data-aos-duration="700">
+					<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
 						<div class="sPartners__img-wrap"> 
 							<div class="img-wrap-center"> 
-								<img src="${img}" alt="" loading="lazy">
+								<img src="${item.avatar_url}" alt="" loading="lazy">
 							</div>
 						</div>
-						<span>${title}</span>
-						<p>${text || ''}</p>
+						<span>${item.name}</span>
+						<p>${item.description || ''}</p>
 					</a>
 				</div>`;
 	};
 	for (const item of items) {
 		// console.log(item);
-		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.description, item.link));
+		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
 getPartners(setPartners, 'partner');

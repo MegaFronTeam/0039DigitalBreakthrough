@@ -147,6 +147,7 @@
 		--bs-gutter-x: #{rem(30)};
 		--bs-gutter-y: #{rem(16)};
 		margin-bottom: rem(16);
+			margin-top: auto;
 		@include media-breakpoint-up(lg) {
 			--bs-gutter-x: #{rem(62)};
 			margin-bottom: rem(23);
@@ -174,7 +175,7 @@
 	}
 	&__btn {
 		width: 100%;
-		margin-top: auto;
+	
 		max-width: rem(196);
 	}
 	&__info-wrap {
