@@ -158,8 +158,8 @@ function setHackPageData(data) {
 	document.querySelector('.sInfo h2').innerHTML = data.playground.name;
 	document.querySelector('.sInfo .addr').innerHTML = data.playground.adress;
 	document.querySelector('.sInfo__grid-item--text').innerHTML = data.playground.description;
-	document.querySelector('.img-avatar')   .setAttribute("src", data.playground.avatar);
-	document.querySelector('.map-img').setAttribute("src", data.playground.map);
+	document.querySelector('.img-avatar').setAttribute("src", data.playground.avatar);
+	document.querySelector('.map-img').innerHTML = data.playground.map_link;
 
 
 

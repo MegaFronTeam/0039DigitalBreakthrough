@@ -123,6 +123,18 @@
 			z-index: 1;
 		}
 	}
+
+		.map-img{
+		position: relative;
+		&>*{
+			position: absolute;
+			@include a-cent;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
