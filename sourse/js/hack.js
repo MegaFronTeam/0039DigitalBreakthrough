@@ -13,6 +13,7 @@ var params = window
 	);
 
 let pageId = params['eventId'];
+console.log(pageId);
 
 function setHackPageData(data) {
 	document.title = data.event.name;
@@ -173,5 +174,8 @@ function setHackPageData(data) {
 	for (const item of data.playground.photos) {
 		document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item));
 	}
+
+	setNews(data.news);
+	setPartners(data.partners);
 }
 getHackPageData(setHackPageData, pageId)

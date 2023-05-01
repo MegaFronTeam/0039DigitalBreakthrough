@@ -31,7 +31,7 @@
 			}
 		</script>
 	</head>
-	<body class="main-page" data-bg="main.jpg">
+	<body class="main-page loaded_hiding" data-bg="main.jpg">
 		<div class="main-wrapper">
 			<script>addBlock(`header`)</script>
 			<div id="headerWrap"></div>
@@ -409,7 +409,7 @@ function setNews(items) {
 		return `
 				<div class="default-slider__slide swiper-slide bg-wrap"   data-aos="fade-up" data-aos-duration="700">
 					<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
-					<div class="default-slider__date">${item.publication_dat}</div>
+					<div class="default-slider__date">${item.publication_date}</div>
 					<h4>${item.name}</h4>
 				</div>`;
 	};
@@ -418,7 +418,10 @@ function setNews(items) {
 		document.querySelector(".sNews .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
 	}
 }
-getNews(setNews);
+
+// let  functionNews = getHackPageData(setNews, pageId)  ||  ;
+
+// functionNews();
 			</script>
 			<!-- start sNews-->
 			<section class="sNews section" id="sNews">
@@ -435,6 +438,7 @@ getNews(setNews);
 				</div>
 			</section>
 			<!-- end sNews-->
+			<script>getNews(setNews)</script>
 			<script>
 function setFAQ(items) {
 	const template = item => {
@@ -489,7 +493,7 @@ function setPartners(items) {
 		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
-getPartners(setPartners, 'partner');
+
 			</script>
 			<!-- start sPartners-->
 			<section class="sPartners section" id="sPartners">
@@ -504,6 +508,7 @@ getPartners(setPartners, 'partner');
 				</div>
 			</section>
 			<!-- end sPartners-->
+			<script>getPartners(setPartners, 'partner');</script>
 			<script>addBlock(`footer`)</script>
 			<div id="footerWrap"></div>
 		</div>

@@ -19,4 +19,3 @@ function setPartners(items) {
 		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
-getPartners(setPartners, 'partner');

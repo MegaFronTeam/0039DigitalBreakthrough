@@ -4,3 +4,7 @@ include ../../blocks/modal/_modal.pug
 
 +footer()
 +modal()
+script.
+	let  functionNews = getHackPageData(setNews, pageId)  ||  getNews(setNews);
+
+	functionNews();

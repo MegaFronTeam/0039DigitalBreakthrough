@@ -519,7 +519,9 @@ function eventHandler() {
       });
     }
   };
-	AOS.init();
+	// setTimeout(() => {
+	// 	document.body.classList.remove('loaded_hiding');
+	// },1200);
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
@@ -527,10 +529,10 @@ if (document.readyState !== 'loading') {
 	document.addEventListener('DOMContentLoaded', eventHandler);
 }
 
-// window.onload = function () {
-// 	document.body.classList.add('loaded_hiding');
-// 	window.setTimeout(function () {
-// 		document.body.classList.add('loaded');
-// 		document.body.classList.remove('loaded_hiding');
-// 	}, 500);
-// }
+window.onload = function () {
+	document.body.classList.add('loaded_hiding');
+	window.setTimeout(function () {
+		document.body.classList.add('loaded');
+		AOS.init();
+	}, 500);
+}
