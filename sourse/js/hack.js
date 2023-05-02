@@ -176,6 +176,6 @@ function setHackPageData(data) {
 	}
 
 	setNews(data.news);
-	setPartners(data.partners);
+	setPartners(data.allPartners);
 }
 getHackPageData(setHackPageData, pageId)
