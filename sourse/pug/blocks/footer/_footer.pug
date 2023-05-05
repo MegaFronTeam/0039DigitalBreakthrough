@@ -3,7 +3,9 @@ mixin footer()
 		.container
 			.row
 				.col-12.col-lg-3.col-xl-4.order-1
-					+e.logo(href='https://hacks-ai.ru/' data-aos="fade-up" data-aos-duration="700" target='_blank'): +img('img/svg/logo3.svg')
+					+e.logo(href='https://hacks-ai.ru/' data-aos="fade-up" data-aos-duration="700" target='_blank')
+						//-  +img('img/svg/logo3.svg')
+						+footerLogo()
 				.col-auto.col-lg-4.col-xl-3.order-3.order-lg-2(data-aos="fade-up" data-aos-duration="700")
 					+soc
 					mixin link(span, mail)

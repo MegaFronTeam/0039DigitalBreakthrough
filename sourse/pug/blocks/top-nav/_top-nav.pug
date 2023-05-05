@@ -37,10 +37,12 @@ mixin top-nav()
 			+e.row.row(data-aos="fade-up" data-aos-duration="700")
 				+e.col-logo.col-auto
 					a(href="https://hacks-ai.ru/ " target="_blank") 
-						+img('img/svg/logo.svg').main-logo
+						//- +img('img/svg/logo.svg').main-logo
+						+logo1().main-logo
 				+e.col-logo.col-auto
 					a(href="https://www.economy.gov.ru/ " target="_blank") 
-						+img('img/svg/logo4.svg').logo-3
+						//- +img('img/svg/logo4.svg').logo-3
+						+logo2().logo-3
 				+e.col-logo.col-auto
 					a(href="https://rsv.ru/ " target="_blank") 
 						+img('img/svg/logo2.svg').logo-2
