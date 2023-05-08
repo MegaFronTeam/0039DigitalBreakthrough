@@ -361,6 +361,7 @@ function eventHandler() {
 	JSCCommon.tabscostume('innerTabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
+	JSCCommon.imgToSVG();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
@@ -427,6 +428,13 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchOverflow: true
+	});
+	
+	const tagsSlider = new Swiper('.sFaqBlock__tags-slider--js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchOverflow: true,
+		spaceBetween: 8,
 	});
 	
 	const sResumeSwiper = new Swiper('.sResume__slider--js', {
@@ -522,6 +530,18 @@ function eventHandler() {
 	// setTimeout(() => {
 	// 	document.body.classList.remove('loaded_hiding');
 	// },1200);
+
+	var Sticky = new hcSticky('.sContent__hc-sticky--js', {
+    stickTo: '.sContent',
+		mobileFirst: true,
+		disable: true,
+		top: '50%',
+		responsive: {
+			998: {
+				disable: false
+			}
+		}
+  });
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

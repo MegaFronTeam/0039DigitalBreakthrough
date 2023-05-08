@@ -30,9 +30,10 @@ block pagecontent
 	
 	+parts('header')
 	+sNews('Новости')
-	script.
-		getNews(setNews)
+	//- script.
+	//- 	getNews(setNews)
 	+sPartners
-	script.
-		getPartners(setPartners, 'partner');
+	//- script.
+	//- 	getPartners(setPartners, 'partner');
 	+parts('footer')
+	script(src='js/news.js')

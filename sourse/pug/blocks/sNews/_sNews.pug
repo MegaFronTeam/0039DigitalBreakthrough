@@ -11,10 +11,8 @@ mixin sNews(second)
 					h2 Новости проекта
 			+defaultSlider('', '', 'https://hacks-ai.ru/news')
 				mixin slide(img, date, title)
-					+e.slide.swiper-slide.bg-wrap(href='#' data-aos="fade-up" data-aos-duration="700")
-						+img(`img/${img}`, 'bg').picture-bg
-						+e.date!=date
-						h4!= title
+					+e.slide.swiper-slide(href='#' data-aos="fade-up" data-aos-duration="700")
+						+newsItem(img, date, title)
 				//- +slide('sNews-img-1.jpg', '10 июня - 20 июля', 'В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;')
 				//- +slide('sNews-img-2.jpg', '10 июня - 20 июля', 'Как искусственный интеллект помогает решать проблему отходов')
 				//- +slide('sNews-img-3.jpg', '10 июня - 20 июля', 'Как искусственный интеллект борется за живую природу')

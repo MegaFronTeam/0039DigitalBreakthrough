@@ -19,6 +19,7 @@ function setEvents(items) {
 								<div class="sHackathons__tag">Профи</div>
 							</div>
 						</div>
+						<a href='#' class='sHackathons__btn btn btn-dark'>Узнай больше о хакатоне</a>
 						<svg class="icon icon-check-2 ">
 							<use xlink:href="img/svg/sprite.svg#check-2"></use>
 						</svg>

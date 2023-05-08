@@ -1,0 +1,29 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sFaqBlock/_sFaqBlock.pug
+include ../blocks/sPartners/_sPartners.pug
+
+block variables
+	- let  mainPage= 'white-theme' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= 'Вопросы и ответы'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	+sFaqBlock
+	+sPartners
+	//- script.
+	//- 	getPartners(setPartners, 'partner');
+	+parts('footer')
+	script(src='js/faq.js')

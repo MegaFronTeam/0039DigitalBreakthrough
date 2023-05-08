@@ -5,8 +5,11 @@
 	padding-bottom: var(--sPB);
 	padding-top: var(--sPT);
 	&__row{
-		--bs-gutter-x: #{rem(18)};
+		--bs-gutter-x: #{rem(10)};
 		--bs-gutter-y: #{rem(24)};
+		@include media-breakpoint-up(sm) {
+			--bs-gutter-x: #{rem(18)};
+		}
 		@include media-breakpoint-up(md) {
 			--bs-gutter-x: #{rem(40)};
 		}

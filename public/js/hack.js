@@ -16,6 +16,7 @@ let pageId = params['eventId'];
 console.log(pageId);
 
 function setHackPageData(data) {
+	console.log(data);
 	document.title = data.event.name;
 	document.querySelector('.sAbout__date').innerHTML = 
 		data.event.dateRange[0] + ' ' +

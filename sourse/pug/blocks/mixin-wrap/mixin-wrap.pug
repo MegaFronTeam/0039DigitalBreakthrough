@@ -201,3 +201,9 @@ mixin footerLogo()
 		defs
 			clippath#clip0_584_1330
 				rect(width='158' height='91.4143' fill='white')
+
+mixin newsItem(img, date, title)
+	+b.news-item.bg-wrap
+		+img(`img/${img}`, 'bg').picture-bg
+		+e.date!=date
+		h4!= title

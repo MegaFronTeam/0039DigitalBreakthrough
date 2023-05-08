@@ -68,7 +68,7 @@
 		background-color: $gray-900;
 		border-radius: 8px;
 		height: 100%;
-		border: 1px solid transparent;
+		border: 2px solid $gray-900;
 		h5 {
 			margin-bottom: rem(4);
 			color: $pink;
@@ -129,7 +129,8 @@
 			}
 		}
 		&:hover {
-			border-color: rgba(3, 254, 51, 0.2);
+			border-color: rgba(3, 254, 51, 0.56);
+			box-shadow: 0px 0px 9px rgba(0, 255, 0, 0.65);
 			.sHackathons__tag {
 				background-color: $primary;
 				color: $body-bg;
@@ -138,6 +139,36 @@
 		&.disabled {
 			opacity: .5;
 			pointer-events: none;
+			.sHackathons__btn {
+				--bs-btn-color: #fff;
+				--bs-btn-bg: #{$gray-800};
+				--bs-btn-border-color: #{$gray-800};
+				opacity: .2;
+			}
+		}
+	}
+	&__btn {
+		--bs-btn-padding-y: #{rem(10)};
+		--bs-btn-font-size: #{rem(16)};
+		--bs-btn-color: #{$primary};
+    --bs-btn-bg: #{$gray-800};
+    --bs-btn-border-color: #{$gray-800};
+    --bs-btn-hover-color: #{$gray-900};
+    --bs-btn-hover-bg: #{$primary};
+    --bs-btn-hover-border-color: #{$primary};
+    --bs-btn-active-color: #{$gray-900};
+    --bs-btn-active-bg: #{$primary};
+    --bs-btn-active-border-color: #{$primary};
+		position: relative;
+    z-index: 10;
+		margin-top: #{rem(26)};
+
+		&:hover {
+			box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
+		}
+		@include media-breakpoint-up(xl) {
+			--bs-btn-font-size: #{rem(16)};
+			--bs-btn-padding-y: #{rem(10)};
 		}
 	}
 	&__content {

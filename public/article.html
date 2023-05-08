@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Новость</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Цифровой прорыв 2023: Хакатоны по искусственному интеллекту">
+		<meta property="og:description" content="Официальный сайт конкурса Цифровой прорыв: Сезон искусственный интеллект. Хакатоны по искусственному интеллекту 2023.">
+		<meta property="og:image" content="https://hacksai-data.obs.ru-moscow-1.hc.sbercloud.ru/logo.jpg">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="libs/aos/aos.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="white-theme loaded_hiding" data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<!-- start sContent-->
+			<section class="sContent section" id="sContent">
+				<div class="sContent__container container">
+					<div class="sContent__animate" data-json="json/animation.json">
+					</div>
+					<div class="row">
+						<div class="col-lg-8">
+							<a class="sContent__back-btn" href="news.html" data-aos="fade-up" data-aos-duration="700">
+								<svg class="icon icon-arrow-left ">
+									<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
+								</svg>Назад
+							</a>
+							<div class="sContent__date" data-aos="fade-up" data-aos-duration="700">10 июня - 20 июля
+							</div>
+							<h1 data-aos="fade-up" data-aos-duration="700">В рамках Russian Internet Week на AI-Day подвели итоги проекта «Цифровой прорыв. Сезон: искусственный интеллект»</h1><img class="res-i" src="img/sContent-img-1.png" alt="" loading="lazy" data-aos="fade-up" data-aos-duration="700"/>
+							<div class="sContent__cite" data-aos="fade-up" data-aos-duration="700">
+								<div class="row">
+									<div class="col-sm-auto"><img src="img/avatar-1.jpg" alt="" loading="lazy"/>
+									</div>
+									<div class="col-sm">
+										<h3>Виктор Ослоновский</h3>
+										<p>Окружной хакатон&nbsp;&mdash; это часть проекта, представляющая собой ограниченное во&nbsp;времени командное соревнование по&nbsp;созданию прототипов цифровых решений</p>
+									</div>
+								</div>
+							</div>
+							<div class="sContent__wrap" data-aos="fade-up" data-aos-duration="700">
+								<p>Окружной хакатон&nbsp;&mdash; это часть проекта, представляющая собой ограниченное во&nbsp;времени командное соревнование по&nbsp;созданию прототипов цифровых решений в&nbsp;рамках выбранного для решения командой кейса, более половины участников которого являются жителями определенного федерального округа Российской Федерации. Таких хакатонов в&nbsp;течение 2022 года планируется 8.</p>
+								<p>Проведение одного окружного мероприятия предполагает представление к&nbsp;решению не&nbsp;менее одного и&nbsp;не&nbsp;более трех кейсовых заданий.</p>
+								<p>Список и&nbsp;даты проведения окружных хакатонов <a href="#"> по&nbsp;ссылке.</a></p>
+							</div>
+							<div class="sContent__share" data-aos="fade-up" data-aos-duration="700"><span>Поделиться:</span>
+								<div class="soc">
+									<a class="soc__item" href="#" target="_blank"><img class="img-svg-js" src="img/svg/facebook.svg" alt="" loading="lazy"/>
+									</a>
+									<a class="soc__item" href="#" target="_blank"><img class="img-svg-js" src="img/svg/vk2.svg" alt="" loading="lazy"/>
+									</a>
+									<a class="soc__item" href="#" target="_blank"><img class="img-svg-js" src="img/svg/tg.svg" alt="" loading="lazy"/>
+									</a>
+									<a class="soc__item" href="#" target="_blank"><img class="img-svg-js" src="img/svg/whatsapp2.svg" alt="" loading="lazy"/>
+									</a>
+									<a class="soc__item" href="#" target="_blank"><img class="img-svg-js" src="img/svg/copy.svg" alt="" loading="lazy"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sContent-->
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+			<script src="js/article.js"> </script>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="libs/aos/aos.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="js/common.js"></script>
+	</body>
+</html>
