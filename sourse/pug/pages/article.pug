@@ -24,7 +24,7 @@ block pagecontent
 	+sContent
 		+e.animate(data-json='json/animation.json')
 		.row
-			.col-lg-8
+			.col-xl-8
 				+e.back-btn(href='news.html' data-aos="fade-up" data-aos-duration="700")
 					+icon('arrow-left')
 					| Назад
@@ -45,21 +45,23 @@ block pagecontent
 						a(href="#")  по&nbsp;ссылке.
 				+e.share(data-aos="fade-up" data-aos-duration="700")
 					span Поделиться:
-					+soc
-						+item-sos()
-							+img('img/svg/facebook.svg').img-svg-js
-						+item-sos()
-							+img('img/svg/vk2.svg').img-svg-js
-						+item-sos()
-							+img('img/svg/tg.svg').img-svg-js
-						+item-sos()
-							+img('img/svg/whatsapp2.svg').img-svg-js
-						+item-sos()
-							+img('img/svg/copy.svg').img-svg-js
+					div(class="ya-share2" data-curtain data-shape="round" data-color-scheme="whiteblack" data-limit="3" data-services="vkontakte,telegram")
+					//- +soc
+					//- 	+item-sos()
+					//- 		+img('img/svg/facebook.svg').img-svg-js
+					//- 	+item-sos()
+					//- 		+img('img/svg/vk2.svg').img-svg-js
+					//- 	+item-sos()
+					//- 		+img('img/svg/tg.svg').img-svg-js
+					//- 	+item-sos()
+					//- 		+img('img/svg/whatsapp2.svg').img-svg-js
+					//- 	+item-sos()
+					//- 		+img('img/svg/copy.svg').img-svg-js
 			//- .col-lg-4.col-xl-3.ms-lg-auto
 			//- 	+e.hc-sticky--js
 			//- 		.h4 Так же читайте...
 			//- 		+e.slide.bg-wrap(href='#' data-aos="fade-up" data-aos-duration="700")
 			//- 			+newsItem('sNews-img-1.jpg', '10 июня - 20 июля', 'В рамках Russian Internet Week на AI-Day подвели итоги проекта «Цифровой прорыв. Сезон: искусственный интеллект»')
 	+parts('footer')
+	script(src="https://yastatic.net/share2/share.js" async)
 	script(src="js/article.js") 
