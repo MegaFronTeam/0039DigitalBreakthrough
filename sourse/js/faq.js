@@ -4,7 +4,7 @@ function setFAQPageData(data) {
 	function templateFaqTags(item) {
 		if (item.articles.length == 0) return ' ';
 		return `
-			<div class="sFaqBlock__tag-slide swiper-slide" data-id="${item.section_id}">${item.name}<span>${item.articles.length + 1}</span>
+			<div class="sFaqBlock__tag-slide swiper-slide" data-id="${item.section_id}">${item.name}<span>${item.articles.length}</span>
 			</div>
 		`;
 	}
