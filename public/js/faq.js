@@ -4,7 +4,7 @@ function setFAQPageData(data) {
 	function templateFaqTags(item) {
 		if (item.articles.length == 0) return ' ';
 		return `
-			<div class="sFaqBlock__tag-slide swiper-slide">${item.name}<span>${item.articles.length + 1}</span>
+			<div class="sFaqBlock__tag-slide swiper-slide" data-id="${item.section_id}">${item.name}<span>${item.articles.length + 1}</span>
 			</div>
 		`;
 	}
@@ -32,7 +32,7 @@ function setFAQPageData(data) {
 		}
 
 		return `
-			<div class="sFaqBlock__wrap">
+			<div class="sFaqBlock__wrap" data-id="${item.section_id}">
 				<div class="h2">${item.name}</div>
 				<div class="dd-group dd-group-js">
 					${faqItem()}
@@ -44,6 +44,22 @@ function setFAQPageData(data) {
 		document.querySelector(".sFaqBlock__tags-slider--js .swiper-wrapper").insertAdjacentHTML("beforeend", templateFaqTags(item));
 		document.querySelector("#articles-district-hackathons").insertAdjacentHTML("beforeend", templateFaqSections(item));
 	}
+
+	
+	const articleWrapper = document.querySelector('#articles-district-hackathons');
+	document.addEventListener('click', function(event) {
+		let tagTarget = event.target.closest('.sFaqBlock__tag-slide');
+		if (tagTarget) {
+			for (let i = 0; i < articleWrapper.children.length; i++) {
+				if(tagTarget.dataset.id === articleWrapper.children[i].dataset.id) {
+					let cloneElem = articleWrapper.children[i].cloneNode(true);
+					articleWrapper.children[i].remove();
+					articleWrapper.prepend(cloneElem);
+				}
+			}
+		}
+	});
+
 	setPartners(data.partners);
 }
 // setFAQPageData()

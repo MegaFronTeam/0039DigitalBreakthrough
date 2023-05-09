@@ -57,6 +57,10 @@
 				background-color: $primary;
 			}
 		}
+		&.disabled {
+			pointer-events: none;
+			opacity: .8;
+		}
 	}
 	&__tabs-content {
 		padding: rem(20);
@@ -158,13 +162,16 @@
 					padding: 0 rem(40) rem(40);
 				}
 				p {
+					margin-bottom: 0;
 					&:last-child {
 						margin-bottom: 0;
 					}
 				}
 				ol {
-					padding-left: rem(19.800);
-					margin-bottom: rem(30);
+					// padding-left: rem(19.800);
+					// margin-bottom: rem(30);
+					margin-bottom: 0;
+					list-style-type: none;
 				}
 				table {
 					min-width: rem(384);

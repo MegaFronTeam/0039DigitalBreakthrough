@@ -18,20 +18,16 @@ let pageId = params['news_id'];
 function setArticlePageData(data) {
 	// console.log(data);
 	document.title = data.name;
-	document.description = data.description;
-	// document.querySelector('.sContent__date').innerHTML = 
-	// 	data.event.dateRange[0] + ' ' +
-	// 	+ data.event.dateRange[1] 
-	// 	+ ' <span>' + data.event.dateRange[2] + '</span>';
-	// document.querySelector('.sAbout__type--1').innerHTML = data.playground.city;
-	// document.querySelector('.sAbout__type--2').innerHTML = data.playground.adress;
+	document.querySelector('meta[name="description"]').content = data.description;
+	document.querySelector('meta[property="og:description"]').content = data.description;
+	
 	document.querySelector('h1').innerHTML = data.name;
-	// document.querySelector('.sAbout h2').innerHTML = data.event.district;
-	// document.querySelector('.sAbout__text').innerHTML = data.event.description;
-	// document.querySelector('.sAbout__banner .h3').innerHTML = data.event.deadline_date;
-	// document.querySelector('.count-attendee').innerHTML = data.event.count.attendee_count;
-	// document.querySelector('.count-team').innerHTML = data.event.count.team_count;
+	document.querySelector('.sContent__img-wrap img').src = data.avatar;
+	document.querySelector('.sContent__date').innerHTML = data.publication_date;
 
+	if(data.text !== null) {
+		document.querySelector("#inner-content").insertAdjacentHTML("beforeend", data.text);
+	}
 }
 
 getSingleNewsPageData(setArticlePageData, pageId);
