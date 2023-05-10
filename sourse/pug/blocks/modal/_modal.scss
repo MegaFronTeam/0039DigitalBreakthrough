@@ -8,13 +8,16 @@
 }
 .modal-win {
 	// display: block;
-	background-color: #fff;
+	background-color: $gray-900;
 	max-width: 100%;
 	position: relative;
-	width: rem(1500);
+	width: rem(632);
 	// min-height: 100%; 
-	padding: 40px;
-
+	padding: rem(16);
+	border-radius: 8px;
+	@include media-breakpoint-up(xl) {
+		padding: rem(40);
+	}
 	.modal-content {
 		// max-width: 485px;
 		// padding-right: 40px 15px;
@@ -25,6 +28,11 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+}
+
+.fancybox__content>.carousel__button.is-close {
+	top: rem(14);
+	right: rem(14);
 }
 
 a {

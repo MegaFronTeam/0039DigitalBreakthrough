@@ -156,13 +156,23 @@ function setHackPageData(data) {
 		document.querySelector(".sCases .row.tabs .col-lg").insertAdjacentHTML("beforeend", templateTabs(item, active));
 	}
 
+	let gridTextLink = document.querySelector('.sInfo__grid-item--text a');
+
 
 	document.querySelector('.sInfo h2').innerHTML = data.playground.name;
 	document.querySelector('.sInfo .addr').innerHTML = data.playground.adress;
-	document.querySelector('.sInfo__grid-item--text').innerHTML = data.playground.description;
+	document.querySelector('.sInfo__inner').innerHTML = data.playground.description;
+	document.querySelector('.modal-win--text').innerHTML = data.playground.description;
 	document.querySelector('.img-avatar').setAttribute("src", data.playground.avatar);
 	document.querySelector('.map-img').innerHTML = data.playground.map_link;
 
+	let sInfoTextSybols = 0;
+	for (const item of document.querySelector('.sInfo__inner').children) {
+		sInfoTextSybols += item.innerText.split('').length;
+	}
+	if (sInfoTextSybols <= 190) {
+		gridTextLink.remove();
+	}
 
 
 	const templateMap = item => {
