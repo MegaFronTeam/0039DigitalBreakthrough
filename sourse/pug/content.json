@@ -1,9 +1,9 @@
 {
   "nav": [
     { "name": "Главная", "url": "/" },
-    { "name": "Новости", "url": "../public/#sNews" },
-    { "name": "Хакатоны", "url": "../public/#sHackathons" },
-    { "name": "Вопросы и ответы", "url": "../public/#sFaq" }
+    { "name": "Новости", "url": "/#sNews" },
+    { "name": "Хакатоны", "url": "/#sHackathons" },
+    { "name": "Вопросы и ответы", "url": "/#sFaq" }
   ],
   "social": [
     { "icon": "vk", "href": "https://vk.com/leadersofdigital" },
