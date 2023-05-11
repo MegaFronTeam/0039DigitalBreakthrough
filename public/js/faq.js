@@ -49,7 +49,10 @@ function setFAQPageData(data) {
 	const articleWrapper = document.querySelector('#articles-district-hackathons');
 	document.addEventListener('click', function(event) {
 		let tagTarget = event.target.closest('.sFaqBlock__tag-slide');
+		let tags = document.querySelectorAll(".sFaqBlock__tag-slide");
 		if (tagTarget) {
+			tags.forEach((tag) => {tag.classList.remove('active')});
+			tagTarget.classList.add('active');
 			for (let i = 0; i < articleWrapper.children.length; i++) {
 				if(tagTarget.dataset.id === articleWrapper.children[i].dataset.id) {
 					let cloneElem = articleWrapper.children[i].cloneNode(true);
