@@ -542,6 +542,17 @@ function eventHandler() {
 			}
 		}
   });
+
+	document.addEventListener('scroll', function() {
+		if(window.scrollY >= 180) {
+			$('.scroll-top').addClass('active');
+		} else {
+			$('.scroll-top').removeClass('active');
+		}
+	});
+	$('.scroll-top').on('click', function() {
+		window.scrollTo(0,0);
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

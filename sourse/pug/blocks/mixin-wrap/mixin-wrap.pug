@@ -207,3 +207,6 @@ mixin newsItem(img, date, title)
 		+img(`img/${img}`, 'bg').picture-bg
 		+e.date!=date
 		h4!= title
+
+mixin scrollToTop()
+	.scroll-top: +icon('chevronTop')
