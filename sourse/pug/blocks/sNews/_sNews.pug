@@ -9,7 +9,7 @@ mixin sNews(second, btn, id='sNews')
 					h1!= second
 				else
 					h2 Новости проекта
-			+defaultSlider(btn, '', '/news.html')
+			+defaultSlider(btn, '', '/public/news.html')
 				mixin slide(img, date, title)
 					+e.slide.swiper-slide(href='#' data-aos="fade-up" data-aos-duration="700")
 						+newsItem(img, date, title)
