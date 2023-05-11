@@ -1,8 +1,8 @@
-mixin sNews(second, btn)
+mixin sNews(second, btn, id='sNews')
 	script
 		include script.js
 	// start sNews
-	+b.SECTION.sNews.section#sNews&attributes(attributes)
+	+b.SECTION.sNews.section(id=id)&attributes(attributes)
 		.container
 			+b.section-title(data-aos="fade-up" data-aos-duration="700")
 				if second
