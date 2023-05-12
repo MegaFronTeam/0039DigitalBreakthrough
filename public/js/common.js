@@ -490,18 +490,18 @@ function eventHandler() {
 						}
 					}, step);
 		}
-		document.addEventListener('click', function(e){
-			let mapTarget = e.target.closest('.map-svg');
-			if (!mapTarget) {
-				counter(hackathonsText, 7, 18, 700);
-				counter(playersText, 5500, 5829, 700);
-				counter(teamsText, 400, 805, 700);
-				counter(resultsText, 250, 491, 700);
-				for (const mapPart of mapParts) {
-					mapPart.classList.remove('active');
-				}
-			}
-		})
+		// document.addEventListener('click', function(e){
+		// 	let mapTarget = e.target.closest('.map-svg');
+		// 	if (!mapTarget) {
+		// 		counter(hackathonsText, 7, 18, 700);
+		// 		counter(playersText, 5500, 5829, 700);
+		// 		counter(teamsText, 400, 805, 700);
+		// 		counter(resultsText, 250, 491, 700);
+		// 		for (const mapPart of mapParts) {
+		// 			mapPart.classList.remove('active');
+		// 		}
+		// 	}
+		// })
 		for (const mapPart of mapParts) {
 			mapPart.addEventListener('click', function() {
 				for (const mapPart of mapParts) {
