@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Новость</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Цифровой прорыв 2023: Хакатоны по искусственному интеллекту">
+		<meta property="og:description" content="Официальный сайт конкурса Цифровой прорыв: Сезон искусственный интеллект. Хакатоны по искусственному интеллекту 2023.">
+		<meta property="og:image" content="https://hacksai-data.obs.ru-moscow-1.hc.sbercloud.ru/logo.jpg">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="libs/aos/aos.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="white-theme loaded_hiding" data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<!-- start sContent-->
+			<section class="sContent section" id="sContent">
+				<div class="sContent__container container">
+					<div class="sContent__animate" data-json="json/animation.json">
+					</div>
+					<div class="row">
+						<div class="col-xl-8">
+							<a class="sContent__back-btn" href="news.html" data-aos="fade-up" data-aos-duration="700">
+								<svg class="icon icon-arrow-left ">
+									<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
+								</svg>Назад
+							</a>
+							<div class="sContent__date" data-aos="fade-up" data-aos-duration="700"> 
+							</div>
+							<h1 data-aos="fade-up" data-aos-duration="700"> </h1>
+							<div class="sContent__img-wrap" data-aos="fade-up" data-aos-duration="700"><img class="res-i" src="" alt="" loading="lazy"/>
+							</div>
+							<div id="inner-content" href="news.html" data-aos="fade-up" data-aos-duration="700"></div>
+							<div class="sContent__share" data-aos="fade-up" data-aos-duration="700"><span>Поделиться:</span>
+								<div class="ya-share2" data-curtain data-shape="round" data-color-scheme="whiteblack" data-limit="3" data-services="vkontakte,telegram"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sContent-->
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+			<script src="https://yastatic.net/share2/share.js" async></script>
+			<script src="js/article.js"> </script>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="libs/aos/aos.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script>
+		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

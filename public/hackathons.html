@@ -144,6 +144,8 @@
 								<p class="addr"></p>
 							</div>
 							<div class="sInfo__grid-item sInfo__grid-item--text" data-aos="fade-up" data-aos-duration="700">
+								<div class="sInfo__inner">
+								</div><a href="#" data-src="modal-full-text" data-fancybox="modal">Подробнее...</a>
 							</div>
 							<div class="sInfo__grid-item bg-wrap map-img" data-aos="fade-up" data-aos-duration="700">
 							</div>
@@ -155,10 +157,12 @@
 function setNews(items) {
 	const template = item => {
 		return `
-				<div class="default-slider__slide swiper-slide bg-wrap"   data-aos="fade-up" data-aos-duration="700">
-					<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
-					<div class="default-slider__date">${item.publication_date}</div>
-					<h4>${item.name}</h4>
+				<div class="default-slider__slide swiper-slide"   data-aos="fade-up" data-aos-duration="700">
+					<a href="article.html?news_id=${item.news_id}" class='news-item bg-wrap'>
+						<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
+						<div class="news-item__date">${item.publication_date}</div>
+						<h4>${item.name}</h4>
+					</a>
 				</div>`;
 	};
 	for (const item of items) {
@@ -233,6 +237,9 @@ function setPartners(items) {
 		<script src="libs/inputmask/inputmask.min.js"> </script>
 		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
 		<script src="libs/aos/aos.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script>
+		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

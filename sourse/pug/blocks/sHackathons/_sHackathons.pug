@@ -8,7 +8,7 @@ mixin sHackathons(data)
 				+b.section-title(data-aos="fade-up" data-aos-duration="700")
 					h2 8 окружных хакатонов
 				+e.row.row
-					mixin item(title)
+					mixin item(title, btn='Узнай больше о хакатоне')
 						+e.item&attributes(attributes)
 							+e.content
 								h5 10 июня - 20 июля
@@ -20,6 +20,7 @@ mixin sHackathons(data)
 									+e.tag Новички
 								.col-auto
 									+e.tag Профи
+							+e.btn.btn.btn-dark(href='#')!= btn
 							+icon('check-2')
 							+e.dataset(href='#')
 								+icon('ai')

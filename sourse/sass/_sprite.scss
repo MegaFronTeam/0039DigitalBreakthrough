@@ -15,6 +15,10 @@
 	font-size:math.div(17,10)*1rem;
 	width: math.div(16,17)*1em;
 }
+.icon-arrow-left {
+	font-size:math.div(17,10)*1rem;
+	width: math.div(17,17)*1em;
+}
 .icon-basket {
 	font-size:math.div(24,10)*1rem;
 	width: math.div(22,24)*1em;
@@ -42,6 +46,10 @@
 .icon-chevron-right-2 {
 	font-size:math.div(25,10)*1rem;
 	width: math.div(24,25)*1em;
+}
+.icon-chevronTop {
+	font-size:math.div(20,10)*1rem;
+	width: math.div(20,20)*1em;
 }
 .icon-fb {
 	font-size:math.div(24,10)*1rem;
@@ -78,8 +86,4 @@
 .icon-vk {
 	font-size:math.div(25,10)*1rem;
 	width: math.div(24,25)*1em;
-}
-.icon-whatsapp {
-	font-size:math.div(16,10)*1rem;
-	width: math.div(16,16)*1em;
 }

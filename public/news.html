@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Новости</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Цифровой прорыв 2023: Хакатоны по искусственному интеллекту">
+		<meta property="og:description" content="Официальный сайт конкурса Цифровой прорыв: Сезон искусственный интеллект. Хакатоны по искусственному интеллекту 2023.">
+		<meta property="og:image" content="https://hacksai-data.obs.ru-moscow-1.hc.sbercloud.ru/logo.jpg">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="libs/aos/aos.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="news-page white-theme loaded_hiding" data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<script>
+function setNews(items) {
+	const template = item => {
+		return `
+				<div class="default-slider__slide swiper-slide"   data-aos="fade-up" data-aos-duration="700">
+					<a href="article.html?news_id=${item.news_id}" class='news-item bg-wrap'>
+						<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
+						<div class="news-item__date">${item.publication_date}</div>
+						<h4>${item.name}</h4>
+					</a>
+				</div>`;
+	};
+	for (const item of items) {
+		// console.log(item);
+		document.querySelector(".sNews .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
+	}
+}
+
+// let  functionNews = getHackPageData(setNews, pageId)  ||  ;
+
+// functionNews();
+			</script>
+			<!-- start sNews-->
+			<section class="sNews section" id="">
+				<div class="container">
+					<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+						<h1>Новости</h1>
+					</div>
+					<div class="default-slider">
+						<div class="default-slider__slider default-slider__slider--js swiper">
+							<div class="swiper-wrapper">
+							</div>
+						</div>
+					</div>
+					<a class="sNews__btn btn btn-primary" href="#" data-aos="fade-up" data-aos-duration="700">Показать еще
+					</a>
+				</div>
+			</section>
+			<!-- end sNews-->
+			<script>
+function setPartners(items) {
+	const template = item => {
+		return `
+				<div class="col-sm-6 col-md-4 col-xl-3">
+					<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
+						<div class="sPartners__img-wrap"> 
+							<div class="img-wrap-center"> 
+								<img src="${item.avatar_url}" alt="" loading="lazy">
+							</div>
+						</div>
+						<span>${item.name}</span>
+						<p>${item.description || ''}</p>
+					</a>
+				</div>`;
+	};
+	for (const item of items) {
+		// console.log(item);
+		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
+	}
+}
+
+			</script>
+			<!-- start sPartners-->
+			<section class="sPartners section" id="sPartners">
+				<div class="container">
+					<div class="sPartners__wrap">
+						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+							<h2>Организаторы и партнеры</h2>
+						</div>
+						<div class="sPartners__row row">
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sPartners-->
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+			<script src="js/news.js"></script>
+			<div class="scroll-top">
+				<svg class="icon icon-chevronTop ">
+					<use xlink:href="img/svg/sprite.svg#chevronTop"></use>
+				</svg>
+			</div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="libs/aos/aos.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script>
+		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

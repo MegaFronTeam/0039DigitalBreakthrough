@@ -85,6 +85,7 @@ function setEvents(items) {
 								<div class="sHackathons__tag">Профи</div>
 							</div>
 						</div>
+						<div class='sHackathons__btn btn btn-dark'>Узнай больше о хакатоне</div>
 						<svg class="icon icon-check-2 ">
 							<use xlink:href="img/svg/sprite.svg#check-2"></use>
 						</svg>
@@ -407,10 +408,12 @@ getMapStats(setMapStats);
 function setNews(items) {
 	const template = item => {
 		return `
-				<div class="default-slider__slide swiper-slide bg-wrap"   data-aos="fade-up" data-aos-duration="700">
-					<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
-					<div class="default-slider__date">${item.publication_date}</div>
-					<h4>${item.name}</h4>
+				<div class="default-slider__slide swiper-slide"   data-aos="fade-up" data-aos-duration="700">
+					<a href="article.html?news_id=${item.news_id}" class='news-item bg-wrap'>
+						<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
+						<div class="news-item__date">${item.publication_date}</div>
+						<h4>${item.name}</h4>
+					</a>
 				</div>`;
 	};
 	for (const item of items) {
@@ -432,6 +435,26 @@ function setNews(items) {
 					<div class="default-slider">
 						<div class="default-slider__slider default-slider__slider--js swiper">
 							<div class="swiper-wrapper">
+							</div>
+						</div>
+						<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
+							<div class="col">
+								<a class="default-slider__btn btn btn-dark" href="/news.html" target="_blank">Все новости
+								</a>
+							</div>
+							<div class="col-auto"> 
+								<div class="default-slider__arrow-wrap">
+									<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+										<svg class="icon icon-chevron-left-2 ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
+										</svg>
+									</div>
+									<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+										<svg class="icon icon-chevron-right-2 ">
+											<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
+										</svg>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -469,6 +492,8 @@ getFAQ(setFAQ);
 						<div class="dd-group__row row">
 						</div>
 					</div>
+					<a class="sFaq__btn btn btn-dark" href="/faq.html" target="_blank" data-aos="fade-up" data-aos-duration="700">Все вопросы
+					</a>
 				</div>
 			</section>
 			<!-- end sFaq-->
@@ -518,6 +543,9 @@ function setPartners(items) {
 		<script src="libs/inputmask/inputmask.min.js"> </script>
 		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
 		<script src="libs/aos/aos.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script>
+		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

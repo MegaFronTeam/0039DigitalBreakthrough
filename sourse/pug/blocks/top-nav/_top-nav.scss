@@ -5,8 +5,11 @@
 	padding-bottom: var(--sPB);
 	padding-top: var(--sPT);
 	&__row{
-		--bs-gutter-x: #{rem(18)};
+		--bs-gutter-x: #{rem(10)};
 		--bs-gutter-y: #{rem(24)};
+		@include media-breakpoint-up(sm) {
+			--bs-gutter-x: #{rem(18)};
+		}
 		@include media-breakpoint-up(md) {
 			--bs-gutter-x: #{rem(40)};
 		}
@@ -28,8 +31,9 @@
 		}
 	}
 	.main-logo {
+		width: 100%;
+		max-width: rem(213);
 		@include media-breakpoint-down(sm) {
-			width: 100%;
 			max-width: rem(124);
 		}
 	}
@@ -40,8 +44,9 @@
 		}
 	}
 	.logo-3 {
+		width: 100%;
+		max-width: rem(106);
 		@include media-breakpoint-down(sm) {
-			width: 100%;
 			max-width: rem(65);
 		}
 	}

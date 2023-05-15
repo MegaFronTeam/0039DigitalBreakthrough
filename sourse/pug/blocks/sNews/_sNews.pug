@@ -1,17 +1,18 @@
-mixin sNews(data)
+mixin sNews(second, btn, id='sNews')
 	script
 		include script.js
 	// start sNews
-	+b.SECTION.sNews.section#sNews&attributes(attributes)
+	+b.SECTION.sNews.section(id=id)&attributes(attributes)
 		.container
 			+b.section-title(data-aos="fade-up" data-aos-duration="700")
-				h2 Новости проекта
-			+defaultSlider('', '', 'https://hacks-ai.ru/news')
+				if second
+					h1!= second
+				else
+					h2 Новости проекта
+			+defaultSlider(btn, '', '/news.html')
 				mixin slide(img, date, title)
-					+e.slide.swiper-slide.bg-wrap(href='#' data-aos="fade-up" data-aos-duration="700")
-						+img(`img/${img}`, 'bg').picture-bg
-						+e.date!=date
-						h4!= title
+					+e.slide.swiper-slide(href='#' data-aos="fade-up" data-aos-duration="700")
+						+newsItem(img, date, title)
 				//- +slide('sNews-img-1.jpg', '10 июня - 20 июля', 'В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;')
 				//- +slide('sNews-img-2.jpg', '10 июня - 20 июля', 'Как искусственный интеллект помогает решать проблему отходов')
 				//- +slide('sNews-img-3.jpg', '10 июня - 20 июля', 'Как искусственный интеллект борется за живую природу')
@@ -20,4 +21,6 @@ mixin sNews(data)
 				//- +slide('sNews-img-2.jpg', '10 июня - 20 июля', 'Как искусственный интеллект помогает решать проблему отходов')
 				//- +slide('sNews-img-3.jpg', '10 июня - 20 июля', 'Как искусственный интеллект борется за живую природу')
 				//- +slide('sNews-img-4.jpg', '10 июня - 20 июля', 'В&nbsp;рамках Russian Internet Week на&nbsp;AI-Day подвели итоги проекта &laquo;Цифровой прорыв. Сезон: искусственный интеллект&raquo;')
+			if second
+				+e.btn.btn.btn-primary(href='#' data-aos="fade-up" data-aos-duration="700") Показать еще
 	// end sNews

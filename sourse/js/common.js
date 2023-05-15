@@ -361,6 +361,7 @@ function eventHandler() {
 	JSCCommon.tabscostume('innerTabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
+	JSCCommon.imgToSVG();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
@@ -429,6 +430,13 @@ function eventHandler() {
 		watchOverflow: true
 	});
 	
+	const tagsSlider = new Swiper('.sFaqBlock__tags-slider--js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchOverflow: true,
+		spaceBetween: 8,
+	});
+	
 	const sResumeSwiper = new Swiper('.sResume__slider--js', {
 		slidesPerView: 1,
 		navigation: {
@@ -482,18 +490,18 @@ function eventHandler() {
 						}
 					}, step);
 		}
-		document.addEventListener('click', function(e){
-			let mapTarget = e.target.closest('.map-svg');
-			if (!mapTarget) {
-				counter(hackathonsText, 7, 18, 700);
-				counter(playersText, 5500, 5829, 700);
-				counter(teamsText, 400, 805, 700);
-				counter(resultsText, 250, 491, 700);
-				for (const mapPart of mapParts) {
-					mapPart.classList.remove('active');
-				}
-			}
-		})
+		// document.addEventListener('click', function(e){
+		// 	let mapTarget = e.target.closest('.map-svg');
+		// 	if (!mapTarget) {
+		// 		counter(hackathonsText, 7, 18, 700);
+		// 		counter(playersText, 5500, 5829, 700);
+		// 		counter(teamsText, 400, 805, 700);
+		// 		counter(resultsText, 250, 491, 700);
+		// 		for (const mapPart of mapParts) {
+		// 			mapPart.classList.remove('active');
+		// 		}
+		// 	}
+		// })
 		for (const mapPart of mapParts) {
 			mapPart.addEventListener('click', function() {
 				for (const mapPart of mapParts) {
@@ -522,6 +530,29 @@ function eventHandler() {
 	// setTimeout(() => {
 	// 	document.body.classList.remove('loaded_hiding');
 	// },1200);
+
+	var Sticky = new hcSticky('.sContent__hc-sticky--js', {
+    stickTo: '.sContent',
+		mobileFirst: true,
+		disable: true,
+		top: '50%',
+		responsive: {
+			998: {
+				disable: false
+			}
+		}
+  });
+
+	document.addEventListener('scroll', function() {
+		if(window.scrollY >= 180) {
+			$('.scroll-top').addClass('active');
+		} else {
+			$('.scroll-top').removeClass('active');
+		}
+	});
+	$('.scroll-top').on('click', function() {
+		window.scrollTo(0,0);
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
