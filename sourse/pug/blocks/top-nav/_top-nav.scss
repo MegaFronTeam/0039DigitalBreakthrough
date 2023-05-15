@@ -7,6 +7,7 @@
 	&__row{
 		--bs-gutter-x: #{rem(10)};
 		--bs-gutter-y: #{rem(24)};
+		align-items: center;
 		@include media-breakpoint-up(sm) {
 			--bs-gutter-x: #{rem(18)};
 		}

@@ -30,7 +30,7 @@ mixin mob-mnu()
 					+e.link(href='https://lodmedia.hb.bizmrg.com/polozhenie.pdf' target="_blank") Положение об окружных хакатонах
 					+e.link(href='https://lodmedia.hb.bizmrg.com/approval.pdf' target="_blank") Политика в отношении обработки персональных данных
 	//  мобильное меню
-mixin top-nav() 
+mixin top-nav(logo= 'img/svg/logo-3-fordark.png') 
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
@@ -45,7 +45,7 @@ mixin top-nav()
 						+logo2().logo-3
 				+e.col-logo.col-auto
 					a(href="https://rsv.ru/ " target="_blank") 
-						+img('img/svg/logo2.svg').logo-2
+						+img(logo).logo-2
 				//- .col-auto.p-0.order-lg-0.order-last
 				//- 	.menu-mobile.menu-mobile--js
 				//- 		.menu-mobile__inner
