@@ -66,18 +66,6 @@ function setHackPageData(data) {
 				</a>`;
 	};
 
-	for (const [index,item] of data.cases.entries()) {
-		if(index ==0) {
-			active = 'active'
-		}
-		else{
-			active = ' '
-		}
-		// console.log(item);
-		document.querySelector(".sCases__links").insertAdjacentHTML("beforeend", templateBtn(item, active));
-	}
-
-
 	// Tabs
 	const templateTabs = (item, active) => {
 		let expertisesItems = ()=>{ 
@@ -145,13 +133,8 @@ function setHackPageData(data) {
 
 
 	for (const [index,item] of data.cases.entries()) {
-		if (index == 0) {
-			active = 'active'
-		}
-		else {
-			active = ' '
-		}
-
+		let active = index == 0 ? 'active' : " ";
+		document.querySelector(".sCases__links").insertAdjacentHTML("beforeend", templateBtn(item, active));
 		document.querySelector(".sCases .row.tabs .col-lg").insertAdjacentHTML("beforeend", templateTabs(item, active));
 	}
 
