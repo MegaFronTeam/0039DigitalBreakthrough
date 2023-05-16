@@ -39,9 +39,11 @@
 		}
 	}
 	.logo-2 {
+		width: 100%;
+		max-width: rem(58);
 		@include media-breakpoint-down(sm) {
-			width: 100%;
-			max-width: rem(58);
+			// width: 100%;
+			// max-width: rem(58);
 		}
 	}
 	.logo-3 {
