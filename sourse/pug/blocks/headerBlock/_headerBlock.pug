@@ -3,24 +3,44 @@ mixin headerBlock()
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
 			.row
-				.col-lg-6
+				.col-lg-auto
 					+e.wrap(data-aos="fade-up" data-aos-duration="700")
 						+img('img/svg/headerBlock-img-1.svg')
 						h3 Большой спорт<br>для IT-специалистов
 						+e.btn.btn.btn-dark(href='https://lk.hacks-ai.ru') Регистрация на хакатон
 						img(src="img/svg/headerBlock-img-3.svg", alt="").bg
-				.col-lg-6(data-aos="fade-up" data-aos-duration="700")
-					+e.img-wrap
-						.tech.tech-1 Computer vision
-						.tech.tech-2 Edtech
-						.tech.tech-3 Machine vision
-						.tech.tech-4 AI
-						.tech.tech-5 Bigdata
-						.tech.tech-6 Deep learning
-						.tech.tech-7 Medtech
-						.tech.tech-8 Machine learning
-						.tech.tech-9 NLP
-						.tech.tech-10 Text Recognition
-						+img('img/headerBlock-img-2.png').res-i
+				.col-lg(data-aos="fade-up" data-aos-duration="700")
+					+e.video(href='#' data-type="iframe" data-fancybox data-src="https://vk.com/video-176084509_456240962")
+						+e.video-img-wrap
+							.img-wrap-center
+								+img('img/video-bg.png', 'bg')
+						+img('img/svg/video-bg-1.svg').img-1
+						+img('img/svg/video-bg-2.svg').img-2
+						+e.play-btn
+							<svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_867_3617)">
+									<path d="M34 0C15.2513 0 0 15.2527 0 34C0 52.7473 15.2513 68 34 68C52.7487 68 68 52.7473 68 34C68 15.2527 52.7487 0 34 0ZM47.5165 35.1912L27.6832 47.9412C27.4508 48.0919 27.1823 48.1667 26.9167 48.1667C26.6843 48.1667 26.4491 48.1085 26.2388 47.9938C25.7822 47.7448 25.5 47.2688 25.5 46.75V21.25C25.5 20.7312 25.7822 20.2552 26.2388 20.0062C26.6871 19.76 27.2487 19.7751 27.6832 20.0588L47.5165 32.8088C47.9205 33.0689 48.1667 33.5186 48.1667 34C48.1667 34.4814 47.9205 34.931 47.5165 35.1912Z" fill="#03FE33"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_867_3617">
+										<rect width="68" height="68" fill="white"/>
+									</clipPath>
+								</defs>
+							</svg>
+						+e.video-content
+							h1 Хакатон<br>Церемония открытия<br>Центральный федеральный округ
+							h3 Начало трансляции в 18:00
+				//- 	+e.img-wrap
+				//- 		.tech.tech-1 Computer vision
+				//- 		.tech.tech-2 Edtech
+				//- 		.tech.tech-3 Machine vision
+				//- 		.tech.tech-4 AI
+				//- 		.tech.tech-5 Bigdata
+				//- 		.tech.tech-6 Deep learning
+				//- 		.tech.tech-7 Medtech
+				//- 		.tech.tech-8 Machine learning
+				//- 		.tech.tech-9 NLP
+				//- 		.tech.tech-10 Text Recognition
+				//- 		+img('img/headerBlock-img-2.png').res-i
 						
 	// end headerBlock
