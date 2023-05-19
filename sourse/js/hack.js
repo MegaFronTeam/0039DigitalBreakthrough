@@ -182,8 +182,10 @@ function setHackPageData(data) {
 		</a>`
 	}
 
-	for (const item of data.videos) {
-		document.querySelector(".sVideo .default-slider__slider--js .swiper-wrapper").insertAdjacentHTML("beforeend", templateVideoSections(item));
+	if (data.videos.length > 0) {
+		for (const item of data.videos) {
+			document.querySelector(".sVideo .default-slider__slider--js .swiper-wrapper").insertAdjacentHTML("beforeend", templateVideoSections(item));
+		}
 	}
 
 	setNews(data.news);
