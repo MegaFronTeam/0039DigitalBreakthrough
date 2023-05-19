@@ -1,11 +1,6 @@
-let headerBlockVue = new Vue({
-		el: '#headerBlock',
-		data: {
-			imgSRc: 'img/',
-		},
-		 created: function () { 
-		},
-		computed: {
-		
-		},
-	})
+function setTranslationLink(data) {
+	document.querySelector('.headerBlock__video iframe').src = data.link;
+	console.log(data);
+}
+
+getTranslationLink(setTranslationLink)
