@@ -169,6 +169,23 @@ function setHackPageData(data) {
 		document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item));
 	}
 
+	function templateVideoSections(item) {
+		return `<a class="default-slider__slide swiper-slide" data-type="iframe" href="${item.url}" data-fancybox="video-gallery" data-aos="fade-up" data-aos-duration="700">
+			<div class="default-slider__video-wrap bg-wrap">
+				<div class="default-slider__play-btn">
+					<svg class="icon icon-play ">
+						<use xlink:href="img/svg/sprite.svg#play"></use>
+					</svg>
+				</div>
+				<img class="object-fit-js" src='${item.preview_image}' alt=""/>
+			</div>
+		</a>`
+	}
+
+	for (const item of data.videos) {
+		document.querySelector(".sVideo .default-slider__slider--js .swiper-wrapper").insertAdjacentHTML("beforeend", templateVideoSections(item));
+	}
+
 	setNews(data.news);
 	setPartners(data.allPartners);
 }
