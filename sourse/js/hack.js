@@ -170,7 +170,7 @@ function setHackPageData(data) {
 	}
 
 	function templateVideoSections(item) {
-		return `<a class="default-slider__slide swiper-slide" data-type="iframe" href="${item.url}" data-fancybox="video-gallery" data-aos="fade-up" data-aos-duration="700">
+		return `<a class="default-slider__slide swiper-slide" href="${item.url}" data-fancybox="video-gallery" data-aos="fade-up" data-aos-duration="700">
 			<div class="default-slider__video-wrap bg-wrap">
 				<div class="default-slider__play-btn">
 					<svg class="icon icon-play ">
