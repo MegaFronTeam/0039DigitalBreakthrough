@@ -34,6 +34,9 @@
 					color: #fff;
 				}
 			}
+			h6 {
+				color: #fff;
+			}
 			p {
 				@include mt;
 				margin-bottom: 0;
@@ -43,10 +46,11 @@
 			}
 		}
 		&__video-wrap {
+			@include block(245, 442);
 			border-radius: 8px;
 			overflow: hidden;
 			margin-bottom: rem(10);
-			&:before {
+			&:after {
 				content: '';
 				position: absolute;
 				display: block;

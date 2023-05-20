@@ -179,6 +179,8 @@ function setHackPageData(data) {
 				</div>
 				<img class="object-fit-js" src='${item.preview_image}' alt=""/>
 			</div>
+			<h6>${item.title}</h6>
+			${item.description}
 		</a>`
 	}
 

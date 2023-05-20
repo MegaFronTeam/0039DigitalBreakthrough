@@ -2,17 +2,18 @@ mixin sVideo(data)
 	// start sVideo
 	+b.SECTION.sVideo.section#sVideo&attributes(attributes)
 		.container
-			mixin item(img, i, text='Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам')
+			mixin item(img, title, text='Смотрите вакансии наших партнеров и&nbsp;присоединяйтесь к&nbsp;лучшим продуктовым командам')
 				+e.slide.swiper-slide(href='https://www.youtube.com/watch?v=L_LUpnjgPso&t=6950s' data-fancybox=`video-gallery` data-aos="fade-up" data-aos-duration="700")
 					+e.video-wrap.bg-wrap
 						+e.play-btn: +icon('play')
 						img(src=`img/${img}` alt='').object-fit-js
+					h6!= title
 					p!= text
 			+defaultSlider('', 'Видео от кейсодержателей')
-				//- +item('sVideo-img-1.jpg', 1)
-				//- +item('sVideo-img-2.jpg', 2)
-				//- +item('sVideo-img-3.jpg', 3)
-				//- +item('sVideo-img-1.jpg', 4)
-				//- +item('sVideo-img-2.jpg', 5)
-				//- +item('sVideo-img-3.jpg', 6)
+				//- +item('sVideo-img-1.jpg')
+				//- +item('sVideo-img-2.jpg')
+				//- +item('sVideo-img-3.jpg')
+				//- +item('sVideo-img-1.jpg')
+				//- +item('sVideo-img-2.jpg')
+				//- +item('sVideo-img-3.jpg')
 	// end sVideo
