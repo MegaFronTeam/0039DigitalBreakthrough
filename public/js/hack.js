@@ -99,31 +99,53 @@ function setHackPageData(data) {
 									<div class="innerTabs">
 										<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
 											<div class="innerTabs__btn active">Описание</div>
-											<div class="innerTabs__btn disabled">Результаты</div>
+											<div class="innerTabs__btn">Результаты</div>
 										</div>
 										<div>
 										
-											<div class="innerTabs__content active">
+											<div class="innerTabs__content ">
 												<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
 													${expertisesItems()}
 												</div>
 												${item.longDescription}
 												
 											</div>
-											<div class="innerTabs__content">
-												<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
-													<a class="sCases__tag" href="#">Edtech
-													</a>
-													<a class="sCases__tag" href="#">NeuralNetwork
-													</a>
-													<a class="sCases__tag" href="#">Signs
-													</a>
+											<div class="innerTabs__content active">
+												<div class='personalRating'>
+													<div class='personalRating__caption'>
+														<div class="personalRating__btn active">Общий рейтинг</div>
+														<div class="personalRating__btn">Новички</div>
+														<div class="personalRating__btn">Профи</div>
+													</div>
+													<div class="personalRating__content active">
+														<div class='sCases__placment'>
+															<div class='row'>
+																<div class='col-sm-auto'>
+																	<div class='sCases__place'>
+																		<span>1</span>
+																		<p>место</p>
+																	</div>
+																	<div class='sCases__rating'>
+																		<span>15</span>
+																		<p>Общий рейтинг</p>
+																	</div>
+																</div>
+																<div class='col-sm'>
+																	<div class='row'>
+																		<div class='col'>
+																			<div class='h4'>Искуственные интеллигенты</div>
+																		</div>
+																		<div class='col-auto'>
+																			<div class='sCases__tag'>Профи</div>
+																		</div>
+																	</row>
+																	<p>Разработка методологии и прототипа системы, определяющей «фронтиры» науки и технологий в целях планирования научных исследований и постановки прорывных задач технологического развития страны</p>
+																	<a href='#' class='sCases__presentation btn btn-outline-primary'>Презентация</a>
+																</div>
+															</div>
+														</div>
+													</div>
 												</div>
-												<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
-												<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
-												<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
-												<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
-												
 											</div>
 										</div>
 										${partnersItem()}

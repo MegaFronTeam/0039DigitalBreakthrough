@@ -155,7 +155,6 @@ const JSCCommon = {
 				.addClass('active').siblings().removeClass('active')
 				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
 				.eq($(this).index()).fadeIn().addClass('active');
-
 		});
 
 	},
@@ -359,6 +358,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.tabscostume('innerTabs');
+	JSCCommon.tabscostume('personalRating');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.imgToSVG();
