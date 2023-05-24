@@ -141,6 +141,53 @@ function setHackPageData(data) {
 																	</row>
 																	<p>Разработка методологии и прототипа системы, определяющей «фронтиры» науки и технологий в целях планирования научных исследований и постановки прорывных задач технологического развития страны</p>
 																	<a href='#' class='sCases__presentation btn btn-outline-primary'>Презентация</a>
+																	<div class='row'>
+																		<div class='col-xl-6 col-xxl-4'>
+																			<div class="sCases__personal">
+																				<img src='img/avatar-2.jpg'/>	
+																				<div>
+																					<div class='h6'>Виктория Константиновская</div>
+																					<span>Регион</span>
+																				</div>
+																			</div>
+																		</div>
+																		<div class='col-xl-6 col-xxl-4'>
+																			<div class="sCases__personal">
+																				<img src='img/avatar-2.jpg'/>	
+																				<div>
+																					<div class='h6'>Виктория Константиновская</div>
+																					<span>Регион</span>
+																				</div>
+																			</div>
+																		</div>
+																		<div class='col-xl-6 col-xxl-4'>
+																			<div class="sCases__personal">
+																				<img src='img/avatar-2.jpg'/>	
+																				<div>
+																					<div class='h6'>Виктория Константиновская</div>
+																					<span>Регион</span>
+																				</div>
+																			</div>
+																		</div>
+																		<div class='col-xl-6 col-xxl-4'>
+																			<div class="sCases__personal">
+																				<img src='img/avatar-2.jpg'/>	
+																				<div>
+																					<div class='h6'>Виктория Константиновская</div>
+																					<span>Регион</span>
+																				</div>
+																			</div>
+																		</div>
+																		<div class='col-xl-6 col-xxl-4'>
+																			<div class="sCases__personal">
+																				<img src='img/avatar-2.jpg'/>	
+																				<div>
+																					<div class='h6'>Виктория Константиновская</div>
+																					<span>Регион</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
 																</div>
 															</div>
 														</div>
