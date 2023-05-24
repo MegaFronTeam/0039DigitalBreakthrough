@@ -94,6 +94,13 @@ function setHackPageData(data) {
 			return content;
 		}
 
+		let casesResults = () => {
+			let content = '';
+			// let itemtType = arr;
+			console.log(item);
+			console.log(item.results);
+		}
+
 		return `
 				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700">
 									<div class="innerTabs">
@@ -103,14 +110,14 @@ function setHackPageData(data) {
 										</div>
 										<div>
 										
-											<div class="innerTabs__content ">
+											<div class="innerTabs__content active">
 												<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
 													${expertisesItems()}
 												</div>
 												${item.longDescription}
-												
+												${partnersItem()}
 											</div>
-											<div class="innerTabs__content active">
+											<div class="innerTabs__content">
 												<div class='personalRating'>
 													<div class='personalRating__caption'>
 														<div class="personalRating__btn active">Общий рейтинг</div>
@@ -118,6 +125,7 @@ function setHackPageData(data) {
 														<div class="personalRating__btn">Профи</div>
 													</div>
 													<div class="personalRating__content active">
+														${casesResults()}
 														<div class='sCases__placment'>
 															<div class='row'>
 																<div class='col-sm-auto'>
@@ -195,7 +203,7 @@ function setHackPageData(data) {
 												</div>
 											</div>
 										</div>
-										${partnersItem()}
+										
 									</div>
 									
 								</div>`;
