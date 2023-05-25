@@ -16,7 +16,7 @@ let pageId = params['eventId'];
 console.log(pageId);
 
 function setHackPageData(data) {
-	console.log(data);
+	// console.log(data);
 	document.title = data.event.name;
 	document.querySelector('.sAbout__date').innerHTML = 
 		data.event.dateRange[0] + ' ' +
@@ -94,119 +94,128 @@ function setHackPageData(data) {
 			return content;
 		}
 
+
+
+
+		let placmentPers = (items) => {
+			let content = ' ';
+
+			if (items == 0) return ' ';
+			for (const item of items) {
+				let avatar = item.avatar != null ? `<img src='${item.avatar}'/>	` : ' ';
+				content += `
+					<div class='col-xl-6 col-xxl-4'>
+						<div class="sCases__personal">
+							${avatar}
+							<div>
+								<div class='h6'>${item.surname} ${item.name}</div>
+								<span>${item.region_iso_code}</span>
+							</div>
+						</div>
+					</div>`;
+			}
+			return content;
+		}
+
+		let resultPlacment = (items) => {
+			let content = ' ';
+
+			if (items == 0) return ' ';
+			console.log(items);
+			let index = 0;
+			for (const item of items) {
+				let teg = item.is_profi == 1 ? 'Профи' : "Новички";
+				content += `
+					<div class='sCases__placment'>
+						<div class='row'>
+							<div class='col-sm-auto'>
+								<div class='sCases__place'>
+									<span>${index + 1}</span>
+									<p>место</p>
+								</div>
+								<div class='sCases__rating'>
+									<span>${item.position}</span>
+									<p>Общий рейтинг</p>
+								</div>
+							</div>
+							<div class='col-sm'>
+								<div class='row'>
+									<div class='col'>
+										<div class='h4'>${item.name}</div>
+									</div>
+									<div class='col-auto'>
+										<div class='sCases__tag'>${teg}</div>
+									</div>
+								</div>
+								<div>
+									${item.teaser}
+								</div>
+								<a href='${item.presentation_url}' class='sCases__presentation btn d-block btn-outline-primary'>Презентация</a>
+								<br>
+								<div class='row'>
+									${placmentPers(item.attendees)}
+								</div>
+							</div>
+						</div>
+					</div>`;
+				index++;
+			}
+			return content;
+		}
+		
+
 		let casesResults = () => {
-			let content = '';
-			// let itemtType = arr;
-			console.log(item);
-			console.log(item.results);
+			let content = ' ';
+
+			let results = item.results; 
+			
+			if (results.length == 0) return ' ';
+			let index = 0;
+			for (const  subItem in results) {
+				let active = index == 0 ? 'active' : ' '; 
+				content += `
+								<div class="personalRating__content ${active}">
+										${resultPlacment(results[subItem])}
+								</div>`;
+				index++;
+			}
+			return content;
 		}
 
 		return `
 				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700">
-									<div class="innerTabs">
-										<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
-											<div class="innerTabs__btn active">Описание</div>
-											<div class="innerTabs__btn">Результаты</div>
-										</div>
-										<div>
-										
-											<div class="innerTabs__content active">
-												<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
-													${expertisesItems()}
-												</div>
-												${item.longDescription}
-												${partnersItem()}
-											</div>
-											<div class="innerTabs__content">
-												<div class='personalRating'>
-													<div class='personalRating__caption'>
-														<div class="personalRating__btn active">Общий рейтинг</div>
-														<div class="personalRating__btn">Новички</div>
-														<div class="personalRating__btn">Профи</div>
-													</div>
-													<div class="personalRating__content active">
-														${casesResults()}
-														<div class='sCases__placment'>
-															<div class='row'>
-																<div class='col-sm-auto'>
-																	<div class='sCases__place'>
-																		<span>1</span>
-																		<p>место</p>
-																	</div>
-																	<div class='sCases__rating'>
-																		<span>15</span>
-																		<p>Общий рейтинг</p>
-																	</div>
-																</div>
-																<div class='col-sm'>
-																	<div class='row'>
-																		<div class='col'>
-																			<div class='h4'>Искуственные интеллигенты</div>
-																		</div>
-																		<div class='col-auto'>
-																			<div class='sCases__tag'>Профи</div>
-																		</div>
-																	</row>
-																	<p>Разработка методологии и прототипа системы, определяющей «фронтиры» науки и технологий в целях планирования научных исследований и постановки прорывных задач технологического развития страны</p>
-																	<a href='#' class='sCases__presentation btn btn-outline-primary'>Презентация</a>
-																	<div class='row'>
-																		<div class='col-xl-6 col-xxl-4'>
-																			<div class="sCases__personal">
-																				<img src='img/avatar-2.jpg'/>	
-																				<div>
-																					<div class='h6'>Виктория Константиновская</div>
-																					<span>Регион</span>
-																				</div>
-																			</div>
-																		</div>
-																		<div class='col-xl-6 col-xxl-4'>
-																			<div class="sCases__personal">
-																				<img src='img/avatar-2.jpg'/>	
-																				<div>
-																					<div class='h6'>Виктория Константиновская</div>
-																					<span>Регион</span>
-																				</div>
-																			</div>
-																		</div>
-																		<div class='col-xl-6 col-xxl-4'>
-																			<div class="sCases__personal">
-																				<img src='img/avatar-2.jpg'/>	
-																				<div>
-																					<div class='h6'>Виктория Константиновская</div>
-																					<span>Регион</span>
-																				</div>
-																			</div>
-																		</div>
-																		<div class='col-xl-6 col-xxl-4'>
-																			<div class="sCases__personal">
-																				<img src='img/avatar-2.jpg'/>	
-																				<div>
-																					<div class='h6'>Виктория Константиновская</div>
-																					<span>Регион</span>
-																				</div>
-																			</div>
-																		</div>
-																		<div class='col-xl-6 col-xxl-4'>
-																			<div class="sCases__personal">
-																				<img src='img/avatar-2.jpg'/>	
-																				<div>
-																					<div class='h6'>Виктория Константиновская</div>
-																					<span>Регион</span>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										
+					<div class="innerTabs">
+						<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
+							<div class="innerTabs__btn active">Описание</div>
+							<div class="innerTabs__btn ">Результаты</div>
+						</div>
+						<div>
+							<div>
+								<div class="innerTabs__content  active">
+									<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+										${expertisesItems()}
 									</div>
-									
-								</div>`;
+									${item.longDescription}
+									${partnersItem()}
+								</div>
+								<div class="innerTabs__content">
+									<div class='personalRating'>
+										<div class='personalRating__caption'>
+											<div class="personalRating__btn active">Общий рейтинг</div>
+											<div class="personalRating__btn">Профи</div>
+											<div class="personalRating__btn">Новички</div>
+										</div>
+										<div class="personalRating__wrap">
+											${casesResults()}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>`;
 	};
 
 

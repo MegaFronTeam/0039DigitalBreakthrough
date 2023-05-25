@@ -92,9 +92,9 @@
 			p {
 				font-size: rem(16);
 				line-height: 1.44;
-				margin-bottom: rem(20);
+				// margin-bottom: rem(20);
 				@include media-breakpoint-up(lg) {
-					margin-bottom: rem(32);
+					// margin-bottom: rem(32);
 					font-size: rem(18);
 				}
 			}

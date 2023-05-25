@@ -160,7 +160,7 @@ const JSCCommon = {
 		// 			.eq($(this).index()).fadeIn().addClass('active');
 		// 	}
 		// })
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+		$(document).on('click', '.' + tab + '__btn:not(.active)', function (e) {
 			$(this)
 				.addClass('active').siblings().removeClass('active')
 				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
@@ -367,12 +367,12 @@ const $ = jQuery;
 function eventHandler() { 
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
-	document.addEventListener('click', function(event) {
-		if(event.target.closest('.tabs')) {
-			JSCCommon.tabscostume('innerTabs');
-			JSCCommon.tabscostume('personalRating');
-		}
-	})
+	// document.addEventListener('click', function(event) {
+	// 	if(event.target.closest('.tabs')) {
+	// 	}
+	// })
+	JSCCommon.tabscostume('innerTabs');
+	JSCCommon.tabscostume('personalRating');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.imgToSVG();
