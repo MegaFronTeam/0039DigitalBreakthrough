@@ -158,7 +158,7 @@
 					}
 				}
 				&__tag {
-					border: 1px solid $pink;
+					border: 1px solid;
 					color: $pink; 
 					&:hover {
 						background-color: transparent;
@@ -272,32 +272,34 @@
 			margin-bottom: rem(8);
 		}
 		p {
-			margin-bottom: rme(18);
 			line-height: 1.44;
 			font-size: rem(16);
+			// margin-bottom: 0;
 			@include media-breakpoint-up(lg) {
 				font-size: rem(18);
-				margin-bottom: rme(24);
 			}
 		}
 	}
 	&__presentation {
 		max-width: max-content;
 		border-radius: 20px;
-
-		--bs-btn-color: #{$pink};
-    --bs-btn-border-color: #{$pink};
-    --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #{$pink};
-    --bs-btn-hover-border-color: #{$pink};
-    --bs-btn-focus-shadow-rgb: 3,254,51;
-    --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #{$pink};
-    --bs-btn-active-border-color: #{$pink};
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,.125);
-    --bs-btn-disabled-color: #{$pink};
-    --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: #{$pink};
+		margin-top: 2rem;
+		&.btn-outline-primary{
+			
+			--bs-btn-color: #{$pink};
+			--bs-btn-border-color: #{$pink};
+			--bs-btn-hover-color: #000;
+			--bs-btn-hover-bg: #{$pink};
+			--bs-btn-hover-border-color: #{$pink};
+			--bs-btn-focus-shadow-rgb: 3,254,51;
+			--bs-btn-active-color: #000;
+			--bs-btn-active-bg: #{$pink};
+			--bs-btn-active-border-color: #{$pink};
+			--bs-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+			--bs-btn-disabled-color: #{$pink};
+			--bs-btn-disabled-bg: transparent;
+			--bs-btn-disabled-border-color: #{$pink};
+		}
 
 		--bs-btn-padding-y: #{rem(8)};
 		margin-top: 0;

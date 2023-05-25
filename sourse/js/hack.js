@@ -124,7 +124,7 @@ function setHackPageData(data) {
 			console.log(items);
 			let index = 0;
 			for (const item of items) {
-				let teg = item.is_profi == 1 ? 'Профи' : "Новички";
+				let teg = item.is_profi == 1 ? '<div class="sCases__tag">Профи</div>' :    '<div class="sCases__tag text-primary" >Новички</div>';
 				content += `
 					<div class='sCases__placment'>
 						<div class='row'>
@@ -144,13 +144,26 @@ function setHackPageData(data) {
 										<div class='h4'>${item.name}</div>
 									</div>
 									<div class='col-auto'>
-										<div class='sCases__tag'>${teg}</div>
+										${teg}
 									</div>
 								</div>
 								<div>
-									${item.teaser}
+									${item.short_text}
 								</div>
-								<a href='${item.presentation_url}' class='sCases__presentation btn d-block btn-outline-primary'>Презентация</a>
+								<div class="row">
+									<div class="col-auto">
+										<a href='#modal-${item.team_id}'  class='sCases__presentation btn d-block btn-primary link-modal-js'>Читать полностью</a>
+										<div id="modal-${item.team_id}" style="display: none">
+											<div class="modal-win">
+												${item.long_text}
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										<a href='${item.presentation_url}' target="_blank" class='sCases__presentation btn d-block btn-outline-primary'>Презентация</a>
+									</div>
+
+								</div>
 								<br>
 								<div class='row'>
 									${placmentPers(item.attendees)}
@@ -191,14 +204,14 @@ function setHackPageData(data) {
 						</div>
 						<div>
 							<div>
-								<div class="innerTabs__content  active">
+								<div class="innerTabs__content">
 									<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
 										${expertisesItems()}
 									</div>
 									${item.longDescription}
 									${partnersItem()}
 								</div>
-								<div class="innerTabs__content">
+								<div class="innerTabs__content  active">
 									<div class='personalRating'>
 										<div class='personalRating__caption'>
 											<div class="personalRating__btn active">Общий рейтинг</div>
