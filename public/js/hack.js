@@ -102,11 +102,15 @@ function setHackPageData(data) {
 
 			if (items == 0) return ' ';
 			for (const item of items) {
-				let avatar = item.avatar != null ? `<img src='${item.avatar}'/>	` : ' ';
+				let avatar = item.avatar != null 
+					? `<img src='${item.avatar}'/>	` 
+					: '<svg class="icon icon-user "><use xlink:href = "img/svg/sprite.svg#user" ></use></svg >';
 				content += `
 					<div class='col-xl-6 col-xxl-4'>
 						<div class="sCases__personal">
-							${avatar}
+							<div class="sCases__personal-img-wrap">
+								${avatar}
+							</div>
 							<div>
 								<div class='h6'>${item.surname} ${item.name}</div>
 								<span>${item.region_iso_code}</span>
