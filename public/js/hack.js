@@ -117,26 +117,30 @@ function setHackPageData(data) {
 			return content;
 		}
 
-		let resultPlacment = (items) => {
+		let resultPlacment = (items, subItem) => {
 			let content = ' ';
 
 			if (items == 0) return ' ';
-			console.log(items);
 			let index = 0;
 			for (const item of items) {
 				let teg = item.is_profi == 1 ? '<div class="sCases__tag">Профи</div>' :    '<div class="sCases__tag text-primary" >Новички</div>';
+				let ratingDiv = `
+				<div class='sCases__rating'>
+				<span>${item.position}</span>
+				<p>Общий рейтинг</p>
+				</div>
+				`
+				let rating = subItem == 'all' ? '' : ratingDiv;
 				content += `
 					<div class='sCases__placment'>
-						<div class='row'>
+					<div class='row'>
 							<div class='col-sm-auto'>
 								<div class='sCases__place'>
 									<span>${index + 1}</span>
 									<p>место</p>
 								</div>
-								<div class='sCases__rating'>
-									<span>${item.position}</span>
-									<p>Общий рейтинг</p>
-								</div>
+								${rating}
+								
 							</div>
 							<div class='col-sm'>
 								<div class='row'>
@@ -144,6 +148,7 @@ function setHackPageData(data) {
 										<div class='h4'>${item.name}</div>
 									</div>
 									<div class='col-auto'>
+							
 										${teg}
 									</div>
 								</div>
@@ -188,7 +193,7 @@ function setHackPageData(data) {
 				let active = index == 0 ? 'active' : ' '; 
 				content += `
 								<div class="personalRating__content ${active}">
-										${resultPlacment(results[subItem])}
+										${resultPlacment(results[subItem], subItem)}
 								</div>`;
 				index++;
 			}
