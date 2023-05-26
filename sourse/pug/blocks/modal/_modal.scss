@@ -13,7 +13,7 @@
 	position: relative;
 	width: rem(632);
 	// min-height: 100%; 
-	padding: rem(16);
+	padding: rem(30.4) rem(30.4) rem(16) rem(16);
 	border-radius: 8px;
 	@include media-breakpoint-up(xl) {
 		padding: rem(40);
@@ -31,8 +31,12 @@
 }
 
 .fancybox__content>.carousel__button.is-close {
-	top: rem(14);
-	right: rem(14);
+	top: rem(1.400);
+	right: rem(-0.400);
+	@include media-breakpoint-up(xl) {
+		top: rem(14);
+		right: rem(14);
+	}
 }
 
 a {
