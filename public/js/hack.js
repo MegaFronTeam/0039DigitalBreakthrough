@@ -161,7 +161,7 @@ function setHackPageData(data) {
 								</div>
 								<div class="row">
 									<div class="col-auto">
-										<a href='#modal-${item.team_id}'  class='sCases__presentation btn d-block btn-primary link-modal-js'>Читать полностью</a>
+										<a href='#modal-${item.team_id}'  class='sCases__presentation btn d-block btn-outline-primary link-modal-js'>Читать полностью</a>
 										<div id="modal-${item.team_id}" style="display: none">
 											<div class="modal-win">
 												${item.long_text}
@@ -169,7 +169,7 @@ function setHackPageData(data) {
 										</div>
 									</div>
 									<div class="col-auto">
-										<a href='${item.presentation_url}' target="_blank" class='sCases__presentation btn d-block btn-outline-primary'>Презентация</a>
+										<a href='${item.presentation_url}' target="_blank" class='sCases__presentation sCases__presentation--pres btn d-block btn-outline-primary'>Презентация</a>
 									</div>
 
 								</div>
@@ -213,14 +213,14 @@ function setHackPageData(data) {
 						</div>
 						<div>
 							<div>
-								<div class="innerTabs__content">
+								<div class="innerTabs__content active">
 									<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
 										${expertisesItems()}
 									</div>
 									${item.longDescription}
 									${partnersItem()}
 								</div>
-								<div class="innerTabs__content  active">
+								<div class="innerTabs__content ">
 									<div class='personalRating'>
 										<div class='personalRating__caption'>
 											<div class="personalRating__btn active">Общий рейтинг</div>
