@@ -34,7 +34,7 @@ function setEvents(items) {
 	let index = 0;
 	for (const item of items) {
 		// console.log(item);
-		if(index > 0 ){
+		if(index > 1 ){
 			className = 'disabled'
 		}
 		else{

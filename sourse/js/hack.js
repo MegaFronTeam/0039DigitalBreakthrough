@@ -22,12 +22,38 @@ function setHackPageData(data) {
 		data.event.dateRange[0] + ' ' +
 		+ data.event.dateRange[1] 
 		+ ' <span>' + data.event.dateRange[2] + '</span>';
-	document.querySelector('.sAbout__type--1').innerHTML = data.playground.city;
-	document.querySelector('.sAbout__type--2').innerHTML = data.playground.adress;
+
+	if (data.playground.city && data.playground.city){ 
+		document.querySelector('.sAbout__types').insertAdjacentHTML("beforeend", `
+		<div class="sAbout__type sAbout__type--1 h4">${data.playground.city || " "}</div>
+		<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div>
+		`);
+	}
+
 	document.querySelector('h1').innerHTML = data.event.name;
 	document.querySelector('.sAbout h2').innerHTML = data.event.district;
 	document.querySelector('.sAbout__text').innerHTML = data.event.description;
-	document.querySelector('.sAbout__banner .h3').innerHTML = data.event.deadline_date;
+
+	if (data.event.isEnded == false){
+		document.querySelector(".sAbout__date").insertAdjacentHTML("afterend", `
+		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
+		<div class="h3"> ${data.event.deadline_date}</div>
+		<span>Дедлайн подачи заявок</span>
+		</div>
+		`);
+	
+		document.querySelector(".sAbout__content").insertAdjacentHTML("beforeend", `
+		<a class="sAbout__btn btn btn-dark" href="https://lk.hacks-ai.ru">Принять участие</a>`);
+	}
+	else{
+		document.querySelector(".sAbout__date").insertAdjacentHTML("afterend", `
+		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
+		<div class="h3"> МЕРОПРИЯТИЕ <br> ЗАВЕРШЕНО</div>
+		</div>
+		`);
+
+	}
+
 	document.querySelector('.count-attendee').innerHTML = data.event.count.attendee_count;
 	document.querySelector('.count-team').innerHTML = data.event.count.team_count;
 
@@ -239,43 +265,68 @@ function setHackPageData(data) {
 					
 				</div>`;
 	};
-
-
-	for (const [index,item] of data.cases.entries()) {
+	if (data.cases.length>0){
+		document.querySelector(".sAbout").insertAdjacentHTML("afterend", `
+		<!-- start sCases-->
+				<section class="sCases section" id="sCases">
+					<div class="container">
+						<div class="sCases__wrap">
+						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+								<h2>Кейсовые задания</h2>
+								</div>
+							<div class="row tabs">
+							<div class="col-lg order-lg-2" data-aos="fade-up" data-aos-duration="700"></div>
+								<div class="col-lg-auto order-lg-1 tabs__caption">
+								<div class="sCases__links" data-aos="fade-up" data-aos-duration="700">
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</section>
+					<!-- end sCases-->
+					`);
+		}
+					for (const [index,item] of data.cases.entries()) {
 		let active = index == 0 ? 'active' : " ";
 		document.querySelector(".sCases__links").insertAdjacentHTML("beforeend", templateBtn(item, active));
 		document.querySelector(".sCases .row.tabs .col-lg").insertAdjacentHTML("beforeend", templateTabs(item, active));
 	}
 
-	let gridTextLink = document.querySelector('.sInfo__grid-item--text a');
 
+	if (Object.keys(data.playground).length !== 0){
+		document.querySelector(".sInfo").classList.remove('d-none');
+		let gridTextLink = document.querySelector('.sInfo__grid-item--text a');
+		document.querySelector('.sInfo h2').innerHTML = data.playground.name;
+		document.querySelector('.sInfo .addr').innerHTML = data.playground.adress;
+		document.querySelector('.sInfo__inner').innerHTML = data.playground.description;
+		document.querySelector('.modal-win--text').innerHTML = data.playground.description;
+		document.querySelector('.img-avatar').setAttribute("src", data.playground.avatar);
+		document.querySelector('.map-img').innerHTML = data.playground.map_link;
 
-	document.querySelector('.sInfo h2').innerHTML = data.playground.name;
-	document.querySelector('.sInfo .addr').innerHTML = data.playground.adress;
-	document.querySelector('.sInfo__inner').innerHTML = data.playground.description;
-	document.querySelector('.modal-win--text').innerHTML = data.playground.description;
-	document.querySelector('.img-avatar').setAttribute("src", data.playground.avatar);
-	document.querySelector('.map-img').innerHTML = data.playground.map_link;
-
-	let sInfoTextSybols = 0;
-	for (const item of document.querySelector('.sInfo__inner').children) {
-		sInfoTextSybols += item.innerText.split('').length;
+		let sInfoTextSybols = 0;
+		for (const item of document.querySelector('.sInfo__inner').children) {
+			sInfoTextSybols += item.innerText.split('').length;
+		}
+		if (sInfoTextSybols <= 190) {
+			gridTextLink.remove();
+		} 
+		const templateMap = item => {
+			return `
+					<div class="sInfo__grid-item bg-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
+					<img class="object-fit-js picture-bg" src="${item} " alt="" loading="lazy">
+					</div>`;
+		};
+		
+		for (const item of data.playground.photos) {
+			document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item));
+		}
 	}
-	if (sInfoTextSybols <= 190) {
-		gridTextLink.remove();
+	else{
+		document.querySelector(".sInfo").remove();
 	}
 
 
-	const templateMap = item => {
-		return `
-				<div class="sInfo__grid-item bg-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
-				<img class="object-fit-js picture-bg" src="${item} " alt="" loading="lazy">
-				</div>`;
-	};
-
-	for (const item of data.playground.photos) {
-		document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item));
-	}
 
 	function templateVideoSections(item) {
 		return `<a class="default-slider__slide swiper-slide" href="${item.url}" data-fancybox="video-gallery" data-aos="fade-up" data-aos-duration="700">
@@ -297,8 +348,13 @@ function setHackPageData(data) {
 			document.querySelector(".sVideo .default-slider__slider--js .swiper-wrapper").insertAdjacentHTML("beforeend", templateVideoSections(item));
 		}
 	}
+	else{
+		document.querySelector(".sVideo").remove();
+	}
 
 	setNews(data.news);
 	setPartners(data.allPartners);
+
+	console.log(data);
 }
 getHackPageData(setHackPageData, pageId)

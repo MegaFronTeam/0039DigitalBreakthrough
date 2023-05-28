@@ -14,8 +14,6 @@ mixin sAbout(data)
 					.col-lg
 						+e.content(data-aos="fade-up" data-aos-duration="700")
 							+e.types
-								+e.type--1.h4
-								+e.type--2.h4
 							h1
 							h2
 							+e.text
@@ -32,11 +30,8 @@ mixin sAbout(data)
 										div
 											p Команд
 											.h2.count-team
-							+e.btn.btn.btn-dark(href='https://lk.hacks-ai.ru') Принять участие
+							//- +e.btn.btn.btn-dark(href='https://lk.hacks-ai.ru') Принять участие
 					.col-lg-auto
 						+e.info-wrap
-							+e.date(data-aos="fade-up" data-aos-duration="700") 
-							+e.banner(data-aos="fade-up" data-aos-duration="700")
-								.h3 24 июня 18:00
-								span Дедлайн подачи заявок
+							+e.date(data-aos="fade-up" data-aos-duration="700")
 	// end sAbout
