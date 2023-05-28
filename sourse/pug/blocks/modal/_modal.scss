@@ -13,7 +13,7 @@
 	position: relative;
 	width: rem(632);
 	// min-height: 100%; 
-	padding: rem(16);
+	padding: rem(50) rem(16);
 	border-radius: 8px;
 	@include media-breakpoint-up(xl) {
 		padding: rem(40);
