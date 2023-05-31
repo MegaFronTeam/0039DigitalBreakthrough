@@ -82,11 +82,11 @@ document.addEventListener('click', function(event) {
 			<!-- end headerBlock-->
 			<script>
 function setEvents(items) {
-	const template = (item, className) => {
+	const template = (item) => {
 
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="700">
-					<div class="sHackathons__item ${className}">
+					<div class="sHackathons__item ${item.isDisabled ? 'disabled' : " "}">
 						<div class="sHackathons__content">
 							<h5>${item.startDate}</h5>
 							<a class="h3" href="/hackathons.html?eventId=${item.eventId}">${item.name}</a>
@@ -115,14 +115,7 @@ function setEvents(items) {
 	};
 	let index = 0;
 	for (const item of items) {
-		// console.log(item);
-		if(index > 1 ){
-			className = 'disabled'
-		}
-		else{
-			className = ''
-		}
-		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item, className));
+		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item));
 		index++;
 	}
 }
