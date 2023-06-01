@@ -60,27 +60,44 @@ function setHackPageData(data) {
 
 
 
-	const templatePartner = item => {
-		return `
-				<div class="col-sm-6 col-md-4 col-xl-3">
-					<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
-						<div class="sPartners__img-wrap"> 
-							<div class="img-wrap-center"> 
-								<img src="${item.avatar_url}" alt="" loading="lazy">
-							</div>
-						</div>
-						<span>${item.name}</span>
-						<p>${item.description || ''}</p>
-					</a>
-				</div>`;
-	};
-
 	
+	
+	if(data.partners.length>0) {
+		const templatePartner = item => {
+			return `
+					<div class="col-sm-6 col-md-4 col-xl-3">
+						<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
+							<div class="sPartners__img-wrap"> 
+								<div class="img-wrap-center"> 
+									<img src="${item.avatar_url}" alt="" loading="lazy">
+								</div>
+							</div>
+							<span>${item.name}</span>
+							<p>${item.description || ''}</p>
+						</a>
+					</div>`;
+		};
 
+		document.querySelector("#parters-wrap").insertAdjacentHTML("afterbegin", 
+		`<!-- start sPartners-->
+		<section class="sPartners sPartners--2 section" id="sPartners2">
+				<div class="container">
+					<div class="sPartners__wrap">
+						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+							<h2>Партнеры окружного хакатона</h2>
+							</div>
+						<div class="sPartners__row row">
+						</div>
+						</div>
+						</div>
+			</section>
+			<!-- end sPartners-->`
+	);
 	for (const item of data.partners) {
 		// console.log(item);
 		document.querySelector("#sPartners2 .sPartners__row").insertAdjacentHTML("beforeend", templatePartner(item));
 	}
+					}
 
 
 	// Cases
@@ -266,7 +283,7 @@ function setHackPageData(data) {
 				</div>`;
 	};
 	if (data.cases.length>0){
-		document.querySelector(".sAbout").insertAdjacentHTML("afterend", `
+		document.querySelector("#cases-wrap").insertAdjacentHTML("afterbegin", `
 		<!-- start sCases-->
 				<section class="sCases section" id="sCases">
 					<div class="container">

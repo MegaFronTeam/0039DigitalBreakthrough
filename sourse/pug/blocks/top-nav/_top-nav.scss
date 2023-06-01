@@ -8,8 +8,8 @@
 		--bs-gutter-x: #{rem(10)};
 		--bs-gutter-y: #{rem(14)};
 		align-items: center;
-		@include media-breakpoint-up(sm) {
-			--bs-gutter-x: #{rem(18)};
+		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(20)};
 		}
 		@include media-breakpoint-up(md) {
 			// --bs-gutter-x: #{rem(40)};
@@ -42,6 +42,7 @@
 		width: 100%;
 		// @include media-breakpoint-down(sm) {
 			max-width: rem(68);
+			
 			@include media-breakpoint-up(md) {
 			max-width: rem(108);
 			// width: 100%;
@@ -50,6 +51,7 @@
 	}
 	.logo-3 {
 		width: 100%;
+		margin-left: 8px;
 		max-width: rem(186);
 		@include media-breakpoint-down(sm) {
 			max-width: rem(65);
