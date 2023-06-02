@@ -19,7 +19,7 @@ function setHackPageData(data) {
 	// console.log(data);
 	document.title = data.event.name;
 	document.querySelector('.sAbout__date').innerHTML = 
-		data.event.dateRange[0] + ' ' +
+		data.event.dateRange[0] + '<br> ' +
 		+ data.event.dateRange[1] 
 		+ ' <span>' + data.event.dateRange[2] + '</span>';
 
@@ -35,7 +35,7 @@ function setHackPageData(data) {
 	document.querySelector('.sAbout__text').innerHTML = data.event.description;
 
 	if (data.event.isEnded == false){
-		document.querySelector(".sAbout__date").insertAdjacentHTML("afterend", `
+		document.querySelector(".sAbout__info-wrap").insertAdjacentHTML("afterbegin", `
 		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
 		<div class="h3"> ${data.event.deadline_date}</div>
 		<span>Дедлайн подачи заявок</span>
@@ -46,7 +46,7 @@ function setHackPageData(data) {
 		<a class="sAbout__btn btn btn-dark" href="https://lk.hacks-ai.ru">Принять участие</a>`);
 	}
 	else{
-		document.querySelector(".sAbout__date").insertAdjacentHTML("afterend", `
+		document.querySelector(".sAbout__info-wrap").insertAdjacentHTML("afterbegin", `
 		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
 		<div class="h3"> МЕРОПРИЯТИЕ <br> ЗАВЕРШЕНО</div>
 		</div>

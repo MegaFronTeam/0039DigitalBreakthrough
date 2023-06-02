@@ -35,26 +35,33 @@
 		width: 100%;
 		max-width: rem(213);
 		@include media-breakpoint-down(md) {
-			max-width: rem(124);
+			// max-width: rem(124);
 		}
 	}
 	.logo-2 {
 		width: 100%;
 		// @include media-breakpoint-down(sm) {
-			max-width: rem(68);
+			// max-width: rem(68);
 			
 			@include media-breakpoint-up(md) {
 			max-width: rem(108);
 			// width: 100%;
 			// max-width: rem(58);
 		}
+		@include media-breakpoint-down(md) {
+			// max-width: rem(65);
+			max-width: 100%;
+			max-height: calc(40px + 5vw);
+		}
 	}
 	.logo-3 {
 		width: 100%;
 		margin-left: 8px;
 		max-width: rem(186);
-		@include media-breakpoint-down(sm) {
-			max-width: rem(65);
+		@include media-breakpoint-down(md) {
+			// max-width: rem(65);
+			max-width: 100%;
+			max-height: calc(40px + 5vw);
 		}
 	}
 	@include media-breakpoint-up(md) {}

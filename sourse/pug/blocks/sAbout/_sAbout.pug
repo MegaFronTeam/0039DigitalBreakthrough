@@ -13,7 +13,11 @@ mixin sAbout(data)
 				.row
 					.col-lg
 						+e.content(data-aos="fade-up" data-aos-duration="700")
-							+e.types
+							.row
+								.col-auto.order-sm-last
+									+e.date(data-aos="fade-up" data-aos-duration="700")
+								.col
+									+e.types
 							h1
 							h2
 							+e.text
@@ -33,5 +37,4 @@ mixin sAbout(data)
 							//- +e.btn.btn.btn-dark(href='https://lk.hacks-ai.ru') Принять участие
 					.col-lg-auto
 						+e.info-wrap
-							+e.date(data-aos="fade-up" data-aos-duration="700")
 	// end sAbout
