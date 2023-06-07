@@ -10,7 +10,8 @@
 	&__wrap {
 		border-radius: 8px;
 		background-color: $primary;
-		padding: rem(24);
+		background-color: #00ff16;
+		padding: rem(24) rem(18);
 		overflow: hidden;
 		position: relative;
 		display: flex;
@@ -127,14 +128,14 @@
 		line-height: 1;
 		margin-bottom: rem(8);
 		@include media-breakpoint-down(lg) {
-			padding-right: rem(40);
+			// padding-right: rem(40);
 		}
 	}
 	h2 {
 		line-height: 1.31;
 		margin-bottom: rem(23);
 		@include media-breakpoint-down(lg) {
-			padding-right: rem(40);
+			// padding-right: rem(40);
 		}
 	}
 	p {

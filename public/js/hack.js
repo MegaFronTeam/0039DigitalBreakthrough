@@ -24,9 +24,9 @@ function setHackPageData(data) {
 		+ ' <span>' + data.event.dateRange[2] + '</span>';
 
 	if (data.playground.city && data.playground.city){ 
-		document.querySelector('.sAbout__types').insertAdjacentHTML("beforeend", `
-		<div class="sAbout__type sAbout__type--1 h4">${data.playground.city || " "}</div>
-		<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div>
+		document.querySelector('.sAbout__types-inner').insertAdjacentHTML("beforeend", `
+		<div class="sAbout__type sAbout__type--1 h4"><div class="sAbout__type sAbout__type--1 h4">${data.playground.city || " "}</div>
+		<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div></div>
 		`);
 	}
 
@@ -311,7 +311,14 @@ function setHackPageData(data) {
 	}
 
 
-	if (Object.keys(data.playground).length !== 0){
+	if (Object.keys(data.playground).length !== 0 
+		&& data.playground.name !== undefined 
+		&& data.playground.adress !== undefined 
+		&& data.playground.description 
+		&& data.playground.description !== undefined 
+		&& data.playground.avatar !== undefined 
+		&& data.playground.map_link !== undefined
+		) {
 		document.querySelector(".sInfo").classList.remove('d-none');
 		let gridTextLink = document.querySelector('.sInfo__grid-item--text a');
 		document.querySelector('.sInfo h2').innerHTML = data.playground.name;

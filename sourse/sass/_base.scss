@@ -564,7 +564,7 @@ iframe {
 }
 
 .container {
-	--bs-gutter-x: #{rem(36)};
+	--bs-gutter-x: #{rem(24)};
 	@include media-breakpoint-up(lg) {
 		--bs-gutter-x: #{rem(80)};
 	}
@@ -723,3 +723,4 @@ iframe {
 		}
 	}
 }
+
