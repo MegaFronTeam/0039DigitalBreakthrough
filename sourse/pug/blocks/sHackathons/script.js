@@ -3,7 +3,7 @@ function setEvents(items) {
 	const template = (item) => {
 
 		return `
-				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="700">
+				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="500"  data-aos-offset="0">
 					<div class="sHackathons__item ${item.isDisabled ? 'disabled' : " "}">
 						<div class="sHackathons__content">
 							<h5>${item.startDate}</h5>

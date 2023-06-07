@@ -85,7 +85,7 @@ function setEvents(items) {
 	const template = (item) => {
 
 		return `
-				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="700">
+				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="500"  data-aos-offset="0">
 					<div class="sHackathons__item ${item.isDisabled ? 'disabled' : " "}">
 						<div class="sHackathons__content">
 							<h5>${item.startDate}</h5>
@@ -126,7 +126,7 @@ getEvents(setEvents);
 			<section class="sHackathons section" id="sHackathons">
 				<div class="container">
 					<div class="sHackathons__wrap">
-						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+						<div class="section-title" data-aos="fade-up" data-aos-duration="500">
 							<h2>8 окружных хакатонов</h2>
 						</div>
 						<div class="sHackathons__row row">
@@ -154,18 +154,14 @@ getEvents(setEvents);
 			<!-- start sLargestEvent-->
 			<section class="sLargestEvent section bg-wrap" id="sLargestEvent">
 				<div class="container">
+					<div class="section-title">
+						<h2 class="h1">Самый масштабный проект по&nbsp;искусственному интеллекту в&nbsp;России</h2>
+					</div>
 					<div class="sLargestEvent__wrap bg-wrap" data-aos="fade-up" data-aos-duration="700">
 						<video class="picture-bg" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata">
 							<source src="video/video-bg.mp4" type="video/mp4"/>
 							<source src="video/video-bg.webm" type="video/webm"/>
 						</video>
-						<div class="sLargestEvent__row row">
-							<div class="col">
-								<h2 class="h1">Самый масштабный проект по&nbsp;искусственному интеллекту в&nbsp;России</h2>
-							</div>
-							<div class="col-auto"><img src="img/sLargestEvent-img-1.png" alt="" loading="lazy"/>
-							</div>
-						</div>
 						<div class="sLargestEvent__num-row row">
 							<!--.col-auto-->
 							<!--	+item(116, 'хакатонов')-->

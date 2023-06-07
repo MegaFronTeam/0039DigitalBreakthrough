@@ -4,6 +4,9 @@
 	--sPB: #{rem(0)};
 	// --sTPB: #{rem()};
 	color: $body-bg;
+	&__text{
+		@include ell(7);
+	}
 	&__wrap {
 		border-radius: 8px;
 		background-color: $primary;

@@ -107,9 +107,14 @@ body {
 	@media screen and (min-width: 500px) {
 		padding-top: rem(170);
 	}
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(96);
+	}
+
 	@include media-breakpoint-up(md) {
 		padding-top: rem(76);
 	}
+	
 	// display: flex;
 	// flex-direction: row; 
 // /	overflow: scroll;
