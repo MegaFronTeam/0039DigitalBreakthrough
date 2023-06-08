@@ -103,13 +103,13 @@ body {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	padding-top: calc(rem(121) );
+	padding-top: calc(rem(55) - rem(16));
 	// @media screen and (min-width: 500px) {
 	// 	padding-top: rem(94);
 	// }
 	@include media-breakpoint-up(sm) {
 		// padding-top: rem(86);
-		padding-top: calc(rem(86) - rem(16));
+		padding-top: calc(rem(68) - rem(16));
 	}
 	@include media-breakpoint-up(lg) {
 		padding-top: calc(rem(93) - rem(16));
