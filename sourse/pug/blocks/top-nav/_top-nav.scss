@@ -1,6 +1,6 @@
 .top-nav {
-	--sPT: #{rem(12)};
-	--sPB: #{rem(12)};
+	--sPT: #{rem(11)};
+	--sPB: #{rem(11)};
 	// --sTPB: #{rem()};
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(24)};
