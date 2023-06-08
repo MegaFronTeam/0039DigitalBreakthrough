@@ -31,8 +31,12 @@
 }
 
 .fancybox__content>.carousel__button.is-close {
-	top: rem(14);
-	right: rem(14);
+	top: rem(1.400);
+	right: rem(-0.400);
+	@include media-breakpoint-up(xl) {
+		top: rem(14);
+		right: rem(14);
+	}
 }
 
 a {
