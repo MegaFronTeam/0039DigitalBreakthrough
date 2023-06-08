@@ -103,6 +103,10 @@
 		line-height: 1.27;
 		color: $body-bg;
 		margin-bottom: 0;
+		// display: inline-block;
+		@include media-breakpoint-up(md) {
+			display: inline-block;
+		} 
 		@include media-breakpoint-down(lg) {
 			font-size: rem(16);
 		}

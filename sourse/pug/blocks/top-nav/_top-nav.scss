@@ -12,9 +12,9 @@
 		--bs-gutter-x: #{rem(10)};
 		--bs-gutter-y: #{rem(9)};
 		align-items: center;
-		@media screen and (min-width: 350px) {
-			--bs-gutter-x: #{rem(16)};
-		}
+		// @media screen and (min-width: 350px) {
+		// 	--bs-gutter-x: #{rem(16)};
+		// }
 		@include media-breakpoint-up(md) {
 			--bs-gutter-x: #{rem(40)};
 		}
