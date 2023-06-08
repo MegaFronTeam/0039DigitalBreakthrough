@@ -33,9 +33,9 @@
 	}
 	.main-logo {
 		width: 100%;
-		max-width: rem(213);
+		max-width: rem(80);
 		@include media-breakpoint-down(sm) {
-			max-width: rem(124);
+			max-width: rem(60);
 		}
 	}
 	.logo-2 {
@@ -48,9 +48,9 @@
 	}
 	.logo-3 {
 		width: 100%;
-		max-width: rem(106);
+		max-width: rem(46);
 		@include media-breakpoint-down(sm) {
-			max-width: rem(65);
+			max-width: rem(40);
 		}
 	}
 	@include media-breakpoint-up(md) {}
