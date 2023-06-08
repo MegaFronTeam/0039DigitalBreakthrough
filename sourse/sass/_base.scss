@@ -108,7 +108,10 @@ body {
 	// 	padding-top: rem(94);
 	// }
 	@include media-breakpoint-up(sm) {
-		padding-top: rem(94);
+		padding-top: rem(88);
+	}
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(83);
 	}
 	
 	// display: flex;
