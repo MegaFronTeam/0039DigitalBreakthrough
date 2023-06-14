@@ -257,7 +257,7 @@ function setHackPageData(data) {
 					<div class="innerTabs">
 						<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
 							<div class="innerTabs__btn active">Описание</div>
-							<div class="innerTabs__btn ${item.results.length > 0 ? ' ' : ' disabled'}">Результаты</div>
+							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}">Результаты</div>
 						</div>
 						<div>
 							<div>
