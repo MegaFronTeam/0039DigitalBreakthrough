@@ -11,6 +11,8 @@
 	}
 	&__img-wrap {
 		position: relative;
+		border-radius: 8px;
+		overflow: hidden;
 	}
 	.tech {
 		&-1 {
@@ -96,7 +98,7 @@
 		}
 		.bg {
 			position: absolute;
-			left: calc(100% - 22%);
+			left: calc(100% - 42%);
 			bottom: -8px;
 			margin-bottom: 0;
 			width: 100%;

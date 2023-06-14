@@ -349,9 +349,14 @@ class Swiper {
         swiper.updateAutoHeight();
       }
     } else {
+<<<<<<< HEAD
       if ((params.slidesPerView === 'auto' || params.slidesPerView > 1) && swiper.isEnd && !params.centeredSlides) {
         const slides = swiper.virtual && params.virtual.enabled ? swiper.virtual.slides : swiper.slides;
         translated = swiper.slideTo(slides.length - 1, 0, false, true);
+=======
+      if ((swiper.params.slidesPerView === 'auto' || swiper.params.slidesPerView > 1) && swiper.isEnd && !swiper.params.centeredSlides) {
+        translated = swiper.slideTo(swiper.slides.length - 1, 0, false, true);
+>>>>>>> 82a09dbe379ac6fb7b7d4f7ad48e09ae5ddca83a
       } else {
         translated = swiper.slideTo(swiper.activeIndex, 0, false, true);
       }

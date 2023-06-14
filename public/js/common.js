@@ -438,11 +438,11 @@ function eventHandler() {
 		},
 	}
 	
-	const swiperbreadcrumb = new Swiper('.breadcrumb-slider--js', {
-		slidesPerView: 'auto',
-		freeMode: true,
-		watchOverflow: true
-	});
+	// const swiperbreadcrumb = new Swiper('.breadcrumb-slider--js', {
+	// 	slidesPerView: 'auto',
+	// 	freeMode: true,
+	// 	watchOverflow: true
+	// });
 	
 	const tagsSlider = new Swiper('.sFaqBlock__tags-slider--js', {
 		slidesPerView: 'auto',

@@ -5,7 +5,7 @@
 	// --sTPB: #{rem()};
 	color: $body-bg;
 	&__text{
-		@include ell(7);
+		@include ell(6);
 	}
 	&__wrap {
 		border-radius: 8px;
@@ -34,7 +34,8 @@
 			z-index: -1;
 			@include media-breakpoint-up(lg) {
 				mix-blend-mode: hard-light;
-				max-width: 872px;
+				max-width: 972px;
+				min-height: 100%;
 				top: 0;
 				left: calc(100% - 64%);
 				bottom: unset;
@@ -103,6 +104,10 @@
 		line-height: 1.27;
 		color: $body-bg;
 		margin-bottom: 0;
+		// display: inline-block;
+		@include media-breakpoint-up(md) {
+			display: inline-block;
+		} 
 		@include media-breakpoint-down(lg) {
 			font-size: rem(16);
 		}
@@ -194,6 +199,12 @@
 		margin-bottom: rem(18);
 		// max-width: rem(79);
 		text-align: center;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		@include media-breakpoint-up(xxl) { 
+			top: rem(40);
+			right: rem(40);
+		}
+
 		@include media-breakpoint-up(lg) {
 			margin-left: auto;
 			margin-bottom: auto;
@@ -201,6 +212,7 @@
 			top: rem(16);
 			right: rem(8);
 		}
+		
 		@include media-breakpoint-down(lg) {
 			font-size: rem(42);
 			// max-width: rem(53);

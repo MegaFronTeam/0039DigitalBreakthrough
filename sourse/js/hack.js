@@ -29,11 +29,15 @@ function setHackPageData(data) {
 		<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div></div>
 		`);
 	}
-
+	console.log(data);
+	document.querySelector('.sAbout__wrap').style.background = data.event.colors.background;
+	document.querySelector('.sAbout__date').style.color = data.event.colors.date;
+	document.querySelector('.sAbout__wrap source').srcset = data.event.avatarDesktop;
+	document.querySelector('.sAbout__wrap img').src = data.event.avatarMobile;
 	document.querySelector('h1').innerHTML = data.event.name;
 	document.querySelector('.sAbout h2').innerHTML = data.event.district;
 	document.querySelector('.sAbout__text').innerHTML = data.event.description;
-
+	
 	if (data.event.isEnded == false){
 		document.querySelector(".sAbout__info-wrap").insertAdjacentHTML("afterbegin", `
 		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
@@ -41,7 +45,8 @@ function setHackPageData(data) {
 		<span>Дедлайн подачи заявок</span>
 		</div>
 		`);
-	
+		document.querySelector('.sAbout__banner').style.background = data.event.colors.deadlineCard;
+		
 		document.querySelector(".sAbout__content").insertAdjacentHTML("beforeend", `
 		<a class="sAbout__btn btn btn-dark" href="https://lk.hacks-ai.ru">Принять участие</a>`);
 	}
@@ -111,7 +116,7 @@ function setHackPageData(data) {
 	};
 
 	// Tabs
-	const templateTabs = (item, active) => {
+	const templateTabs = (item, active, disableClass) => {
 		let expertisesItems = ()=>{ 
 			let content = ' '
 			if (item.expertises.length == 0) return ' ';
@@ -252,7 +257,7 @@ function setHackPageData(data) {
 					<div class="innerTabs">
 						<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
 							<div class="innerTabs__btn active">Описание</div>
-							<div class="innerTabs__btn ">Результаты</div>
+							<div class="innerTabs__btn ${item.results.length > 0 ? ' ' : ' disabled'}">Результаты</div>
 						</div>
 						<div>
 							<div>

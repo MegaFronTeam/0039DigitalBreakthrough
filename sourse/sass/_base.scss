@@ -103,16 +103,19 @@ body {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	padding-top: rem(170);
-	@media screen and (min-width: 500px) {
-		padding-top: rem(170);
+	padding-top: calc(rem(55) - rem(16));
+	// @media screen and (min-width: 500px) {
+	// 	padding-top: rem(94);
+	// }
+	@media screen and (min-width: 350px) {
+		padding-top: calc(rem(68) - rem(16));
+	}
+	@include media-breakpoint-up(sm) {
+		// padding-top: rem(86);
+		padding-top: calc(rem(68) - rem(16));
 	}
 	@include media-breakpoint-up(lg) {
-		padding-top: rem(96);
-	}
-
-	@include media-breakpoint-up(md) {
-		padding-top: rem(76);
+		padding-top: calc(rem(93) - rem(16));
 	}
 	
 	// display: flex;
