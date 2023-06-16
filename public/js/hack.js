@@ -52,7 +52,7 @@ function setHackPageData(data) {
 	}
 	else{
 		document.querySelector(".sAbout__info-wrap").insertAdjacentHTML("afterbegin", `
-		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
+		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
 		<div class="h3"> МЕРОПРИЯТИЕ <br> ЗАВЕРШЕНО</div>
 		</div>
 		`);
@@ -253,16 +253,16 @@ function setHackPageData(data) {
 		}
 
 		return `
-				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700">
+				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
 					<div class="innerTabs">
-						<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
+						<div class="innerTabs__caption"  >
 							<div class="innerTabs__btn active">Описание</div>
 							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}">Результаты</div>
 						</div>
 						<div>
 							<div>
 								<div class="innerTabs__content active">
-									<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+									<div class="sCases__tags"  >
 										${expertisesItems()}
 									</div>
 									${item.longDescription}
