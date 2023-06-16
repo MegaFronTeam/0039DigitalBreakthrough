@@ -297,9 +297,9 @@ function setHackPageData(data) {
 								<h2>Кейсовые задания</h2>
 								</div>
 							<div class="row tabs">
-							<div class="col-lg order-lg-2" data-aos="fade-up" data-aos-duration="700"></div>
+							<div class="col-lg order-lg-2" data-aos="fade-up" data-aos-duration="700"  data-aos-offset="0"></div>
 								<div class="col-lg-auto order-lg-1 tabs__caption">
-								<div class="sCases__links" data-aos="fade-up" data-aos-duration="700">
+								<div class="sCases__links" data-aos="fade-up" data-aos-duration="700" >
 								</div>
 								</div>
 							</div>
@@ -382,7 +382,7 @@ function setHackPageData(data) {
 	}
 
 	setNews(data.news);
-	// setPartners(data.allPartners);
+	setPartnersMain(data.allPartners);
 
 	console.log(data);
 }
