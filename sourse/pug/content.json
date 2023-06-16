@@ -4,6 +4,7 @@
     { "name": "Новости", "url": "/#sNews" },
     { "name": "Хакатоны", "url": "/#sHackathons" },
     { "name": "Вопросы и ответы", "url": "/#sFaq" },
+    { "name": "Партнеры", "url": "/#sPartners" },
     { "name": "Архив 2022", "url": "http://2022.hacks-ai.ru/" }
   ],
   "social": [

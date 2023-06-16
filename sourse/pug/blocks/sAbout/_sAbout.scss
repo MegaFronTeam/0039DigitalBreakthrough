@@ -10,7 +10,7 @@
 	&__wrap {
 		border-radius: 8px;
 		background-color: $primary;
-		background-color: #00ff16;
+		background-color: $dark;
 		padding: rem(24) rem(18);
 		overflow: hidden;
 		position: relative;
@@ -33,7 +33,7 @@
 			max-width: 384px;
 			z-index: -1;
 			@include media-breakpoint-up(lg) {
-				mix-blend-mode: hard-light;
+				// mix-blend-mode: hard-light;
 				max-width: 972px;
 				min-height: 100%;
 				top: 0;
@@ -238,12 +238,21 @@
 	&__banner {
 		position: relative;
 		z-index: 4;
-		padding: rem(24);
+		margin-top: 140px;
+		@include media-breakpoint-up(sm) {
+			padding: rem(24);
+			display: inline-block;
+			margin-top: 0;
+			margin-top: auto;
+		}
+		padding: rem(14);
 		background-color: $pink;
 		text-align: center;
 		border-radius: 21px;
-		margin-top: auto;
 		.h3 {
+			@include media-breakpoint-down(sm) {
+				font-size: 16px;
+			}
 			margin-bottom: 0;
 			line-height: 1.29;
 			font-weight: 600;

@@ -382,7 +382,7 @@ function setHackPageData(data) {
 	}
 
 	setNews(data.news);
-	setPartners(data.allPartners);
+	// setPartners(data.allPartners);
 
 	console.log(data);
 }
