@@ -317,6 +317,7 @@ function setHackPageData(data) {
 						<div class="innerTabs__caption"  >
 							<div class="innerTabs__btn active">Описание</div>
 							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}">Результаты</div>
+							<div class="innerTabs__btn ${item.isOrgDisabled == true ? ' disabled ' : ' '}">Организаторы</div>
 						</div>
 						<div>
 							<div>
@@ -326,8 +327,7 @@ function setHackPageData(data) {
 									</div>
 									${item.longDescription}
 									${partnersVideo()}
-									${partnersItem()}
-									${partnersPeoples()}
+									${partnersItem()} 
 								</div>
 								<div class="innerTabs__content ">
 									<div class='personalRating'>
@@ -340,6 +340,9 @@ function setHackPageData(data) {
 											${casesResults()}
 										</div>
 									</div>
+								</div>
+								<div class="innerTabs__content  "> 
+									${partnersPeoples()}
 								</div>
 							</div>
 						</div>

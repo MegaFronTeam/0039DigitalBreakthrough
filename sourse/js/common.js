@@ -577,6 +577,7 @@ if (document.readyState !== 'loading') {
 window.onload = function () {
 	document.body.classList.add('loaded_hiding');
 	window.setTimeout(function () {
+		document.querySelector(".loader-wrap").classList.add('loaded');
 		document.body.classList.add('loaded');
 		AOS.init();
 	}, 3000);
