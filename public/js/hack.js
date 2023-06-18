@@ -251,7 +251,66 @@ function setHackPageData(data) {
 			}
 			return content;
 		}
+		
+		
+		let partnersVideo = () => { 
+			let video = item.video; 
+			
+			if (video.length == 0) return ' '; 
+			return `
+			<div class="ratio ratio-16x9 mb-4"  data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
+			${video}
+			</div>
+			`;
+		}
+		
 
+		let partnersPeoplesItem = (items) => {
+			let content = ' ';
+
+			if (items == 0) return ' ';
+			for (const item of items) {
+				let avatar = item.avatar != null
+					? `<img src='${item.avatar}'/>	`
+					: '<svg class="icon icon-user "><use xlink:href = "img/svg/sprite.svg#user" ></use></svg >';
+				content += `
+					<div class='col-md-6 col-xxl-4'  data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
+						<div class="sCases__personal">
+							<div class="sCases__personal-img-wrap">
+								${avatar}
+							</div>
+							<div>
+								<div class='h6'>${item.surname} ${item.name}</div>
+								<span>${item.company}</span>
+							</div>
+						</div>
+					</div>`;
+			}
+			return content;
+		}
+		
+		let partnersPeoples = () => {
+			let content = ' ';
+
+			let staff = item.staff; 
+			
+			if (staff.length == 0) return ' ';
+			let index = 0;
+			for (const subItem in staff) { 
+				content += `
+							<div class="section mt-4">
+								<h3>${subItem}</h3>
+								<div class="row">
+									${partnersPeoplesItem(staff[subItem], subItem)}
+								</div>
+								</div>
+								`;
+							
+				index++;
+			}
+			return content;
+		}
+		
 		return `
 				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
 					<div class="innerTabs">
@@ -266,7 +325,9 @@ function setHackPageData(data) {
 										${expertisesItems()}
 									</div>
 									${item.longDescription}
+									${partnersVideo()}
 									${partnersItem()}
+									${partnersPeoples()}
 								</div>
 								<div class="innerTabs__content ">
 									<div class='personalRating'>
