@@ -1,6 +1,9 @@
 // start .sCases
 .sCases {
 	// --sPT: #{rem(16)};
+	.ratio {
+		max-width: rem(400);
+	}
 	.innerTabs__caption{
 		flex-wrap: wrap;
 	}

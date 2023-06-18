@@ -294,17 +294,20 @@ function setHackPageData(data) {
 
 			let staff = item.staff; 
 			
-			if (staff.length == 0) return ' ';
+			if (item.isOrgDisabled == true ) return  `
+				<p>${item.orgPlaceholder}</p>
+			`;
 			let index = 0;
 			for (const subItem in staff) { 
 				content += `
 							<div class="section mt-4">
 								<h3>${subItem}</h3>
+								<br>
 								<div class="row">
 									${partnersPeoplesItem(staff[subItem], subItem)}
 								</div>
-								</div>
-								`;
+							</div>
+							`;
 							
 				index++;
 			}
@@ -316,8 +319,8 @@ function setHackPageData(data) {
 					<div class="innerTabs">
 						<div class="innerTabs__caption"  >
 							<div class="innerTabs__btn active">Описание</div>
+							<div class="innerTabs__btn ">Эксперты и Жюри</div>
 							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}">Результаты</div>
-							<div class="innerTabs__btn ${item.isOrgDisabled == true ? ' disabled ' : ' '}">Организаторы</div>
 						</div>
 						<div>
 							<div>
@@ -328,6 +331,11 @@ function setHackPageData(data) {
 									${item.longDescription}
 									${partnersVideo()}
 									${partnersItem()} 
+								</div>
+								<div class="innerTabs__content  "> 
+									<div class="text-white">
+										${partnersPeoples()}
+									</div>
 								</div>
 								<div class="innerTabs__content ">
 									<div class='personalRating'>
@@ -341,8 +349,6 @@ function setHackPageData(data) {
 										</div>
 									</div>
 								</div>
-								<div class="innerTabs__content  "> 
-									${partnersPeoples()}
 								</div>
 							</div>
 						</div>
