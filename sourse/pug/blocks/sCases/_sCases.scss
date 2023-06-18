@@ -1,6 +1,12 @@
 // start .sCases
 .sCases {
 	// --sPT: #{rem(16)};
+	.innerTabs__caption{
+		flex-wrap: wrap;
+	}
+	.innerTabs__btn  {
+		margin-bottom: 20px;
+	}
 	--sPB: #{rem(0)};
 	--sTPB: #{rem(25)};
 	@include media-breakpoint-up(lg) {
