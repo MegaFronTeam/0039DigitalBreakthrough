@@ -5,7 +5,7 @@
 	// --sTPB: #{rem()};
 	color: $body-bg;
 	&__text{
-		@include ell(6);
+		// @include ell(6);
 	}
 	&__wrap {
 		border-radius: 8px;
@@ -22,7 +22,7 @@
 			// min-height: 100%;
 		}
 		@include media-breakpoint-up(lg) {
-			padding: rem(40) rem(31) rem(40) rem(40);
+			padding: rem(36) rem(31) rem(30) rem(40);
 			min-height: rem(580);
 		}
 		.bg {
