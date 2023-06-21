@@ -13,7 +13,7 @@ var params = window
 	);
 
 let pageId = params['eventId'];
-console.log(pageId);
+
 
 function setHackPageData(data) {
 	// console.log(data);
@@ -109,7 +109,7 @@ function setHackPageData(data) {
 	// BTns
 	const templateBtn = (item, active) => {
 		return `
-				<a class="sCases__link tabs__btn scroll-link ${active}" href="#sCases">
+				<a class="sCases__link tabs__btn scroll-link ${active}" id="${item.caseId}" href="#sCases">
 					<p>${item.shortDescription}</p>
 					<span>${item.name}</span>
 				</a>`;
@@ -315,29 +315,29 @@ function setHackPageData(data) {
 		}
 		
 		return `
-				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
+				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0"  id="content-${item.caseId}">
 					<div class="innerTabs">
 						<div class="innerTabs__caption"  >
-							<div class="innerTabs__btn active">Описание</div>
-							<div class="innerTabs__btn ">Эксперты и Жюри</div>
-							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}">Результаты</div>
+							<div class="innerTabs__btn active"  data-path="${item.caseId}"  data-number="1">Описание</div>
+							<div class="innerTabs__btn "  data-path="${item.caseId}"  data-number="2">Эксперты и Жюри</div>
+							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}"  data-path="${item.caseId}"  data-number="3">Результаты</div>
 						</div>
 						<div>
 							<div>
-								<div class="innerTabs__content active">
-									<div class="sCases__tags"  >
+								<div class="innerTabs__content active" >
+									<div class="sCases__tags" >
 										${expertisesItems()}
 									</div>
 									${item.longDescription}
 									${partnersVideo()}
 									${partnersItem()} 
 								</div>
-								<div class="innerTabs__content  "> 
+								<div class="innerTabs__content  "  > 
 									<div class="text-white">
 										${partnersPeoples()}
 									</div>
 								</div>
-								<div class="innerTabs__content ">
+								<div class="innerTabs__content "  >
 									<div class='personalRating'>
 										<div class='personalRating__caption'>
 											<div class="personalRating__btn active">Общий рейтинг</div>
@@ -454,6 +454,25 @@ function setHackPageData(data) {
 	setNews(data.news);
 	setPartnersMain(data.allPartners);
 
-	console.log(data);
+	// console.log(data);
+	
+	let tabId = params['tabId'];
+	let number = params['number'];
+	$(`#${tabId}`).click();
+	$(`#content-${tabId}  [data-number=${number}]`).click();
+
+	$(".sCases__link").click(function(){ 
+		tabId = $(this).attr('id');
+		window.history.pushState('1', 'Title', `?eventId=${pageId}&tabId=${tabId}&number=${number}`);
+	})
+	
+	$(".innerTabs__btn").click(function(){
+		number = $(this).attr('data-number');
+		window.history.pushState('1', 'Title', `?eventId=${pageId}&tabId=${tabId}&number=${number }`); 
+	})
+
 }
-getHackPageData(setHackPageData, pageId)
+getHackPageData(setHackPageData, pageId);
+
+
+
