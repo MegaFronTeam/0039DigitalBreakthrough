@@ -64,6 +64,7 @@ function setFAQPageData(data) {
 	});
 
 	setPartners(data.partners);
+	loadingContent();
 }
 // setFAQPageData()
 // getHackPageData(setFAQPageData, pageId)

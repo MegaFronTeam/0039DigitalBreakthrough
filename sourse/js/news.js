@@ -9,6 +9,7 @@ function setNewsPageData(data) {
 
 	setNews(data.news);
 	setPartners(data.partners);
+	loadingContent();
 }
 // setFAQPageData()
 // getHackPageData(setFAQPageData, pageId)

@@ -28,6 +28,8 @@ function setArticlePageData(data) {
 	if(data.text !== null) {
 		document.querySelector("#inner-content").insertAdjacentHTML("beforeend", data.text);
 	}
+
+	loadingContent();
 }
 
 getSingleNewsPageData(setArticlePageData, pageId);

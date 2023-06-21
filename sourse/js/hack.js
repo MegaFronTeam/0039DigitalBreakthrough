@@ -463,14 +463,16 @@ function setHackPageData(data) {
 
 	$(".sCases__link").click(function(){ 
 		tabId = $(this).attr('id');
+		number = $(`#content-${tabId} .innerTabs__btn.active`).attr('data-number');
 		window.history.pushState('1', 'Title', `?eventId=${pageId}&tabId=${tabId}&number=${number}`);
 	})
 	
 	$(".innerTabs__btn").click(function(){
 		number = $(this).attr('data-number');
+		tabId = $(`.sCases__link.active`).attr('id');
 		window.history.pushState('1', 'Title', `?eventId=${pageId}&tabId=${tabId}&number=${number }`); 
 	})
-
+	loadingContent();
 }
 getHackPageData(setHackPageData, pageId);
 

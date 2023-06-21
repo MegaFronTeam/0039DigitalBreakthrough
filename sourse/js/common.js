@@ -569,21 +569,19 @@ function eventHandler() {
 	});
 };
 
-
-window.onload = function () {
+function loadingContent () {
+	if (document.readyState !== 'loading') {
+		eventHandler();
+	} else {
+		document.addEventListener('DOMContentLoaded', eventHandler);
+	}
 	document.body.classList.add('loaded_hiding');
 	window.setTimeout(function () {
 		document.querySelector(".loader-wrap").classList.add('loaded');
 		document.body.classList.add('loaded');
 		AOS.init();
-		if (document.readyState !== 'loading') {
-			eventHandler();
-		} else {
-			document.addEventListener('DOMContentLoaded', eventHandler);
-		}
 
-	
-	}, 3000);
+	}, 600);
 
 }
 

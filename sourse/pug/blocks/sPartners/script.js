@@ -60,4 +60,5 @@ function setPartnersMain(items) {
 		// console.log(item);
 		document.querySelector("#sPartners .sPartners__wrap").insertAdjacentHTML("beforeend", group(item));
 	}
+	loadingContent();
 }
