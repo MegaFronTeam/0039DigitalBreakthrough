@@ -318,9 +318,9 @@ function setHackPageData(data) {
 				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0"  id="content-${item.caseId}">
 					<div class="innerTabs">
 						<div class="innerTabs__caption"  >
-							<div class="innerTabs__btn active"  data-path="${item.caseId}"  data-number="1">Описание</div>
-							<div class="innerTabs__btn "  data-path="${item.caseId}"  data-number="2">Эксперты и Жюри</div>
-							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}"  data-path="${item.caseId}"  data-number="3">Результаты</div>
+							<div class="innerTabs__btn active"  data-path="${item.caseId}"  data-tab="1">Описание</div>
+							<div class="innerTabs__btn "  data-path="${item.caseId}"  data-tab="2">Эксперты и Жюри</div>
+							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}"  data-path="${item.caseId}"  data-tab="3">Результаты</div>
 						</div>
 						<div>
 							<div>
@@ -456,21 +456,21 @@ function setHackPageData(data) {
 
 	// console.log(data);
 	
-	let tabId = params['tabId'];
-	let number = params['number'];
-	$(`#${tabId}`).click();
-	$(`#content-${tabId}  [data-number=${number}]`).click();
+	let caseEl = params['caseEl'];
+	let tab = params['tab'];
+	$(`#${caseEl}`).click();
+	$(`#content-${caseEl}  [data-tab=${tab}]`).click();
 
-	$(".sCases__link").click(function(){ 
-		tabId = $(this).attr('id');
-		number = $(`#content-${tabId} .innerTabs__btn.active`).attr('data-number');
-		window.history.pushState('1', 'Title', `?eventId=${pageId}&tabId=${tabId}&number=${number}`);
+	$(".sCaseEls__link").click(function(){ 
+		caseEl = $(this).attr('id');
+		tab = $(`#content-${caseEl} .innerTabs__btn.active`).attr('data-tab');
+		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab}`);
 	})
 	
 	$(".innerTabs__btn").click(function(){
-		number = $(this).attr('data-number');
-		tabId = $(`.sCases__link.active`).attr('id');
-		window.history.pushState('1', 'Title', `?eventId=${pageId}&tabId=${tabId}&number=${number }`); 
+		tab = $(this).attr('data-tab');
+		caseEl = $(`.sCases__link.active`).attr('id');
+		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab }`); 
 	})
 	loadingContent();
 }
