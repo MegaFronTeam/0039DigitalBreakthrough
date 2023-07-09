@@ -63,7 +63,7 @@ mixin defaultSlider(btn, title, link)
 		+e.slider--js.swiper
 			.swiper-wrapper
 				block
-		if btn
+		if btn 
 			+e.row.row(data-aos="fade-up" data-aos-duration="700")
 				.col
 					+e.btn.btn.btn-dark(href=link target='_blank')!= btn
