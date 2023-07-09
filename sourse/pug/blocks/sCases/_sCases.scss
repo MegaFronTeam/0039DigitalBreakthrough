@@ -192,7 +192,30 @@
 				border-bottom-color: $pink;
 			}
 			&.disabled {
-				pointer-events: none;
+				// pointer-events: none;
+				cursor: no-drop;
+				color: rgba($color: $gray-500, $alpha: .3) !important;
+				border-bottom: 1px solid transparent !important;
+				position: relative;
+				&::before{
+					content: "Результаты появятся после завершения мероприятия";
+					position: absolute;
+					background-color: $dark;
+					font-size: 12px;
+					padding: 15px;
+					@include a-cent1(x);
+					width: 200px;
+					color: #fff;
+					top: 100%;
+					border-radius: $border-radius;
+					display: none;
+
+				}
+				&:hover{
+					&:before{
+						display: block;
+					}
+				}
 			}
 		}
 	}

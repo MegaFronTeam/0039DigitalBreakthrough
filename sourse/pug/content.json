@@ -5,7 +5,7 @@
     { "name": "Хакатоны", "url": "/#sHackathons" },
     { "name": "Вопросы и ответы", "url": "/#sFaq" },
     { "name": "Партнеры", "url": "/#sPartners" },
-    { "name": "Архив 2022", "url": "http://2022.hacks-ai.ru/" }
+    { "name": "Архив 2022", "url": "http://2022.hacks-ai.ru/", "target":"_blank" }
   ],
   "social": [
     { "icon": "vk", "href": "https://vk.com/leadersofdigital" },

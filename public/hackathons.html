@@ -178,9 +178,27 @@ function setNews(items) {
 				<section class="sNews section" id="sNews">
 					<div class="container">
 						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
-							<h2>Новости проекта</h2>
 						</div>
 						<div class="default-slider">
+							<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
+								<div class="col">
+									<h2>Новости проекта</h2>
+								</div>
+								<div class="col-auto"> 
+									<div class="default-slider__arrow-wrap">
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="default-slider__slider default-slider__slider--js swiper">
 								<div class="swiper-wrapper">
 								</div>
@@ -194,7 +212,7 @@ function setPartners(items) {
 	const template = item => {
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3">
-					<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
+					<a class="sPartners__item  " target="_blank"  href="${item.link}" data-aos="fade-up" data-aos-duration="700">
 						<div class="sPartners__img-wrap"> 
 							<div class="img-wrap-center"> 
 								<img src="${item.avatar_url}" alt="" loading="lazy">
@@ -233,7 +251,7 @@ function setPartnersMain(items) {
 		for (const subitem of item) {
 			content += `
 								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item  " href="${subitem.link}" data-aos="fade-up" data-aos-duration="700">
+									<a class="sPartners__item  " target="_blank" href="${subitem.link}" data-aos="fade-up" data-aos-duration="700">
 										<div class="sPartners__img-wrap"> 
 											<div class="img-wrap-center"> 
 												<img src="${subitem.avatar_url}" alt="" loading="lazy">

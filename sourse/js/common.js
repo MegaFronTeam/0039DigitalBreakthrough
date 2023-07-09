@@ -160,7 +160,7 @@ const JSCCommon = {
 		// 			.eq($(this).index()).fadeIn().addClass('active');
 		// 	}
 		// })
-		$(document).on('click', '.' + tab + '__btn:not(.active)', function (e) {
+		$(document).on('click', '.' + tab + '__btn:not(.active):not(.disabled)', function (e) {
 			$(this)
 				.addClass('active').siblings().removeClass('active')
 				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
@@ -567,6 +567,30 @@ function eventHandler() {
 	$('.scroll-top').on('click', function() {
 		window.scrollTo(0,0);
 	});
+
+
+	if (getCookie('userAgree') !== 'true') {
+
+		let cookies = `<div class="cookie-block ">
+			<div class="container">
+				<div class="row">
+					<div class="col">Для того, чтобы ты&nbsp;мог удобнее пользоваться сайтом, мы&nbsp;используем cookies, которые сохраняются на&nbsp;твоем компьютере. Нажимая СОГЛАСЕН, ты&nbsp;подтверждаешь, что ты&nbsp;знаешь об&nbsp;использовании cookies на&nbsp;нашем сайте. Если захочешь, то&nbsp;отключить cookies ты&nbsp;можешь в&nbsp;настройках своего браузера</div>
+					<div class="col-auto">
+						<button class="btn btn-primary" type="button"> Согласен</button>
+					</div>
+				</div>
+			</div>
+		</div>`
+		document.querySelector("footer").insertAdjacentHTML("afterend", cookies);
+		document.querySelector('.cookie-block .btn').addEventListener("click", function() {
+			setCookie('userAgree', 'true');
+			$(".cookie-block").remove();
+		})
+	}
+	// Пример использования:
+
+	// deleteCookie('userAgree') 
+
 };
 
 function loadingContent () {
@@ -585,3 +609,44 @@ function loadingContent () {
 
 }
 
+
+function setCookie(name, value, options = {}) {
+
+	options = {
+		path: '/',
+		// при необходимости добавьте другие значения по умолчанию
+		...options
+	};
+
+	if (options.expires instanceof Date) {
+		options.expires = options.expires.toUTCString();
+	}
+
+	let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+	for (let optionKey in options) {
+		updatedCookie += "; " + optionKey;
+		let optionValue = options[optionKey];
+		if (optionValue !== true) {
+			updatedCookie += "=" + optionValue;
+		}
+	}
+
+	document.cookie = updatedCookie;
+}
+
+
+
+function getCookie(name) {
+	let matches = document.cookie.match(new RegExp(
+		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+	));
+	return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
+function deleteCookie(name) {
+	setCookie(name, "", {
+		'max-age': -1
+	})
+}

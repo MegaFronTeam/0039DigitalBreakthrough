@@ -730,6 +730,9 @@ iframe {
 			}
 		}
 	}
+	.footer__wrap a:not(:hover){
+		color: var(--bs-body-color);
+	}
 }
 
 .loader-wrap{
@@ -773,5 +776,27 @@ iframe {
   100% {
 		
 		transform: translateX(400%);
+	}
+}
+
+
+.cookie-block{
+	position: fixed; 
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: var(--bs-body-bg);
+	font-size: 12px;
+	padding: 10px 0;
+	box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.06);
+	// border-top: 1px solid #000;
+	// color: var(--bs-body-color);
+	z-index: 1000;
+	.row{
+		align-items: center;
+	}
+	.btn{
+		padding: 5px 15px;
+		font-size: 14px;
 	}
 }

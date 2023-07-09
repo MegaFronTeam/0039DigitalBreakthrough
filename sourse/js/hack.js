@@ -71,7 +71,7 @@ function setHackPageData(data) {
 		const templatePartner = item => {
 			return `
 					<div class="col-sm-6 col-md-4 col-xl-3">
-						<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
+						<a class="sPartners__item  "  target="_blank"  href="${item.link}" data-aos="fade-up" data-aos-duration="700">
 							<div class="sPartners__img-wrap"> 
 								<div class="img-wrap-center"> 
 									<img src="${item.avatar_url}" alt="" loading="lazy">
@@ -320,7 +320,7 @@ function setHackPageData(data) {
 						<div class="innerTabs__caption"  >
 							<div class="innerTabs__btn active"  data-path="${item.caseId}"  data-tab="1">Описание</div>
 							<div class="innerTabs__btn "  data-path="${item.caseId}"  data-tab="2">Эксперты и Жюри</div>
-							<div class="innerTabs__btn ${item.results.length == 0 ? ' disabled ' : ' '}"  data-path="${item.caseId}"  data-tab="3">Результаты</div>
+							<div class="innerTabs__btn disabled ${item.results.length == 0 ? ' disabled ' : ' '}"  data-path="${item.caseId}"  data-tab="3">Результаты</div>
 						</div>
 						<div>
 							<div>
@@ -467,12 +467,12 @@ function setHackPageData(data) {
 		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab}`);
 	})
 	
-	$(".innerTabs__btn").click(function(){
+	$(".innerTabs__btn:not(.disabled)").click(function(){
 		tab = $(this).attr('data-tab');
 		caseEl = $(`.sCases__link.active`).attr('id');
 		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab }`); 
 	})
-	loadingContent();
+	// loadingContent();
 }
 getHackPageData(setHackPageData, pageId);
 

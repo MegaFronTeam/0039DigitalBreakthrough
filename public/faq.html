@@ -68,7 +68,7 @@ function setPartners(items) {
 	const template = item => {
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3">
-					<a class="sPartners__item  " href="${item.link}" data-aos="fade-up" data-aos-duration="700">
+					<a class="sPartners__item  " target="_blank"  href="${item.link}" data-aos="fade-up" data-aos-duration="700">
 						<div class="sPartners__img-wrap"> 
 							<div class="img-wrap-center"> 
 								<img src="${item.avatar_url}" alt="" loading="lazy">
@@ -107,7 +107,7 @@ function setPartnersMain(items) {
 		for (const subitem of item) {
 			content += `
 								<div class="col-sm-6 col-md-4 col-xl-3">
-									<a class="sPartners__item  " href="${subitem.link}" data-aos="fade-up" data-aos-duration="700">
+									<a class="sPartners__item  " target="_blank" href="${subitem.link}" data-aos="fade-up" data-aos-duration="700">
 										<div class="sPartners__img-wrap"> 
 											<div class="img-wrap-center"> 
 												<img src="${subitem.avatar_url}" alt="" loading="lazy">

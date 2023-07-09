@@ -1,4 +1,4 @@
-mixin sNews(second, btn, id='sNews')
+mixin sNews(second, btn, id='sNews',title)
 	script
 		include script.js
 	// start sNews
@@ -7,9 +7,7 @@ mixin sNews(second, btn, id='sNews')
 			+b.section-title(data-aos="fade-up" data-aos-duration="700")
 				if second
 					h1!= second
-				else
-					h2 Новости проекта
-			+defaultSlider(btn, '', '/news.html')
+			+defaultSlider(btn, title, '/news.html')
 				mixin slide(img, date, title)
 					+e.slide.swiper-slide(href='#' data-aos="fade-up" data-aos-duration="700")
 						+newsItem(img, date, title)
