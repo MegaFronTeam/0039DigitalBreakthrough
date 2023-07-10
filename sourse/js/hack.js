@@ -320,7 +320,7 @@ function setHackPageData(data) {
 						<div class="innerTabs__caption"  >
 							<div class="innerTabs__btn active"  data-path="${item.caseId}"  data-tab="1">Описание</div>
 							<div class="innerTabs__btn "  data-path="${item.caseId}"  data-tab="2">Эксперты и Жюри</div>
-							<div class="innerTabs__btn disabled ${item.results.length == 0 ? ' disabled ' : ' '}"  data-path="${item.caseId}"  data-tab="3">Результаты</div>
+							<div class="innerTabs__btn  ${item.results.length == 0 ? ' disabled ' : ' '}"  data-path="${item.caseId}"  data-tab="3">Результаты</div>
 						</div>
 						<div>
 							<div>
