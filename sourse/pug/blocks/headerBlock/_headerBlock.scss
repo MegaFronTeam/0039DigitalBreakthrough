@@ -66,6 +66,7 @@
 		padding: rem(20);
 		overflow: hidden;
 		z-index: 1;
+		align-items: flex-start;
 		@include media-breakpoint-up(xl) {
 			padding: rem(40);
 		}
@@ -115,8 +116,7 @@
 	&__btn {
 		display: block;
 		margin-top: auto;
-		width: 100%;
-		max-width: rem(259);
+		min-width: rem(259);
 	}
 
 	&__video {

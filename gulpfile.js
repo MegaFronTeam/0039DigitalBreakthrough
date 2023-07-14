@@ -237,7 +237,7 @@ function img() {
 }
 function startwatch() {
     watch([sourse + '/sass/**/*.css', sourse + '/pug/blocks/**/*.scss', sourse + '/sass/**/*.scss', sourse + '/sass/**/*.sass'], { usePolling: true }, styles);
-    watch([sourse + '/pug/**/*.pug', sourse + '/pug/content.json'], { usePolling: true }, pugFiles);
+    watch([sourse + '/pug/**/*.pug', sourse + '/pug/content.json', sourse + '/pug/**/*.js'], { usePolling: true }, pugFiles);
     watch(sourse + '/svg/*.svg', { usePolling: true }, svg);
     // watch([sourse + '/js/libs.js'], { usePolling: true }, scripts);
     watch(sourse + '/sass/*.svg', { usePolling: true }, svgCopy);

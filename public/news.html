@@ -44,7 +44,7 @@ function setNews(items) {
 	const template = item => {
 		return `
 				<div class="default-slider__slide swiper-slide"   data-aos="fade-up" data-aos-duration="700">
-					<a href="article.html?news_id=${item.news_id}" class='news-item bg-wrap'>
+					<a href="article.html?news_id=${item.news_id}" class='news-item bg-wrap' target="_blank">
 						<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
 						<div class="news-item__date">${item.publication_date}</div>
 						<h4>${item.name}</h4>
@@ -94,8 +94,7 @@ function setPartners(items) {
 					</a>
 				</div>`;
 	};
-	for (const item of items) {
-		// console.log(item);
+	for (const item of items) { 
 		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
@@ -116,8 +115,7 @@ function setPartnersMain(items) {
 		`
 	}
 	const template = item => {
-		let content = ' ';
-		console.log(item);
+		let content = ' '; 
 		if (item.length == 0) return ' ';
 		for (const subitem of item) {
 			content += `
@@ -136,8 +134,7 @@ function setPartnersMain(items) {
 		return content;
 
 	};
-	for (const item in items) {
-		// console.log(item);
+	for (const item in items) { 
 		document.querySelector("#sPartners .sPartners__wrap").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();

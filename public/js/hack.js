@@ -29,7 +29,7 @@ function setHackPageData(data) {
 		<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div></div>
 		`);
 	}
-	console.log(data);
+	// console.log(data);
 	document.querySelector('.sAbout__wrap').style.background = data.event.colors.background;
 	document.querySelector('.sAbout__date').style.color = data.event.colors.date;
 	document.querySelector('.sAbout__wrap source').srcset = data.event.avatarDesktop;

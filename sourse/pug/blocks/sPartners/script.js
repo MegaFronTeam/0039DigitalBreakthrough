@@ -14,8 +14,7 @@ function setPartners(items) {
 					</a>
 				</div>`;
 	};
-	for (const item of items) {
-		// console.log(item);
+	for (const item of items) { 
 		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
@@ -36,8 +35,7 @@ function setPartnersMain(items) {
 		`
 	}
 	const template = item => {
-		let content = ' ';
-		console.log(item);
+		let content = ' '; 
 		if (item.length == 0) return ' ';
 		for (const subitem of item) {
 			content += `
@@ -56,8 +54,7 @@ function setPartnersMain(items) {
 		return content;
 
 	};
-	for (const item in items) {
-		// console.log(item);
+	for (const item in items) { 
 		document.querySelector("#sPartners .sPartners__wrap").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();
