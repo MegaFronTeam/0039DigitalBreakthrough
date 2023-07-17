@@ -157,12 +157,31 @@ function setEvents(items) {
 				</div>`;
 	};
 	let index = 0;
-	for (const item of items) {
+	for (const item of items.events) {
 		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item));
 		index++;
 	}
+
+	let btn = document.querySelector(".headerBlock__btn");
+
+	switch (items.isRegistrationAvailable) {
+		case true:
+			btn.innerHTML = 'Регистрируйся на хакатон';	
+			break;
+			
+		case false:
+			btn.innerHTML = 'Регистрация скоро откроется'; 
+			btn.setAttribute('disabled', '');
+			break;
+
+
+		default:
+			btn.innerHTML = 'Подробнее';
+			break;
+	}
+
 }
-getEvents(setEvents);
+getEvents(setEvents ,false);
 
 			</script>
 			<!-- start sHackathons-->
