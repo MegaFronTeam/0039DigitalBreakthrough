@@ -1,7 +1,22 @@
 
 function setEvents(items) {
-	const template = (item) => {
+	const template = (item) => { 
+		let buttonAttr = '';
+		let buttonTitle = '';
+		if (item.isDisabled == true && item.isEnded == false) {
+			buttonTitle = 'Регистрация скоро откроется'
+		}
+		else if (item.isDisabled == false && item.isEnded == false) {
+			buttonTitle = 'Регистрируйся на хакатон'
+		
+		}
+		else if ( item.isEnded == true) {
+			buttonTitle = 'Узнать как все прошло'
+		}
+		else{
+			buttonTitle = 'Подробнее'
 
+		}
 		return `
 				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="500"  data-aos-offset="0">
 					<a href='/hackathons.html?eventId=${item.eventId}' class="sHackathons__item ${item.isDisabled ? 'disabled' : " "}">
@@ -19,7 +34,7 @@ function setEvents(items) {
 								<div class="sHackathons__tag" data-tooltip="Лига для  опытных участников, участвуют в хакатонах ИИ не первый раз">Профи</div>
 							</div>
 						</div>
-						<button type="button"  class='sHackathons__btn btn btn-dark'>Узнай больше о хакатоне</button>
+						<button type="button"  class='sHackathons__btn btn btn-dark'  >${buttonTitle}</button>
 						<svg class="icon icon-check-2 ">
 							<use xlink:href="img/svg/sprite.svg#check-2"></use>
 						</svg>
@@ -30,6 +45,8 @@ function setEvents(items) {
 						</div>
 					</a>
 				</div>`;
+
+				
 	};
 	let index = 0;
 	for (const item of items.events) {
@@ -37,21 +54,18 @@ function setEvents(items) {
 		index++;
 	}
 
-	let btn = document.querySelector(".headerBlock__btn");
+	
 
+	let btn = document.querySelector(".headerBlock__btn");
+	console.log(items);
 	switch (items.isRegistrationAvailable) {
 		case true:
 			btn.innerHTML = 'Регистрируйся на хакатон';	
 			break;
 			
-		case false:
+		default:
 			btn.innerHTML = 'Регистрация скоро откроется'; 
 			btn.setAttribute('disabled', '');
-			break;
-
-
-		default:
-			btn.innerHTML = 'Подробнее';
 			break;
 	}
 
