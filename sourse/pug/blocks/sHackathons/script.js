@@ -57,7 +57,7 @@ function setEvents(items) {
 	
 
 	let btn = document.querySelector(".headerBlock__btn");
-	console.log(items);
+	// console.log(items);
 	switch (items.isRegistrationAvailable) {
 		case true:
 			btn.innerHTML = 'Регистрируйся на хакатон';	
