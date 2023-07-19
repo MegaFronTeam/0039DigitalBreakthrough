@@ -461,13 +461,13 @@ function setHackPageData(data) {
 	$(`#${caseEl}`).click();
 	$(`#content-${caseEl}  [data-tab=${tab}]`).click();
 
-	$(".sCaseEls__link").click(function(){ 
+	$(document).on('click', ".sCases__link", function(){ 
 		caseEl = $(this).attr('id');
 		tab = $(`#content-${caseEl} .innerTabs__btn.active`).attr('data-tab');
 		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab}`);
 	})
-	
-	$(".innerTabs__btn:not(.disabled)").click(function(){
+
+	$(document).on('click', ".innerTabs__btn:not(.disabled)", function(){
 		tab = $(this).attr('data-tab');
 		caseEl = $(`.sCases__link.active`).attr('id');
 		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab }`); 
