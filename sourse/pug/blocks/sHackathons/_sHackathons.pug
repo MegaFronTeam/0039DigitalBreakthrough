@@ -43,13 +43,17 @@ mixin sHackathons(data)
 					//- 	+item('Волгоград').disabled
 				.row
 					.col-lg-6
-						+e.item-wrap(style='--bgColor: #03FE33' data-aos="fade-up" data-aos-duration="700")
+						+e.item-wrap(href="/hackathons.html?eventId=969091" style='--bgColor: #03FE33' data-aos="fade-up" data-aos-duration="700")
 							span 8 сентября - 10 сентября
 							.h1 Всероссийский хакатон
 							+e.place Нижний Новгород
+							+e.btn.btn.btn-dark Регистрируйся на хакатон
 					.col-lg-6
+						//- href="/hackathons.html?eventId=969092" 
 						+e.item-wrap(style='--bgColor: #FF00C7' data-aos="fade-up" data-aos-duration="700")
 							span.text-white 24 ноября - 26 ноября
 							.h1.text-white Международный хакатон
 							+e.place.text-white Москва
+							//- +e.btn.btn.btn-dark Регистрируйся на хакатон
+							
 	// end sHackathons
