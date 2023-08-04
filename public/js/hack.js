@@ -18,10 +18,23 @@ let pageId = params['eventId'];
 function setHackPageData(data) {
 	// console.log(data);
 	document.title = data.event.name;
-	document.querySelector('.sAbout__date').innerHTML = 
-		data.event.dateRange[0] + '<br> ' +
-		+ data.event.dateRange[1] 
-		+ ' <span>' + data.event.dateRange[2] + '</span>';
+	console.log(data.event.dateRange);
+	if (data.event.dateRange.length > 3) {
+		let zero = data.event.dateRange[2] < 10 ? '0' : ' ';
+		document.querySelector('.sAbout__date').innerHTML = 
+			data.event.dateRange[0] 
+			+ '<br>'
+			+ data.event.dateRange[1]  ;
+		
+		}
+		else{
+			
+			document.querySelector('.sAbout__date').innerHTML = 
+				data.event.dateRange[0] + '<br> ' +
+				+ data.event.dateRange[1] 
+				+ ' <span>' + data.event.dateRange[2] + '</span>';
+			
+	}
 
 	if (data.playground.city && data.playground.city){ 
 		document.querySelector('.sAbout__types-inner').insertAdjacentHTML("beforeend", `
