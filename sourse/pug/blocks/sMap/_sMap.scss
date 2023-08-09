@@ -57,7 +57,12 @@
 		}
 	}
 	&__item{
-		max-width: rem(175);
+		width: 100%;
+		@include media-breakpoint-up(md) {
+
+			max-width: rem(175);
+		}
+		max-width: 50%;
 		p {
 			line-height: 1.27;
 			margin-bottom: 0;

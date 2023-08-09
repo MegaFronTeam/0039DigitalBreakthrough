@@ -32,11 +32,12 @@ function setMapStats(items) {
 
 	let map = document.querySelector('.map-svg');
 	let mapParts = map.children;
-	let numbersElements = document.querySelectorAll(".sMap__number")
+	let numbersElements = document.querySelectorAll(".sMap__number");
+	let select = document.querySelector('.sMap__select-wrap select');
 
 	document.addEventListener('click', function (e) {
 		let target = e.target.closest('[data-region]');
-		let select = e.target.closest('.sMap__select-wrap select');
+		let selectTarget = e.target.closest('.sMap__select-wrap select');
 
 		if (target) {
 			for (const mapPart of mapParts) {
@@ -50,8 +51,9 @@ function setMapStats(items) {
 				counter(el, +attributeNodeArray[index]['value'], 200);
 				index++;
 			}
+			select.value = target.getAttribute('data-region');
 		}
-		else if (!$(mapParts).hasClass('active') && !select) {
+		else if ($(mapParts).hasClass('active') && !selectTarget) {
 			for (const mapPart of mapParts) {
 				mapPart.classList.remove('active');
 			}
@@ -60,11 +62,10 @@ function setMapStats(items) {
 
 	});
 
-	let select = document.querySelector('.sMap__select-wrap select');
+	
 	select.addEventListener('change', function (e) {
-		let value = this.value;
-		let paths = document.querySelectorAll(`.map-svg [data-region]`);
-		for (const path of paths) {
+		let value = this.value; 
+		for (const path of mapParts) {
 			if (path.getAttribute('data-region') !== value) {
 				path.classList.remove('active');
 			}
@@ -91,19 +92,20 @@ function counter(id, end) {
 		increment = end > start ? 1 : -1,
 		step = Math.abs(Math.floor(200 / range));
 	increment = (start > 300 || end > 300) ? increment * 5 : increment;
-	if (end == start) return;
-	let timer = setInterval(() => {
-		current += increment;
-		obj.textContent = current;
-		if (increment > 0 && current >= end) {
-			current == end;
-			clearInterval(timer);
-		}
-		else if (increment < 0 && current <= end) {
-			current == end;
-			clearInterval(timer);
-		}
-	}, step);
+	if (end != current) { 
+		let timer = setInterval(() => {
+			current += increment;
+			obj.textContent = current;
+			if (increment > 0 && current >= end) {
+				+current == +end;
+				clearInterval(timer); 
+			}
+			else if (increment < 0 && current <= end) {
+				+current == +end;
+				clearInterval(timer); 
+			}
+		}, step);
+	}
 }
 
 function setMap(arr = arrAll) {
