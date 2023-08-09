@@ -16,9 +16,9 @@ function setMapStats(items) {
 			];
 			setMap()
 		}
-		else{
+		else {
 
-			let path = document.querySelector(`.map-svg [data-region="${subObj.region}"]`); 
+			let path = document.querySelector(`.map-svg [data-region="${subObj.region}"]`);
 			path.setAttribute("data-result-hackathons", subObj.events);
 			path.setAttribute("data-result-attendees-newbie", subObj.attendees['newbie']);
 			path.setAttribute("data-result-attendees-profi", subObj.attendees['profi']);
@@ -30,36 +30,35 @@ function setMapStats(items) {
 	}
 
 
-	let map = document.querySelector('.map-svg'); 
-		let mapParts = map.children;
-		let numbersElements = document.querySelectorAll(".sMap__number") 
+	let map = document.querySelector('.map-svg');
+	let mapParts = map.children;
+	let numbersElements = document.querySelectorAll(".sMap__number")
 
-		document.addEventListener('click', function (e) {
-			let target = e.target.closest('[data-region]');
-			let select = e.target.closest('.sMap__select-wrap select'); 
+	document.addEventListener('click', function (e) {
+		let target = e.target.closest('[data-region]');
+		let select = e.target.closest('.sMap__select-wrap select');
 
-			if (target) {
-				for (const mapPart of mapParts) {
-					mapPart.classList.remove('active');
-				}
-				target.classList.add('active');
-				
-				let index = 0;
-				let attributeNodeArray = [...target.attributes].filter(item => item.name.includes('data-result')); 
-				for (const el of numbersElements) {  
-					counter(el,  +attributeNodeArray[index]['value'], 200);
-					index++;
-				} 
+		if (target) {
+			for (const mapPart of mapParts) {
+				mapPart.classList.remove('active');
 			}
-			else if (!$(mapParts).hasClass('active') && !select) {
-				for (const mapPart of mapParts) {
-					mapPart.classList.remove('active');
-				}
-				setMap()
-				console.log('00');
+			target.classList.add('active');
+
+			let index = 0;
+			let attributeNodeArray = [...target.attributes].filter(item => item.name.includes('data-result'));
+			for (const el of numbersElements) {
+				counter(el, +attributeNodeArray[index]['value'], 200);
+				index++;
 			}
-			
-		});
+		}
+		else if (!$(mapParts).hasClass('active') && !select) {
+			for (const mapPart of mapParts) {
+				mapPart.classList.remove('active');
+			}
+			setMap()
+		}
+
+	});
 
 	let select = document.querySelector('.sMap__select-wrap select');
 	select.addEventListener('change', function (e) {
@@ -68,9 +67,8 @@ function setMapStats(items) {
 		for (const path of paths) {
 			if (path.getAttribute('data-region') !== value) {
 				path.classList.remove('active');
-				console.log(0);
-      }
-      else {
+			}
+			else {
 				path.classList.add('active');
 				let index = 0;
 				let attributeNodeArray = [...path.attributes].filter(item => item.name.includes('data-result'));
@@ -78,22 +76,21 @@ function setMapStats(items) {
 					counter(el, +attributeNodeArray[index]['value'], 200);
 					index++;
 				}
-				console.log(1);
-      }
+			}
 		}
 	});
 
 }
 
 function counter(id, end) {
-	
+
 	let obj = id,
 		current = +id.textContent,
 		start = current,
 		range = (start > 200 || end > 200) ? (end - start) * 2 : end - start,
 		increment = end > start ? 1 : -1,
 		step = Math.abs(Math.floor(200 / range));
-		increment = (start > 300 || end > 300) ? increment * 5 : increment;
+	increment = (start > 300 || end > 300) ? increment * 5 : increment;
 	if (end == start) return;
 	let timer = setInterval(() => {
 		current += increment;
@@ -103,10 +100,10 @@ function counter(id, end) {
 			clearInterval(timer);
 		}
 		else if (increment < 0 && current <= end) {
-      current == end;
-      clearInterval(timer);
-    }
-	}, step); 
+			current == end;
+			clearInterval(timer);
+		}
+	}, step);
 }
 
 function setMap(arr = arrAll) {
