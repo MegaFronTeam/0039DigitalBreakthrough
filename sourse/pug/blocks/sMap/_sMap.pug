@@ -6,7 +6,7 @@ mixin sMap(data)
 			+e.wrap
 				+b.section-title
 					h2 Карта участников за 2023 год
-				+e.select-wrap
+				+e.LABEL.select-wrap
 					select.form-select
 						option(disabled selected) Выберите округ
 						option(value="Дальневосточный федеральный округ") Дальневосточный федеральный округ
@@ -186,15 +186,25 @@ mixin sMap(data)
 								path(fill-rule='evenodd' clip-rule='evenodd' d='M52.9222 299.575L50.9972 301.196L50.7528 301.38L50.6 301.105L49.1334 298.565L47.3611 299.391L47.1778 301.013L47.1472 301.105L47.0861 301.166L45.3445 302.91L46.8722 304.317L47.025 304.439L46.9334 304.623L45.4667 307.407L46.5361 309.059L46.7195 309.334L46.4139 309.426L43.5722 310.589L42.4111 312.914L45.7722 319.247L45.8945 319.461L45.6806 319.583L43.45 321.082L43.6334 325.304L49.3472 330.444H52.5861L52.6167 330.627L53.5945 333.778L53.625 333.87L53.5945 333.993L52.6167 335.645L55.3972 337.909L58.6361 338.092H58.7889L58.85 338.214L59.7667 339.53L61.8139 338.245L60.9278 336.501L60.8361 336.318L61.0195 336.195L63.7389 334.023L63.8306 333.962L63.9222 333.993L68.5056 334.176L70.0945 332.922L70.2778 328.792L69.3306 324.753L66.4278 319.491L66.3667 319.43L66.3972 319.338L67.1611 314.719L64.4722 310.099H64.4417V310.069L63.3111 307.07L60.7139 306.306H60.6222L60.5611 306.214L59.3084 304.409L57.3222 304.745L57.1695 304.776L57.0778 304.654L52.9222 299.575Z' fill='#03FE33')
 					
 					.col-lg-auto 
-						mixin item(text, span)
+						mixin item(text, span, sm1)
 							+e.item(data-aos="fade-up" data-aos-duration="700")
 								p!= text
 								.row
-									+e.number.text-primary.col&attributes(attributes)!= span
+									+e.number.text-primary.col&attributes(attributes)
+										span!= span
+										if block 
+											block
+										else
+											.small Новички
 									if block 
 										block
 									else
-										+e.number--second.col&attributes(attributes)!= span
+										+e.number--second.col&attributes(attributes)
+											span!= span
+											if block 
+												block
+											else
+												.small Профи
 						+e.item-wrap
 							+item('Хакатонов прошло', '0').hackathons 
 							+item('Участников', '0').players

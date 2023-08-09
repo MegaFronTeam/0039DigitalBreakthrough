@@ -13,8 +13,8 @@ function setMapStats(items) {
 				subObj.teams['profi'],
 				subObj.solutions['newbie'],
 				subObj.solutions['profi']
-			];
-			setMap()
+			]; 
+			setMap();
 		}
 		else {
 
@@ -32,19 +32,18 @@ function setMapStats(items) {
 
 	let map = document.querySelector('.map-svg');
 	let mapParts = map.children;
-	let numbersElements = document.querySelectorAll(".sMap__number");
+	let numbersElements = document.querySelectorAll(".sMap__number span");
 	let select = document.querySelector('.sMap__select-wrap select');
 
 	document.addEventListener('click', function (e) {
 		let target = e.target.closest('[data-region]');
-		let selectTarget = e.target.closest('.sMap__select-wrap select');
+		let selectTarget = e.target.closest('.sMap__select-wrap  ');
 
 		if (target) {
 			for (const mapPart of mapParts) {
 				mapPart.classList.remove('active');
 			}
 			target.classList.add('active');
-
 			let index = 0;
 			let attributeNodeArray = [...target.attributes].filter(item => item.name.includes('data-result'));
 			for (const el of numbersElements) {
@@ -58,6 +57,7 @@ function setMapStats(items) {
 				mapPart.classList.remove('active');
 			}
 			setMap()
+			select.value = 'Выберите округ'
 		}
 
 	});
@@ -109,7 +109,7 @@ function counter(id, end) {
 }
 
 function setMap(arr = arrAll) {
-	let numbersElements = document.querySelectorAll(".sMap__number")
+	let numbersElements = document.querySelectorAll(".sMap__number span")
 	let index = 0;
 	for (const el of numbersElements) {
 		counter(el, + arr[index++]);

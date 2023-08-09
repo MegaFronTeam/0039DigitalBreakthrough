@@ -258,7 +258,7 @@ getEvents(setEvents ,false);
 						<div class="section-title">
 							<h2>Карта участников за 2023 год</h2>
 						</div>
-						<div class="sMap__select-wrap">
+						<label class="sMap__select-wrap">
 							<select class="form-select">
 								<option disabled="disabled" selected="selected">Выберите округ</option>
 								<option value="Дальневосточный федеральный округ">Дальневосточный федеральный округ</option>
@@ -270,7 +270,7 @@ getEvents(setEvents ,false);
 								<option value="Центрaльный федеральный округ">Центрaльный федеральный округ</option>
 								<option value="Южный федеральный округ">Южный федеральный округ</option>
 							</select>
-						</div>
+						</label>
 						<div class="sMap__row row">
 							<div class="col-lg" data-aos="fade-up" data-aos-duration="700">
 								<svg class="map-svg" viewBox="0 0 1051 448" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -452,34 +452,40 @@ getEvents(setEvents ,false);
 										<div class="sMap__item" data-aos="fade-up" data-aos-duration="700">
 											<p>Хакатонов прошло</p>
 											<div class="row">
-												<div class="sMap__number text-primary col hackathons">0
+												<div class="sMap__number text-primary col hackathons"><span>0</span> 
 												</div> 
 											</div>
 										</div>
 										<div class="sMap__item" data-aos="fade-up" data-aos-duration="700">
 											<p>Участников</p>
 											<div class="row">
-												<div class="sMap__number text-primary col players">0
+												<div class="sMap__number text-primary col players"><span>0</span>
+													<div class="small">Новички</div>
 												</div>
-												<div class="sMap__number sMap__number--second col players">0
+												<div class="sMap__number sMap__number--second col players"><span>0</span>
+													<div class="small">Профи</div>
 												</div>
 											</div>
 										</div>
 										<div class="sMap__item" data-aos="fade-up" data-aos-duration="700">
 											<p>Команд</p>
 											<div class="row">
-												<div class="sMap__number text-primary col teams">0
+												<div class="sMap__number text-primary col teams"><span>0</span>
+													<div class="small">Новички</div>
 												</div>
-												<div class="sMap__number sMap__number--second col teams">0
+												<div class="sMap__number sMap__number--second col teams"><span>0</span>
+													<div class="small">Профи</div>
 												</div>
 											</div>
 										</div>
 										<div class="sMap__item" data-aos="fade-up" data-aos-duration="700">
 											<p>Решений</p>
 											<div class="row">
-												<div class="sMap__number text-primary col results">0
+												<div class="sMap__number text-primary col results"><span>0</span>
+													<div class="small">Новички</div>
 												</div>
-												<div class="sMap__number sMap__number--second col results">0
+												<div class="sMap__number sMap__number--second col results"><span>0</span>
+													<div class="small">Профи</div>
 												</div>
 											</div>
 										</div>
@@ -504,8 +510,8 @@ function setMapStats(items) {
 				subObj.teams['profi'],
 				subObj.solutions['newbie'],
 				subObj.solutions['profi']
-			];
-			setMap()
+			]; 
+			setMap();
 		}
 		else {
 
@@ -523,19 +529,18 @@ function setMapStats(items) {
 
 	let map = document.querySelector('.map-svg');
 	let mapParts = map.children;
-	let numbersElements = document.querySelectorAll(".sMap__number");
+	let numbersElements = document.querySelectorAll(".sMap__number span");
 	let select = document.querySelector('.sMap__select-wrap select');
 
 	document.addEventListener('click', function (e) {
 		let target = e.target.closest('[data-region]');
-		let selectTarget = e.target.closest('.sMap__select-wrap select');
+		let selectTarget = e.target.closest('.sMap__select-wrap  ');
 
 		if (target) {
 			for (const mapPart of mapParts) {
 				mapPart.classList.remove('active');
 			}
 			target.classList.add('active');
-
 			let index = 0;
 			let attributeNodeArray = [...target.attributes].filter(item => item.name.includes('data-result'));
 			for (const el of numbersElements) {
@@ -549,6 +554,7 @@ function setMapStats(items) {
 				mapPart.classList.remove('active');
 			}
 			setMap()
+			select.value = 'Выберите округ'
 		}
 
 	});
@@ -600,7 +606,7 @@ function counter(id, end) {
 }
 
 function setMap(arr = arrAll) {
-	let numbersElements = document.querySelectorAll(".sMap__number")
+	let numbersElements = document.querySelectorAll(".sMap__number span")
 	let index = 0;
 	for (const el of numbersElements) {
 		counter(el, + arr[index++]);
