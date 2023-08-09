@@ -1,3 +1,4 @@
+"use strict"
 var params = window
 	.location
 	.search
