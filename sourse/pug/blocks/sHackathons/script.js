@@ -11,7 +11,7 @@ function setEvents(items) {
 		
 		}
 		else if ( item.isEnded == true) {
-			buttonTitle = 'Узнать как все прошло'
+			buttonTitle = 'Узнать, как все прошло'
 		}
 		else{
 			buttonTitle = 'Подробнее'
