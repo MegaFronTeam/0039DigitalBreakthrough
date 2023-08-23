@@ -27,8 +27,12 @@ function setEvents(items) {
 			
 		}
 		else if ( item.isEnded == true) {
+<<<<<<< HEAD
 			buttonUPTitle = "Мероприятие завершено";
 			buttonTitle = 'Узнать как   прошло'
+=======
+			buttonTitle = 'Узнать, как все прошло'
+>>>>>>> feb1e5ac96f694e9c0f55fbdf2a9fb11c268e56b
 		}
 		else{
 			buttonUPTitle = "Мероприятие  проходит";

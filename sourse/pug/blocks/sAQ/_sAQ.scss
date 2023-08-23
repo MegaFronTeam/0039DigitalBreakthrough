@@ -19,8 +19,8 @@
 	}
 	&__inner{
 		position: relative;
-		z-index: 2;
-			@include media-breakpoint-up(xl) {
+		z-index: 3;
+		@include media-breakpoint-up(xl) {
 
 				padding: rem(40);
 			}
