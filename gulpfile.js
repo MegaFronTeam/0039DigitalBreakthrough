@@ -231,7 +231,7 @@ function cleanPublic() {
     return deleteAsync([dist])
 }
 function copyPublic() {
-    return src(`${publicPath}/*`)
+    return src(`${publicPath}/**/*`)
         .pipe(plumber())
         .pipe(dest(`${dist}/`))
     
