@@ -1,0 +1,13 @@
+$output-bourbon-deprecation-warnings: false;
+@use "sass:math";
+@import "bourbon/app/assets/stylesheets/bourbon";
+@import "fonts";
+@import "mixin";
+@import "~bootstrap/scss/functions";
+@import "vars";
+@import "~bootstrap/scss/variables";
+@import "var-dark";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";

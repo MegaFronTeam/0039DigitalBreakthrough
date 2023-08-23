@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<link href="css/main.min.css" rel="stylesheet"/>
-		<script src="https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs"> </script>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
 		<script>
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -235,12 +235,14 @@ function setPartnersMain(items) {
 
 	const group = (item) => {
 		return `
-			<div class="section-title" data-aos="fade-up" data-aos-duration="700">
-							<h2>${item}</h2>
-						</div>
-						<div class="sPartners__row row pb-5">
-						${template(items[item])}
-						</div>
+			<div class="sPartners__wrap">
+				<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+					<h2>${item}</h2>
+				</div>
+				<div class="sPartners__row row pb-5">
+					${template(items[item])}
+				</div>
+			</div>
 		`
 	}
 	const template = item => {
@@ -264,7 +266,7 @@ function setPartnersMain(items) {
 
 	};
 	for (const item in items) { 
-		document.querySelector("#sPartners .sPartners__wrap").insertAdjacentHTML("beforeend", group(item));
+		document.querySelector("#sPartners .container ").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();
 }
@@ -272,10 +274,7 @@ function setPartnersMain(items) {
 				</script>
 				<!-- start sPartners-->
 				<section class="sPartners section" id="sPartners">
-					<div class="container">
-						<div class="sPartners__wrap">
-						</div>
-					</div>
+					<div class="container"></div>
 				</section>
 			</main>
 			<script>addBlock(`footer`)</script>

@@ -108,6 +108,7 @@ body {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+  min-height: 100vh;
 	padding-top: calc(rem(55) - rem(16));
 	// @media screen and (min-width: 500px) {
 	// 	padding-top: rem(94);

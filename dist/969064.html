@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Цифровой прорыв 2023: Хакатоны по искусственному интеллекту">
+		<meta property="og:description" content="Официальный сайт конкурса Цифровой прорыв: Сезон искусственный интеллект. Хакатоны по искусственному интеллекту 2023.">
+		<meta property="og:image" content="https://hacksai-data.obs.ru-moscow-1.hc.sbercloud.ru/logo.jpg">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="libs/aos/aos.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="main-page" data-bg="main.jpg">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main>
+				<!-- start sAbout-->
+				<section class="sAbout section" id="sAbout">
+					<div class="container">
+						<div class="sAbout__wrap">
+							<div class="tech tech-1">AI</div>
+							<div class="tech tech-2">NeuralNetwork</div>
+							<div class="tech tech-3">NeuralNetwork</div>
+							<div class="tech tech-4">Edtech</div>
+							<picture>
+								<source media="(min-width: 992px)" srcset="img/sAbout-bg-1.png"/><img class="bg" src="img/sAbout-bg-sm-1.png" alt=""/>
+							</picture>
+							<div class="row">
+								<div class="col-lg">
+									<div class="sAbout__content" data-aos="fade-up" data-aos-duration="700">
+										<div class="sAbout__types">
+											<div class="sAbout__type h4">Окружной хакатон
+											</div>
+											<div class="sAbout__type h4">г. Москва, площадка VK
+											</div>
+										</div>
+										<h1>Москва</h1>
+										<h2>Центральный федеральный округ</h2>
+										<p>Окружной хакатон&nbsp;&mdash; командное соревнование для специалистов&nbsp;ИТ, в&nbsp;результате которого участники из&nbsp;округа смогут решить задачи от&nbsp;государства и&nbsp;бизнеса по&nbsp;теме&nbsp;ИИ или другим ИТ-тематикам. Мероприятие проходит в&nbsp;гибридном формате с&nbsp;офлайн площадкой (студия + коворкинг) в&nbsp;одном из&nbsp;регионов округа. В&nbsp;окружном хакатоне могут участвовать также и&nbsp;представители других регионов.</p>
+										<div class="sAbout__row row">
+											<div class="col-auto">
+												<div class="sAbout__item">
+													<svg class="icon icon-user-solid ">
+														<use xlink:href="img/svg/sprite.svg#user-solid"></use>
+													</svg>
+													<div>
+														<p>Участников</p>
+														<div class="h2">1240</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-auto">
+												<div class="sAbout__item">
+													<svg class="icon icon-users ">
+														<use xlink:href="img/svg/sprite.svg#users"></use>
+													</svg>
+													<div>
+														<p>Команд</p>
+														<div class="h2">11 240</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<a class="sAbout__btn btn btn-dark" href="#">Принять участие
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-auto">
+									<div class="sAbout__info-wrap">
+										<div class="sAbout__date" data-aos="fade-up" data-aos-duration="700">26 28 <span>мая</span>
+										</div>
+										<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
+											<div class="h3">24 июня 18:00</div><span>Дедлайн подачи заявок</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sAbout-->
+				<!-- start sCases-->
+				<section class="sCases section" id="sCases">
+					<div class="container">
+						<div class="sCases__wrap">
+							<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+								<h2>Кейсовые задания</h2>
+							</div>
+							<div class="row tabs">
+								<div class="col-lg order-lg-2 tabs__content active" data-aos="fade-up" data-aos-duration="700">
+									<div class="innerTabs">
+										<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
+											<div class="innerTabs__btn active">Описание</div>
+											<div class="innerTabs__btn disabled">Результаты</div>
+										</div>
+										<div class="innerTabs__content active">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Signs
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+										<div class="innerTabs__content">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Signs
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg order-lg-2 tabs__content" data-aos="fade-up" data-aos-duration="700">
+									<div class="innerTabs">
+										<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
+											<div class="innerTabs__btn active">Описание</div>
+											<div class="innerTabs__btn disabled">Результаты</div>
+										</div>
+										<div class="innerTabs__content active">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Signs
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+										<div class="innerTabs__content">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Signs
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg order-lg-2 tabs__content" data-aos="fade-up" data-aos-duration="700">
+									<div class="innerTabs">
+										<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
+											<div class="innerTabs__btn active">Описание</div>
+											<div class="innerTabs__btn disabled">Результаты</div>
+										</div>
+										<div class="innerTabs__content active">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Signs
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+										<div class="innerTabs__content">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Signs
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg order-lg-2 tabs__content" data-aos="fade-up" data-aos-duration="700">
+									<div class="innerTabs">
+										<div class="innerTabs__caption" data-aos="fade-up" data-aos-duration="700">
+											<div class="innerTabs__btn active">Описание</div>
+											<div class="innerTabs__btn disabled">Результаты</div>
+										</div>
+										<div class="innerTabs__content active">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Signs
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+										<div class="innerTabs__content">
+											<div class="sCases__tags" data-aos="fade-up" data-aos-duration="700">
+												<a class="sCases__tag" href="#">Edtech
+												</a>
+												<a class="sCases__tag" href="#">NeuralNetwork
+												</a>
+												<a class="sCases__tag" href="#">Signs
+												</a>
+											</div>
+											<p data-aos="fade-up" data-aos-duration="700">В&nbsp;Российской Федерации на&nbsp;постоянной основе поддерживается и&nbsp;развивается научно-техническая деятельность</p>
+											<p data-aos="fade-up" data-aos-duration="700">Разработка методологии и&nbsp;прототипа системы, определяющей &laquo;фронтиры&raquo; науки и&nbsp;технологий в&nbsp;целях планирования научных исследований и&nbsp;постановки прорывных задач технологического развития страны</p>
+											<p data-aos="fade-up" data-aos-duration="700">Основной задачей кейса является определения перечня &laquo;фронтиров&raquo; научно-технологических исследований и&nbsp;прогноз перспективных направлений. В&nbsp;мире уже существует несколько сотен миллионов различных информационных источников/материалов, анализ которых требуется для определения &laquo;фронтиров&raquo;. Решение описанной задачи в&nbsp;настоящее время представляется максимально эффективным на&nbsp;основе передовых ML-технологий.</p>
+											<p data-aos="fade-up" data-aos-duration="700">&laquo;Фронтиры&raquo; научно-технического развития&nbsp;&mdash; это наиболее популярные направления исследований, где идёт активное развитие и&nbsp;большое количество прорывов. Точное определение приоритетных направлений (&laquo;фронтиров&raquo;) науки и&nbsp;технологии позволит выделять госфинансирование на&nbsp;темы, которые в&nbsp;наибольшей степени углубят научные знания, принесут пользу экономике и&nbsp;социальной сфере, позволят российским командам исследователей решать задачи &laquo;на&nbsp;опережение&raquo; и&nbsp;выйти на&nbsp;лидирующие позиции в&nbsp;научном мировом сообществе.</p>
+											<a class="sCases__director" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sber.png" alt="" loading="lazy"/>
+												<div><span>Постановщик задачи</span>
+													<p>Короткое название</p>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-auto order-lg-1 tabs__caption">
+									<div class="sCases__links" data-aos="fade-up" data-aos-duration="700">
+										<a class="sCases__link tabs__btn active scroll-link" href="#sCases">
+											<p>Эффективность образовательных программ</p><span>Рустехнологии</span>
+										</a>
+										<a class="sCases__link tabs__btn scroll-link" href="#sCases">
+											<p>Фронтиры науки</p><span>СБЕРтехнологии</span>
+										</a>
+										<a class="sCases__link tabs__btn scroll-link" href="#sCases">
+											<p>Фронтиры науки</p><span>СБЕРтехнологии</span>
+										</a>
+										<a class="sCases__link tabs__btn scroll-link" href="#sCases">
+											<p>Фронтиры науки</p><span>СБЕРтехнологии</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sCases-->
+				<!-- start sPartners-->
+				<section class="sPartners sPartners--2 section" id="sPartners">
+					<div class="container">
+						<div class="sPartners__wrap">
+							<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+								<h2>Партнеры окружного хакатона</h2>
+							</div>
+							<div class="sPartners__row row">
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-1.png" alt="" loading="lazy"/><span>Информационный партнер</span>
+										<p></p>
+									</a>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</a>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</a>
+								</div>
+								<div class="col-sm-6 col-md-4 col-xl-3">
+									<a class="sPartners__item" href="#" data-aos="fade-up" data-aos-duration="700"><img src="img/sPartners-img-2.png" alt="" loading="lazy"/><span>Соорганизатор</span>
+										<p>Автономная некоммерческая организация, созданная в&nbsp;2018 году по&nbsp;инициативе Президента</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sPartners-->
+				<!-- start sInfo-->
+				<section class="sInfo section" id="sInfo">
+					<div class="container">
+						<div class="sInfo__grid">
+							<div class="sInfo__grid-item bg-wrap" data-aos="fade-up" data-aos-duration="700">
+								<div class="sInfo__img-wrap picture-bg"><img class="object-fit-js" src="img/sInfo-img-1.jpg" alt="" loading="lazy"/>
+								</div>
+								<h2 class="h1">Название площадки</h2>
+								<p>Нижний Новгород, ул. Викторовская 68</p>
+							</div>
+							<div class="sInfo__grid-item" data-aos="fade-up" data-aos-duration="700">
+								<p>The election of&nbsp;9&nbsp;April 2021 resulted in&nbsp;a&nbsp;25/25 tie between the ruling Human Rights Protection Party (HRPP) of&nbsp;Prime Minister Tuilaepa Aiono Sailele Malielegaoi and the FAST party of&nbsp;Naomi Mata&rsquo;afa, with the remaining seat held by&nbsp;the independent Tuala Iosefo Ponifasio.[5] On&nbsp;20 April 2021, the Samoan electoral commission declared the HRPP&rsquo;s Ali&rsquo;imalemanu Alofa Tuuau elected in&nbsp;an&nbsp;extra seat due to&nbsp;the requirement that a&nbsp;minimum of&nbsp;10% of&nbsp;seats in&nbsp;parliament must be&nbsp;held by&nbsp;women</p>
+							</div>
+							<div class="sInfo__grid-item bg-wrap" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sInfo-img-2.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="sInfo__grid-item bg-wrap" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sInfo-img-3.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="sInfo__grid-item p-0" data-aos="fade-up" data-aos-duration="700"><iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A067577216d28e63ea7afc2dba5eaf822c8cdcdc3fb8e8050fb4a8c45fc86d3ab&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+							</div>
+							<div class="sInfo__grid-item bg-wrap" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js picture-bg" src="img/sInfo-img-4.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="sInfo__grid-item" data-aos="fade-up" data-aos-duration="700">
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sInfo-->
+				<script>
+function setNews(items) {
+	const template = function (img, title, date) {
+		return `
+				<div class="default-slider__slide swiper-slide"   data-aos="fade-up" data-aos-duration="700">
+					<div class='news-item bg-wrap'>
+						<img class="object-fit-js picture-bg" src="${img}" alt="" loading="lazy"/>
+						<div class="default-slider__date">${date}</div>
+						<h4>${title}</h4>
+					</div>
+				</div>`;
+	};
+	for (const item of items) {
+		// console.log(item);
+		document.querySelector(".sNews .swiper-wrapper").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.publication_date));
+	}
+}
+getNews(setNews);
+				</script>
+				<!-- start sNews-->
+				<section class="sNews section" id="sNews">
+					<div class="container">
+						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+							<h2>Новости проекта</h2>
+						</div>
+						<div class="default-slider">
+							<div class="default-slider__slider default-slider__slider--js swiper">
+								<div class="swiper-wrapper">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sNews-->
+				<script>
+function setPartners(items) {
+	const template = function (img, title, text, link) {
+		return `
+				<div class="col-sm-6 col-md-4 col-xl-3">
+					<a class="sPartners__item  " href="${link}" data-aos="fade-up" data-aos-duration="700">
+						<div class="sPartners__img-wrap"> 
+							<div class="img-wrap-center"> 
+								<img src="${img}" alt="" loading="lazy">
+							</div>
+						</div>
+						<span>${title}</span>
+						<p>${text || ''}</p>
+					</a>
+				</div>`;
+	};
+	for (const item of items) {
+		// console.log(item);
+		document.querySelector(".sPartners__row").insertAdjacentHTML("beforeend", template(item.avatar_url, item.name, item.description, item.link));
+	}
+}
+getPartners(setPartners, 'partner');
+				</script>
+				<!-- start sPartners-->
+				<section class="sPartners section" id="sPartners">
+					<div class="container">
+						<div class="sPartners__wrap">
+							<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+								<h2>Организаторы и партнеры</h2>
+							</div>
+							<div class="sPartners__row row">
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sPartners-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+			<script src="js/hack.js"></script>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="libs/aos/aos.js"> </script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

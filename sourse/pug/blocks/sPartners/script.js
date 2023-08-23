@@ -26,12 +26,14 @@ function setPartnersMain(items) {
 
 	const group = (item) => {
 		return `
-			<div class="section-title" data-aos="fade-up" data-aos-duration="700">
-							<h2>${item}</h2>
-						</div>
-						<div class="sPartners__row row pb-5">
-						${template(items[item])}
-						</div>
+			<div class="sPartners__wrap">
+				<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+					<h2>${item}</h2>
+				</div>
+				<div class="sPartners__row row pb-5">
+					${template(items[item])}
+				</div>
+			</div>
 		`
 	}
 	const template = item => {
@@ -55,7 +57,7 @@ function setPartnersMain(items) {
 
 	};
 	for (const item in items) { 
-		document.querySelector("#sPartners .sPartners__wrap").insertAdjacentHTML("beforeend", group(item));
+		document.querySelector("#sPartners .container ").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();
 }

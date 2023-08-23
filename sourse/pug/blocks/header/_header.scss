@@ -6,7 +6,6 @@
 	left: 0;
 	width: 100%;
 	z-index: 100;
-	background-color: $body-bg;
 	&--js{
 		&.fixed-animate{
 			transition: transform .4s;
@@ -14,6 +13,7 @@
 		}
 		&.fixed{
 			transform: translateY(-200%);
+			background-color: $body-bg;
 			// padding-top: .875rem;
 			// padding-top: 0;
 			.top-nav__col-logo {

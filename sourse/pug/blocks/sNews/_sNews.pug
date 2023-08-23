@@ -5,6 +5,7 @@ mixin sNews(second, btn, id='sNews',title)
 	+b.SECTION.sNews.section(id=id)&attributes(attributes)
 		.container
 			+b.section-title(data-aos="fade-up" data-aos-duration="700")
+				block
 				if second
 					h1!= second
 			+defaultSlider(btn, title, '/news.html')

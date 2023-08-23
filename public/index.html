@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<link href="css/main.min.css" rel="stylesheet"/>
-		<script src="https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs"> </script>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
 		<script>
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -69,56 +69,10 @@ getTranslationLink(setTranslationShow);
 
 			</script>
 			<!-- start headerBlock-->
-			<div class="headerBlock section" id="headerBlock">
+			<div class="headerBlock2 section" id="headerBlock">
 				<div class="container">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="headerBlock__wrap" data-aos="fade-up" data-aos-duration="700"><img src="img/svg/headerBlock-img-1.svg" alt="" loading="lazy"/>
-								<h3>Большой спорт<br>для IT-специалистов</h3>
-								<a class="headerBlock__btn btn btn-dark" href="https://lk.hacks-ai.ru">Регистрируйся на хакатон
-								</a><img class="bg" src="img/svg/headerBlock-img-3.svg" alt=""/>
-							</div>
-						</div>
-						<div class="col-lg-6" data-aos="fade-up" data-aos-duration="700">
-							<div class="headerBlock__video">
-								<div class="headerBlock__video-img-wrap">
-									<div class="img-wrap-center">
-										<iframe src=""></iframe>
-									</div>
-								</div>
-								<div class="headerBlock__cover">
-									<div class="img-wrap-center"><img class="object-fit-js" src="https://lodmedia.hb.bizmrg.com/assets/video-bg.webp" alt="" loading="lazy"/>
-									</div><img class="img-1" src="https://lodmedia.hb.bizmrg.com/assets/video-bg-1.svg" alt="" loading="lazy"/><img class="img-2" src="https://lodmedia.hb.bizmrg.com/assets/video-bg-2.svg" alt="" loading="lazy"/>
-									<div class="headerBlock__play-btn"><svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_867_3617)">
-<path d="M34 0C15.2513 0 0 15.2527 0 34C0 52.7473 15.2513 68 34 68C52.7487 68 68 52.7473 68 34C68 15.2527 52.7487 0 34 0ZM47.5165 35.1912L27.6832 47.9412C27.4508 48.0919 27.1823 48.1667 26.9167 48.1667C26.6843 48.1667 26.4491 48.1085 26.2388 47.9938C25.7822 47.7448 25.5 47.2688 25.5 46.75V21.25C25.5 20.7312 25.7822 20.2552 26.2388 20.0062C26.6871 19.76 27.2487 19.7751 27.6832 20.0588L47.5165 32.8088C47.9205 33.0689 48.1667 33.5186 48.1667 34C48.1667 34.4814 47.9205 34.931 47.5165 35.1912Z" fill="#03FE33"/>
-</g>
-<defs>
-<clipPath id="clip0_867_3617">
-<rect width="68" height="68" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-									</div>
-									<div class="headerBlock__video-content">
-										<h1>Хакатон<br>Церемония закрытия<br>Уральский федеральный округ</h1>
-										<h3>Начало трансляции в 14:30 по МСК</h3>
-									</div>
-								</div>
-							</div>
-							<div class="headerBlock__img-wrap">
-								<div class="tech tech-1">Computer vision</div>
-								<div class="tech tech-2">Edtech</div>
-								<div class="tech tech-3">Machine vision</div>
-								<div class="tech tech-4">AI</div>
-								<div class="tech tech-5">Bigdata</div>
-								<div class="tech tech-6">Deep learning</div>
-								<div class="tech tech-7">Medtech</div>
-								<div class="tech tech-8">Machine learning</div>
-								<div class="tech tech-9">NLP</div>
-								<div class="tech tech-10">Text Recognition</div><img class="res-i" src="https://lodmedia.hb.bizmrg.com/assets/headerBlock-img-2.webp" alt="" loading="lazy"/>
-							</div>
-						</div>
+					<div class="headerBlock2__videoBlock">
+						<h1>Большой спорт для IT-специалистов</h1><a class="btn btn-primary" href="https://lk.hacks-ai.r"> Регистрация на хакатон</a>
 					</div>
 				</div>
 			</div>
@@ -128,17 +82,35 @@ function setEvents(items) {
 	const template = (item) => { 
 		let buttonAttr = '';
 		let buttonTitle = '';
+		let buttonUPTitle = '';
+		let dateNUmbers = item.startDate.split("-",2);
+		let fistDate = dateNUmbers[0].split(" ")[0];
+				fistDate = +fistDate > 9 ? fistDate : "0" + fistDate;
+		let secondDate = dateNUmbers[1].split(" ")[0]; 
+				secondDate = +secondDate > 9 ? secondDate : "0" + secondDate; 
+		let date = `
+							<div class="date-numbers">${fistDate}</div> 
+							<div class="date-numbers">${secondDate}</div> 
+							<small>${dateNUmbers[1].split(" ")[1].slice(0,3)}</small>
+							`;
+		
 		if (item.isDisabled == true && item.isEnded == false) {
-			buttonTitle = 'Регистрация скоро откроется'
+			buttonTitle = 'Регистрация еще не началась';
+			// buttonUPTitle = "Регистрация откроется 2 сентября";
+			buttonUPTitle =   "Регистрация скоро откроется  ";
 		}
 		else if (item.isDisabled == false && item.isEnded == false) {
 			buttonTitle = 'Регистрируйся на хакатон'
-		
+			// buttonUPTitle = "Регистрация открыта до 2 августа";
+			buttonUPTitle = "Регистрация открыта";
+			
 		}
 		else if ( item.isEnded == true) {
-			buttonTitle = 'Узнать как все прошло'
+			buttonUPTitle = "Мероприятие завершено";
+			buttonTitle = 'Узнать как   прошло'
 		}
 		else{
+			buttonUPTitle = "Мероприятие  проходит";
 			buttonTitle = 'Подробнее'
 
 		}
@@ -146,19 +118,15 @@ function setEvents(items) {
 				<div class="col-sm-6 col-md-4 col-xl-3" data-aos="fade-up" data-aos-duration="500"  data-aos-offset="0">
 					<a href='/hackathons.html?eventId=${item.eventId}' class="sHackathons__item ${item.isDisabled ? 'disabled' : " "}">
 						<div class="sHackathons__content">
-							<h5>${item.startDate}</h5>
-							<div class="h3"  >${item.name}</div>
-							<div class="sHackathons__city">${item.region}</div>
-						</div>
-						<div class="sHackathons__choose">Лиги: </div>
-						<div class="sHackathons__inner-row row">
-							<div class="col-auto">
-								<div class="sHackathons__tag" data-tooltip="Лига для участников, впервые участвующих в хакатонах цифрового прорыва. Команды новичков кроме денежного приза могут выиграть также путешествие от БЧП">Новички</div>
-							</div>
-							<div class="col-auto">
-								<div class="sHackathons__tag" data-tooltip="Лига для  опытных участников, участвуют в хакатонах ИИ не первый раз">Профи</div>
+							<div class="row">
+								<div class="col">
+									<div class="h3"  >${item.name}</div>
+									<div class="sHackathons__city">${item.region}</div>
+								</div>
+								<div class="col-auto sHackathons__date">${date}</div>
 							</div>
 						</div>
+						<div class="sHackathons__item-text">${buttonUPTitle}</div>
 						<button type="button"  class='sHackathons__btn btn btn-dark'  >${buttonTitle}</button>
 						<svg class="icon icon-check-2 ">
 							<use xlink:href="img/svg/sprite.svg#check-2"></use>
@@ -202,28 +170,25 @@ getEvents(setEvents ,false);
 			<section class="sHackathons section" id="sHackathons">
 				<div class="container">
 					<div class="sHackathons__wrap">
-						<div class="section-title" data-aos="fade-up" data-aos-duration="500">
-							<h2>8 окружных хакатонов</h2>
-						</div>
 						<div class="sHackathons__row row">
-						</div>
-						<div class="row">
 							<div class="col-lg-6">
-								<a class="sHackathons__item-wrap" href="/hackathons.html?eventId=969091" style="--bgColor: #03FE33" data-aos="fade-up" data-aos-duration="700"><span>8 сентября - 10 сентября</span>
-									<div class="h1">Всероссийский хакатон</div>
-									<div class="sHackathons__place">Нижний Новгород
-									</div>
+								<a class="sHackathons__item-wrap" href="/hackathons.html?eventId=969091" style="--bgColor: #03FE33" data-aos="fade-up" data-aos-duration="700">
+									<div class="row"><span class="col-auto">8 сентября - 10 сентября</span><span class="col-auto"> Нижний Новгород</span></div>
+									<div class="h1">Всероссийский хакатон </div>
 									<div class="sHackathons__btn btn btn-dark">Регистрируйся на хакатон
 									</div>
 								</a>
 							</div>
 							<div class="col-lg-6">
-								<div class="sHackathons__item-wrap" style="--bgColor: #FF00C7" data-aos="fade-up" data-aos-duration="700"><span class="text-white">24 ноября - 26 ноября</span>
-									<div class="h1 text-white">Международный хакатон</div>
-									<div class="sHackathons__place text-white">Москва
+								<div class="sHackathons__item-wrap" style="--bgColor: #FF00C7" data-aos="fade-up" data-aos-duration="700">
+									<div class="row text-white"><span class="col-auto">24 ноября - 26 ноября</span><span class="col-auto">Москва</span></div>
+									<div class="h1 text-white">Международный хакатон </div>
+									<div class="sHackathons__text-soon">Регистрация скоро откроется
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="sHackathons__row row">
 						</div>
 					</div>
 				</div>
@@ -231,21 +196,42 @@ getEvents(setEvents ,false);
 			<!-- end sHackathons-->
 			<!-- start sLargestEvent-->
 			<section class="sLargestEvent section bg-wrap" id="sLargestEvent">
-				<div class="container">
-					<div class="section-title">
-						<h2 class="h1">Самый масштабный проект по&nbsp;искусственному интеллекту в&nbsp;России</h2>
-					</div>
-					<div class="sLargestEvent__wrap bg-wrap" data-aos="fade-up" data-aos-duration="700">
-						<video class="picture-bg" src="https://lodmedia.hb.bizmrg.com/assets/video-bg-540.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata"></video>
+				<div class="container"> 
+					<div class="sLargestEvent__content-wrap">
 						<div class="sLargestEvent__num-row row">
-							<!--.col-auto-->
-							<!--	+item(116, 'хакатонов')-->
-							<!--.col-auto-->
-							<!--	+item(35, 'лекций')-->
-							<!--.col-auto-->
-							<!--	+item('2021-22', 'годы проведения ')-->
-							<!--.col-auto.ms-xxl-auto.text-xxl-end-->
-							<!--	+item('34 000 000 ', 'призовой фонд')-->
+							<div class="sLargestEvent__col col">
+								<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+									<h2 class="h1">Цифровой прорыв. <br> Сезон: Искусственный интеллект </h2>
+									<p>Самое масштабное соревнование для профессионалов в&nbsp;сфере IT&nbsp;&mdash; реализуется в&nbsp;рамках федерального проекта &laquo;Искусственный интеллект&raquo; национальной программы &laquo;Цифровая экономика Российской Федерации&raquo;. Проект направлен на&nbsp;поиск, развитие и&nbsp;поддержку талантливых специалистов по&nbsp;созданию продуктов и&nbsp;сервисов с&nbsp;использованием технологий искусственного интеллекта. В&nbsp;рамках хакатонов проекта специалисты&mdash;разработчики сообща решают поставленную организаторами бизнес-проблему и&nbsp;(или) социальную проблему в&nbsp;сфере искусственного интеллекта за&nbsp;ограниченное время. По&nbsp;итогам соревнований определяются призеры и&nbsp;победители.</p>
+								</div>
+								<div class="sLargestEvent__item" data-aos="fade-up" data-aos-duration="700"><span>110 000 000Р </span>призовой фонд
+								</div>
+							</div>
+							<div class="col-12 order-xl-last m-0">
+								<div class="sLargestEvent__wrap bg-wrap">
+									<video class="picture-bg" src="https://lodmedia.hb.bizmrg.com/assets/video-bg-540.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata"> </video>
+								</div>
+							</div>
+							<div class="sLargestEvent__items-col col-xl-auto">
+								<div class="row">
+									<div class="col-xl-12 col-auto">
+										<div class="sLargestEvent__item" data-aos="fade-up" data-aos-duration="700"><span>5</span>лет
+										</div>
+									</div>
+									<div class="col-xl-12 col-auto">
+										<div class="sLargestEvent__item" data-aos="fade-up" data-aos-duration="700"><span>85</span>лекций
+										</div>
+									</div>
+									<div class="col-xl-12 col-auto">
+										<div class="sLargestEvent__item" data-aos="fade-up" data-aos-duration="700"><span>116</span>хакатонов
+										</div>
+									</div>
+									<div class="col-xl-12 col-auto">
+										<div class="sLargestEvent__item" data-aos="fade-up" data-aos-duration="700"><span>20 000</span> участников
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -615,6 +601,80 @@ function setMap(arr = arrAll) {
 getMainPageData(setMapStats);
 			</script>
 			<!-- end sMap-->
+			<!-- start sGR-->
+			<div class="sGR section" data-aos="fade-up" data-aos-duration="700" id="sGR">
+				<div class="container">
+					<div class="sGR__inner">
+						<div class="tabs">
+							<div class="tabs__caption">
+								<div class="tabs__btn active">Возможности</div>
+								<div class="tabs__btn">Образование</div>
+								<div class="tabs__btn">Наука</div>
+								<div class="tabs__btn">Гранты</div>
+								<div class="tabs__btn">Работа</div>
+							</div>
+							<div>
+										<div class="tabs__content active">
+											<div class="row">
+												<div class="col">
+													<div class="sGR__title">Возможности развития для участников
+													</div>
+													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
+													</a>
+												</div>
+												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+											</div>
+										</div>
+										<div class="tabs__content">
+											<div class="row">
+												<div class="col">
+													<div class="sGR__title">Возможности развития для участников
+													</div>
+													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
+													</a>
+												</div>
+												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+											</div>
+										</div>
+										<div class="tabs__content">
+											<div class="row">
+												<div class="col">
+													<div class="sGR__title">Возможности развития для участников
+													</div>
+													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
+													</a>
+												</div>
+												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+											</div>
+										</div>
+										<div class="tabs__content">
+											<div class="row">
+												<div class="col">
+													<div class="sGR__title">Возможности развития для участников
+													</div>
+													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
+													</a>
+												</div>
+												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+											</div>
+										</div>
+										<div class="tabs__content">
+											<div class="row">
+												<div class="col">
+													<div class="sGR__title">Возможности развития для участников
+													</div>
+													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
+													</a>
+												</div>
+												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+											</div>
+										</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end sGR-->
 			<script>
 function setNews(items) {
 	const template = item => {
@@ -641,6 +701,7 @@ function setNews(items) {
 			<section class="sNews section" id="sNews">
 				<div class="container">
 					<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+						<h2>Новости проекта</h2>
 					</div>
 					<div class="default-slider">
 						<div class="default-slider__slider default-slider__slider--js swiper">
@@ -672,6 +733,81 @@ function setNews(items) {
 			</section>
 			<!-- end sNews-->
 			<script>getNews(setNews)</script>
+			<!-- start sIthubs-->
+			<section class="sIthubs section" id="sIthubs">
+				<div class="container">
+					<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+						<h2>IT хабы</h2>
+					</div>
+					<div class="default-slider">
+						<div class="default-slider__slider default-slider__slider--js swiper">
+							<div class="swiper-wrapper">
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-1.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-2.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-3.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-4.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-1.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-2.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-3.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-4.jpg" alt="" loading="lazy"/>
+									<div class="h4">Название ITхаба</div>
+									<div class="default-slider__city">г. Москва
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
+							<div class="col">
+								<div class="default-slider__btn btn btn-dark" target="_blank">Все IT хабы
+								</div>
+							</div>
+							<div class="col-auto"> 
+								<div class="default-slider__arrow-wrap">
+									<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+										<svg class="icon icon-chevron-left-2 ">
+											<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
+										</svg>
+									</div>
+									<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+										<svg class="icon icon-chevron-right-2 ">
+											<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sIthubs-->
 			<script>
 function setFAQ(items) {
 	const template = item => {
@@ -707,6 +843,139 @@ getFAQ(setFAQ);
 				</div>
 			</section>
 			<!-- end sFaq-->
+			<!-- start sAQ-->
+			<section class="sAQ section pt-0" data-aos="fade-up" data-aos-duration="700" id="sAQ">
+				<div class="container">
+					<div class="sAQ__inner">
+						<h2>Остались вопросы?</h2>
+						<p>Напиши нам на&nbsp;почту  <a href="mailto:hacks-ai@rsv-help.ru">hacks-ai@rsv-help.ru</a> и&nbsp;скоро мы&nbsp;свяжемся с&nbsp;вами</p>
+					</div>
+				</div>
+			</section>
+			<!-- end sAQ-->
+			<!-- start sAmbasadors-->
+			<section class="sAmbasadors section" id="sAmbasadors">
+				<div class="container">
+					<div class="sAmbasadors__wrap" data-aos="fade-up" data-aos-duration="700">
+						<div class="section-title">
+							<h2>Амбасадоры </h2>
+						</div>
+						<div class="default-slider"> 
+							<div class="default-slider__slider default-slider__slider--js swiper" data-aos="fade-up" data-aos-duration="700">
+								<div class="swiper-wrapper">
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+									<div class="default-slider__slide swiper-slide">
+										<div class="sAmbasadors-item">
+											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
+											</div>
+											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
+											</div>
+											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
+								<div class="col">
+									<a class="default-slider__btn btn btn-primary" href="#" target="_blank">Все амбасадоры
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sAmbasadors-->
 			<script>
 function setPartners(items) {
 	const template = item => {
@@ -735,12 +1004,14 @@ function setPartnersMain(items) {
 
 	const group = (item) => {
 		return `
-			<div class="section-title" data-aos="fade-up" data-aos-duration="700">
-							<h2>${item}</h2>
-						</div>
-						<div class="sPartners__row row pb-5">
-						${template(items[item])}
-						</div>
+			<div class="sPartners__wrap">
+				<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+					<h2>${item}</h2>
+				</div>
+				<div class="sPartners__row row pb-5">
+					${template(items[item])}
+				</div>
+			</div>
 		`
 	}
 	const template = item => {
@@ -764,7 +1035,7 @@ function setPartnersMain(items) {
 
 	};
 	for (const item in items) { 
-		document.querySelector("#sPartners .sPartners__wrap").insertAdjacentHTML("beforeend", group(item));
+		document.querySelector("#sPartners .container ").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();
 }
@@ -772,10 +1043,7 @@ function setPartnersMain(items) {
 			</script>
 			<!-- start sPartners-->
 			<section class="sPartners section" id="sPartners">
-				<div class="container">
-					<div class="sPartners__wrap">
-					</div>
-				</div>
+				<div class="container"></div>
 			</section>
 			<script>getPartnersSections(setPartnersMain);</script>
 			<script>addBlock(`footer`)</script>

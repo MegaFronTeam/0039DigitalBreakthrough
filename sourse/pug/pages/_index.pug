@@ -1,0 +1,45 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sHackathons/_sHackathons.pug
+include ../blocks/sLargestEvent/_sLargestEvent.pug
+include ../blocks/sMap/_sMap.pug
+include ../blocks/sResume/_sResume.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sFaq/_sFaq.pug
+include ../blocks/sIthubs/_sIthubs.pug
+include ../blocks/sPartners/_sPartners.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= 'Главная'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	+headerBlock
+	+sHackathons
+	+sLargestEvent
+	+sMap
+	//- +sResume
+	+sNews('', 'Все новости')
+	script.
+		getNews(setNews)
+	+sFaq
+	//- +sIthubs
+	+sPartnersMain
+	script.
+		getPartnersSections(setPartnersMain);
+	+parts('footer')

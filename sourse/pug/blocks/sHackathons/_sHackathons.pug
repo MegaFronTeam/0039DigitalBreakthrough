@@ -5,8 +5,24 @@ mixin sHackathons(data)
 	+b.SECTION.sHackathons.section#sHackathons&attributes(attributes)
 		.container
 			+e.wrap
-				+b.section-title(data-aos="fade-up" data-aos-duration="500" )
-					h2 8 окружных хакатонов
+				//- +b.section-title(data-aos="fade-up" data-aos-duration="500" )
+				//- 	h2 8 окружных хакатонов
+				+e.row.row
+					.col-lg-6
+						+e.item-wrap(href="/hackathons.html?eventId=969091" style='--bgColor: #03FE33' data-aos="fade-up" data-aos-duration="700")
+							.row
+								span.col-auto 8 сентября - 10 сентября
+								span.col-auto  Нижний Новгород
+							.h1 Всероссийский хакатон 
+							+e.btn.btn.btn-dark Регистрируйся на хакатон
+					.col-lg-6
+						//- href="/hackathons.html?eventId=969092" 
+						+e.item-wrap(style='--bgColor: #FF00C7' data-aos="fade-up" data-aos-duration="700")
+							.row.text-white
+								span.col-auto 24 ноября - 26 ноября
+								span.col-auto Москва
+							.h1.text-white Международный хакатон 
+							+e.text-soon Регистрация скоро откроется
 				+e.row.row
 					mixin item(title, btn='Узнай больше о хакатоне')
 						+e.item&attributes(attributes)
@@ -41,19 +57,5 @@ mixin sHackathons(data)
 					//- 	+item('Москва').disabled
 					//- .col-sm-6.col-md-4.col-xl-3(data-aos="fade-up" data-aos-duration="700")
 					//- 	+item('Волгоград').disabled
-				.row
-					.col-lg-6
-						+e.item-wrap(href="/hackathons.html?eventId=969091" style='--bgColor: #03FE33' data-aos="fade-up" data-aos-duration="700")
-							span 8 сентября - 10 сентября
-							.h1 Всероссийский хакатон
-							+e.place Нижний Новгород
-							+e.btn.btn.btn-dark Регистрируйся на хакатон
-					.col-lg-6
-						//- href="/hackathons.html?eventId=969092" 
-						+e.item-wrap(style='--bgColor: #FF00C7' data-aos="fade-up" data-aos-duration="700")
-							span.text-white 24 ноября - 26 ноября
-							.h1.text-white Международный хакатон
-							+e.place.text-white Москва
-							//- +e.btn.btn.btn-dark Регистрируйся на хакатон
 							
 	// end sHackathons

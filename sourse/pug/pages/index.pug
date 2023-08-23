@@ -16,6 +16,9 @@ include ../blocks/sNews/_sNews.pug
 include ../blocks/sFaq/_sFaq.pug
 include ../blocks/sIthubs/_sIthubs.pug
 include ../blocks/sPartners/_sPartners.pug
+include ../blocks/sGR/_sGR.pug
+include ../blocks/sAmbasadors/_sAmbasadors.pug
+include ../blocks/sAQ/_sAQ.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -29,16 +32,20 @@ block pagecontent
 	
 	
 	+parts('header')
-	+headerBlock
+	+headerBlock2
 	+sHackathons
 	+sLargestEvent
 	+sMap
 	//- +sResume
+	+sGR
 	+sNews('', 'Все новости')
+		h2 Новости проекта
 	script.
 		getNews(setNews)
+	+sIthubs
 	+sFaq
-	//- +sIthubs
+	+sAQ
+	+sAmbasadors
 	+sPartnersMain
 	script.
 		getPartnersSections(setPartnersMain);

@@ -1,21 +1,20 @@
 
 :root {
+  	--vh: 1vh;
 	--animate-delay: 1.2s;
 	--bs-body-font-size: #{$em-base};
 
-	@include media-breakpoint-up(md) {
+	--sPT: #{rem(20)};
+	--sPB: #{rem(20)};
+	--sTPB: #{rem(24)};
 
-		--sPT: #{rem(16)};
-		--sPB: #{rem(16)};
+	@include media-breakpoint-up(md) {
+ 
 		--sTPB: #{rem(32)};
 	}
 	@include media-breakpoint-up(xl) {
 		--bs-body-font-size: #{$em-base};
 	}
-
-	--sPT: #{rem(16)};
-	--sPB: #{rem(16)};
-	--sTPB: #{rem(24)};
 
 
 	--fancybox-content-color: var(--bs-body-color);

@@ -61,7 +61,7 @@ function setHackPageData(data) {
 		document.querySelector('.sAbout__banner').style.background = data.event.colors.deadlineCard;
 		
 		document.querySelector(".sAbout__content").insertAdjacentHTML("beforeend", `
-		<a class="sAbout__btn btn btn-dark" href="https://lk.hacks-ai.ru/${data.event.eventId}">Принять участие</a>`);
+		<a class="sAbout__btn btn btn-dark" href="https://lk.hacks-ai.ru">Принять участие</a>`);
 	}
 	else{
 		document.querySelector(".sAbout__info-wrap").insertAdjacentHTML("afterbegin", `

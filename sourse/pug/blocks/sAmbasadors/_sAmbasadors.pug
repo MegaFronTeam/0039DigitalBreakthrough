@@ -1,0 +1,21 @@
+mixin sAmbasadors(data)
+	// start sAmbasadors
+	+b.SECTION.sAmbasadors.section#sAmbasadors&attributes(attributes)
+		.container
+			+e.wrap(data-aos="fade-up" data-aos-duration="700")
+				+b.section-title
+					h2 Амбасадоры 
+				+b.default-slider 
+					+e.slider--js.swiper(data-aos="fade-up" data-aos-duration="700")
+						.swiper-wrapper
+							- for (var x = 0; x < 10; x++)
+								+e.slide.swiper-slide
+									+b.sAmbasadors-item
+										+e.img-wrap
+											img(src="img/amb.png", loading="lazy" alt="")
+										+e.title Миллер Алексей Борисович
+										+e.text Председатель Правления ПАО «Газпром»
+					+e.row.row(data-aos="fade-up" data-aos-duration="700")
+						.col
+							+e.btn.btn.btn-primary(href='#' target='_blank') Все амбасадоры
+	// end sAmbasadors

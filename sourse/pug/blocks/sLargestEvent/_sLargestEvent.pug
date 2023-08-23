@@ -1,30 +1,29 @@
 mixin sLargestEvent(data)
 	// start sLargestEvent
 	+b.SECTION.sLargestEvent.section#sLargestEvent.bg-wrap&attributes(attributes)
-		.container
-			.section-title
-				h2.h1 Самый масштабный проект по&nbsp;искусственному интеллекту в&nbsp;России
-			+e.wrap.bg-wrap(data-aos="fade-up" data-aos-duration="700")
-				video.picture-bg(src="https://lodmedia.hb.bizmrg.com/assets/video-bg-540.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata")
-				//- video.picture-bg(autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata")
-				//- 	source(src="video/video-bg.mp4" type="video/mp4")
-				//- 	source(src="video/video-bg.webm" type="video/webm")
-				//- +e.img-wrap.picture-bg: +img('img/sLargestEvent-bg-1.jpg', 'bg')
-				//- +e.row.row
-				//- 	.col
-				//- 	.col-auto
-				//- 		+img('img/sLargestEvent-img-1.png')
+		.container 
+			+e.content-wrap
+				mixin item(num, text)
+					+e.item(data-aos="fade-up" data-aos-duration="700")&attributes(attributes)
+						span!= num
+						!= text
 				+e.num-row.row
-					mixin item(num, text)
-						+e.item
-							span!= num
-							!= text
-					//.col-auto
-					//	+item(116, 'хакатонов')
-					//.col-auto
-					//	+item(35, 'лекций')
-					//.col-auto
-					//	+item('2021-22', 'годы проведения ')
-					//.col-auto.ms-xxl-auto.text-xxl-end
-					//	+item('34 000 000 ', 'призовой фонд')
+					+e.col.col
+						.section-title(data-aos="fade-up" data-aos-duration="700")
+							h2.h1 Цифровой прорыв. <br> Сезон: Искусственный интеллект 
+							p Самое масштабное соревнование для профессионалов в&nbsp;сфере IT&nbsp;&mdash; реализуется в&nbsp;рамках федерального проекта &laquo;Искусственный интеллект&raquo; национальной программы &laquo;Цифровая экономика Российской Федерации&raquo;. Проект направлен на&nbsp;поиск, развитие и&nbsp;поддержку талантливых специалистов по&nbsp;созданию продуктов и&nbsp;сервисов с&nbsp;использованием технологий искусственного интеллекта. В&nbsp;рамках хакатонов проекта специалисты&mdash;разработчики сообща решают поставленную организаторами бизнес-проблему и&nbsp;(или) социальную проблему в&nbsp;сфере искусственного интеллекта за&nbsp;ограниченное время. По&nbsp;итогам соревнований определяются призеры и&nbsp;победители.
+						+item('110 000 000Р ', 'призовой фонд')
+					.col-12.order-xl-last.m-0
+						+e.wrap.bg-wrap( )
+							video.picture-bg(src="https://lodmedia.hb.bizmrg.com/assets/video-bg-540.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata") 
+					+e.items-col.col-xl-auto
+						.row
+							.col-xl-12.col-auto
+								+item(5, 'лет') 
+							.col-xl-12.col-auto
+								+item(85, 'лекций') 
+							.col-xl-12.col-auto
+								+item(116, 'хакатонов') 
+							.col-xl-12.col-auto
+								+item('20 000', ' участников') 
 	// end sLargestEvent

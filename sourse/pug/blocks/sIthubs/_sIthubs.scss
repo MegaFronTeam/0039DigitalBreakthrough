@@ -3,6 +3,8 @@
 	--sPT: #{rem(32)};
 	--sPB: #{rem(20)};
 	--sTPB: #{rem(20)};
+	position: relative;
+	z-index: 3;
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(52)};
 		--sPB: #{rem(40)};

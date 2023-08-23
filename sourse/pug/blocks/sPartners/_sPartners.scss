@@ -1,10 +1,33 @@
 // start .sPartners
 .sPartners {
-	--sPT: #{rem(32)};
+	--sPT: #{rem(20)};
 	--sPB: #{rem(20)};
 	--sTPB: #{rem(16)};
+	position: relative;
+	z-index: 2;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: -1;
+		width: 1500px;
+		height: 1500px;
+		pointer-events: none;
+	}
+	&:before {
+		background-image: url('../img/round-primary.png');
+		top: -1000px;
+		left: 5%;
+	}
+	&:after {
+		background-image: url('../img/round-pink.png');
+		left: -500px;
+		top: 0;
+	}
 	@include media-breakpoint-up(lg) {
-		--sPT: #{rem(66.400)};
+		// --sPT: #{rem(66.400)};
 		--sPB: #{rem(28)};
 		--sTPB: #{rem(32)};
 	}
@@ -20,6 +43,7 @@
 		background-color: #fff;
 		border-radius: 8px;
 		padding: rem(20);
+		margin-bottom: rem(40);
 		@include media-breakpoint-up(lg) {
 			padding: rem(40) rem(40) rem(63.400) rem(40);
 		}

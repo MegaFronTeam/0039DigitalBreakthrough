@@ -7,6 +7,26 @@
 		--bs-gutter-y: var(--bs-gutter-x);
 
 	}
+	position: relative;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat ;
+		width: 1500px;
+		height: 1500px;
+		pointer-events: none;
+	}
+	&:before {
+		background-image: url('../img/round-primary.png');
+		top: -800px;
+		right: -800px;
+	}
+	.container{
+		position: relative;
+		z-index: 2;
+	}
 	&__logo {
 		display: block;
 		width: 100%;

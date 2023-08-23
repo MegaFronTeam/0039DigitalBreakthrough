@@ -49,3 +49,14 @@ mixin headerBlock()
 						+img('https://lodmedia.hb.bizmrg.com/assets/headerBlock-img-2.webp').res-i
 						
 	// end headerBlock
+mixin headerBlock2()
+	script
+		include _headerBlock.js
+	// start headerBlock
+	+b.headerBlock2.section#headerBlock&attributes(attributes)
+		.container
+			+e.videoBlock
+				h1 Большой спорт для IT-специалистов
+				a.btn.btn-primary(href="https://lk.hacks-ai.r")  Регистрация на хакатон
+	// end headerBlock
+

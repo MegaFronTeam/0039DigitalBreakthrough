@@ -1,0 +1,53 @@
+// start .sAQ
+.sAQ {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+
+	}
+	.section-title{
+		
+	}
+	&__col{
+
+	}
+	&__item{
+
+	}
+	&__inner{
+		position: relative;
+		z-index: 2;
+			@include media-breakpoint-up(xl) {
+
+				padding: rem(40);
+			}
+			padding: rem(40) rem(20);
+		background-color: $primary;
+		color: $gray-800;
+		border-radius: 8px;
+		overflow: hidden;
+		a{
+			color: $gray-800;
+		}
+		&::after{
+			z-index: -1;
+			position: absolute;
+			content: url(../img/aq.svg);
+			right: 0;
+			bottom: -80px;	
+		}
+	}
+	h2{
+		@include rfs(48px);
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sAQ

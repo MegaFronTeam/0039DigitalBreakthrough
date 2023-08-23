@@ -18,7 +18,11 @@
 	}
 	@include media-breakpoint-up(xl) {
 		--slideCount: 4;
+		.default-slider__slide { 
+			width: calc(100%/var(--slideCount) - var(--slideGutter) - 20px);
+		}
 	}
+
 	.default-slider {
 		&__slider {
 			margin-bottom: rem(20);
@@ -128,5 +132,24 @@
 
 		width: 100%;
 		max-width: rem(154);
+	}
+}
+
+.main-page .sNews {
+	position: relative;
+	z-index: 2;
+	&::after{
+		content: '';
+		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: -1;
+		width: 1500px;
+		height: 1500px;
+		pointer-events: none;
+		background-image: url('../img/round-primary.png');
+		top: -600px;
+		// left: -20%;
+		right: -400px;
 	}
 }

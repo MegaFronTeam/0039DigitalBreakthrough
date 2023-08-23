@@ -3,6 +3,22 @@
 	--sPT: #{rem(20)};
 	--sPB: #{rem(20)};
 	--sTPB: #{rem(20)};
+	position: relative;
+	z-index: 2;
+	&::after{
+		content: '';
+		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: -1;
+		width: 1500px;
+		height: 1500px;
+		pointer-events: none;
+		background-image: url('../img/round-pink.png');
+		top: -200px;
+		// left: -20%;
+		right: -600px;
+	}
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(40)};
 		--sPB: #{rem(52)};

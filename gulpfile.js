@@ -1,5 +1,6 @@
 'use strict';
 let  publicPath = 'public',
+    dist = 'dist',
     sourse = 'sourse',
     destSprite = '../_sprite.scss'
 
@@ -55,7 +56,7 @@ function pugFiles() {
     }))
     .pipe(pug({ 
         pretty: true,
-        cache: true, 
+        cache: true,
         // locals: dataFromFile || {}
     }).on("error", notify.onError())) 
     .pipe(tabify(2, true))
@@ -63,6 +64,26 @@ function pugFiles() {
     .pipe(dest(publicPath))
     .on('end', browserSync.reload); 
 }
+
+function pp() {
+    return  src([sourse + '/pug/pages/**/*.pug'])
+    .pipe(data(function(file) {
+        return JSON.parse(fs.readFileSync(sourse + '/pug/content.json'))
+    }))
+    .pipe(pug({ 
+        pretty: true,
+        cache: true, 
+        data: {
+            url: ' https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs'
+        }
+        // locals: dataFromFile || {}
+    }).on("error", notify.onError())) 
+    .pipe(tabify(2, true))
+    // .pipe( urlBuilder() )
+        .pipe(dest(dist))
+    .on('end', browserSync.reload); 
+}
+
 
 function cleanlibs() {
     return deleteAsync([publicPath + '/libs'])
@@ -206,6 +227,16 @@ function svgCopy() {
     
 }
 
+function cleanPublic() {
+    return deleteAsync([dist])
+}
+function copyPublic() {
+    return src(`${publicPath}/*`)
+        .pipe(plumber())
+        .pipe(dest(`${dist}/`))
+    
+}
+
 function cleanimg() {
     const path = publicPath + '/img';
     return deleteAsync([path + '/@*'])
@@ -248,7 +279,8 @@ function startwatch() {
 
 export let imgAll = series(cleanimg, img) 
 export let libs = series(cleanlibs, copyLibs)
-export let sprite = series(svg, svgCopy)
+export let sprite = series(svg, svgCopy);
+export let build = series(cleanPublic,copyPublic,pp);
 
 
 

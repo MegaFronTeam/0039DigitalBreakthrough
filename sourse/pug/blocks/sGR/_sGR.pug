@@ -1,0 +1,29 @@
+mixin sGR(data)
+	// start sGR
+	+b.sGR.section( data-aos="fade-up" data-aos-duration="700")#sGR&attributes(attributes)
+		.container
+			+e.inner
+				.tabs
+					.tabs__caption
+						.tabs__btn.active Возможности
+						.tabs__btn Образование
+						.tabs__btn Наука
+						.tabs__btn Гранты
+						.tabs__btn Работа
+					div
+						mixin content(t='Возможности развития для участников')
+							.tabs__content&attributes(attributes)
+								.row
+									.col
+										+e.title= t
+										+e.link(href="#")
+											span Сканируй qr-код и узнай больше
+									.col-auto
+										a(href="#") 
+											img(src="img/qr.png", alt="")
+						+content().active
+						+content()
+						+content()
+						+content()
+						+content()
+	// end sGR
