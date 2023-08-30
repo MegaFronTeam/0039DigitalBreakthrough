@@ -67,7 +67,7 @@
 				}
 			}
 		}
-		.row{
+		&__content:nth-child(1) .row{
 			align-items: flex-end;
 		}
 	}
@@ -109,7 +109,42 @@
 		margin-bottom: 1rem;
 
 	}
+	h4{
+		color: #ff00c7;
+		text-transform: uppercase;
+	}
+	ul{
+		li{
+			list-style: none;
+			padding-left: 25px;
+			position: relative;
+			font-weight: 500;
+			&::before{
+				content: '';
+				position: absolute;
+				left: 0;
+				top: rem(10);
+				width: 8px;
+				height: 8px;
+				border: 1px solid #ff00c7;
+			}
+			li{
+				&::before{
+					height: 1px;
+					background: #ff00c7;
+					border: none;
+					width: 18px;
+					top: rem(14);
+				}
+			}
+			&::marker{
 
+			}
+		}
+	}
+	.btn{
+		max-width: 400px;
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

@@ -1,4 +1,6 @@
 mixin sIthubs(data)
+	script
+		include script.js
 	// start sIthubs
 	+b.SECTION.sIthubs.section#sIthubs&attributes(attributes)
 		.container
@@ -10,12 +12,30 @@ mixin sIthubs(data)
 						+img(`img/${img}`, 'bg')
 						.h4!= title
 						+e.city г. Москва
-				+slide('sIthubs-img-1.jpg', 'Название ITхаба')
-				+slide('sIthubs-img-2.jpg', 'Название ITхаба')
-				+slide('sIthubs-img-3.jpg', 'Название ITхаба')
-				+slide('sIthubs-img-4.jpg', 'Название ITхаба')
-				+slide('sIthubs-img-1.jpg', 'Название ITхаба')
-				+slide('sIthubs-img-2.jpg', 'Название ITхаба')
-				+slide('sIthubs-img-3.jpg', 'Название ITхаба')
-				+slide('sIthubs-img-4.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-1.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-2.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-3.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-4.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-1.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-2.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-3.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-4.jpg', 'Название ITхаба')
+	// end sIthubs
+mixin sIthubsPage(data)
+	script
+		include script.js
+	// start sIthubs
+	+b.SECTION.sIthubs.section#sIthubs&attributes(attributes)
+		.container
+			+b.section-title(data-aos="fade-up" data-aos-duration="700")
+				h1 IT хабы
+			.row.gy-4
+				//- +slide('sIthubs-img-1.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-2.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-3.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-4.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-1.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-2.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-3.jpg', 'Название ITхаба')
+				//- +slide('sIthubs-img-4.jpg', 'Название ITхаба')
 	// end sIthubs

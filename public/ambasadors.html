@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Амбасадоры</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Цифровой прорыв 2023: Хакатоны по искусственному интеллекту">
+		<meta property="og:description" content="Официальный сайт конкурса Цифровой прорыв: Сезон искусственный интеллект. Хакатоны по искусственному интеллекту 2023.">
+		<meta property="og:image" content="https://hacksai-data.obs.ru-moscow-1.hc.sbercloud.ru/logo.jpg">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
+		<link href="libs/aos/aos.css" rel="stylesheet"/><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+							wrap.remove();
+						}
+					);
+			}
+		</script>
+	</head>
+	<body class="news-page white-theme loaded_hiding" data-bg="main.jpg">
+		<div class="loader-wrap"><img class="loader-svg" src="loading-indicator-component.svg" alt=""><div class="progress" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 2px">
+<div class="progress-bar" style="width: 25%"></div>
+</div>
+		</div>
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<script>function setAmbasadors(items) {
+	const template = (item) => {
+		return `
+			<div class="default-slider__slide swiper-slide" >
+				<div class="sAmbasadors-item">
+					<div class="sAmbasadors-item__img-wrap"><img src="${item.image}" loading="lazy" alt=""/>
+					</div>
+					<div class="sAmbasadors-item__title">${item.name}</div>
+					<div class="sAmbasadors-item__text">${item.description}</div>
+				</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sAmbasadors .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+
+}
+function setAmbasadorsPage(items) {
+	const template = (item) => {
+		return `
+			<div class="col-xl-3 col-lg-4 col-6"  data-aos="fade-up" data-aos-duration="700">
+				<div class="sAmbasadors-item">
+					<div class="sAmbasadors-item__img-wrap"><img src="${item.image}" loading="lazy" alt=""/>
+					</div>
+					<div class="sAmbasadors-item__title">${item.name}</div>
+					<div class="sAmbasadors-item__text">${item.description}</div>
+				</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sAmbasadors .row").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+	loadingContent();
+}
+
+// getMainPageData(setAmbasadors);
+			</script>
+			<!-- start sAmbasadors-->
+			<section class="sAmbasadors section" id="sAmbasadors">
+				<div class="container">
+					<div class="section-title">
+						<h1>Амбасадоры </h1>
+					</div>
+					<div class="row gy-4"></div>
+				</div>
+			</section>
+			<!-- end sAmbasadors-->
+			<script>getAmbassador(setAmbasadorsPage)</script>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+			<div class="scroll-top">
+				<svg class="icon icon-chevronTop ">
+					<use xlink:href="img/svg/sprite.svg#chevronTop"></use>
+				</svg>
+			</div>
+		</div>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
+		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
+		<script src="libs/aos/aos.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script><!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+	(function (m, e, t, r, i, k, a) {
+		m[i] = m[i] || function () {
+			(m[i].a = m[i].a || []).push(arguments)
+		};
+		m[i].l = 1 * new Date();
+		for (var j = 0; j < document.scripts.length; j++) {
+			if (document.scripts[j].src === r) {
+				return;
+			}
+		}
+		k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+	})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(94768570, "init", {
+		clickmap: true,
+		trackLinks: true,
+		accurateTrackBounce: true,
+		webvisor: true
+	});
+</script>
+<noscript>
+	<div><img src="https://mc.yandex.ru/watch/94768570" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
+		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

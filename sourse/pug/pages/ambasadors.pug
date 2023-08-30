@@ -1,0 +1,37 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sHackathons/_sHackathons.pug
+include ../blocks/sLargestEvent/_sLargestEvent.pug
+include ../blocks/sMap/_sMap.pug
+include ../blocks/sResume/_sResume.pug
+include ../blocks/sAmbasadors/_sAmbasadors.pug
+include ../blocks/sFaq/_sFaq.pug
+include ../blocks/sIthubs/_sIthubs.pug
+include ../blocks/sPartners/_sPartners.pug
+
+block variables
+	- let  mainPage= 'news-page white-theme' 
+	- let  bg= 'main.jpg'
+
+block title
+	- let  title= 'Амбасадоры'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	+sAmbasadorsPage('Амбасадоры', '', '') 
+	script.
+		getAmbassador(setAmbasadorsPage)
+	+parts('footer')
+	//- script(src='js/news.js')
+	+scrollToTop()

@@ -112,13 +112,13 @@
 		border-radius: 8px;
 	}
 	&__btn {
-		display: block;
-		margin-top: auto;
-		min-width: rem(259);
-		&[disabled] {
-			pointer-events: none;
-			opacity: 0.8;
-		}
+		// display: block;
+		// margin-top: auto;
+		// min-width: rem(259);
+		// &[disabled] {
+		// 	pointer-events: none;
+		// 	opacity: 0.8;
+		// }
 	}
 
 	&__video {
@@ -291,7 +291,7 @@
 	position: relative;
 	padding-top: rem(40);
 	padding-bottom: rem(40);
-	z-index: 2;
+	// z-index: 2;
 	&::before,
 	&::after {
 		content: '';

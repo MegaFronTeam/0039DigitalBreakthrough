@@ -2,7 +2,7 @@
 .sLargestEvent {
 	--sPT: #{rem(20)};
 	--sPB: #{rem(40)};
-
+	position: relative;
 	&::before,
 	&::after {
 		content: '';

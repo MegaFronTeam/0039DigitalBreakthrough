@@ -14,16 +14,56 @@ mixin sGR(data)
 						mixin content(t='Возможности развития для участников')
 							.tabs__content&attributes(attributes)
 								.row
-									.col
-										+e.title= t
-										+e.link(href="#")
-											span Сканируй qr-код и узнай больше
-									.col-auto
-										a(href="#") 
-											img(src="img/qr.png", alt="")
+									if block
+										block
+									else
+										.col
+											+e.title= t
+											+e.link(href="https://ai.gov.ru")
+												span Сканируй или нажми на  qr-код и узнай больше
+										.col-auto
+											a(href="https://ai.gov.ru") 
+												img(src="img/qr.png", alt="")
+						+content()
 						+content().active
+							.col
+								h3.ttu ЧТО ВЫ ПОЛУЧаеТЕ
+								ul
+									li Конкурсные программы в Фонде содействия инновациям
+									li Включая:
+										ul
+											li Гранты до 4 млн на создание собственного инновационного предприятия без образования юридического лица
+											li Гранты до 10 млн на создание открытой библиотеки в сфере ИИ без образования юридического лица
+											li Возможность пройти акселерационные программы и многое другое
+											li Возможность обучения на магистерских программах по ИИ в лучших ВУЗах страны БЕСПЛАТНО 
+							.text-center.col-md-auto
+								+img("img/tab-1.svg")
+								h4 образование
 						+content()
+							.col
+								h3.ttu 
+								ul
+									li Возможность получить новые компетенции в рамках программ дополнительного профессионального образования от Университета 20.35, разработанных в партнерстве с крупнейшими технологическими компаниями страны
+									li Возможность участия в работе ведущих исследовательских центров в сфере ИИ
+									li Возможность повысить свою конкурентоспособность на рынке труда
+							.text-center.col-md-auto
+								+img("img/tab-2.svg")
+								h4 наука
 						+content()
+							.col
+								h3.ttu ЧТО ДЛЯ ЭТОГО НУЖНО
+								ul
+									li Подать заявку на участие в конкурсной программе
+									li Пройти вступительные испытания
+							.text-center.col-md-auto
+								+img("img/tab-3.svg")
+								h4 гранты
 						+content()
-						+content()
+							.col.text-center.align-self-center
+								h3.ttu Наши партнёры уже ждут тебя!
+								br
+								a.btn.btn-outline-pink(href="https://ai.gov.ru").w-100 Хочу работать! 
+							.text-center.col-md-auto
+								+img("img/tab-4.svg")
+								h4 вакансии
 	// end sGR

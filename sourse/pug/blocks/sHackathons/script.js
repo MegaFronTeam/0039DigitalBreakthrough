@@ -5,14 +5,12 @@ function setEvents(items) {
 		let buttonTitle = '';
 		let buttonUPTitle = '';
 		let dateNUmbers = item.startDate.split("-",2);
-		let fistDate = dateNUmbers[0].split(" ")[0];
-				fistDate = +fistDate > 9 ? fistDate : "0" + fistDate;
-		let secondDate = dateNUmbers[1].split(" ")[0]; 
-				secondDate = +secondDate > 9 ? secondDate : "0" + secondDate; 
+		let fistDate = item.firstDate; 
+		let secondDate = item.secondDate; 
 		let date = `
 							<div class="date-numbers">${fistDate}</div> 
 							<div class="date-numbers">${secondDate}</div> 
-							<small>${dateNUmbers[1].split(" ")[1].slice(0,3)}</small>
+							<small>${item.month}</small>
 							`;
 		
 		if (item.isDisabled == true && item.isEnded == false) {
@@ -27,12 +25,7 @@ function setEvents(items) {
 			
 		}
 		else if ( item.isEnded == true) {
-<<<<<<< HEAD
-			buttonUPTitle = "Мероприятие завершено";
-			buttonTitle = 'Узнать как   прошло'
-=======
 			buttonTitle = 'Узнать, как все прошло'
->>>>>>> feb1e5ac96f694e9c0f55fbdf2a9fb11c268e56b
 		}
 		else{
 			buttonUPTitle = "Мероприятие  проходит";
@@ -67,7 +60,7 @@ function setEvents(items) {
 				
 	};
 	let index = 0;
-	for (const item of items.events) {
+	for (const item of items.events.events) {
 		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item));
 		index++;
 	}
@@ -88,4 +81,4 @@ function setEvents(items) {
 	}
 
 }
-getEvents(setEvents ,false);
+// getMainPageData(setEvents ,false);

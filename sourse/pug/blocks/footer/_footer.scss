@@ -17,6 +17,7 @@
 		width: 1500px;
 		height: 1500px;
 		pointer-events: none;
+		z-index: -1;
 	}
 	&:before {
 		background-image: url('../img/round-primary.png');

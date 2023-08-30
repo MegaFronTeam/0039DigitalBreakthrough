@@ -16,4 +16,4 @@ function setFAQ(items) {
 		document.querySelector(".sFaq .dd-group__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
-getFAQ(setFAQ);
+// getFAQ(setFAQ);

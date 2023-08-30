@@ -12,6 +12,7 @@ include ../blocks/sVideo/_sVideo.pug
 include ../blocks/sDetailedInfo/_sDetailedInfo.pug
 include ../blocks/sCases/_sCases.pug
 include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sIthubs/_sIthubs.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -34,6 +35,7 @@ block pagecontent
 		//- +sDetailedInfo
 		+sVideo
 		+sInfo
+		+sIthubs
 		+sNews('', '', id='sNews','Новости проекта')
 		+sPartnersMain
 		//- script.

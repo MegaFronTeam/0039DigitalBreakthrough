@@ -152,6 +152,78 @@
 					</div>
 				</section>
 				<!-- end sInfo-->
+				<script>function setItHubs(items) {
+	const template = (item) => {
+		return `
+			<div class="default-slider__slide swiper-slide"data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+				<div class="h4">${item.name}</div>
+				<div class="default-slider__city">${item.city}</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sIthubs .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+
+}
+
+// getMainPageData(setAmbasadors);
+function setItHubsPage(items) {
+	const template = (item) => {
+		return `
+			<div class="hub-slide  col-xxl-4 col-lg-6 text-body" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+				<div class="h4 text-dark">${item.name}</div>
+				<div class="default-slider__city text-dark">${item.city}</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sIthubs .row").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+	loadingContent();
+}
+
+// getMainPageData(setAmbasadors);
+				</script>
+				<!-- start sIthubs-->
+				<section class="sIthubs section" id="sIthubs">
+					<div class="container">
+						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
+							<h2>IT хабы</h2>
+						</div>
+						<div class="default-slider">
+							<div class="default-slider__slider default-slider__slider--js swiper">
+								<div class="swiper-wrapper">
+								</div>
+							</div>
+							<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
+								<div class="col">
+									<div class="default-slider__btn btn btn-dark" target="_blank">Все IT хабы
+									</div>
+								</div>
+								<div class="col-auto"> 
+									<div class="default-slider__arrow-wrap">
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sIthubs-->
 				<script>
 function setNews(items) {
 	const template = item => {
@@ -289,21 +361,33 @@ function setPartnersMain(items) {
 		<script src="libs/aos/aos.js"> </script>
 		<script src="libs/hc-sticky/hc-sticky.js"> </script>
 		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script><!-- Yandex.Metrika counter -->
-		<script>
-			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-			m[i].l=1*new Date();
-			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-			
-			ym(80538532, "init", {
-						clickmap:true,
-						trackLinks:true,
-						accurateTrackBounce:true,
-						webvisor:true
-			}); 
-		</script><noscript><div><img src="https://mc.yandex.ru/watch/80538532" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script type="text/javascript">
+	(function (m, e, t, r, i, k, a) {
+		m[i] = m[i] || function () {
+			(m[i].a = m[i].a || []).push(arguments)
+		};
+		m[i].l = 1 * new Date();
+		for (var j = 0; j < document.scripts.length; j++) {
+			if (document.scripts[j].src === r) {
+				return;
+			}
+		}
+		k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+	})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(94768570, "init", {
+		clickmap: true,
+		trackLinks: true,
+		accurateTrackBounce: true,
+		webvisor: true
+	});
+</script>
+<noscript>
+	<div><img src="https://mc.yandex.ru/watch/94768570" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
+
 		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
 		<script src="js/common.js"></script>
 	</body>

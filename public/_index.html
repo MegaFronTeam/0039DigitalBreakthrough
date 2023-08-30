@@ -55,7 +55,9 @@
 		})
 	}
 	else{
-		document.querySelector('.headerBlock__video ').remove();
+		if (document.querySelector('.headerBlock__video ')) {
+			document.querySelector('.headerBlock__video ').remove();
+		}
 
 	}
 	// console.log(data);
@@ -130,14 +132,12 @@ function setEvents(items) {
 		let buttonTitle = '';
 		let buttonUPTitle = '';
 		let dateNUmbers = item.startDate.split("-",2);
-		let fistDate = dateNUmbers[0].split(" ")[0];
-				fistDate = +fistDate > 9 ? fistDate : "0" + fistDate;
-		let secondDate = dateNUmbers[1].split(" ")[0]; 
-				secondDate = +secondDate > 9 ? secondDate : "0" + secondDate; 
+		let fistDate = item.firstDate; 
+		let secondDate = item.secondDate; 
 		let date = `
 							<div class="date-numbers">${fistDate}</div> 
 							<div class="date-numbers">${secondDate}</div> 
-							<small>${dateNUmbers[1].split(" ")[1].slice(0,3)}</small>
+							<small>${item.month}</small>
 							`;
 		
 		if (item.isDisabled == true && item.isEnded == false) {
@@ -152,12 +152,7 @@ function setEvents(items) {
 			
 		}
 		else if ( item.isEnded == true) {
-<<<<<<< HEAD
-			buttonUPTitle = "Мероприятие завершено";
-			buttonTitle = 'Узнать как   прошло'
-=======
 			buttonTitle = 'Узнать, как все прошло'
->>>>>>> feb1e5ac96f694e9c0f55fbdf2a9fb11c268e56b
 		}
 		else{
 			buttonUPTitle = "Мероприятие  проходит";
@@ -192,7 +187,7 @@ function setEvents(items) {
 				
 	};
 	let index = 0;
-	for (const item of items.events) {
+	for (const item of items.events.events) {
 		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item));
 		index++;
 	}
@@ -213,7 +208,7 @@ function setEvents(items) {
 	}
 
 }
-getEvents(setEvents ,false);
+// getMainPageData(setEvents ,false);
 
 			</script>
 			<!-- start sHackathons-->
@@ -245,7 +240,7 @@ getEvents(setEvents ,false);
 			</section>
 			<!-- end sHackathons-->
 			<!-- start sLargestEvent-->
-			<section class="sLargestEvent section bg-wrap" id="sLargestEvent">
+			<section class="sLargestEvent section" id="sLargestEvent">
 				<div class="container"> 
 					<div class="sLargestEvent__content-wrap">
 						<div class="sLargestEvent__num-row row">
@@ -648,7 +643,7 @@ function setMap(arr = arrAll) {
 		counter(el, + arr[index++]);
 	}
 }
-getMainPageData(setMapStats);
+// getMainPageData(setMapStats);
 			</script>
 			<!-- end sMap-->
 			<script>
@@ -726,7 +721,7 @@ function setFAQ(items) {
 		document.querySelector(".sFaq .dd-group__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
-getFAQ(setFAQ);
+// getFAQ(setFAQ);
 			</script>
 			<!-- start sFaq-->
 			<section class="sFaq section" id="sFaq">
@@ -824,21 +819,33 @@ function setPartnersMain(items) {
 		<script src="libs/aos/aos.js"> </script>
 		<script src="libs/hc-sticky/hc-sticky.js"> </script>
 		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script><!-- Yandex.Metrika counter -->
-		<script>
-			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-			m[i].l=1*new Date();
-			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-			
-			ym(80538532, "init", {
-						clickmap:true,
-						trackLinks:true,
-						accurateTrackBounce:true,
-						webvisor:true
-			}); 
-		</script><noscript><div><img src="https://mc.yandex.ru/watch/80538532" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script type="text/javascript">
+	(function (m, e, t, r, i, k, a) {
+		m[i] = m[i] || function () {
+			(m[i].a = m[i].a || []).push(arguments)
+		};
+		m[i].l = 1 * new Date();
+		for (var j = 0; j < document.scripts.length; j++) {
+			if (document.scripts[j].src === r) {
+				return;
+			}
+		}
+		k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+	})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(94768570, "init", {
+		clickmap: true,
+		trackLinks: true,
+		accurateTrackBounce: true,
+		webvisor: true
+	});
+</script>
+<noscript>
+	<div><img src="https://mc.yandex.ru/watch/94768570" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
+
 		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
 		<script src="js/common.js"></script>
 	</body>

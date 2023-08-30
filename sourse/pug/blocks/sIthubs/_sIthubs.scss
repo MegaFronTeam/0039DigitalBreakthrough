@@ -21,6 +21,41 @@
 	@include media-breakpoint-up(xl) {
 		--slideCount: 4;
 	}
+	.default-slider__slide {
+
+		@include media-breakpoint-up(xl) {
+			max-width: rem(309);
+		}
+	}
+	.hub-slide{
+		height: 100%;
+	}
+	.hub-slide,
+	.default-slider__slide {
+		.h4 {
+			@include mt;
+			margin-bottom: rem(4);
+			line-height: 1.27;
+			color: #fff;
+		}
+		&:hover {
+			.h4 {
+				color: $primary;
+			}
+		}
+
+		img {
+			@include block(193, 310);
+			border-radius: 8px;
+			overflow: hidden;
+			margin-bottom: rem(24);
+		}
+			.default-slider__city {
+			font-size: rem(12);
+			line-height: 1.83;
+			color: rgba($color: #fff, $alpha: .5);
+		}
+	}
 	.default-slider {
 		&__slider {
 			margin-bottom: rem(20);
@@ -28,33 +63,7 @@
 				margin-bottom: rem(40);
 			}
 		}
-		&__slide {
-			.h4 {
-				@include mt;
-				margin-bottom: rem(4);
-				line-height: 1.27;
-				color: #fff;
-			}
-			@include media-breakpoint-up(xl) {
-				max-width: rem(309);
-			}
-			&:hover {
-				.h4 {
-					color: $primary;
-				}
-			}
-		}
-		img {
-			@include block(193, 310);
-			border-radius: 8px;
-			overflow: hidden;
-			margin-bottom: rem(24);
-		}
-		&__city {
-			font-size: rem(12);
-			line-height: 1.83;
-			color: rgba($color: #fff, $alpha: .5);
-		}
+		
 		&__btn {
 			--bs-btn-bg: #{$gray-800};
 	

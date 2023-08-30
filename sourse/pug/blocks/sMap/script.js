@@ -115,4 +115,4 @@ function setMap(arr = arrAll) {
 		counter(el, + arr[index++]);
 	}
 }
-getMainPageData(setMapStats);
+// getMainPageData(setMapStats);

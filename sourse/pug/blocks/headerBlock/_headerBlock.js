@@ -14,7 +14,9 @@ function setTranslationShow(data) {
 		})
 	}
 	else{
-		document.querySelector('.headerBlock__video ').remove();
+		if (document.querySelector('.headerBlock__video ')) {
+			document.querySelector('.headerBlock__video ').remove();
+		}
 
 	}
 	// console.log(data);

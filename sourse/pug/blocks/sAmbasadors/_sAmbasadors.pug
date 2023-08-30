@@ -1,4 +1,6 @@
 mixin sAmbasadors(data)
+	script
+		include script.js
 	// start sAmbasadors
 	+b.SECTION.sAmbasadors.section#sAmbasadors&attributes(attributes)
 		.container
@@ -8,14 +10,29 @@ mixin sAmbasadors(data)
 				+b.default-slider 
 					+e.slider--js.swiper(data-aos="fade-up" data-aos-duration="700")
 						.swiper-wrapper
-							- for (var x = 0; x < 10; x++)
-								+e.slide.swiper-slide
-									+b.sAmbasadors-item
-										+e.img-wrap
-											img(src="img/amb.png", loading="lazy" alt="")
-										+e.title Миллер Алексей Борисович
-										+e.text Председатель Правления ПАО «Газпром»
+							//- - for (var x = 0; x < 10; x++)
+							//- 	+e.slide.swiper-slide
+							//- 		+b.sAmbasadors-item
+							//- 			+e.img-wrap
+							//- 				img(src="img/amb.png", loading="lazy" alt="")
+							//- 			+e.title Миллер Алексей Борисович
+							//- 			+e.text Председатель Правления ПАО «Газпром»
 					+e.row.row(data-aos="fade-up" data-aos-duration="700")
 						.col
 							+e.btn.btn.btn-primary(href='#' target='_blank') Все амбасадоры
+						
+						.col-auto 
+							+e.arrow-wrap
+								+arrow
+	// end sAmbasadors
+mixin sAmbasadorsPage(data)
+	script
+		include script.js
+	// start sAmbasadors
+	+b.SECTION.sAmbasadors.section#sAmbasadors&attributes(attributes)
+		.container
+			+b.section-title
+				h1 Амбасадоры 
+			//- +e.wrap(data-aos="fade-up" data-aos-duration="700") 
+			.row.gy-4
 	// end sAmbasadors

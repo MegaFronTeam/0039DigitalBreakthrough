@@ -40,13 +40,22 @@ block pagecontent
 	+sGR
 	+sNews('', 'Все новости')
 		h2 Новости проекта
-	script.
-		getNews(setNews)
+	//- script.
+	//- 	getNews(setNews)
 	+sIthubs
 	+sFaq
 	+sAQ
 	+sAmbasadors
 	+sPartnersMain
 	script.
+		function setMainPageBlock(items) {
+			setEvents(items);
+			setMapStats(items);
+			setFAQ(items.faq);
+			setNews(items.news);
+			setAmbasadors(items.ambassadors);
+			setItHubs(items.playgrounds);
+		}
+		getMainPageData(setMainPageBlock);
 		getPartnersSections(setPartnersMain);
 	+parts('footer')

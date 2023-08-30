@@ -144,13 +144,16 @@ function setHackPageData(data) {
 			if (item.partners.length == 0) return ' ';
 			for (const subItem of item.partners) {
 				content += `
-								<a class="sCases__director " href="${subItem.link}" data-aos="fade-up" data-aos-duration="700">
-										<img src="${subItem.avatar_url}" alt="" loading="lazy"/>
-										<div>
-										<span>${subItem.description}</span>
-											<p>${subItem.name}</p>
-										</div>
-								</a>`
+							<div class="col-auto">
+							<a class="sCases__director " href="${subItem.link}" data-aos="fade-up" data-aos-duration="700">
+							<img src="${subItem.avatar_url}" alt="" loading="lazy"/>
+							<div>
+							<span>${subItem.description}</span>
+							<p>${subItem.name}</p>
+							</div>
+							</a>
+							</div>
+							`
 			}
 			return content;
 		}
@@ -343,7 +346,9 @@ function setHackPageData(data) {
 									</div>
 									${item.longDescription}
 									${partnersVideo()}
-									${partnersItem()} 
+									<div class=" row gy-3">
+										${partnersItem()} 
+									</div>
 								</div>
 								<div class="innerTabs__content  "  > 
 									<div class="text-white">
@@ -466,6 +471,7 @@ function setHackPageData(data) {
 
 	setNews(data.news);
 	setPartnersMain(data.allPartners);
+	setItHubs(data.allPlaygrounds);
 
 	// console.log(data);
 	
