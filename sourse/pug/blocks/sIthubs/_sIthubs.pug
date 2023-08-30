@@ -6,7 +6,7 @@ mixin sIthubs(data)
 		.container
 			+b.section-title(data-aos="fade-up" data-aos-duration="700")
 				h2 IT хабы
-			+defaultSlider('Все IT хабы')
+			+defaultSlider('Все IT хабы','','/it-hubs.html')
 				mixin slide(img, title)
 					+e.slide.swiper-slide(href='#' data-aos="fade-up" data-aos-duration="700")
 						+img(`img/${img}`, 'bg')
