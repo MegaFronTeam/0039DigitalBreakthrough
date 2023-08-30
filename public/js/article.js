@@ -28,7 +28,10 @@ function setArticlePageData(data) {
 
 	if(data.text !== null) {
 		document.querySelector("#inner-content").insertAdjacentHTML("beforeend", data.text);
+	  document.querySelector('meta[property="og:description"]').content = data.text;
 	}
+  document.querySelector('meta[property="og:title"]').content = data.name;
+  document.querySelector('meta[property="og:image"]').content = data.avatar;
 
 	loadingContent();
 }

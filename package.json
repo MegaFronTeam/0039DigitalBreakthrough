@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "gulp": "gulp",
+    "build": "gulp build",
     "img": "gulp img"
   },
   "author": "Khalunin Pavel",
