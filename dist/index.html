@@ -55,7 +55,9 @@
 		})
 	}
 	else{
-		document.querySelector('.headerBlock__video ').remove();
+		if (document.querySelector('.headerBlock__video ')) {
+			document.querySelector('.headerBlock__video ').remove();
+		}
 
 	}
 	// console.log(data);
@@ -72,7 +74,7 @@ getTranslationLink(setTranslationShow);
 			<div class="headerBlock2 section" id="headerBlock">
 				<div class="container">
 					<div class="headerBlock2__videoBlock">
-						<h1>Большой спорт для IT-специалистов</h1><a class="btn btn-primary" href="https://lk.hacks-ai.r"> Регистрация на хакатон</a>
+						<h1>Большой спорт для IT-специалистов</h1><a class="headerBlock__btn btn btn-primary" href="https://lk.hacks-ai.r"> Регистрация на хакатон</a>
 					</div>
 				</div>
 			</div>
@@ -84,14 +86,12 @@ function setEvents(items) {
 		let buttonTitle = '';
 		let buttonUPTitle = '';
 		let dateNUmbers = item.startDate.split("-",2);
-		let fistDate = dateNUmbers[0].split(" ")[0];
-				fistDate = +fistDate > 9 ? fistDate : "0" + fistDate;
-		let secondDate = dateNUmbers[1].split(" ")[0]; 
-				secondDate = +secondDate > 9 ? secondDate : "0" + secondDate; 
+		let fistDate = item.firstDate; 
+		let secondDate = item.secondDate; 
 		let date = `
 							<div class="date-numbers">${fistDate}</div> 
 							<div class="date-numbers">${secondDate}</div> 
-							<small>${dateNUmbers[1].split(" ")[1].slice(0,3)}</small>
+							<small>${item.month}</small>
 							`;
 		
 		if (item.isDisabled == true && item.isEnded == false) {
@@ -106,12 +106,7 @@ function setEvents(items) {
 			
 		}
 		else if ( item.isEnded == true) {
-<<<<<<< HEAD
-			buttonUPTitle = "Мероприятие завершено";
-			buttonTitle = 'Узнать как   прошло'
-=======
 			buttonTitle = 'Узнать, как все прошло'
->>>>>>> feb1e5ac96f694e9c0f55fbdf2a9fb11c268e56b
 		}
 		else{
 			buttonUPTitle = "Мероприятие  проходит";
@@ -146,7 +141,7 @@ function setEvents(items) {
 				
 	};
 	let index = 0;
-	for (const item of items.events) {
+	for (const item of items.events.events) {
 		document.querySelector(".sHackathons__row").insertAdjacentHTML("beforeend", template(item));
 		index++;
 	}
@@ -167,7 +162,7 @@ function setEvents(items) {
 	}
 
 }
-getEvents(setEvents ,false);
+// getMainPageData(setEvents ,false);
 
 			</script>
 			<!-- start sHackathons-->
@@ -199,7 +194,7 @@ getEvents(setEvents ,false);
 			</section>
 			<!-- end sHackathons-->
 			<!-- start sLargestEvent-->
-			<section class="sLargestEvent section bg-wrap" id="sLargestEvent">
+			<section class="sLargestEvent section" id="sLargestEvent">
 				<div class="container"> 
 					<div class="sLargestEvent__content-wrap">
 						<div class="sLargestEvent__num-row row">
@@ -602,7 +597,7 @@ function setMap(arr = arrAll) {
 		counter(el, + arr[index++]);
 	}
 }
-getMainPageData(setMapStats);
+// getMainPageData(setMapStats);
 			</script>
 			<!-- end sMap-->
 			<!-- start sGR-->
@@ -618,59 +613,75 @@ getMainPageData(setMapStats);
 								<div class="tabs__btn">Работа</div>
 							</div>
 							<div>
+										<div class="tabs__content">
+											<div class="row">
+												<div class="col">
+													<div class="sGR__title">Возможности развития для участников
+													</div>
+													<a class="sGR__link" href="https://ai.gov.ru"><span>Сканируй или нажми на  qr-код и узнай больше</span>
+													</a>
+												</div>
+												<div class="col-auto"><a href="https://ai.gov.ru"> <img src="img/qr.png" alt=""/></a></div>
+											</div>
+										</div>
 										<div class="tabs__content active">
 											<div class="row">
 												<div class="col">
-													<div class="sGR__title">Возможности развития для участников
-													</div>
-													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
-													</a>
+													<h3 class="ttu">ЧТО ВЫ ПОЛУЧаеТЕ</h3>
+													<ul>
+														<li>Конкурсные программы в Фонде содействия инновациям</li>
+														<li>Включая:
+															<ul>
+																<li>Гранты до 4 млн на создание собственного инновационного предприятия без образования юридического лица</li>
+																<li>Гранты до 10 млн на создание открытой библиотеки в сфере ИИ без образования юридического лица</li>
+																<li>Возможность пройти акселерационные программы и многое другое</li>
+																<li>Возможность обучения на магистерских программах по ИИ в лучших ВУЗах страны БЕСПЛАТНО </li>
+															</ul>
+														</li>
+													</ul>
 												</div>
-												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+												<div class="text-center col-md-auto"><img src="img/tab-1.svg" alt="" loading="lazy"/>
+													<h4>образование</h4>
+												</div>
 											</div>
 										</div>
 										<div class="tabs__content">
 											<div class="row">
 												<div class="col">
-													<div class="sGR__title">Возможности развития для участников
-													</div>
-													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
-													</a>
+													<h3 class="ttu"> </h3>
+													<ul>
+														<li>Возможность получить новые компетенции в рамках программ дополнительного профессионального образования от Университета 20.35, разработанных в партнерстве с крупнейшими технологическими компаниями страны</li>
+														<li>Возможность участия в работе ведущих исследовательских центров в сфере ИИ</li>
+														<li>Возможность повысить свою конкурентоспособность на рынке труда</li>
+													</ul>
 												</div>
-												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+												<div class="text-center col-md-auto"><img src="img/tab-2.svg" alt="" loading="lazy"/>
+													<h4>наука</h4>
+												</div>
 											</div>
 										</div>
 										<div class="tabs__content">
 											<div class="row">
 												<div class="col">
-													<div class="sGR__title">Возможности развития для участников
-													</div>
-													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
-													</a>
+													<h3 class="ttu">ЧТО ДЛЯ ЭТОГО НУЖНО</h3>
+													<ul>
+														<li>Подать заявку на участие в конкурсной программе</li>
+														<li>Пройти вступительные испытания</li>
+													</ul>
 												</div>
-												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
+												<div class="text-center col-md-auto"><img src="img/tab-3.svg" alt="" loading="lazy"/>
+													<h4>гранты</h4>
+												</div>
 											</div>
 										</div>
 										<div class="tabs__content">
 											<div class="row">
-												<div class="col">
-													<div class="sGR__title">Возможности развития для участников
-													</div>
-													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
-													</a>
+												<div class="col text-center align-self-center">
+													<h3 class="ttu">Наши партнёры уже ждут тебя!</h3><br/><a class="btn btn-outline-pink w-100" href="https://ai.gov.ru">Хочу работать! </a>
 												</div>
-												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
-											</div>
-										</div>
-										<div class="tabs__content">
-											<div class="row">
-												<div class="col">
-													<div class="sGR__title">Возможности развития для участников
-													</div>
-													<a class="sGR__link" href="#"><span>Сканируй qr-код и узнай больше</span>
-													</a>
+												<div class="text-center col-md-auto"><img src="img/tab-4.svg" alt="" loading="lazy"/>
+													<h4>вакансии</h4>
 												</div>
-												<div class="col-auto"><a href="#"> <img src="img/qr.png" alt=""/></a></div>
 											</div>
 										</div>
 							</div>
@@ -736,7 +747,43 @@ function setNews(items) {
 				</div>
 			</section>
 			<!-- end sNews-->
-			<script>getNews(setNews)</script>
+			<script>function setItHubs(items) {
+	const template = (item) => {
+		return `
+			<div class="default-slider__slide swiper-slide"data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+				<div class="h4">${item.name}</div>
+				<div class="default-slider__city">${item.city}</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sIthubs .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+
+}
+
+// getMainPageData(setAmbasadors);
+function setItHubsPage(items) {
+	const template = (item) => {
+		return `
+			<div class="hub-slide  col-xxl-4 col-lg-6 text-body" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+				<div class="h4 text-dark">${item.name}</div>
+				<div class="default-slider__city text-dark">${item.city}</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sIthubs .row").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+	loadingContent();
+}
+
+// getMainPageData(setAmbasadors);
+			</script>
 			<!-- start sIthubs-->
 			<section class="sIthubs section" id="sIthubs">
 				<div class="container">
@@ -746,46 +793,6 @@ function setNews(items) {
 					<div class="default-slider">
 						<div class="default-slider__slider default-slider__slider--js swiper">
 							<div class="swiper-wrapper">
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-1.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-2.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-3.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-4.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-1.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-2.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-3.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
-								<a class="default-slider__slide swiper-slide" href="#" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="img/sIthubs-img-4.jpg" alt="" loading="lazy"/>
-									<div class="h4">Название ITхаба</div>
-									<div class="default-slider__city">г. Москва
-									</div>
-								</a>
 							</div>
 						</div>
 						<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
@@ -830,7 +837,7 @@ function setFAQ(items) {
 		document.querySelector(".sFaq .dd-group__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
-getFAQ(setFAQ);
+// getFAQ(setFAQ);
 			</script>
 			<!-- start sFaq-->
 			<section class="sFaq section" id="sFaq">
@@ -857,6 +864,49 @@ getFAQ(setFAQ);
 				</div>
 			</section>
 			<!-- end sAQ-->
+			<script>function setAmbasadors(items) {
+	const template = (item) => {
+		return `
+			<div class="default-slider__slide swiper-slide" >
+				<div class="sAmbasadors-item">
+					<div class="sAmbasadors-item__img-wrap"><img src="${item.image}" loading="lazy" alt=""/>
+					</div>
+					<div class="sAmbasadors-item__title">${item.name}</div>
+					<div class="sAmbasadors-item__text">${item.description}</div>
+				</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sAmbasadors .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+
+}
+function setAmbasadorsPage(items) {
+	const template = (item) => {
+		return `
+			<div class="col-xl-3 col-lg-4 col-6"  data-aos="fade-up" data-aos-duration="700">
+				<div class="sAmbasadors-item">
+					<div class="sAmbasadors-item__img-wrap"><img src="${item.image}" loading="lazy" alt=""/>
+					</div>
+					<div class="sAmbasadors-item__title">${item.name}</div>
+					<div class="sAmbasadors-item__text">${item.description}</div>
+				</div>
+			</div>
+		`
+	};
+
+	for (const item of items) {
+		document.querySelector(".sAmbasadors .row").insertAdjacentHTML("beforeend", template(item));
+		// index++;ambassadors
+	}
+	loadingContent();
+}
+
+// getMainPageData(setAmbasadors);
+			</script>
 			<!-- start sAmbasadors-->
 			<section class="sAmbasadors section" id="sAmbasadors">
 				<div class="container">
@@ -866,113 +916,26 @@ getFAQ(setFAQ);
 						</div>
 						<div class="default-slider"> 
 							<div class="default-slider__slider default-slider__slider--js swiper" data-aos="fade-up" data-aos-duration="700">
-								<div class="swiper-wrapper">
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-									<div class="default-slider__slide swiper-slide">
-										<div class="sAmbasadors-item">
-											<div class="sAmbasadors-item__img-wrap"><img src="img/amb.png" loading="lazy" alt=""/>
-											</div>
-											<div class="sAmbasadors-item__title">Миллер Алексей Борисович
-											</div>
-											<div class="sAmbasadors-item__text">Председатель Правления ПАО «Газпром»
-											</div>
-										</div>
-									</div>
-								</div>
+								<div class="swiper-wrapper"></div>
 							</div>
 							<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
 								<div class="col">
 									<a class="default-slider__btn btn btn-primary" href="#" target="_blank">Все амбасадоры
 									</a>
+								</div>
+								<div class="col-auto"> 
+									<div class="default-slider__arrow-wrap">
+										<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+											<svg class="icon icon-chevron-left-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
+											</svg>
+										</div>
+										<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+											<svg class="icon icon-chevron-right-2 ">
+												<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
+											</svg>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1049,7 +1012,18 @@ function setPartnersMain(items) {
 			<section class="sPartners section" id="sPartners">
 				<div class="container"></div>
 			</section>
-			<script>getPartnersSections(setPartnersMain);</script>
+			<script>
+				function setMainPageBlock(items) {
+					setEvents(items);
+					setMapStats(items);
+					setFAQ(items.faq);
+					setNews(items.news);
+					setAmbasadors(items.ambassadors);
+					setItHubs(items.playgrounds);
+				}
+				getMainPageData(setMainPageBlock);
+				getPartnersSections(setPartnersMain);
+			</script>
 			<script>addBlock(`footer`)</script>
 			<div id="footerWrap"></div>
 		</div>
@@ -1061,21 +1035,33 @@ function setPartnersMain(items) {
 		<script src="libs/aos/aos.js"> </script>
 		<script src="libs/hc-sticky/hc-sticky.js"> </script>
 		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script><!-- Yandex.Metrika counter -->
-		<script>
-			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-			m[i].l=1*new Date();
-			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-			
-			ym(80538532, "init", {
-						clickmap:true,
-						trackLinks:true,
-						accurateTrackBounce:true,
-						webvisor:true
-			}); 
-		</script><noscript><div><img src="https://mc.yandex.ru/watch/80538532" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script type="text/javascript">
+	(function (m, e, t, r, i, k, a) {
+		m[i] = m[i] || function () {
+			(m[i].a = m[i].a || []).push(arguments)
+		};
+		m[i].l = 1 * new Date();
+		for (var j = 0; j < document.scripts.length; j++) {
+			if (document.scripts[j].src === r) {
+				return;
+			}
+		}
+		k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+	})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(94768570, "init", {
+		clickmap: true,
+		trackLinks: true,
+		accurateTrackBounce: true,
+		webvisor: true
+	});
+</script>
+<noscript>
+	<div><img src="https://mc.yandex.ru/watch/94768570" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
+
 		<script>window.hdeContactWidgetCustom = JSON.parse('{"size":"22","position":"bottom-right","direction":"top","bg":"23869B","color":"FFFFFF","buttons":[{"source":"telegram","url":"https://t.me/hacks_ai_bot"},{"source":"chat","bg":"23869B"}]}')</script>
 		<script src="js/common.js"></script>
 	</body>
