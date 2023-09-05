@@ -36,12 +36,12 @@ function setHackPageData(data) {
 			
 	}
 
-	if (data.playground.city && data.playground.city){ 
-		document.querySelector('.sAbout__types-inner').insertAdjacentHTML("beforeend", `
-		<div class="sAbout__type sAbout__type--1 h4"><div class="sAbout__type sAbout__type--1 h4">${data.playground.city || " "}</div>
-		<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div></div>
-		`);
-	}
+	// if (data.playground.city && data.playground.city){ 
+	// 	document.querySelector('.sAbout__types-inner').insertAdjacentHTML("beforeend", `
+	// 	<div class="sAbout__type sAbout__type--1 h4"><div class="sAbout__type sAbout__type--1 h4">${data.playground.city || " "}</div>
+	// 	<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div></div>
+	// 	`);
+	// }
 	// console.log(data);
 	document.querySelector('.sAbout__wrap').style.background = data.event.colors.background;
 	document.querySelector('.sAbout__date').style.color = data.event.colors.date;

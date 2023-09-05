@@ -34,7 +34,7 @@
 			display: flex;
 			@include roww(42px, m);
 			flex-wrap: wrap;
-			margin-bottom: 40px;
+			margin-bottom: 24px;
 		}
 		&__btn{
 			margin-bottom: 10px;
@@ -69,6 +69,11 @@
 		}
 		&__content:nth-child(1) .row{
 			align-items: flex-end;
+		}
+		&__content {
+			.h1 {
+				margin-bottom: rem(24);
+			}
 		}
 	}
 	
@@ -114,27 +119,44 @@
 		text-transform: uppercase;
 	}
 	ul{
+		margin-bottom: 0;
+		max-width: 944px;
 		li{
 			list-style: none;
-			padding-left: 25px;
+			padding-left: 28px;
 			position: relative;
 			font-weight: 500;
+			line-height: 1.44;
+			ul {
+				margin-top: rem(8);
+				max-width: none;
+			}
+			&:not(:last-child) {
+				margin-bottom: rem(8);
+			}
 			&::before{
 				content: '';
 				position: absolute;
 				left: 0;
-				top: rem(10);
-				width: 8px;
-				height: 8px;
-				border: 1px solid #ff00c7;
+				top: rem(8);
+				width: 12px;
+				height: 12px;
+				// border: 1px solid #ff00c7;
+				background-color: #ff00c7;
 			}
 			li{
+				padding-left: rem(12);
+				font-size: rem(16);
+				line-height: 1.37;
 				&::before{
 					height: 1px;
-					background: #ff00c7;
+					background-color: currentColor;
 					border: none;
-					width: 18px;
-					top: rem(14);
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+					top: rem(8);
+					left: rem(-3);
 				}
 			}
 			&::marker{
@@ -143,7 +165,10 @@
 		}
 	}
 	.btn{
-		max-width: 400px;
+		display: block;
+		width: 100%;
+		max-width: 172px;
+		--bs-btn-color: #fff;
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

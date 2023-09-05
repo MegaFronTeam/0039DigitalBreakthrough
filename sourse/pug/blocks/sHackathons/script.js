@@ -69,9 +69,11 @@ function setEvents(items) {
 
 	let btn = document.querySelector(".headerBlock__btn");
 	// console.log(items);
-	switch (items.isRegistrationAvailable) {
+	// Change items.isRegistrationAvailable to items.events.isRegistrationAvailable
+	switch (items.events.isRegistrationAvailable) {
 		case true:
-			btn.innerHTML = 'Регистрируйся на хакатон';	
+			// btn.innerHTML = 'Регистрируйся на хакатон';	
+			btn.innerHTML = 'Регистрация на хакатон';	
 			break;
 			
 		default:
