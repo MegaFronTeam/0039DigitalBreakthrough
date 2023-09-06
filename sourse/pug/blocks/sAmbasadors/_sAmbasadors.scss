@@ -73,3 +73,7 @@
 		line-height: calc(22 / 12);
 	}
 }
+
+.default-slider__slide .sAmbasadors-item__text{
+	@include ell;
+}
