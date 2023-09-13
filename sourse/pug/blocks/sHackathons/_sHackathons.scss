@@ -32,6 +32,17 @@
 
 			--bs-btn-bg: #{$gray-800};
 			--bs-btn-border-color: #{$gray-800};
+			&:hover{
+
+			}
+			--bs-btn-hover-bg: var(--bgColor);
+			--bs-btn-hover-border-color: var(--bgColor);
+			&.btn-outline-dark{
+				--bs-btn-bg: transparent;
+				--bs-btn-color: #{$gray-800};
+				--bs-btn-color: #{$gray-800};
+
+			}
 		}
 		color: $body-bg;
 		background: var(--bgColor);

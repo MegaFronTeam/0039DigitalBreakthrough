@@ -14,15 +14,16 @@ mixin sHackathons(data)
 								span.col-auto 8 сентября - 10 сентября
 								span.col-auto  Нижний Новгород
 							.h1 Всероссийский хакатон 
-							+e.btn.btn.btn-dark Регистрируйся на хакатон
+							+e.btn.btn.btn-outline-dark Узнать, как все прошло
 					.col-lg-6
 						//- href="/hackathons.html?eventId=969092" 
-						+e.item-wrap(style='--bgColor: #FF00C7' data-aos="fade-up" data-aos-duration="700")
+						+e.item-wrap(href="/hackathons.html?eventId=969092" style='--bgColor: #FF00C7' data-aos="fade-up" data-aos-duration="700")
 							.row.text-white
 								span.col-auto 24 ноября - 26 ноября
 								span.col-auto Москва
 							.h1.text-white Международный хакатон 
-							+e.text-soon Регистрация скоро откроется
+							+e.btn.btn.btn-dark Регистрируйся на хакатон
+							//- +e.text-soon Регистрация скоро откроется
 				+e.row.row
 					mixin item(title, btn='Узнай больше о хакатоне')
 						+e.item&attributes(attributes)
