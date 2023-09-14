@@ -39,7 +39,7 @@
 		<div class="main-wrapper">
 			<script>addBlock(`header`)</script>
 			<div id="headerWrap"></div>
-			<script>function setAmbasadors(items) {
+			<script>function setAmbasadors(items) { 
 	const template = (item) => {
 		return `
 			<div class="default-slider__slide swiper-slide" >
@@ -52,10 +52,16 @@
 			</div>
 		`
 	};
+	if(items.length) {
 
-	for (const item of items) {
-		document.querySelector(".sAmbasadors .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
-		// index++;ambassadors
+		for (const item of items) {
+			
+			document.querySelector(".sAmbasadors .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
+			// index++;ambassadors
+		}
+	}
+	else {
+		document.querySelector(".sAmbasadors").remove();
 	}
 
 }

@@ -1,4 +1,4 @@
-function setAmbasadors(items) {
+function setAmbasadors(items) { 
 	const template = (item) => {
 		return `
 			<div class="default-slider__slide swiper-slide" >
@@ -11,10 +11,16 @@ function setAmbasadors(items) {
 			</div>
 		`
 	};
+	if(items.length) {
 
-	for (const item of items) {
-		document.querySelector(".sAmbasadors .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
-		// index++;ambassadors
+		for (const item of items) {
+			
+			document.querySelector(".sAmbasadors .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
+			// index++;ambassadors
+		}
+	}
+	else {
+		document.querySelector(".sAmbasadors").remove();
 	}
 
 }
