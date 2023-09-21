@@ -40,7 +40,7 @@
 			<script>addBlock(`header`)</script>
 			<div id="headerWrap"></div>
 			<script>function setTranslationShow(data) {
-	// console.log(data);
+	console.log(data);
 	if (data.show) {
 		console.log(data);
 		// document.querySelector('.headerBlock__img-wrap ').remove(); 
@@ -61,9 +61,9 @@
 		document.querySelector('.headerBlock2__videoBlock iframe').src = data.link;
 	}
 	else{
-		// if (document.querySelector('.headerBlock__video ')) {
-		// 	document.querySelector('.headerBlock__video ').remove();
-		// }
+		if (document.querySelector('.headerBlock2__video ')) {
+			document.querySelector('.headerBlock2__video ').remove();
+		}
 
 
 		document.querySelector('.headerBlock2__videoBlock').classList.remove('isTranslation');
