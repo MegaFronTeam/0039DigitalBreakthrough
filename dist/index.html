@@ -61,9 +61,9 @@
 		document.querySelector('.headerBlock2__videoBlock iframe').src = data.link;
 	}
 	else{
-		// if (document.querySelector('.headerBlock__video ')) {
-		// 	document.querySelector('.headerBlock__video ').remove();
-		// }
+		if (document.querySelector('.headerBlock2__video ')) {
+			document.querySelector('.headerBlock2__video ').remove();
+		}
 
 
 		document.querySelector('.headerBlock2__videoBlock').classList.remove('isTranslation');
@@ -82,7 +82,9 @@ getTranslationLink(setTranslationShow);
 			<!-- start headerBlock-->
 			<div class="headerBlock2 section" id="headerBlock">
 				<div class="container">
-					<div class="headerBlock2__videoBlock bg-wrap"><a class="headerBlock__btn btn btn-primary" href="https://lk.hacks-ai.ru"> Регистрация на хакатон</a>
+					<div class="headerBlock2__videoBlock bg-wrap">
+						<h1>Большой спорт для IT-специалистов</h1><a class="headerBlock__btn btn btn-primary" href="https://lk.hacks-ai.ru"> Регистрация на хакатон </a>
+						<iframe src="" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen="webkitAllowFullScreen" mozallowfullscreen="mozallowfullscreen" allowFullScreen="allowFullScreen"></iframe>
 						<video class="picture-bg" src="https://lodmedia.hb.bizmrg.com/assets/video-bg-new.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata"> </video>
 					</div>
 				</div>
