@@ -100,3 +100,13 @@
 }
 
 
+
+
+.my-class{
+	margin-left: calc(-1 * var(--bs-gutter-x) / 3);
+	.icon{
+		font-size: 1.4rem;
+		position: relative;
+		top: rem(-2);
+	}
+}
