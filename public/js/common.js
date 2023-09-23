@@ -546,6 +546,12 @@ function eventHandler() {
 
 	// deleteCookie('userAgree') 
 
+	new isvek.Bvi({
+    target: '.my-class',
+    fontSize: 24,
+    theme: 'black'
+});
+
 };
 
 function loadingContent () {
