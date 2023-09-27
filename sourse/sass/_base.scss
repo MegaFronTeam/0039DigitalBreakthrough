@@ -801,3 +801,16 @@ iframe {
 		font-size: 14px;
 	}
 }
+
+.bvi-block-center{
+	.bvi-block:nth-child(4) {
+		display: none;
+	}
+}
+
+
+body .bvi-body[data-bvi-theme] :not(.bvi-no-styles){
+	&.section:after{
+		filter: saturate(1);
+	}
+}
