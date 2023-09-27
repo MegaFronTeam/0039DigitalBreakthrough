@@ -814,3 +814,11 @@ body .bvi-body[data-bvi-theme] :not(.bvi-no-styles){
 		filter: saturate(0);
 	}
 }
+
+
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles){
+	&.qr-link{
+		display: inline-block;
+		background-color: #fff !important;
+	}
+}
