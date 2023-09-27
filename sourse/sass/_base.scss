@@ -811,6 +811,6 @@ iframe {
 
 body .bvi-body[data-bvi-theme] :not(.bvi-no-styles){
 	&.section:after{
-		filter: saturate(1);
+		filter: saturate(0);
 	}
 }
