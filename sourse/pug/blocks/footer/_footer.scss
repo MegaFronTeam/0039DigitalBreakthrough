@@ -95,7 +95,9 @@
 			line-height: 1.83;
 		}
 		a {
-			font-size: rem(12);
+			&:not(.h6){
+				font-size: rem(12);
+			}
 			line-height: 1.83;
 			&:not(:hover) {
 				color: #fff;
