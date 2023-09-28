@@ -164,7 +164,7 @@ function setHackPageData(data) {
 			if (item.video.length == 0) return ' '; 
 				content += `
 
-							<div class="mb-3  col-md-auto sVideo " style="max-width: 200px" data-aos="fade-up" data-aos-duration="700">
+							<div class="mb-3  sVideo " style=" " data-aos="fade-up" data-aos-duration="700">
 								<a class=" " data-fancybox  href="${item.video}" > 
 									<div class="default-slider__video-wrap bg-wrap">
 										<div class="default-slider__play-btn">
@@ -367,15 +367,15 @@ function setHackPageData(data) {
 								<div class="innerTabs__content active" >
 									<div class="sCases__tags" >
 										${expertisesItems()}
-									</div>
-									${item.longDescription} 
+										</div>
+										${item.longDescription} 
+										${partnersItemVideo()}  
 									<div class=" row gy-3">
 										<div class="col">
 											${partnersItem()} 
 										</div>
 										
 										
-											${partnersItemVideo()}  
 
 									</div>
 								</div>
