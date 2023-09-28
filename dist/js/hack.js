@@ -144,7 +144,7 @@ function setHackPageData(data) {
 			if (item.partners.length == 0) return ' ';
 			for (const subItem of item.partners) {
 				content += `
-							<div class="col-auto">
+							<div class="mb-3">
 							<a class="sCases__director " href="${subItem.link}" data-aos="fade-up" data-aos-duration="700">
 							<img src="${subItem.avatar_url}" alt="" loading="lazy"/>
 							<div>
@@ -158,6 +158,29 @@ function setHackPageData(data) {
 			return content;
 		}
 
+		
+		let partnersItemVideo = ()=>{
+			let content = ' '
+			if (item.video.length == 0) return ' '; 
+				content += `
+
+							<div class="mb-3  col-md-auto sVideo " style="max-width: 200px" data-aos="fade-up" data-aos-duration="700">
+								<a class=" " data-fancybox  href="${item.video}" > 
+									<div class="default-slider__video-wrap bg-wrap">
+										<div class="default-slider__play-btn">
+											<svg class="icon icon-play ">
+												<use xlink:href="img/svg/sprite.svg#play"></use>
+											</svg>
+										</div>
+										<img class="object-fit-js" src="${item.avatarUrl}" alt="">
+									</div>
+								</a>
+							</div>
+							` 
+			return content;
+		}
+
+		console.log(item);
 
 
 
@@ -276,6 +299,7 @@ function setHackPageData(data) {
 			return `
 			<div class="ratio ratio-16x9 mb-4"  data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
 			${video}
+
 			</div>
 			`;
 		}
@@ -344,10 +368,15 @@ function setHackPageData(data) {
 									<div class="sCases__tags" >
 										${expertisesItems()}
 									</div>
-									${item.longDescription}
-									${partnersVideo()}
+									${item.longDescription} 
 									<div class=" row gy-3">
-										${partnersItem()} 
+										<div class="col">
+											${partnersItem()} 
+										</div>
+										
+										
+											${partnersItemVideo()}  
+
 									</div>
 								</div>
 								<div class="innerTabs__content  "  > 
