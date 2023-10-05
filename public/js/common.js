@@ -190,7 +190,7 @@ const JSCCommon = {
 		}, { passive: true });
 	},
 	animateScroll() {
-		$(document).on('click', " nav li a, .scroll-link", function () {
+		$(document).on('click', " nav li a ", function () {
 			const elementClick = $(this).attr("href");
 			if (!document.body.classList.contains('index-page')) {
 				$(this).attr("href", '/' + elementClick)
@@ -207,6 +207,14 @@ const JSCCommon = {
 				return false;
 			}
 		});
+		
+		$(document).on('click', " .scroll-link", function () {
+			const elementClick = $(this).attr("href"); 
+				let destination = $(elementClick).offset().top;
+				$('html, body').animate({ scrollTop: destination - 160 }, 0); 
+				return false; 
+		});
+
 	},
 	getCurrentYear(el) {
 		let now = new Date();
