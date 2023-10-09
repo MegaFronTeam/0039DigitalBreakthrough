@@ -462,7 +462,7 @@ function eventHandler() {
 
 	new isvek.Bvi({
     target: '.my-class',
-    fontSize: 24,
+    fontSize: 32,
     theme: 'black',
 		speech: false,
 });
