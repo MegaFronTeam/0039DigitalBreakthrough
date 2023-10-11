@@ -5,6 +5,14 @@
 	--sTPB: #{rem(20)};
 	position: relative;
 	z-index: 3;
+	&__img-wrap{
+
+		@include block(400, 600);
+		border-radius: 8px;
+		overflow: hidden;
+		margin-bottom: rem(24);
+	}
+
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(52)};
 		--sPB: #{rem(40)};
@@ -45,10 +53,7 @@
 		}
 
 		img {
-			@include block(193, 310);
-			border-radius: 8px;
-			overflow: hidden;
-			margin-bottom: rem(24);
+			@include a-cent;
 		}
 			.default-slider__city {
 			font-size: rem(12);

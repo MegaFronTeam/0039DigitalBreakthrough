@@ -482,8 +482,22 @@ function loadingContent () {
 		AOS.init({
 			offset: 160
 		});
-
 	}, 600);
+	window.setTimeout(function () {
+		let scrolToHash  = window.location.hash;
+		if(scrolToHash) {
+			let destination = $(scrolToHash).offset().top;
+			console.log(scrolToHash);
+			// $('html, body').animate({ scrollTop: destination - 160 }, 0);
+			
+			window.scrollTo({
+				top: destination - 160,
+				left: 0,
+				behavior: "smooth",
+			});
+		}
+			
+	}, 1000)
 
 }
 
@@ -528,3 +542,4 @@ function deleteCookie(name) {
 		'max-age': -1
 	})
 }
+

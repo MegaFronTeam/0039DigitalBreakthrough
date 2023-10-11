@@ -15,7 +15,7 @@ function setPartners(items) {
 				</div>`;
 	};
 	for (const item of items) { 
-		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
+		document.querySelector(".sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
 
@@ -23,10 +23,12 @@ function setPartners(items) {
 
 
 function setPartnersMain(items) {
+	console.log(items);
 
 	const group = (item) => {
+		let idBlock = item === 'Партнёры' ? 'sPartners' : '';
 		return `
-			<div class="sPartners__wrap">
+			<div class="sPartners__wrap" id="${idBlock}">
 				<div class="section-title" data-aos="fade-up" data-aos-duration="700">
 					<h2>${item}</h2>
 				</div>
@@ -57,7 +59,7 @@ function setPartnersMain(items) {
 
 	};
 	for (const item in items) { 
-		document.querySelector("#sPartners .container ").insertAdjacentHTML("beforeend", group(item));
+		document.querySelector(".sPartners .container ").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();
 }
