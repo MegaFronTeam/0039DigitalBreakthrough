@@ -22,8 +22,7 @@ function setPartners(items) {
 
 
 
-function setPartnersMain(items) {
-	console.log(items);
+function setPartnersMain(items) { 
 
 	const group = (item) => {
 		let idBlock = item === 'Партнёры' ? 'sPartners' : '';

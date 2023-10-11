@@ -486,8 +486,7 @@ function loadingContent () {
 	window.setTimeout(function () {
 		let scrolToHash  = window.location.hash;
 		if(scrolToHash) {
-			let destination = $(scrolToHash).offset().top;
-			console.log(scrolToHash);
+			let destination = $(scrolToHash).offset().top; 
 			// $('html, body').animate({ scrollTop: destination - 160 }, 0);
 			
 			window.scrollTo({
