@@ -152,7 +152,10 @@
 				<script>function setItHubs(items) {
 	const template = (item) => {
 		return `
-			<div class="default-slider__slide swiper-slide"data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+			<div class="default-slider__slide swiper-slide"data-aos="fade-up" data-aos-duration="700">
+				<div class="sIthubs__img-wrap">
+					<img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+				</div>
 				<div class="h4">${item.name}</div>
 				<div class="default-slider__city">${item.city}</div>
 			</div>
@@ -170,7 +173,10 @@
 function setItHubsPage(items) {
 	const template = (item) => {
 		return `
-			<div class="hub-slide  col-xxl-4 col-lg-6 text-body" data-aos="fade-up" data-aos-duration="700"><img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+			<div class="hub-slide  col-xxl-4 col-lg-6 text-body" data-aos="fade-up" data-aos-duration="700">
+				<div class="sIthubs__img-wrap">
+					<img class="object-fit-js" src="${item.avatar}" alt="" loading="lazy"/>
+				</div>
 				<div class="h4 text-dark">${item.name}</div>
 				<div class="default-slider__city text-dark">${item.city}</div>
 			</div>
@@ -293,7 +299,7 @@ function setPartners(items) {
 				</div>`;
 	};
 	for (const item of items) { 
-		document.querySelector("#sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
+		document.querySelector(".sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
 
@@ -301,10 +307,12 @@ function setPartners(items) {
 
 
 function setPartnersMain(items) {
+	console.log(items);
 
 	const group = (item) => {
+		let idBlock = item === 'Партнёры' ? 'sPartners' : '';
 		return `
-			<div class="sPartners__wrap">
+			<div class="sPartners__wrap" id="${idBlock}">
 				<div class="section-title" data-aos="fade-up" data-aos-duration="700">
 					<h2>${item}</h2>
 				</div>
@@ -335,14 +343,14 @@ function setPartnersMain(items) {
 
 	};
 	for (const item in items) { 
-		document.querySelector("#sPartners .container ").insertAdjacentHTML("beforeend", group(item));
+		document.querySelector(".sPartners .container ").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();
 }
 
 				</script>
 				<!-- start sPartners-->
-				<section class="sPartners section" id="sPartners">
+				<section class="sPartners section">
 					<div class="container"></div>
 				</section>
 			</main>
