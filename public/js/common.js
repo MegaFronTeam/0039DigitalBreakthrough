@@ -198,6 +198,7 @@ const JSCCommon = {
 			else {
 				let destination = $(elementClick).offset().top;
 				$('html, body').animate({ scrollTop: destination - 160 }, 0);
+				window.history.pushState('1', 'Title', `${elementClick}`);
 				// window.scrollTo({
 				// 	top: destination.offsetTop - 160,
 				// 	left: 0,
