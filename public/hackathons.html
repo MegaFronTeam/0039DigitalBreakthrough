@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<link href="css/main.min.css" rel="stylesheet"/>
-		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"> </script>
+		<script src="https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs"> </script>
 		<script>
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -97,7 +97,26 @@
 				</section>
 				<!-- end sAbout-->
 				<div id="cases-wrap"></div>
-				<div id="parters-wrap"></div>
+				<!-- start sInfo-->
+				<section class="sInfo section d-none" id="sInfo">
+					<div class="container">
+						<div class="sInfo__grid">
+							<div class="sInfo__grid-item bg-wrap" data-aos="fade-up" data-aos-duration="700">
+								<div class="sInfo__img-wrap picture-bg"><img class="object-fit-js img-avatar" src="img/sInfo-img-1.jpg" alt="" loading="lazy"/>
+								</div>
+								<h2 class="h1"></h2>
+								<p class="addr"></p>
+							</div>
+							<div class="sInfo__grid-item sInfo__grid-item--text" data-aos="fade-up" data-aos-duration="700">
+								<div class="sInfo__inner">
+								</div><a href="#" data-src="modal-full-text" data-fancybox="modal">Подробнее...</a>
+							</div>
+							<div class="sInfo__grid-item bg-wrap map-img" data-aos="fade-up" data-aos-duration="700">
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end sInfo-->
 				<!-- start sVideo-->
 				<section class="sVideo section" id="sVideo">
 					<div class="container">
@@ -129,26 +148,7 @@
 					</div>
 				</section>
 				<!-- end sVideo-->
-				<!-- start sInfo-->
-				<section class="sInfo section d-none" id="sInfo">
-					<div class="container">
-						<div class="sInfo__grid">
-							<div class="sInfo__grid-item bg-wrap" data-aos="fade-up" data-aos-duration="700">
-								<div class="sInfo__img-wrap picture-bg"><img class="object-fit-js img-avatar" src="img/sInfo-img-1.jpg" alt="" loading="lazy"/>
-								</div>
-								<h2 class="h1"></h2>
-								<p class="addr"></p>
-							</div>
-							<div class="sInfo__grid-item sInfo__grid-item--text" data-aos="fade-up" data-aos-duration="700">
-								<div class="sInfo__inner">
-								</div><a href="#" data-src="modal-full-text" data-fancybox="modal">Подробнее...</a>
-							</div>
-							<div class="sInfo__grid-item bg-wrap map-img" data-aos="fade-up" data-aos-duration="700">
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- end sInfo-->
+				<div id="parters-wrap"></div>
 				<script>function setItHubs(items) {
 	const template = (item) => {
 		return `
