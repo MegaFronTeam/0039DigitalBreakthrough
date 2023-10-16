@@ -18,7 +18,7 @@ let pageId = params['eventId'];
 function setHackPageData(data) {
 	// console.log(data);
 	document.title = data.event.name;
-	console.log(data.event.dateRange);
+	// console.log(data.event.dateRange);
 	if (data.event.dateRange.length > 3) {
 		let zero = data.event.dateRange[2] < 10 ? '0' : ' ';
 		document.querySelector('.sAbout__date').innerHTML = 
@@ -180,7 +180,7 @@ function setHackPageData(data) {
 			return content;
 		}
 
-		console.log(item);
+		// console.log(item);
 
 
 
@@ -495,7 +495,8 @@ function setHackPageData(data) {
 		}
 	}
 	else{
-		document.querySelector(".sVideo").remove();
+		console.log(data.videos);
+		document.querySelector("#sVideo").remove();
 	}
 
 	setNews(data.news);
