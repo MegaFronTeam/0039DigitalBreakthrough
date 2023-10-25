@@ -144,8 +144,6 @@ export default function Pagination({
           const bulletIndex = elementIndex(bullet);
           if (bulletIndex === current) {
             bullet.classList.add(...params.bulletActiveClass.split(' '));
-          } else if (swiper.isElement) {
-            bullet.setAttribute('part', 'bullet');
           }
           if (params.dynamicBullets) {
             if (bulletIndex >= firstIndex && bulletIndex <= lastIndex) {
@@ -163,11 +161,6 @@ export default function Pagination({
         const bullet = bullets[current];
         if (bullet) {
           bullet.classList.add(...params.bulletActiveClass.split(' '));
-        }
-        if (swiper.isElement) {
-          bullets.forEach((bulletEl, bulletIndex) => {
-            bulletEl.setAttribute('part', bulletIndex === current ? 'bullet-active' : 'bullet');
-          });
         }
         if (params.dynamicBullets) {
           const firstDisplayedBullet = bullets[firstIndex];
@@ -248,8 +241,7 @@ export default function Pagination({
         if (params.renderBullet) {
           paginationHTML += params.renderBullet.call(swiper, i, params.bulletClass);
         } else {
-          // prettier-ignore
-          paginationHTML += `<${params.bulletElement} ${swiper.isElement ? 'part="bullet"' : ''} class="${params.bulletClass}"></${params.bulletElement}>`;
+          paginationHTML += `<${params.bulletElement} class="${params.bulletClass}"></${params.bulletElement}>`;
         }
       }
     }
