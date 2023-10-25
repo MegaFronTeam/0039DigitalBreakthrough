@@ -35,12 +35,16 @@ mixin footer()
 							li: a(href="https://hacks-ai.ru/int/" target="_blank") Международный лендинг
 			+e.wrap
 				.row.text-center.text-md-start
-					.col-md.col-lg-4
+					.col-md-auto
 						span © 2023
-					.col-md.col-lg-3
-						a(href="https://lodmedia.hb.bizmrg.com/approval.pdf" target="_blank") Политика в отношении обработки персональных данных
-					.col-md.col-lg-3
-						a(href="https://lodmedia.hb.bizmrg.com/polozhenie.pdf" target="_blank") Положение о хакатонах
+					.col-md
+						.row.justify-content-center
+							.col-auto
+								a(href="https://lodmedia.hb.bizmrg.com/approval.pdf" target="_blank") Политика в отношении обработки персональных данных
+							.col-auto
+								a(href="https://lodmedia.hb.bizmrg.com/polozhenie.pdf" target="_blank") Положение о хакатонах
+							.col-auto
+								a(href="https://lodmedia.hb.bizmrg.com/appelation.pdf" target="_blank") Положение об апелляциях
 					.col-md-auto
 						a(href="#" ).h6.my-class Версия  для слабовидящих
 					// .col-md.col-lg-3
