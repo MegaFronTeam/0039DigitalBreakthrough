@@ -8,7 +8,9 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sFaqBlock/_sFaqBlock.pug
 include ../blocks/sPartners/_sPartners.pug
-
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
 block variables
 	- let  mainPage= 'white-theme' 
 	- let  bg= 'main.jpg'
@@ -20,7 +22,9 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
+	+mob-mnu()
+	+header()
+		+top-nav()
 	+sFaqBlock
 	+sPartners
 	//- script.

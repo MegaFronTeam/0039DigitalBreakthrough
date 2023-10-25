@@ -13,7 +13,9 @@ include ../blocks/sDetailedInfo/_sDetailedInfo.pug
 include ../blocks/sCases/_sCases.pug
 include ../blocks/sAbout/_sAbout.pug
 include ../blocks/sIthubs/_sIthubs.pug
-
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= 'main.jpg'
@@ -25,7 +27,9 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
+	+mob-mnu()
+	+header()
+		+top-nav()
 	main
 		+sAbout
 		#cases-wrap

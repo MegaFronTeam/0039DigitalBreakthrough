@@ -190,30 +190,15 @@ const JSCCommon = {
 		}, { passive: true });
 	},
 	animateScroll() {
-		$(document).on('click', " nav li a ", function () {
-			const elementClick = $(this).attr("href");
-			if (!document.body.classList.contains('index-page')) {
-				$(this).attr("href", '/' + elementClick)
-			}
-			else {
+		$(document).on('click', " nav li a,.scroll-link ", function () {
+			const elementClick = this.hash;
+			if($(this).attr("href") == '/') return;
+			if (document.querySelector(elementClick)) { 
 				let destination = $(elementClick).offset().top;
 				$('html, body').animate({ scrollTop: destination - 160 }, 0);
-				window.history.pushState('1', 'Title', `${elementClick}`);
-				// window.scrollTo({
-				// 	top: destination.offsetTop - 160,
-				// 	left: 0,
-				// 	behavior: 'smooth'
-				// });
-				// Note : smoot
+				window.history.pushState('1', 'Title', `${elementClick}`); 
 				return false;
 			}
-		});
-		
-		$(document).on('click', " .scroll-link", function () {
-			const elementClick = $(this).attr("href"); 
-				let destination = $(elementClick).offset().top;
-				$('html, body').animate({ scrollTop: destination - 160 }, 0); 
-				return false; 
 		});
 
 	},
@@ -471,15 +456,16 @@ function eventHandler() {
 };
 
 function loadingContent () {
-	if (document.readyState !== 'loading') {
-		eventHandler();
-	} else {
-		document.addEventListener('DOMContentLoaded', eventHandler);
-	}
+	eventHandler();
+	// if (document.readyState !== 'loading') {
+	// } else {
+	// }
+	// document.addEventListener('DOMContentLoaded', eventHandler);
 	document.body.classList.add('loaded_hiding');
 	window.setTimeout(function () {
 		document.querySelector(".loader-wrap").classList.add('loaded');
 		document.body.classList.add('loaded');
+		document.body.classList.remove('loaded_hiding');
 		AOS.init({
 			offset: 160
 		});

@@ -20,6 +20,10 @@ include ../blocks/sGR/_sGR.pug
 include ../blocks/sAmbasadors/_sAmbasadors.pug
 include ../blocks/sAQ/_sAQ.pug
 
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+
 block variables
 	- let  mainPage= 'main-page index-page' 
 	- let  bg= 'main.jpg'
@@ -31,7 +35,9 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
+	+mob-mnu()
+	+header()
+		+top-nav()
 	+headerBlock2
 	+sHackathons
 	+sLargestEvent

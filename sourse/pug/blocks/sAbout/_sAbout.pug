@@ -10,12 +10,12 @@ mixin sAbout(data)
 				picture
 					source(media="(min-width: 992px)")
 					img(src="", alt="").bg
+				+e.date(data-aos="fade-up" data-aos-duration="700")
 				.row
 					.col-lg
 						+e.content(data-aos="fade-up" data-aos-duration="700")
 							.row
 								.col-auto.order-sm-last
-									+e.date(data-aos="fade-up" data-aos-duration="700")
 								//- .col
 								//- 	+e.types-inner
 							h1

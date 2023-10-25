@@ -16,7 +16,9 @@ include ../blocks/sAmbasadors/_sAmbasadors.pug
 include ../blocks/sFaq/_sFaq.pug
 include ../blocks/sIthubs/_sIthubs.pug
 include ../blocks/sPartners/_sPartners.pug
-
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
 block variables
 	- let  mainPage= 'news-page white-theme' 
 	- let  bg= 'main.jpg'
@@ -28,7 +30,9 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
+	+mob-mnu()
+	+header()
+		+top-nav()
 	+sAmbasadorsPage('Амбасадоры', '', '') 
 	script.
 		getAmbassador(setAmbasadorsPage)

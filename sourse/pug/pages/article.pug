@@ -9,6 +9,9 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sNews/_sNews.pug
 
+include ../blocks/header/_header.pug
+include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
 block variables
 	- let  mainPage= 'white-theme' 
 	- let  bg= 'main.jpg'
@@ -20,7 +23,9 @@ block pagecontent
 	//- +mob-mnu()
 	
 	
-	+parts('header')
+	+mob-mnu()
+	+header()
+		+top-nav()
 	+sContent
 		+e.animate(data-json='json/animation.json')
 		.row

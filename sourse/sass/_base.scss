@@ -44,7 +44,7 @@ body {
 			@include mt;
 			
 			opacity: 0;
-			pointer-events: none;
+			// pointer-events: none;
 		}
 			
 			&::before {
@@ -53,10 +53,10 @@ body {
 	}
 
 	&.loaded {
-		.main-wrapper{
-		pointer-events: visible;
-		opacity: 1;
-	}
+		// .main-wrapper{
+		// 	pointer-events: visible;
+		// 	opacity: 1;
+		// }
 	}
 
 	&::before {
