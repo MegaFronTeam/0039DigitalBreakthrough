@@ -21,23 +21,23 @@ html(lang="ru")
 		//- 	if (is_safari) {
 		//- 		//- alert(navigator.userAgent);
 		//- 		function w() {
-		//- 			this.outerWidth > 575 
-		//- 				? viewport.content = "width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" 
-		//- 				:  viewport.content = "width=575,   maximum-scale=1 , user-scalable=0, shrink-to-fit=no" 
+		//- 			this.outerWidth > 575
+		//- 				? viewport.content = "width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+		//- 				:  viewport.content = "width=575,   maximum-scale=1 , user-scalable=0, shrink-to-fit=no"
 		//- 			//- alert(this.outerWidth + ', '+  viewport.content);
 		//- 		}
 		//- 		 w();
-		//- 		window.addEventListener('resize', () => { 
+		//- 		window.addEventListener('resize', () => {
 		//- 		 w();
 		//- 		}, { passive: true });
 		//- 	}
 		meta(name="viewport", content="width=device-width,initial-scale=1.0,  shrink-to-fit=no")
-		link(type="image/ico", href='img/favicon.ico', rel='shortcut icon') 
-		<meta name="format-detection" content="telephone=no"> 
+		link(type="image/ico", href='img/favicon.ico', rel='shortcut icon')
+		<meta name="format-detection" content="telephone=no">
 		+allcss()
 
-		script(src= url || 'https://s3.its.xyz/hack/xthon-sync.umd.cjs') 
-		//- script(src= url || 'https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs') 
+		script(src= url || 'https://s3.its.xyz/hack/xthon-sync.umd.cjs')
+		//- script(src= url || 'https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs')
 		script.
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -52,7 +52,7 @@ html(lang="ru")
 	block variables
 	//- style.
 	//- 	.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }
-	//- body.loaded_hiding(class= mainPage) 
+	//- body.loaded_hiding(class= mainPage)
 	body(class=mainPage data-bg=bg).loaded_hiding
 		+b.loader-wrap
 			img(src="loading-indicator-component.svg", alt="").loader-svg
@@ -62,7 +62,7 @@ html(lang="ru")
 		.main-wrapper
 			block pagecontent
 				h3 content
-		
+		.after-c
 
 		+allcjs()
 		block scripts

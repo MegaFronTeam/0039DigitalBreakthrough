@@ -1,5 +1,5 @@
 "use strict";
-const JSCCommon = { 
+const JSCCommon = {
 	modalCall() {
 		const link = '[data-fancybox="modal"], .link-modal-js';
 
@@ -175,7 +175,7 @@ const JSCCommon = {
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
 		Inputmask({"mask":"+9(999)999-99-99", showMaskOnHover: false}).mask(InputTel);
-	}, 
+	},
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -193,10 +193,10 @@ const JSCCommon = {
 		$(document).on('click', " nav li a,.scroll-link ", function () {
 			const elementClick = this.hash;
 			if($(this).attr("href") == '/') return;
-			if (document.querySelector(elementClick)) { 
+			if (document.querySelector(elementClick)) {
 				let destination = $(elementClick).offset().top;
 				$('html, body').animate({ scrollTop: destination - 160 }, 0);
-				window.history.pushState('1', 'Title', `${elementClick}`); 
+				window.history.pushState('1', 'Title', `${elementClick}`);
 				return false;
 			}
 		});
@@ -236,35 +236,35 @@ const JSCCommon = {
         .slideToggle(function () {
           $(this).toggleClass('active');
         });
-    }); 
+    });
 	},
 	imgToSVG() {
     const convertImages = (query, callback) => {
 			const images = document.querySelectorAll(query);
-	
+
 			images.forEach(image => {
 				fetch(image.src)
 					.then(res => res.text())
 					.then(data => {
 						const parser = new DOMParser();
 						const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
-	
+
 						if (image.id) svg.id = image.id;
 						if (image.className) svg.classList = image.classList;
-	
+
 						image.parentNode.replaceChild(svg, image);
 					})
 					.then(callback)
 					.catch(error => console.error(error))
 			});
 		};
-	
+
 		convertImages('.img-svg-js');
   },
 };
 const $ = jQuery;
 
-function eventHandler() { 
+function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	// document.addEventListener('click', function(event) {
@@ -281,8 +281,8 @@ function eventHandler() {
 	JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	JSCCommon.animateScroll();
-	
-	// JSCCommon.CustomInputFile(); 
+
+	// JSCCommon.CustomInputFile();
 	var x = window.location.host;
 	let screenName;
 	screenName = 'screen/'+document.body.dataset.bg;
@@ -337,20 +337,20 @@ function eventHandler() {
 			// }
 		},
 	}
-	
+
 	// const swiperbreadcrumb = new Swiper('.breadcrumb-slider--js', {
 	// 	slidesPerView: 'auto',
 	// 	freeMode: true,
 	// 	watchOverflow: true
 	// });
-	
+
 	const tagsSlider = new Swiper('.sFaqBlock__tags-slider--js', {
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchOverflow: true,
 		spaceBetween: 8,
 	});
-	
+
 	const sResumeSwiper = new Swiper('.sResume__slider--js', {
 		slidesPerView: 1,
 		navigation: {
@@ -383,7 +383,7 @@ function eventHandler() {
 		}
 	}
 
-	
+
 	let animateBlocks = document.querySelectorAll('[data-json]');
   if (animateBlocks) {
     for (const animateBlock of animateBlocks) {
@@ -436,7 +436,7 @@ function eventHandler() {
 				</div>
 			</div>
 		</div>`
-		document.querySelector("footer").insertAdjacentHTML("afterend", cookies);
+		document.querySelector(".after-c").insertAdjacentHTML("afterend", cookies);
 		document.querySelector('.cookie-block .btn').addEventListener("click", function() {
 			setCookie('userAgree', 'true');
 			$(".cookie-block").remove();
@@ -444,7 +444,7 @@ function eventHandler() {
 	}
 	// Пример использования:
 
-	// deleteCookie('userAgree') 
+	// deleteCookie('userAgree')
 
 	new isvek.Bvi({
     target: '.my-class',
@@ -473,16 +473,16 @@ function loadingContent () {
 	window.setTimeout(function () {
 		let scrolToHash  = window.location.hash;
 		if(scrolToHash) {
-			let destination = $(scrolToHash).offset().top; 
+			let destination = $(scrolToHash).offset().top;
 			// $('html, body').animate({ scrollTop: destination - 160 }, 0);
-			
+
 			window.scrollTo({
 				top: destination - 160,
 				left: 0,
 				behavior: "smooth",
 			});
 		}
-			
+
 	}, 1000)
 
 }
