@@ -10,7 +10,7 @@
 		<meta property="og:description" content="Официальный сайт конкурса Цифровой прорыв: Сезон искусственный интеллект. Хакатоны по искусственному интеллекту 2023.">
 		<meta property="og:image" content="https://hacksai-data.obs.ru-moscow-1.hc.sbercloud.ru/logo.jpg">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
-		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no">
 		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
 		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
 		<link href="libs/aos/aos.css" rel="stylesheet"/>
@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<link href="css/main.min.css" rel="stylesheet"/>
-		<script src=" https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs"> </script>
+		<script src=" https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs"></script>
 		<script>
 			function addBlock(elem) {
 				fetch(`parts/${elem}.html`)
@@ -450,7 +450,7 @@ function setEvents(items) {
 					<div class="sHackathons__wrap">
 						<div class="sHackathons__row row">
 							<div class="col-lg-6">
-								<a class="sHackathons__item-wrap" href="/hackathons.html?eventId=969091" style="--bgColor: #03FE33" data-aos="fade-up" data-aos-duration="700">
+								<a class="sHackathons__item-wrap" href="/hackathons.html?eventId=969091" style="--bgColor: #03FE33" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
 									<div class="row"><span class="col-auto">8 сентября - 10 сентября</span><span class="col-auto"> Нижний Новгород</span></div>
 									<div class="h1">Всероссийский хакатон </div>
 									<div class="sHackathons__btn btn btn-outline-dark">Узнать, как все прошло
@@ -458,7 +458,7 @@ function setEvents(items) {
 								</a>
 							</div>
 							<div class="col-lg-6">
-								<a class="sHackathons__item-wrap" href="/hackathons.html?eventId=969092" style="--bgColor: #FF00C7" data-aos="fade-up" data-aos-duration="700">
+								<a class="sHackathons__item-wrap" href="/hackathons.html?eventId=969092" style="--bgColor: #FF00C7" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
 									<div class="row text-white"><span class="col-auto">23 ноября - 26 ноября</span><span class="col-auto">Москва</span></div>
 									<div class="h1 text-white">Международный хакатон </div>
 									<div class="sHackathons__btn btn btn-dark">Регистрируйся на хакатон
@@ -521,8 +521,8 @@ function setEvents(items) {
 						<div class="section-title">
 							<h2>Карта участников за 2023 год</h2>
 						</div>
-						<label class="sMap__select-wrap">
-							<select class="form-select">
+						<div class="sMap__select-wrap d-inlin">
+							<select class="form-select" name="select-map">
 								<option disabled="disabled" selected="selected">Выберите округ</option>
 								<option value="Дальневосточный федеральный округ">Дальневосточный федеральный округ</option>
 								<option value="Приволжский федеральный округ">Приволжский федеральный округ</option>
@@ -533,10 +533,10 @@ function setEvents(items) {
 								<option value="Центрaльный федеральный округ">Центрaльный федеральный округ</option>
 								<option value="Южный федеральный округ">Южный федеральный округ</option>
 							</select>
-						</label>
+						</div>
 						<div class="sMap__row row">
 							<div class="col-lg" data-aos="fade-up" data-aos-duration="700">
-								<svg class="map-svg" viewBox="0 0 1051 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<svg class="map-svg" viewBox="0 0 870 448" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<g class="path-042" data-region="Дальневосточный федеральный округ">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M680.167 89.2148L679.433 91.2339L681.206 92.4271L683.222 91.2339L682.519 88.7559L680.167 89.2148Z" fill="#03FE33"></path>
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M510.767 143.059L514.005 145.629L515.503 143.273L515.992 141.346L514.189 140.214L512.05 139.877L510.767 143.059Z" fill="#03FE33"></path>
@@ -1327,6 +1327,7 @@ function setPartnersMain(items) {
 			<script>addBlock(`footer`)</script>
 			<div id="footerWrap"></div>
 		</div>
+		<div class="after-c"></div>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
 		<script src="libs/swiper/swiper-bundle.min.js"> </script>
