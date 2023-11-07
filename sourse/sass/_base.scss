@@ -826,3 +826,12 @@ body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles){
 [data-bvi-images="false"] img.object-fit-js{
 	display: none;
 }
+
+.bvi-blocks{
+
+	.bvi-block{
+		&:nth-child(1){
+			display: none;
+		}
+	}
+}
