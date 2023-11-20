@@ -5,7 +5,10 @@
     { "name": "Хакатоны", "url": "/#sHackathons" },
     { "name": "Вопросы и ответы", "url": "/#sFaq" },
     { "name": "Партнеры", "url": "/#sPartners" },
-    { "name": "Архив 2022", "url": "http://2022.hacks-ai.ru/", "target":"_blank" }
+    { "name": "Архив 2022", "url": "http://2022.hacks-ai.ru/", "target":"_blank" },
+    { "name": "Айти хабы", "url": "/#sIthubs" },
+    { "name": "Амбассадоры", "url": "/#sAmbasadors" },
+    { "name": "Возможности для участников хакатонов", "url": "/#sGR" }
   ],
   "social": [
     { "icon": "vk", "href": "https://vk.com/leadersofdigital" },
