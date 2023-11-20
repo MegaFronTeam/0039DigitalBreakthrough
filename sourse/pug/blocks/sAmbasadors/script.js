@@ -6,7 +6,6 @@ function setAmbasadors(items) {
 					<div class="sAmbasadors-item__img-wrap"><img src="${item.image}" loading="lazy" alt=""/>
 					</div>
 					<div class="sAmbasadors-item__title">${item.name}</div>
-					<div class="sAmbasadors-item__text">${item.description}</div>
 				</div>
 			</div>
 		`
@@ -32,7 +31,6 @@ function setAmbasadorsPage(items) {
 					<div class="sAmbasadors-item__img-wrap"><img src="${item.image}" loading="lazy" alt=""/>
 					</div>
 					<div class="sAmbasadors-item__title">${item.name}</div>
-					<div class="sAmbasadors-item__text">${item.description}</div>
 				</div>
 			</div>
 		`
