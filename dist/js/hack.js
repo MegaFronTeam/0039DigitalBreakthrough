@@ -102,12 +102,12 @@ function setHackPageData(data) {
 				<div class="container">
 					<div class="sPartners__wrap">
 						<div class="section-title" data-aos="fade-up" data-aos-duration="700">
-							<h2>Партнеры окружного хакатона</h2>
+							<h2>Партнеры  хакатона</h2>
 							</div>
 						<div class="sPartners__row row">
 						</div>
-						</div>
-						</div>
+					</div>
+				</div>
 			</section>
 			<!-- end sPartners-->`
 	);
