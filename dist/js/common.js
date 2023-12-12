@@ -262,7 +262,7 @@ const JSCCommon = {
 		convertImages('.img-svg-js');
   },
 };
-const $ = jQuery;
+
 
 function eventHandler() {
 	JSCCommon.modalCall();
