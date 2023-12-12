@@ -9,9 +9,6 @@ mixin allcss()
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 	link(href=`css/main.min.css`, rel="stylesheet")
-	script(src=`js/common.js`)
-
-mixin allcjs() 
 	script(src="libs/jquery/jquery.min.js")
 	script(src="libs/@fancyapps/ui/fancybox.umd.js") 
 	script(src="libs/swiper/swiper-bundle.min.js")  
@@ -20,6 +17,9 @@ mixin allcjs()
 	script(src="libs/aos/aos.js") 
 	script(src="libs/hc-sticky/hc-sticky.js") 
 	script(src=`js/bvi.min.js`)
+	script(src=`js/common.js`)
+
+mixin allcjs() 
 	//- script(src=`js/common.js?v=${version}`)
 	//-  WIDGETS START
 	script(src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer)  
