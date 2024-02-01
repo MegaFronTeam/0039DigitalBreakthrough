@@ -14,7 +14,7 @@ function setPartners(items) {
 					</a>
 				</div>`;
 	};
-	for (const item of items) { 
+	for (const item of items) {
 		document.querySelector(".sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
@@ -22,7 +22,7 @@ function setPartners(items) {
 
 
 
-function setPartnersMain(items) { 
+function setPartnersMain(items) {
 
 	const group = (item) => {
 		let idBlock = item === 'Партнёры' ? 'sPartners' : '';
@@ -38,7 +38,7 @@ function setPartnersMain(items) {
 		`
 	}
 	const template = item => {
-		let content = ' '; 
+		let content = ' ';
 		if (item.length == 0) return ' ';
 		for (const subitem of item) {
 			content += `
@@ -57,7 +57,7 @@ function setPartnersMain(items) {
 		return content;
 
 	};
-	for (const item in items) { 
+	for (const item in items) {
 		document.querySelector(".sPartners .container ").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();

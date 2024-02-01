@@ -20,7 +20,7 @@ module.exports = function () {
 			})).on('error', function handleError() {
 				this.emit('end')
 			})
-			// 
+			//
 			// .pipe($.tabify(2, true))
 			.pipe($.rename('libs.js'))
 			.pipe($.gulp.dest($.public + '/js'))
@@ -40,6 +40,16 @@ module.exports = function () {
 			.pipe($.gulp.dest($.public + '/js'))
 			.pipe($.browserSync.stream());
 	}
+	);
+
+	$.gulp.task('scripts:mock', function () {
+			return $.gulp.src(
+				[
+					$.sourse + '/mock/mock.js',
+				])
+				.pipe($.gulp.dest($.public + '/mock'))
+				.pipe($.browserSync.stream());
+		}
 	);
 
 }

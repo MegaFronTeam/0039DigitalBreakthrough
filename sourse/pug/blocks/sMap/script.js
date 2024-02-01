@@ -13,7 +13,7 @@ function setMapStats(items) {
 				subObj.teams['profi'],
 				subObj.solutions['newbie'],
 				subObj.solutions['profi']
-			]; 
+			];
 			setMap();
 		}
 		else {
@@ -47,9 +47,8 @@ function setMapStats(items) {
 
 			let index = 0;
 			let attributeNodeArray = [...target.attributes].filter(item => item.name.includes('data-result'));
-			for (const el of numbersElements) { 
-				counter(el, attributeNodeArray[index]['value']); 
-				console.log(attributeNodeArray[index]['value']);
+			for (const el of numbersElements) {
+				counter(el, attributeNodeArray[index]['value']);
 				index++;
 			}
 			select.value = target.getAttribute('data-region');
@@ -64,9 +63,9 @@ function setMapStats(items) {
 
 	});
 
-	
+
 	select.addEventListener('change', function (e) {
-		let value = this.value; 
+		let value = this.value;
 		for (const path of mapParts) {
 			if (path.getAttribute('data-region') !== value) {
 				path.classList.remove('active');
@@ -76,7 +75,7 @@ function setMapStats(items) {
 				let index = 0;
 				let attributeNodeArray = [...path.attributes].filter(item => item.name.includes('data-result'));
 				for (const el of numbersElements) {
-					
+
 					counter(el, +attributeNodeArray[index]['value'], 100);
 					index++;
 				}
@@ -94,7 +93,7 @@ function counter(id, end) {
 		increment = end > start ? 1 : -1,
 		range =  ( end > start) ? (end - start) : (start - end),
 		step =   Math.abs(Math.floor(1 / (range**range )));
-	if (end != current) { 
+	if (end != current) {
 		let timer = setInterval(() => {
 			if ( Math.abs(current - end) > 1000) {
 				current += increment * 500;
@@ -106,15 +105,15 @@ function counter(id, end) {
 				current += increment ;
 			}
 			obj.textContent = current;
-			 
+
 			if (increment > 0 && current == end) {
 
 				+current == +end;
-				clearInterval(timer); 
+				clearInterval(timer);
 			}
 			else if (increment < 0 && current == end) {
 				+current == +end;
-				clearInterval(timer); 
+				clearInterval(timer);
 			}
 		}, 1);
 	}
@@ -123,7 +122,7 @@ function counter(id, end) {
 function setMap(arr = arrAll) {
 	let numbersElements = document.querySelectorAll(".sMap__number span")
 	let index = 0;
-	for (const el of numbersElements) { 
+	for (const el of numbersElements) {
 		counter(el, + arr[index++]);
 	}
 }

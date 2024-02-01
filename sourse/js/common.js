@@ -436,11 +436,11 @@ function eventHandler() {
 				</div>
 			</div>
 		</div>`
-		document.querySelector(".after-c").insertAdjacentHTML("afterend", cookies);
-		document.querySelector('.cookie-block .btn').addEventListener("click", function() {
-			setCookie('userAgree', 'true');
-			$(".cookie-block").remove();
-		})
+		// document.querySelector(".after-c").insertAdjacentHTML("afterend", cookies);
+		// document.querySelector('.cookie-block .btn').addEventListener("click", function() {
+		// 	setCookie('userAgree', 'true');
+		// 	$(".cookie-block").remove();
+		// })
 	}
 	// Пример использования:
 
@@ -457,10 +457,6 @@ function eventHandler() {
 
 function loadingContent () {
 	eventHandler();
-	// if (document.readyState !== 'loading') {
-	// } else {
-	// }
-	// document.addEventListener('DOMContentLoaded', eventHandler);
 	document.body.classList.add('loaded_hiding');
 	window.setTimeout(function () {
 		document.querySelector(".loader-wrap").classList.add('loaded');
@@ -469,7 +465,7 @@ function loadingContent () {
 		AOS.init({
 			offset: 160
 		});
-	}, 600);
+	}, 300);
 	window.setTimeout(function () {
 		let scrolToHash  = window.location.hash;
 		if(scrolToHash) {

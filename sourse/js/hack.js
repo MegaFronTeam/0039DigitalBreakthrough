@@ -16,27 +16,27 @@ let pageId = params['eventId'];
 
 
 function setHackPageData(data) {
-	// console.log(data);
+	console.log(data);
 	document.title = data.event.name;
 	// console.log(data.event.dateRange);
 	if (data.event.dateRange.length > 3) {
 		let zero = data.event.dateRange[2] < 10 ? '0' : ' ';
-		document.querySelector('.sAbout__date').innerHTML = 
-			data.event.dateRange[0] 
+		document.querySelector('.sAbout__date').innerHTML =
+			data.event.dateRange[0]
 			+ '<br>'
 			+ data.event.dateRange[1]  ;
-		
+
 		}
 		else{
-			
-			document.querySelector('.sAbout__date').innerHTML = 
+
+			document.querySelector('.sAbout__date').innerHTML =
 				data.event.dateRange[0] + '<br> ' +
-				+ data.event.dateRange[1] 
+				+ data.event.dateRange[1]
 				+ ' <span>' + data.event.dateRange[2] + '</span>';
-			
+
 	}
 
-	// if (data.playground.city && data.playground.city){ 
+	// if (data.playground.city && data.playground.city){
 	// 	document.querySelector('.sAbout__types-inner').insertAdjacentHTML("beforeend", `
 	// 	<div class="sAbout__type sAbout__type--1 h4"><div class="sAbout__type sAbout__type--1 h4">${data.playground.city || " "}</div>
 	// 	<div class="sAbout__type sAbout__type--2 h4">${data.playground.adress || " "}</div></div>
@@ -50,7 +50,7 @@ function setHackPageData(data) {
 	document.querySelector('h1').innerHTML = data.event.name;
 	document.querySelector('.sAbout h2').innerHTML = data.event.district;
 	document.querySelector('.sAbout__text').innerHTML = data.event.description;
-	
+
 	if (data.event.isEnded == false){
 		document.querySelector(".sAbout__info-wrap").insertAdjacentHTML("afterbegin", `
 		<div class="sAbout__banner" data-aos="fade-up" data-aos-duration="700">
@@ -59,7 +59,7 @@ function setHackPageData(data) {
 		</div>
 		`);
 		document.querySelector('.sAbout__banner').style.background = data.event.colors.deadlineCard;
-		
+
 		document.querySelector(".sAbout__content").insertAdjacentHTML("beforeend", `
 		<a class="sAbout__btn btn btn-dark" href="https://lk.hacks-ai.ru">Принять участие</a>`);
 	}
@@ -78,8 +78,8 @@ function setHackPageData(data) {
 
 
 
-	
-	
+
+
 	if(data.partners.length>0) {
 		const templatePartner = item => {
 			return `
@@ -96,7 +96,7 @@ function setHackPageData(data) {
 					</div>`;
 		};
 
-		document.querySelector("#parters-wrap").insertAdjacentHTML("afterbegin", 
+		document.querySelector("#parters-wrap").insertAdjacentHTML("afterbegin",
 		`<!-- start sPartners-->
 		<section class="sPartners sPartners--2 section" id="sPartners2">
 				<div class="container">
@@ -130,15 +130,15 @@ function setHackPageData(data) {
 
 	// Tabs
 	const templateTabs = (item, active, disableClass) => {
-		let expertisesItems = ()=>{ 
+		let expertisesItems = ()=>{
 			let content = ' '
 			if (item.expertises.length == 0) return ' ';
-			for (const subItem of item.expertises) { 
-				content += ` <a class="sCases__tag" href="#">${subItem.name} </a>` 
+			for (const subItem of item.expertises) {
+				content += ` <a class="sCases__tag" href="#">${subItem.name} </a>`
 			}
 			return content;
 		}
-		
+
 		let partnersItem = ()=>{
 			let content = ' '
 			if (item.partners.length == 0) return ' ';
@@ -158,10 +158,10 @@ function setHackPageData(data) {
 			return content;
 		}
 
-		
+
 		let partnersItemVideo = ()=>{
 			let content = ' '
-			if (item.video.length == 0) return ' '; 
+			if (item.video.length == 0) return ' ';
 				content += `
 
 							<div class="mb-3  sVideo " style=" " data-aos="fade-up" data-aos-duration="700">
@@ -176,7 +176,7 @@ function setHackPageData(data) {
 									</div>
 								</a>
 							</div>
-							` 
+							`
 			return content;
 		}
 
@@ -189,8 +189,8 @@ function setHackPageData(data) {
 
 			if (items == 0) return ' ';
 			for (const item of items) {
-				let avatar = item.avatar != null 
-					? `<img src='${item.avatar}'/>	` 
+				let avatar = item.avatar != null
+					? `<img src='${item.avatar}'/>	`
 					: '<svg class="icon icon-user "><use xlink:href = "img/svg/sprite.svg#user" ></use></svg >';
 				content += `
 					<div class='col-xl-6 col-xxl-4'>
@@ -271,17 +271,17 @@ function setHackPageData(data) {
 			}
 			return content;
 		}
-		
+
 
 		let casesResults = () => {
 			let content = ' ';
 
-			let results = item.results; 
-			
+			let results = item.results;
+
 			if (results.length == 0) return ' ';
 			let index = 0;
 			for (const  subItem in results) {
-				let active = index == 0 ? 'active' : ' '; 
+				let active = index == 0 ? 'active' : ' ';
 				content += `
 								<div class="personalRating__content ${active}">
 										${resultPlacment(results[subItem], subItem)}
@@ -290,12 +290,12 @@ function setHackPageData(data) {
 			}
 			return content;
 		}
-		
-		
-		let partnersVideo = () => { 
-			let video = item.video; 
-			
-			if (video.length == 0) return ' '; 
+
+
+		let partnersVideo = () => {
+			let video = item.video;
+
+			if (video.length == 0) return ' ';
 			return `
 			<div class="ratio ratio-16x9 mb-4"  data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
 			${video}
@@ -303,7 +303,7 @@ function setHackPageData(data) {
 			</div>
 			`;
 		}
-		
+
 
 		let partnersPeoplesItem = (items) => {
 			let content = ' ';
@@ -328,17 +328,17 @@ function setHackPageData(data) {
 			}
 			return content;
 		}
-		
+
 		let partnersPeoples = () => {
 			let content = ' ';
 
-			let staff = item.staff; 
-			
+			let staff = item.staff;
+
 			if (item.isOrgDisabled == true ) return  `
 				<p>${item.orgPlaceholder}</p>
 			`;
 			let index = 0;
-			for (const subItem in staff) { 
+			for (const subItem in staff) {
 				content += `
 							<div class="section mt-4">
 								<h3>${subItem}</h3>
@@ -348,12 +348,12 @@ function setHackPageData(data) {
 								</div>
 							</div>
 							`;
-							
+
 				index++;
 			}
 			return content;
 		}
-		
+
 		return `
 				<div class="  tabs__content  ${active}" data-aos="fade-up" data-aos-duration="700" data-aos-offset="0"  id="content-${item.caseId}">
 					<div class="innerTabs">
@@ -433,12 +433,12 @@ function setHackPageData(data) {
 	}
 
 
-	if (Object.keys(data.playground).length !== 0 
-		&& data.playground.name !== undefined 
-		&& data.playground.adress !== undefined 
-		&& data.playground.description 
-		&& data.playground.description !== undefined 
-		&& data.playground.avatar !== undefined 
+	if (Object.keys(data.playground).length !== 0
+		&& data.playground.name !== undefined
+		&& data.playground.adress !== undefined
+		&& data.playground.description
+		&& data.playground.description !== undefined
+		&& data.playground.avatar !== undefined
 		&& data.playground.map_link !== undefined
 		) {
 		document.querySelector(".sInfo").classList.remove('d-none');
@@ -446,7 +446,7 @@ function setHackPageData(data) {
 		document.querySelector('.sInfo h2').innerHTML = data.playground.name;
 		document.querySelector('.sInfo .addr').innerHTML = data.playground.adress;
 		document.querySelector('.sInfo__inner').innerHTML = data.playground.description;
-		document.querySelector('.modal-win--text').innerHTML = data.playground.description;
+		// document.querySelector('.modal-win--text').innerHTML = data.playground.description;
 		document.querySelector('.img-avatar').setAttribute("src", data.playground.avatar);
 		document.querySelector('.map-img').innerHTML = data.playground.map_link;
 
@@ -456,14 +456,14 @@ function setHackPageData(data) {
 		}
 		if (sInfoTextSybols <= 190) {
 			gridTextLink.remove();
-		} 
+		}
 		const templateMap = item => {
 			return `
 					<div class="sInfo__grid-item bg-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
 					<img class="object-fit-js picture-bg" src="${item} " alt="" loading="lazy">
 					</div>`;
 		};
-		
+
 		for (const item of data.playground.photos) {
 			document.querySelector(".sInfo__grid-item--text").insertAdjacentHTML("afterend", templateMap(item));
 		}
@@ -499,18 +499,18 @@ function setHackPageData(data) {
 		document.querySelector("#sVideo").remove();
 	}
 
-	setNews(data.news);
+	// setNews(data.news);
 	setPartnersMain(data.allPartners);
 	setItHubs(data.allPlaygrounds);
 
 	// console.log(data);
-	
+
 	let caseEl = params['caseEl'];
 	let tab = params['tab'];
 	$(`#${caseEl}`).click();
 	$(`#content-${caseEl}  [data-tab=${tab}]`).click();
 
-	$(document).on('click', ".sCases__link", function(){ 
+	$(document).on('click', ".sCases__link", function(){
 		caseEl = $(this).attr('id');
 		tab = $(`#content-${caseEl} .innerTabs__btn.active`).attr('data-tab');
 		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab}`);
@@ -519,11 +519,13 @@ function setHackPageData(data) {
 	$(document).on('click', ".innerTabs__btn:not(.disabled)", function(){
 		tab = $(this).attr('data-tab');
 		caseEl = $(`.sCases__link.active`).attr('id');
-		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab }`); 
+		window.history.pushState('1', 'Title', `?eventId=${pageId}&caseEl=${caseEl}&tab=${tab }`);
 	})
 	// loadingContent();
 }
-getHackPageData(setHackPageData, pageId);
+// getHackPageData(setHackPageData, pageId);
+
+setHackPageData(mock.hackPage[pageId])
 
 
 

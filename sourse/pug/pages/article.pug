@@ -1,74 +1,74 @@
-extends ../layout/main.pug
-
-include ../blocks/headerBlock/_headerBlock.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sContent/_sContent.pug
- 
-include ../blocks/sContact/_sContact.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sContent/_sContent.pug
-include ../blocks/sNews/_sNews.pug
-
-include ../blocks/header/_header.pug
-include ../blocks/topLine/_topLine.pug
-include ../blocks/top-nav/_top-nav.pug 
-block variables
-	- let  mainPage= 'white-theme' 
-	- let  bg= 'main.jpg'
-
-block title
-	- let  title= 'Новость'
-	title= title
-block pagecontent
-	//- +mob-mnu()
-	
-	
-	+mob-mnu()
-	+header()
-		+top-nav()
-	+sContent
-		+e.animate(data-json='json/animation.json')
-		.row
-			.col-xl-8
-				+e.back-btn(href='news.html' data-aos="fade-up" data-aos-duration="700")
-					+icon('arrow-left')
-					| Назад
-				+e.date(data-aos="fade-up" data-aos-duration="700") 
-				h1(data-aos="fade-up" data-aos-duration="700") 
-				+e.img-wrap(data-aos="fade-up" data-aos-duration="700")
-					+img('').res-i
-				#inner-content(href='news.html' data-aos="fade-up" data-aos-duration="700")
-				//- +e.cite(data-aos="fade-up" data-aos-duration="700")
-				//- 	.row
-				//- 		.col-sm-auto
-				//- 			+img('img/avatar-1.jpg')
-				//- 		.col-sm
-				//- 			h3 Виктор Ослоновский
-				//- 			p Окружной хакатон&nbsp;&mdash; это часть проекта, представляющая собой ограниченное во&nbsp;времени командное соревнование по&nbsp;созданию прототипов цифровых решений
-				//- +e.wrap(data-aos="fade-up" data-aos-duration="700")
-				//- 	p Окружной хакатон&nbsp;&mdash; это часть проекта, представляющая собой ограниченное во&nbsp;времени командное соревнование по&nbsp;созданию прототипов цифровых решений в&nbsp;рамках выбранного для решения командой кейса, более половины участников которого являются жителями определенного федерального округа Российской Федерации. Таких хакатонов в&nbsp;течение 2022 года планируется 8.
-				//- 	p Проведение одного окружного мероприятия предполагает представление к&nbsp;решению не&nbsp;менее одного и&nbsp;не&nbsp;более трех кейсовых заданий.
-				//- 	p Список и&nbsp;даты проведения окружных хакатонов 
-				//- 		a(href="#")  по&nbsp;ссылке.
-				+e.share(data-aos="fade-up" data-aos-duration="700")
-					span Поделиться:
-					div(class="ya-share2" data-curtain data-shape="round" data-color-scheme="whiteblack" data-limit="3" data-services="vkontakte,telegram")
-					//- +soc
-					//- 	+item-sos()
-					//- 		+img('img/svg/facebook.svg').img-svg-js
-					//- 	+item-sos()
-					//- 		+img('img/svg/vk2.svg').img-svg-js
-					//- 	+item-sos()
-					//- 		+img('img/svg/tg.svg').img-svg-js
-					//- 	+item-sos()
-					//- 		+img('img/svg/whatsapp2.svg').img-svg-js
-					//- 	+item-sos()
-					//- 		+img('img/svg/copy.svg').img-svg-js
-			//- .col-lg-4.col-xl-3.ms-lg-auto
-			//- 	+e.hc-sticky--js
-			//- 		.h4 Так же читайте...
-			//- 		+e.slide.bg-wrap(href='#' data-aos="fade-up" data-aos-duration="700")
-			//- 			+newsItem('sNews-img-1.jpg', '10 июня - 20 июля', 'В рамках Russian Internet Week на AI-Day подвели итоги проекта «Цифровой прорыв. Сезон: искусственный интеллект»')
-	+parts('footer')
-	script(src="https://yastatic.net/share2/share.js" async)
-	script(src="js/article.js") 
+//extends ../layout/main.pug
+//
+//include ../blocks/headerBlock/_headerBlock.pug
+//include ../blocks/sForm/_sForm.pug
+//include ../blocks/sContent/_sContent.pug
+//
+//include ../blocks/sContact/_sContact.pug
+//include ../blocks/sForm/_sForm.pug
+//include ../blocks/sContent/_sContent.pug
+//include ../blocks/sNews/_sNews.pug
+//
+//include ../blocks/header/_header.pug
+//include ../blocks/topLine/_topLine.pug
+//include ../blocks/top-nav/_top-nav.pug
+//block variables
+//	- let  mainPage= 'white-theme'
+//	- let  bg= 'main.jpg'
+//
+//block title
+//	- let  title= 'Новость'
+//	title= title
+//block pagecontent
+//	//- +mob-mnu()
+//
+//
+//	+mob-mnu()
+//	+header()
+//		+top-nav()
+//	+sContent
+//		+e.animate(data-json='json/animation.json')
+//		.row
+//			.col-xl-8
+//				+e.back-btn(href='news.html' data-aos="fade-up" data-aos-duration="700")
+//					+icon('arrow-left')
+//					| Назад
+//				+e.date(data-aos="fade-up" data-aos-duration="700")
+//				h1(data-aos="fade-up" data-aos-duration="700")
+//				+e.img-wrap(data-aos="fade-up" data-aos-duration="700")
+//					+img('').res-i
+//				#inner-content(href='news.html' data-aos="fade-up" data-aos-duration="700")
+//				//- +e.cite(data-aos="fade-up" data-aos-duration="700")
+//				//- 	.row
+//				//- 		.col-sm-auto
+//				//- 			+img('img/avatar-1.jpg')
+//				//- 		.col-sm
+//				//- 			h3 Виктор Ослоновский
+//				//- 			p Окружной хакатон&nbsp;&mdash; это часть проекта, представляющая собой ограниченное во&nbsp;времени командное соревнование по&nbsp;созданию прототипов цифровых решений
+//				//- +e.wrap(data-aos="fade-up" data-aos-duration="700")
+//				//- 	p Окружной хакатон&nbsp;&mdash; это часть проекта, представляющая собой ограниченное во&nbsp;времени командное соревнование по&nbsp;созданию прототипов цифровых решений в&nbsp;рамках выбранного для решения командой кейса, более половины участников которого являются жителями определенного федерального округа Российской Федерации. Таких хакатонов в&nbsp;течение 2022 года планируется 8.
+//				//- 	p Проведение одного окружного мероприятия предполагает представление к&nbsp;решению не&nbsp;менее одного и&nbsp;не&nbsp;более трех кейсовых заданий.
+//				//- 	p Список и&nbsp;даты проведения окружных хакатонов
+//				//- 		a(href="#")  по&nbsp;ссылке.
+//				+e.share(data-aos="fade-up" data-aos-duration="700")
+//					span Поделиться:
+//					div(class="ya-share2" data-curtain data-shape="round" data-color-scheme="whiteblack" data-limit="3" data-services="vkontakte,telegram")
+//					//- +soc
+//					//- 	+item-sos()
+//					//- 		+img('img/svg/facebook.svg').img-svg-js
+//					//- 	+item-sos()
+//					//- 		+img('img/svg/vk2.svg').img-svg-js
+//					//- 	+item-sos()
+//					//- 		+img('img/svg/tg.svg').img-svg-js
+//					//- 	+item-sos()
+//					//- 		+img('img/svg/whatsapp2.svg').img-svg-js
+//					//- 	+item-sos()
+//					//- 		+img('img/svg/copy.svg').img-svg-js
+//			//- .col-lg-4.col-xl-3.ms-lg-auto
+//			//- 	+e.hc-sticky--js
+//			//- 		.h4 Так же читайте...
+//			//- 		+e.slide.bg-wrap(href='#' data-aos="fade-up" data-aos-duration="700")
+//			//- 			+newsItem('sNews-img-1.jpg', '10 июня - 20 июля', 'В рамках Russian Internet Week на AI-Day подвели итоги проекта «Цифровой прорыв. Сезон: искусственный интеллект»')
+//	+parts('footer')
+//	script(src="https://yastatic.net/share2/share.js" async)
+//	script(src="js/article.js")

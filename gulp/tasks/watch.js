@@ -9,6 +9,7 @@ module.exports = function () {
 		$.gulp.watch($.sourse + '/sass/*.svg', { usePolling: true }, $.gulp.series('svgCopy'));
 
 		$.gulp.watch([$.sourse + '/js/common.js'], { usePolling: true }, $.gulp.series('scripts:common'));
+		$.gulp.watch([$.sourse + '/mock/mock.js'], { usePolling: true }, $.gulp.series('scripts:mock'));
 		$.gulp.watch($.sourse + '/img', { usePolling: true }, $.gulp.series('img-responsive'));
 	});
 

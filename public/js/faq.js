@@ -1,4 +1,4 @@
-function setFAQPageData(data) {
+function setFAQPageData() {
 	// document.querySelector('h1').innerHTML = data.faq;
 	// console.log(data);
 	function templateFaqTags(item) {
@@ -9,7 +9,7 @@ function setFAQPageData(data) {
 		`;
 	}
 
-	
+
 	function templateFaqSections(item) {
 		if (item.articles.length == 0) return ' ';
 		let faqItem = ()=>{
@@ -40,12 +40,12 @@ function setFAQPageData(data) {
 			</div>
 		`;
 	}
-	for (const item of data.faq) {
+	for (const item of mock.faqPage.faq) {
 		document.querySelector(".sFaqBlock__tags-slider--js .swiper-wrapper").insertAdjacentHTML("beforeend", templateFaqTags(item));
 		document.querySelector("#articles-district-hackathons").insertAdjacentHTML("beforeend", templateFaqSections(item));
 	}
 
-	
+
 	const articleWrapper = document.querySelector('#articles-district-hackathons');
 	document.addEventListener('click', function(event) {
 		let tagTarget = event.target.closest('.sFaqBlock__tag-slide');
@@ -63,9 +63,11 @@ function setFAQPageData(data) {
 		}
 	});
 
-	setPartners(data.partners);
+	setPartners(mock.faqPage.partners);
 	loadingContent();
 }
 // setFAQPageData()
 // getHackPageData(setFAQPageData, pageId)
-getFAQPageData(setFAQPageData)
+// getFAQPageData()
+
+setFAQPageData()

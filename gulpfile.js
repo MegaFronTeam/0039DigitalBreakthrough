@@ -9,29 +9,29 @@ const { gulp, src, dest, parallel, series, watch } = pkg
 
 import {deleteAsync} from 'del';
 import pug  from 'gulp-pug'
-import notify  from 'gulp-notify' 
+import notify  from 'gulp-notify'
 import svgmin  from 'gulp-svgmin'
 import cheerio  from 'gulp-cheerio'
 import replace  from 'gulp-replace'
-import svgSprite  from 'gulp-svg-sprite' 
+import svgSprite  from 'gulp-svg-sprite'
 import npmDist  from 'gulp-npm-dist'
-import rename  from 'gulp-rename'  
+import rename  from 'gulp-rename'
 import gulpSass      from 'gulp-sass'
 import sassGlob  from 'gulp-sass-glob'
 import dartSass      from 'sass'
 const  sass          = gulpSass(dartSass)
-import tabify  from 'gulp-tabify' 
-import gcmq  from 'postcss-sort-media-queries'  
+import tabify  from 'gulp-tabify'
+import gcmq  from 'postcss-sort-media-queries'
 import browserSync  from 'browser-sync'
 import postcss  from 'gulp-postcss'
 import autoprefixer  from 'autoprefixer'
-import cssnano  from 'cssnano' 
+import cssnano  from 'cssnano'
 import nested  from 'postcss-nested'
 import pscss  from 'postcss-scss'
 // )({ scss: 'postcss-scss'}),
 import plumber  from 'gulp-plumber'
-import sharpResponsive from "gulp-sharp-responsive"; 
-import data from "gulp-data"; 
+import sharpResponsive from "gulp-sharp-responsive";
+import data from "gulp-data";
 import  fs from 'fs';
 
 const dataFromFile = JSON.parse(fs.readFileSync(sourse + '/pug/content.json'))
@@ -54,15 +54,15 @@ function pugFiles() {
     .pipe(data(function(file) {
         return JSON.parse(fs.readFileSync(sourse + '/pug/content.json'))
     }))
-    .pipe(pug({ 
+    .pipe(pug({
         pretty: true,
         cache: true,
         // locals: dataFromFile || {}
-    }).on("error", notify.onError())) 
+    }).on("error", notify.onError()))
     .pipe(tabify(2, true))
     // .pipe( urlBuilder() )
     .pipe(dest(publicPath))
-    .on('end', browserSync.reload); 
+    .on('end', browserSync.reload);
 }
 
 function pp() {
@@ -70,18 +70,18 @@ function pp() {
     .pipe(data(function(file) {
         return JSON.parse(fs.readFileSync(sourse + '/pug/content.json'))
     }))
-    .pipe(pug({ 
+    .pipe(pug({
         pretty: true,
-        cache: true, 
+        cache: true,
         data: {
             url: ' https://lodmedia.hb.bizmrg.com/hack/xthon-sync.umd.cjs'
         }
         // locals: dataFromFile || {}
-    }).on("error", notify.onError())) 
+    }).on("error", notify.onError()))
     .pipe(tabify(2, true))
     // .pipe( urlBuilder() )
         .pipe(dest(dist))
-    .on('end', browserSync.reload); 
+    .on('end', browserSync.reload);
 }
 
 
@@ -91,7 +91,7 @@ function cleanlibs() {
 
 function copyLibs() {
     return src(npmDist({
-        // copyUnminified: true, 
+        // copyUnminified: true,
         excludes: [
             // '*.map',
             'src/**/*',
@@ -176,6 +176,15 @@ function common() {
         .pipe(dest(publicPath + '/js'))
         .pipe(browserSync.stream());
 }
+function mock() {
+    return src(
+      [
+          sourse + '/mock/*.js',
+      ]
+    )
+      .pipe(dest(publicPath + '/mock'))
+      .pipe(browserSync.stream());
+}
 function svg() {
         return src('./' + sourse + '/svg/*.svg')
             .pipe(svgmin({
@@ -217,14 +226,14 @@ function svg() {
 
             }))
 
-            .pipe(dest(`${sourse}/sass/`)); 
+            .pipe(dest(`${sourse}/sass/`));
 }
 
 function svgCopy() {
     return src(`${sourse}/sass/sprite.svg`)
         .pipe(plumber())
         .pipe(dest(`${publicPath}/img/svg/`))
-    
+
 }
 
 function cleanPublic() {
@@ -234,7 +243,7 @@ function copyPublic() {
     return src(`${publicPath}/**/*`)
         .pipe(plumber())
         .pipe(dest(`${dist}/`))
-    
+
 }
 
 function cleanimg() {
@@ -261,10 +270,10 @@ function img() {
                 // { width: w50, jpegOptions: { quality: 80, progressive: true }, rename: { dirname: path1 } },
                 // {width: w50, webpOptions: { quality: 100, progressive: true }, format: "webp", rename: { dirname: `${path1}webp/` } },
                 // { width: w50, avifOptions: { quality: 100, progressive: true }, format: "avif", rename: { dirname: `${path1}avif/` } },
-                
+
             ]
         }))
-        .pipe(dest(publicPath + '/img')) 
+        .pipe(dest(publicPath + '/img'))
 }
 function startwatch() {
     watch([sourse + '/sass/**/*.css', sourse + '/pug/blocks/**/*.scss', sourse + '/sass/**/*.scss', sourse + '/sass/**/*.sass'], { usePolling: true }, styles);
@@ -274,14 +283,15 @@ function startwatch() {
     watch(sourse + '/sass/*.svg', { usePolling: true }, svgCopy);
 
     watch([sourse + '/js/*.js'], { usePolling: true }, common);
+    watch([sourse + '/mock/*.js'], { usePolling: true }, mock);
     watch(sourse + '/img', { usePolling: true }, img);
 }
 
-export let imgAll = series(cleanimg, img) 
+export let imgAll = series(cleanimg, img)
 export let libs = series(cleanlibs, copyLibs)
 export let sprite = series(svg, svgCopy);
 export let build = series(cleanPublic,copyPublic,pp);
 
 
 
-export default series(common, libs, styles, imgAll, sprite, pugFiles, parallel(browsersync, startwatch))
+export default series(common, mock, libs, styles, imgAll, sprite, pugFiles, parallel(browsersync, startwatch))

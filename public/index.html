@@ -19,14 +19,15 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<link href="css/main.min.css" rel="stylesheet"/>
 		<script src="libs/jquery/jquery.min.js"></script>
-		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
-		<script src="libs/swiper/swiper-bundle.min.js"> </script>
-		<script src="libs/inputmask/inputmask.min.js"> </script>
-		<script src="libs/lottie-web/build/player/lottie.min.js"> </script>
-		<script src="libs/aos/aos.js"> </script>
-		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+		<script src="libs/@fancyapps/ui/fancybox.umd.js"></script>
+		<script src="libs/swiper/swiper-bundle.min.js"></script>
+		<script src="libs/inputmask/inputmask.min.js"></script>
+		<script src="libs/lottie-web/build/player/lottie.min.js"></script>
+		<script src="libs/aos/aos.js"></script>
+		<script src="libs/hc-sticky/hc-sticky.js"></script>
 		<script src="js/bvi.min.js"></script>
 		<script src="js/common.js"></script>
+		<script src="mock/mock.js"></script>
 		<script src="https://s3.its.xyz/hack/xthon-sync.umd.cjs"></script>
 		<script>
 			function addBlock(elem) {
@@ -318,22 +319,20 @@
 			</header>
 			<!-- end header-->
 			<script>function setTranslationShow(data) {
-	// console.log(data);
 	if (data.show) {
-		console.log(data);
-		// document.querySelector('.headerBlock__img-wrap ').remove(); 
-		
+		// document.querySelector('.headerBlock__img-wrap ').remove();
+
 		// document.addEventListener('click', function(event) {
 		// 	let coverTarget = event.target.closest('.headerBlock__cover');
 		// 	if(coverTarget) {
 		// 		document.querySelector('.headerBlock__cover').classList.add('hide');
 		// 		document.querySelector('.headerBlock__video-img-wrap').classList.add('active');
-				
+
 		// 		getTranslationLink(setTranslationLink);
 		// 	}
 		// })
 
-		// 
+		//
 
 		document.querySelector('.headerBlock2__videoBlock').classList.add('isTranslation');
 		document.querySelector('.headerBlock2__videoBlock iframe').src = data.link;
@@ -349,12 +348,12 @@
 	}
 	// console.log(data);
 }
-function setTranslationLink(data) { 
+function setTranslationLink(data) {
 	document.querySelector('.headerBlock__video iframe').src = data.link;
 	// console.log(data);
 }
 
-getTranslationLink(setTranslationShow);
+// getTranslationLink(setTranslationShow);
 
 			</script>
 			<!-- start headerBlock-->
@@ -785,7 +784,7 @@ function setMapStats(items) {
 				subObj.teams['profi'],
 				subObj.solutions['newbie'],
 				subObj.solutions['profi']
-			]; 
+			];
 			setMap();
 		}
 		else {
@@ -819,9 +818,8 @@ function setMapStats(items) {
 
 			let index = 0;
 			let attributeNodeArray = [...target.attributes].filter(item => item.name.includes('data-result'));
-			for (const el of numbersElements) { 
-				counter(el, attributeNodeArray[index]['value']); 
-				console.log(attributeNodeArray[index]['value']);
+			for (const el of numbersElements) {
+				counter(el, attributeNodeArray[index]['value']);
 				index++;
 			}
 			select.value = target.getAttribute('data-region');
@@ -836,9 +834,9 @@ function setMapStats(items) {
 
 	});
 
-	
+
 	select.addEventListener('change', function (e) {
-		let value = this.value; 
+		let value = this.value;
 		for (const path of mapParts) {
 			if (path.getAttribute('data-region') !== value) {
 				path.classList.remove('active');
@@ -848,7 +846,7 @@ function setMapStats(items) {
 				let index = 0;
 				let attributeNodeArray = [...path.attributes].filter(item => item.name.includes('data-result'));
 				for (const el of numbersElements) {
-					
+
 					counter(el, +attributeNodeArray[index]['value'], 100);
 					index++;
 				}
@@ -866,7 +864,7 @@ function counter(id, end) {
 		increment = end > start ? 1 : -1,
 		range =  ( end > start) ? (end - start) : (start - end),
 		step =   Math.abs(Math.floor(1 / (range**range )));
-	if (end != current) { 
+	if (end != current) {
 		let timer = setInterval(() => {
 			if ( Math.abs(current - end) > 1000) {
 				current += increment * 500;
@@ -878,15 +876,15 @@ function counter(id, end) {
 				current += increment ;
 			}
 			obj.textContent = current;
-			 
+
 			if (increment > 0 && current == end) {
 
 				+current == +end;
-				clearInterval(timer); 
+				clearInterval(timer);
 			}
 			else if (increment < 0 && current == end) {
 				+current == +end;
-				clearInterval(timer); 
+				clearInterval(timer);
 			}
 		}, 1);
 	}
@@ -895,11 +893,12 @@ function counter(id, end) {
 function setMap(arr = arrAll) {
 	let numbersElements = document.querySelectorAll(".sMap__number span")
 	let index = 0;
-	for (const el of numbersElements) { 
+	for (const el of numbersElements) {
 		counter(el, + arr[index++]);
 	}
 }
 // getMainPageData(setMapStats);
+
 			</script>
 			<!-- end sMap-->
 			<!-- start sGR-->
@@ -989,63 +988,8 @@ function setMap(arr = arrAll) {
 				</div>
 			</div>
 			<!-- end sGR-->
-			<script>
-function setNews(items) {
-	const template = item => {
-		return `
-				<div class="default-slider__slide swiper-slide"   data-aos="fade-up" data-aos-duration="700">
-					<a href="article.html?news_id=${item.news_id}" class='news-item bg-wrap' target="_blank">
-						<img class="object-fit-js picture-bg" src="${item.avatar_url}" alt="" loading="lazy"/>
-						<div class="news-item__date">${item.publication_date}</div>
-						<h4>${item.name}</h4>
-					</a>
-				</div>`;
-	};
-	for (const item of items) {
-		// console.log(item);
-		document.querySelector(".sNews .swiper-wrapper").insertAdjacentHTML("beforeend", template(item));
-	}
-}
-
-// let  functionNews = getHackPageData(setNews, pageId)  ||  ;
-
-// functionNews();
-			</script>
-			<!-- start sNews-->
-			<section class="sNews section" id="sNews">
-				<div class="container">
-					<div class="section-title" data-aos="fade-up" data-aos-duration="700">
-						<h2>Новости проекта</h2>
-					</div>
-					<div class="default-slider">
-						<div class="default-slider__slider default-slider__slider--js swiper">
-							<div class="swiper-wrapper">
-							</div>
-						</div>
-						<div class="default-slider__row row" data-aos="fade-up" data-aos-duration="700">
-							<div class="col">
-								<a class="default-slider__btn btn btn-dark" href="/news.html" target="_blank">Все новости
-								</a>
-							</div>
-							<div class="col-auto"> 
-								<div class="default-slider__arrow-wrap">
-									<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
-										<svg class="icon icon-chevron-left-2 ">
-											<use xlink:href="img/svg/sprite.svg#chevron-left-2"></use>
-										</svg>
-									</div>
-									<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
-										<svg class="icon icon-chevron-right-2 ">
-											<use xlink:href="img/svg/sprite.svg#chevron-right-2"></use>
-										</svg>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- end sNews-->
+			<!--+sNews('', 'Все новости')-->
+			<!-- h2 Новости проекта-->
 			<script>function setItHubs(items) {
 	const template = (item) => {
 		return `
@@ -1268,7 +1212,7 @@ function setPartners(items) {
 					</a>
 				</div>`;
 	};
-	for (const item of items) { 
+	for (const item of items) {
 		document.querySelector(".sPartners .sPartners__row").insertAdjacentHTML("beforeend", template(item));
 	}
 }
@@ -1276,7 +1220,7 @@ function setPartners(items) {
 
 
 
-function setPartnersMain(items) { 
+function setPartnersMain(items) {
 
 	const group = (item) => {
 		let idBlock = item === 'Партнёры' ? 'sPartners' : '';
@@ -1292,7 +1236,7 @@ function setPartnersMain(items) {
 		`
 	}
 	const template = item => {
-		let content = ' '; 
+		let content = ' ';
 		if (item.length == 0) return ' ';
 		for (const subitem of item) {
 			content += `
@@ -1311,7 +1255,7 @@ function setPartnersMain(items) {
 		return content;
 
 	};
-	for (const item in items) { 
+	for (const item in items) {
 		document.querySelector(".sPartners .container ").insertAdjacentHTML("beforeend", group(item));
 	}
 	loadingContent();
@@ -1323,22 +1267,24 @@ function setPartnersMain(items) {
 				<div class="container"></div>
 			</section>
 			<script>
-				function setMainPageBlock(items) {
-					setEvents(items);
-					setMapStats(items);
-					setFAQ(items.faq);
-					setNews(items.news);
-					setAmbasadors(items.ambassadors);
-					setItHubs(items.playgrounds);
+				function setMainPageBlock() {
+					setEvents(mock.mainPage);
+					setMapStats(mock.mainPage);
+					setFAQ(mock.mainPage.faq);
+					// setNews(mock.mainPage.news);
+					setAmbasadors(mock.mainPage.ambassadors);
+					setItHubs(mock.mainPage.playgrounds);
 				}
-				getMainPageData(setMainPageBlock);
-				getPartnersSections(setPartnersMain);
+				setMainPageBlock()
+				loadingContent()
+				setPartnersMain(mock.partners)
+				// getPartnersSections(setPartnersMain);
 			</script>
 			<script>addBlock(`footer`)</script>
 			<div id="footerWrap"></div>
 		</div>
 		<div class="after-c"></div>
-		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"> </script><!-- Yandex.Metrika counter -->
+		<script src="//cdn5.helpdeskeddy.com//js/contact-widget.js" id="hde-contact-widget" data-assets-host="//cdn5.helpdeskeddy.com/" data-host="headliner.helpdeskeddy.com" data-lang="ru" defer="defer"></script><!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 	(function (m, e, t, r, i, k, a) {
 		m[i] = m[i] || function () {

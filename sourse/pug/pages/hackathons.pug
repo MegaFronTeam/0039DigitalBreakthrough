@@ -3,7 +3,7 @@ extends ../layout/main.pug
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sContent/_sContent.pug
- 
+
 include ../blocks/sPartners/_sPartners.pug
 include ../blocks/sNews/_sNews.pug
 include ../blocks/sPartners/_sPartners.pug
@@ -15,9 +15,9 @@ include ../blocks/sAbout/_sAbout.pug
 include ../blocks/sIthubs/_sIthubs.pug
 include ../blocks/header/_header.pug
 include ../blocks/topLine/_topLine.pug
-include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/top-nav/_top-nav.pug
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= 'main-page'
 	- let  bg= 'main.jpg'
 
 block title
@@ -25,8 +25,8 @@ block title
 	title= title
 block pagecontent
 	//- +mob-mnu()
-	
-	
+
+
 	+mob-mnu()
 	+header()
 		+top-nav()
@@ -40,7 +40,7 @@ block pagecontent
 		//- +sPartners2
 		//- +sDetailedInfo
 		+sIthubs
-		+sNews('', '', id='sNews','Новости проекта')
+		//+sNews('', '', id='sNews','Новости проекта')
 		+sPartnersMain
 		//- script.
 		//- 	getPartnersSections(setPartnersMain);

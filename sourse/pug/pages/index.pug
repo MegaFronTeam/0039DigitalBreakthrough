@@ -3,7 +3,7 @@ extends ../layout/main.pug
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sContent/_sContent.pug
- 
+
 include ../blocks/sContact/_sContact.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
@@ -22,10 +22,10 @@ include ../blocks/sAQ/_sAQ.pug
 
 include ../blocks/header/_header.pug
 include ../blocks/topLine/_topLine.pug
-include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/top-nav/_top-nav.pug
 
 block variables
-	- let  mainPage= 'main-page index-page' 
+	- let  mainPage= 'main-page index-page'
 	- let  bg= 'main.jpg'
 
 block title
@@ -33,8 +33,8 @@ block title
 	title= title
 block pagecontent
 	//- +mob-mnu()
-	
-	
+
+
 	+mob-mnu()
 	+header()
 		+top-nav()
@@ -44,8 +44,8 @@ block pagecontent
 	+sMap
 	//- +sResume
 	+sGR
-	+sNews('', 'Все новости')
-		h2 Новости проекта
+	//+sNews('', 'Все новости')
+	// h2 Новости проекта
 	//- script.
 	//- 	getNews(setNews)
 	+sIthubs
@@ -54,14 +54,16 @@ block pagecontent
 	+sAmbasadors
 	+sPartnersMain
 	script.
-		function setMainPageBlock(items) {
-			setEvents(items);
-			setMapStats(items);
-			setFAQ(items.faq);
-			setNews(items.news);
-			setAmbasadors(items.ambassadors);
-			setItHubs(items.playgrounds);
+		function setMainPageBlock() {
+			setEvents(mock.mainPage);
+			setMapStats(mock.mainPage);
+			setFAQ(mock.mainPage.faq);
+			// setNews(mock.mainPage.news);
+			setAmbasadors(mock.mainPage.ambassadors);
+			setItHubs(mock.mainPage.playgrounds);
 		}
-		getMainPageData(setMainPageBlock);
-		getPartnersSections(setPartnersMain);
+		setMainPageBlock()
+		loadingContent()
+		setPartnersMain(mock.partners)
+		// getPartnersSections(setPartnersMain);
 	+parts('footer')
